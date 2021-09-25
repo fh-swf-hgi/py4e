@@ -304,8 +304,8 @@ Die neue Liste wird in aufsteigender alphabetischer Reihenfolge nach dem Schlüs
 Mehrfachzuweisung mit Dictionaries
 ----------------------------------
 
-\index{Traversieren!Wörterbuch}
-\index{Wörterbuch!Traversieren}
+\index{Traversieren!Dictionary}
+\index{Dictionary!Traversieren}
 
 Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Dictionarys in einer einzigen Schleife sehen:
 
@@ -384,7 +384,7 @@ Die Tatsache, dass dieses komplexe Parsen und Analysieren von Daten mit einem le
 Verwendung von Tupeln als Schlüssel in Dictionaries
 ---------------------------------------------------
 
-\index{Tupel!als Schlüssel in Wörterbüchern}
+\index{Tupel!als Schlüssel in Dictionaries}
 \index{hashbar}
 
 Da Tupel *gehasht* werden können und Listen nicht, müssen wir ein Tupel als Schlüssel verwenden, wenn wir einen *zusammengesetzten* Schlüssel zur Verwendung in einem Dictionary erstellen wollen.

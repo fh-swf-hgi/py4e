@@ -481,7 +481,7 @@ line slicing : Zeilen-Slicing
 ### Kapitel 9
 
 ```
-\index{dictionary} : \index{Wörterbuch}
+\index{dictionary} : \index{Dictionary}
 \index{type!dict} : \index{Datentyp!dict}
 \index{key} : \index{Schlüssel}\index{Key}
 \index{key-value pair} : \index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
@@ -490,7 +490,7 @@ line slicing : Zeilen-Slicing
 \index{squiggly bracket} : \index{geschweifte Klammern}
 \index{bracket!squiggly} : \index{Klammern!geschweift}
 \index{exception!KeyError} : \index{Ausnahme!KeyError}
-\index{membership!dictionary} : \index{Zugehörigkeit!Wörterbuch}
+\index{membership!dictionary} : \index{Zugehörigkeit!Dictionary}
 \index{values method} : \index{values (Methode)}
 \index{method!values} : \index{Methode!values}
 \index{hash table} : \index{Hashtabelle}
@@ -504,8 +504,8 @@ line slicing : Zeilen-Slicing
 \index{nested loops} : \index{verschachtelte Schleifen}
 \index{loop!nested} : \index{Schleife!verschachtelt}
 \index{Romeo and Juliet} : \index{Romeo and Juliet}
-\index{dictionary!looping with} : \index{Wörterbuch!Iteration durch}
-\index{looping!with dictionaries} : \index{Schleife!über Wörterbuch}\index{Iteration!durch Wörterbuch}
+\index{dictionary!looping with} : \index{Dictionary!Iteration durch}
+\index{looping!with dictionaries} : \index{Schleife!über Dictionary}\index{Iteration!durch Dictionary}
 \index{keys method} : \index{keys (Methode)}
 \index{method!keys} : \index{Methode!keys}
 \index{sanity check} : \index{Plausibilitätsprüfung}
@@ -545,9 +545,9 @@ lookup : Lookup
 \index{email address} : \index{E-Mail-Adresse}
 \index{items method} : \index{items (Methode)}
 \index{method!items} : \index{Methode!items}
-\index{traverse!dictionary} : \index{Traversieren!Wörterbuch}
-\index{dictionary!traversal} : \index{Wörterbuch!Traversieren}
-\index{tuple!as key in dictionary} : \index{Tupel!als Schlüssel in Wörterbüchern}
+\index{traverse!dictionary} : \index{Traversieren!Dictionary}
+\index{dictionary!traversal} : \index{Dictionary!Traversieren}
+\index{tuple!as key in dictionary} : \index{Tupel!als Schlüssel in Dictionaries}
 \index{tuple!in brackets} : \index{Tupel!geklammert}
 \index{sorted function} : \index{sorted (Funktion)}
 \index{function!sorted} : \index{Funktion!sorted}
