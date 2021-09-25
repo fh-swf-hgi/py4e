@@ -522,41 +522,41 @@ Anzahl Arbeitsstunden: vierzig
 Fehler, bitte gib eine Zahl ein
 ~~~~
 
-    **Übung 3: Schreiben Sie ein Programm, das nach einem Wert zwischen 0,0 und 1,0 fragt. Wenn die Punktzahl außerhalb des Bereichs liegt, geben Sie eine Fehlermeldung aus. Wenn die Punktzahl zwischen 0,0 und 1,0 liegt, geben Sie eine Note anhand der folgenden Tabelle aus:**
+**Übung 3: Schreiben Sie ein Programm, das nach einem Wert zwischen 0,0 und 1,0 fragt. Wenn die Punktzahl außerhalb des Bereichs liegt, geben Sie eine Fehlermeldung aus. Wenn die Punktzahl zwischen 0,0 und 1,0 liegt, geben Sie eine Note anhand der folgenden Tabelle aus:**
 
-    ~~~~
-    Punkte   Note
-    >= 0.9     1
-    >= 0.8     2
-    >= 0.7     3
-    >= 0.6     4
-    < 0.6     5
-    ~~~~
+~~~~
+Punkte   Note
+>= 0.9     1
+>= 0.8     2
+>= 0.7     3
+>= 0.6     4
+ < 0.6     5
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.95
-    1
-    ~~~~
+Führen Sie das Programm wiederholt wie nachfolgend gezeigt aus, um die verschiedenen Werte für die Eingabe zu testen.
 
-    ~~~~
-    Punkte eingeben: perfekt
-    Falsche Punkanzahl
-    ~~~~
+~~~~
+Punkte eingeben: 0.95
+1
+~~~~
 
-    ~~~~
-    Punkte eingeben: 10.0
-    Falsche Punkanzahl
-    ~~~~
+~~~~
+Punkte eingeben: perfekt
+Falsche Punktanzahl
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.75
-    3
-    ~~~~
+~~~~
+Punkte eingeben: 10.0
+Falsche Punktanzahl
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.5
-    5   
-    ~~~~
+~~~~
+Punkte eingeben: 0.75
+3
+~~~~
 
-    Führen Sie das Programm wiederholt wie oben gezeigt aus, um die verschiedenen Werte für die Eingabe zu testen.
+~~~~
+Punkte eingeben: 0.5
+5   
+~~~~
 

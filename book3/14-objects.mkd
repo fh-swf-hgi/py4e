@@ -16,7 +16,7 @@ Zu Beginn dieses Buches haben wir vier grundlegende Programmiermuster betrachtet
 
 In späteren Kapiteln haben wir uns mit einfachen Variablen sowie mit Sammeldatenstrukturen wie Listen, Tupeln und Dictionaries beschäftigt.
 
-Wenn wir Programme erstellen, entwerfen wir Datenstrukturen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben die Leser wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, und andere, die „eleganter“ sind. Auch wenn unsere bisherigen Programme vielleicht klein sind, fängt man an zu erkennen, dass ein gewisses Gespür für Kunst und Ästhetik beim Schreiben von Code hilfreich ist.
+Wenn wir Programme erstellen, entwerfen wir Datenstrukturen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, und andere, die „eleganter“ sind. Auch wenn unsere bisherigen Programme vielleicht klein sind, fängt man an zu erkennen, dass ein gewisses Gespür für Kunst und Ästhetik beim Schreiben von Code hilfreich ist.
 
 Wenn Programme Millionen von Zeilen lang werden, wird es immer wichtiger, Code zu schreiben, der leicht zu verstehen ist. Wenn wir an einem millionenzeiligen Programm arbeiten, können wir nie das gesamte Programm gleichzeitig im Kopf behalten. Wir brauchen Möglichkeiten, große Programme in mehrere kleinere Teile zu zerlegen, damit wir weniger zu beachten haben, wenn wir ein Problem lösen, einen Fehler beheben oder eine neue Funktion hinzufügen.
 
@@ -38,7 +38,7 @@ Wie sich herausstellt, haben wir in diesem Buch die ganze Zeit über Objekte ver
 
 \VerbatimInput{../code3/party1.py}
 
-Anstatt sich darauf zu konzentrieren, was diese Zeilen bewirken, sollten wir uns ansehen, was aus der Sicht der objektorientierten Programmierung wirklich passiert. Es sollten sich keine Sorgen gemacht werden, wenn die folgenden Absätze beim ersten Lesen keinen Sinn ergeben, weil wir noch nicht alle diese Begriffe definiert haben.
+Anstatt sich darauf zu konzentrieren, was diese Zeilen bewirken, sollten wir uns ansehen, was aus der Sicht der objektorientierten Programmierung wirklich passiert. Es sollte uns keine Sorgen bereiten, wenn die folgenden Absätze beim ersten Lesen keinen Sinn ergeben, weil wir noch nicht alle diese Begriffe definiert haben.
 
 Die erste Zeile *konstruiert* ein Objekt vom Typ `list`, die zweite und dritte Zeile *ruft* die `append()`-Methode auf, die vierte Zeile ruft die `sort()`-Methode auf, und die fünfte Zeile *liefert* das Element an Position 0.
 
@@ -309,7 +309,7 @@ In der `dir`-Ausgabe für das `j`-Objekt (Instanz der Klasse `CricketFan`) sehen
 Zusammenfassung
 ---------------
 
-Dies ist eine sehr schnelle Einführung in die objektorientierte Programmierung, die sich hauptsächlich auf die Terminologie und die Syntax der Definition und Verwendung von Objekten konzentriert. Der Code am Anfang des Buches sollte nun vollständig verstanden werden.
+Dies war eine sehr schnelle Einführung in die objektorientierte Programmierung, die sich hauptsächlich auf die Terminologie und die Syntax der Definition und Verwendung von Objekten konzentriert. Der Code am Anfang dieses Kapitels sollte nun jedoch besser verständlich sein.
 
 \VerbatimInput{../code3/party1.py}
 

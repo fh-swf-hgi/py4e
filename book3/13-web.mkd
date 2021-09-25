@@ -112,7 +112,7 @@ JavaScript Object Notation - JSON
 \index{JSON}
 \index{JavaScript Object Notation}
 
-Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Wörterbücher und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und Wörterbüchern.
+Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Wörterbücher und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und Python-Wörterbüchern.
 
 Hier ist eine JSON-Kodierung, die in etwa dem einfachen XML von oben entspricht:
 
