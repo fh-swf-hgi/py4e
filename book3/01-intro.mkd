@@ -13,7 +13,7 @@ Schauen wir uns zum Beispiel die ersten drei Absätze dieses Kapitels an und fin
 ~~~~ {.python}
 python words.py
 Enter file:words.txt
-Das Wort “die“ kommt 9-mal vor
+Das Wort "die" kommt 9-mal vor
 ~~~~
 
 Unser Programm sagt uns schnell, dass das Wort „die“ 9 mal im oberen Teil dieses Kapitels verwendet wurde. Genau diese Tatsache, dass Computer Dinge gut können, die Menschen eher nicht gut bzw. schnell können, ist der Grund, warum man die Programmiersprachen beherrschen sollten. Sobald man eine Programmiersprache gelernt hat, kann man viele alltägliche Aufgaben durch den Computer erledigen lassen. So bleibt einem mehr Zeit für die diejenigen Aufgaben, für die wir Menschen einzigartig geeignet sind, nämlich Kreativität, Intuition und Ideenreichtum.
@@ -126,7 +126,7 @@ Das Fenster sollte dann in etwa so aussehen:
 ~~~~ {.python}
 Python 3.5.1 (v3.5.1:37a07cee5969, Dec  6 2015, 01:54:25)
 [MSC v.1900 64 bit (AMD64)] on win32
-Type “help“, “copyright“, “credits“ or “license“ for more
+Type "help", "copyright", "credits" or "license" for more
 information.
 >>>
 ~~~~
@@ -137,7 +137,7 @@ Nehmen wir an, wir kennen nicht einmal die einfachsten Wörter oder Sätze in Py
 
 ~~~~ {.python}
 >>> I come in peace, please take me to your leader
-File “<stdin>“, line 1
+File "<stdin>", line 1
   I come in peace, please take me to your leader
        ^
 SyntaxError: invalid syntax
@@ -162,7 +162,7 @@ We have been waiting for you for a long time
 >>> print('Our legend says you will be very tasty with mustard')
 Our legend says you will be very tasty with mustard
 >>> print 'We will have a feast tonight unless you say
-File “<stdin>“, line 1
+File "<stdin>", line 1
   print 'We will have a feast tonight unless you say
                                                    ^
 SyntaxError: Missing parentheses in call to 'print'
@@ -176,10 +176,10 @@ Bevor wir nun unser erstes Gespräch mit dem Python-Interpreter beenden, sollten
 ~~~~ {.python}
 >>> good-bye
 Traceback (most recent call last):
-File “<stdin>“, line 1, in <module>
+File "<stdin>", line 1, in <module>
 NameError: name 'good' is not defined
 >>> if you don't mind, I need to leave
-File “<stdin>“, line 1
+File "<stdin>", line 1
   if you don't mind, I need to leave
            ^
 SyntaxError: invalid syntax
@@ -352,18 +352,18 @@ Wie wir in unseren ersten „Gesprächen“ mit Python gesehen haben, müssen wi
 ~~~~ {.python}
 C:\Python> python.exe
 Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)]
-Type “help“, “copyright“, “credits“ or “license“ for more information.
+Type "help", "copyright", "credits" or "license" for more information.
 >>> primt 'Hello World'
-  File “<stdin>“, line 1
+  File "<stdin>", line 1
     primt 'Hello World'
           ^
 SyntaxError: invalid syntax
 >>> primt('Hello World')
 Traceback (most recent call last):
-  File “<stdin>“, line 1, in <module>
+  File "<stdin>", line 1, in <module>
 NameError: name 'primt' is not defined
 >>> Come on, Python
-  File “<stdin>“, line 1
+  File "<stdin>", line 1
     Come on, Python
          ^
 SyntaxError: invalid syntax
@@ -543,7 +543,7 @@ d) Ein Textverarbeitungsdokument
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
-File “<stdin>“, line 1
+File "<stdin>", line 1
   primt 'Hello world!'
                      ^
 SyntaxError: invalid syntax

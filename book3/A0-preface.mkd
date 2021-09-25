@@ -3,10 +3,10 @@
 Mitwirkende
 -----------
 
-    Redaktionelle Unterstüzung: Elliott Hauser, Sue Blumenberg
-    Covergestaltung: Aimee Andrion
-    Deutsche Übersetzung: Fabian Eberts, Heiner Giefers, Sebastian Schmidt,
-    Julia Warnke
+    Redaktionelle Unterstützung: Elliott Hauser, Sue Blumenberg
+                Covergestaltung: Aimee Andrion
+           Deutsche Übersetzung: Fabian Eberts, Heiner Giefers,
+                                 Sebastian Schmidt, Julia Warnke
 
 Historie
 --------
@@ -32,17 +32,17 @@ Vorwort
 =======
 
 Vorwort zur deutschen Ausgabe
--------------------------------
+-----------------------------
 
-Die deutsche Nationalbibliothek listet über 500 Titel zum Thema Python Programmierung, digitale Medien eingeschlossen sind es sogar über 1000.
+Die Deutsche Nationalbibliothek listet über 500 Titel zum Thema Python Programmierung, digitale Medien eingeschlossen sind es sogar über 1000.
 Man kann sich also die Frage stellen, ob das *1001 Buch über Python* wirklich notwendig ist.
 Wir finden *ja*, denn der Ansatz dieses Buches unterscheidet sich von den meisten anderen zum Thema.
 *Python für alle* ist Teil eines offenen Curriculums zu Python, das bereits in verschiedene Sprachen übersetzt wurde und in diversen Hochschulen als auch in Online-Kursen Anwendung findet.
 
 Mein großer Dank gilt Charles Severance, der diese Materialsammlung aufgebaut hat und weltweit Menschen dabei unterstützt, seine Inhalte zu verwenden und weiterzuentwickeln.
-Genau wie der Autor stand auch ich vor der Entscheidung, für einen Kurs zur Einführung in die Programmierung mit Python Lehrmaterialien selbst zu entwickeln, oder ein bestehendes Lehrbuch zu verwenden.
+Genau wie der Autor stand auch ich vor der Entscheidung, für einen Kurs zur Einführung in die Programmierung mit Python Lehrmaterialien selbst zu entwickeln oder ein bestehendes Lehrbuch zu verwenden.
 Viele der vielen Lehrbücher zu Python waren prinzipiell geeignet, aber keines passte genau auf die Anforderungen der Veranstaltung.
-Der pragmatische Ansatz von *Python for Everybody* eignet sich sehr für Programmieranfänger. Es gibt keinen Anspruch auf Vollständigkeit; vielmehr zielt das Buch darauf ab, die Programmierung mit Python in logisch aufeinander aufbauenden Kapitel *von Grund auf* zu vermitteln. Dies, und die Möglichkeit das Buch inhaltlich zu erweitern, haben schließlich zum Entschluss geführt, *Python for Everybody* ins Deutsche zu übersetzen.
+Der pragmatische Ansatz von *Python for Everybody* eignet sich sehr für Programmieranfänger. Es gibt keinen Anspruch auf Vollständigkeit; vielmehr zielt das Buch darauf ab, die Programmierung mit Python in logisch aufeinander aufbauenden Kapitel *von Grund auf* zu vermitteln. Dies und die Möglichkeit, das Buch inhaltlich zu erweitern, haben schließlich zum Entschluss geführt, *Python for Everybody* ins Deutsche zu übersetzen.
 
 Die vorliegende Übersetzung orientiert sich weitgehend am englischsprachigen Original. Die Einleitung des Themas in Kapiteln 1 würde etwas verkürzt, in den Kapitel Kapiteln 2-11 wurden einige Abschnitte aktualisiert und ergänzt, allerdings ohne dabei den Grundaufbau zu verändern. Bei den Programmbeispielen sind die Ausgaben größtenteils ins Deutsche übersetzt worden, Eingabedaten und Bezeichnern wurden überwiegend wie in der Originalausgabe belassen.
 
