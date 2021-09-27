@@ -97,7 +97,7 @@ Wenn wir auf das Programm zur Link-Extraktion zurückblicken, bei der wir die Be
 
 \VerbatimInput{../code3/urllinks.py}
 
-Wir lesen die URL in einen String und übergeben diesen dann an `urllib`, um die Daten aus dem Web abzurufen.  Die `urllib`-Bibliothek verwendet die `socket`-Bibliothek, um die eigentliche Netzwerkverbindung zum Abrufen der Daten herzustellen. Wir nehmen die Zeichenkette, die `urllib` zurückgibt und übergeben sie an BeautifulSoup zum Parsen. BeautifulSoup verwendet das Objekt `html.parser`^[https://docs.python.org/3/library/html.parser.html] und gibt ein Objekt zurück. Wir rufen die Methode `tags()` für das zurückgegebene Objekt auf, die ein Wörterbuch mit Tag-Objekten zurückgibt. Wir laufen in einer Schleife durch die Tags und rufen die Methode `get()` für jedes Tag auf, um das Attribut `href` auszugeben.
+Wir lesen die URL in einen String und übergeben diesen dann an `urllib`, um die Daten aus dem Web abzurufen.  Die `urllib`-Bibliothek verwendet die `socket`-Bibliothek, um die eigentliche Netzwerkverbindung zum Abrufen der Daten herzustellen. Wir nehmen die Zeichenkette, die `urllib` zurückgibt und übergeben sie an BeautifulSoup zum Parsen. BeautifulSoup verwendet das Objekt `html.parser`^[https://docs.python.org/3/library/html.parser.html] und gibt ein Objekt zurück. Wir rufen die Methode `tags()` für das zurückgegebene Objekt auf, die ein Dictionary mit Tag-Objekten zurückgibt. Wir laufen in einer Schleife durch die Tags und rufen die Methode `get()` für jedes Tag auf, um das Attribut `href` auszugeben.
 
 Wir können uns so Bild von diesem Programm machen und wie die Objekte zusammenarbeiten.
 
@@ -152,7 +152,7 @@ Hier weisen wir Python an, ein *Objekt* oder eine *Instanz* der Klasse `PartyAni
 counts = dict()
 ~~~~
 
-Hier weisen wir Python an, ein Objekt unter Verwendung der Vorlage `dict` (in Python bereits vorhanden) zu konstruieren, die Instanz des Wörterbuchs zurückzugeben und sie der Variablen `counts` zuzuweisen.
+Hier weisen wir Python an, ein Objekt unter Verwendung der Vorlage `dict` (in Python bereits vorhanden) zu konstruieren, die Instanz des Dictionarys zurückzugeben und sie der Variablen `counts` zuzuweisen.
 
 Wenn die Klasse `PartyAnimal` verwendet wird, um ein Objekt zu erstellen, wird die Variable `an` verwendet, um auf dieses Objekt zu zeigen. Wir verwenden `an`, um auf den Code und die Daten für diese bestimmte Instanz der Klasse `PartyAnimal` zuzugreifen.
 

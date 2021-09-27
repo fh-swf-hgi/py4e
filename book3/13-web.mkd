@@ -4,7 +4,7 @@ Web-Services
 
 Nachdem wir gelernt hatten wie einfach es ist, Dokumente über HTTP mit Hilfe von Programmen abzurufen und zu parsen, dauerte es nicht lange, bis wir einen Ansatz entwickelten, Dokumente zu produzieren, die speziell dafür ausgelegt waren, von anderen Programmen verarbeitet zu werden (d. h. nicht HTML, um in einem Browser angezeigt zu werden).
 
-Es gibt zwei gängige Formate, die wir beim Austausch von Daten über das Web verwenden. eXtensible Markup Language (XML) wird schon sehr lange verwendet und eignet sich am besten für den Austausch von dokumentenähnlichen Daten. Wenn Programme nur Wörterbücher, Listen oder andere interne Informationen miteinander austauschen wollen, verwenden sie dagegen JavaScript Object Notation (JSON) (siehe [www.json.org](http://www.json.org)). Wir werden uns beide Formate ansehen.
+Es gibt zwei gängige Formate, die wir beim Austausch von Daten über das Web verwenden. eXtensible Markup Language (XML) wird schon sehr lange verwendet und eignet sich am besten für den Austausch von dokumentenähnlichen Daten. Wenn Programme nur Dictionaries, Listen oder andere interne Informationen miteinander austauschen wollen, verwenden sie dagegen JavaScript Object Notation (JSON) (siehe [www.json.org](http://www.json.org)). Wir werden uns beide Formate ansehen.
 
 eXtensible Markup Language - XML
 --------------------------------
@@ -112,7 +112,7 @@ JavaScript Object Notation - JSON
 \index{JSON}
 \index{JavaScript Object Notation}
 
-Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Wörterbücher und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und Python-Wörterbüchern.
+Das JSON-Format wurde durch das in der Sprache JavaScript verwendete Objekt- und Array-Format inspiriert. Da Python jedoch vor JavaScript erfunden wurde, hat die Syntax von Python für Dictionaries und Listen die Syntax von JSON beeinflusst. Das Format von JSON ist also fast identisch mit einer Kombination aus Python-Listen und Python-Dictionaries.
 
 Hier ist eine JSON-Kodierung, die in etwa dem einfachen XML von oben entspricht:
 
@@ -138,13 +138,13 @@ JSON entwickelt sich aufgrund seiner relativen Einfachheit im Vergleich zu XML s
 Parsen von JSON
 ---------------
 
-Wir konstruieren unser JSON, indem wir Wörterbücher und Listen nach Bedarf verschachteln. In diesem Beispiel stellen wir eine Liste von Benutzern dar, wobei jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist (d. h. ein Wörterbuch). Wir haben also eine Liste von Wörterbüchern.
+Wir konstruieren unser JSON, indem wir Dictionaries und Listen nach Bedarf verschachteln. In diesem Beispiel stellen wir eine Liste von Benutzern dar, wobei jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist (d. h. ein Dictionary). Wir haben also eine Liste von Dictionaries.
 
 Im folgenden Programm verwenden wir die eingebaute `json`-Bibliothek, um das JSON zu parsen und die Daten einzulesen. Vergleichen wir dies genau mit den entsprechenden XML-Daten und dem Code oben. Das JSON hat weniger Details, daher müssen wir im Voraus wissen, dass wir eine Liste erhalten und dass die Liste aus Benutzern besteht und jeder Benutzer ein Satz von Schlüssel-Wert-Paaren ist. Das JSON ist prägnanter (ein Vorteil), aber auch weniger selbstbeschreibend (ein Nachteil).
 
 \VerbatimInput{../code3/json2.py}
 
-Wenn wir den Code zum Extrahieren von Daten aus dem geparsten JSON und XML vergleichen, sehen wir, dass das, was wir von `json.loads()` erhalten, eine Python-Liste ist, die wir mit einer `for`-Schleife durchlaufen. Jedes Element innerhalb dieser Liste ist ein Python-Wörterbuch. Sobald das JSON geparst wurde, können wir den Python-Indexoperator verwenden, um die verschiedenen Daten für jeden Benutzer zu extrahieren. Wir müssen nicht die JSON-Bibliothek verwenden, um uns durch das geparste JSON zu wühlen, da die zurückgegebenen Daten einfach native Python-Strukturen sind.
+Wenn wir den Code zum Extrahieren von Daten aus dem geparsten JSON und XML vergleichen, sehen wir, dass das, was wir von `json.loads()` erhalten, eine Python-Liste ist, die wir mit einer `for`-Schleife durchlaufen. Jedes Element innerhalb dieser Liste ist ein Python-Dictionary. Sobald das JSON geparst wurde, können wir den Python-Indexoperator verwenden, um die verschiedenen Daten für jeden Benutzer zu extrahieren. Wir müssen nicht die JSON-Bibliothek verwenden, um uns durch das geparste JSON zu wühlen, da die zurückgegebenen Daten einfach native Python-Strukturen sind.
 
 Die Ausgabe dieses Programms ist genau die gleiche wie die obige XML-Version.
 
@@ -409,7 +409,7 @@ Im folgenden Beispiel rufen wir die Twitter-Freunde eines Benutzers ab, parsen d
 ../code3/twurl.py
 \end{trinketfiles}
 
-Da das JSON zu einer Reihe von verschachtelten Python-Listen und -Wörterbüchern wird, können wir eine Kombination aus Indexzugriff und `for`-Schleifen verwenden, um die zurückgegebenen Datenstrukturen mit sehr wenig Python-Code zu durchwandern.
+Da das JSON zu einer Reihe von verschachtelten Python-Listen und -Dictionaries wird, können wir eine Kombination aus Indexzugriff und `for`-Schleifen verwenden, um die zurückgegebenen Datenstrukturen mit sehr wenig Python-Code zu durchwandern.
 
 Die Ausgabe des Programms sieht wie folgt aus (einige der Datenelemente sind gekürzt, um auf die Seite zu passen):
 
