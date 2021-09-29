@@ -29,8 +29,8 @@ Wie bei vielen Aspekten der Programmierung ist es notwendig, die Konzepte der ob
 
 Das wichtigste Ergebnis dieses Kapitels ist, ein grundlegendes Verständnis dafür zu haben, wie Objekte aufgebaut sind und wie sie funktionieren und vor allem, wie wir die Funktionen von Objekten nutzen, die uns von Python und den Python-Bibliotheken zur Verfügung gestellt werden.
 
-Handhabung von Objekte
-----------------------
+Handhabung von Objekten
+-----------------------
 
 Wie sich herausstellt, haben wir in diesem Buch die ganze Zeit über Objekte verwendet. Python stellt uns viele eingebaute Objekte zur Verfügung. Hier ist ein einfache Beispiel, bei dem sich die ersten Zeilen sehr einfach und natürlich anfühlen sollten.
 
@@ -76,8 +76,8 @@ Wir können einen Blick auf die Fähigkeiten eines Objekts werfen, indem wir uns
 
 Im weiteren Verlauf dieses Kapitels werden alle oben genannten Begriffe definiert. Nach Beendigung sollten die obigen Abschnitte erneut gelesen werden, um das Verständnis zu überprüfen.
 
-Mit Programmen starten
-----------------------
+Betrachtung von außen
+---------------------
 
 Ein Programm in seiner einfachsten Form nimmt Eingaben entgegen, führt Verarbeitungen durch und erzeugt Ausgaben. Das Folgende Programm zum Konvertieren einer Etagennummer demonstriert ein sehr kurzes, aber vollständiges Programm, das alle drei dieser Schritte zeigt.
 
@@ -99,7 +99,7 @@ Wenn wir auf das Programm zur Link-Extraktion zurückblicken, bei der wir die Be
 
 Wir lesen die URL in einen String und übergeben diesen dann an `urllib`, um die Daten aus dem Web abzurufen.  Die `urllib`-Bibliothek verwendet die `socket`-Bibliothek, um die eigentliche Netzwerkverbindung zum Abrufen der Daten herzustellen. Wir nehmen die Zeichenkette, die `urllib` zurückgibt und übergeben sie an BeautifulSoup zum Parsen. BeautifulSoup verwendet das Objekt `html.parser`^[https://docs.python.org/3/library/html.parser.html] und gibt ein Objekt zurück. Wir rufen die Methode `tags()` für das zurückgegebene Objekt auf, die ein Dictionary mit Tag-Objekten zurückgibt. Wir laufen in einer Schleife durch die Tags und rufen die Methode `get()` für jedes Tag auf, um das Attribut `href` auszugeben.
 
-Wir können uns so Bild von diesem Programm machen und wie die Objekte zusammenarbeiten.
+Wir können uns so ein Bild von diesem Programm machen und davon, wie die Objekte zusammenarbeiten.
 
 ![Ein Programm als Netzwerk von Objekten](height=1.50in@../images/program-oo)
 

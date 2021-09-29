@@ -58,7 +58,7 @@ Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein ne
 {'one': 'eins', 'three': 'drei', 'two': 'zwei'}
 ~~~~
 
-Die Reihenfolge der Schlüssel/Wert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Dictionary unvorhersehbar.
+Die Reihenfolge der Schlüssel-Wert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Dictionary unvorhersehbar.
 
 Das ist aber kein Problem, weil die Elemente eines Dictionarys nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
 
@@ -299,7 +299,7 @@ Wir sehen nur die Einträge mit einem Wert über 10.
 \index{keys (Methode)}
 \index{Methode!keys}
 
-Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüssel/Wert-Paare wie folgt ausgeben:
+Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüssel-Wert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
 counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
@@ -319,7 +319,7 @@ chuck 1
 jan 100
 ~~~~
 
-Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüssel/Wert-Paare in der Reihenfolge aus der `for`-Schleife.
+Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüssel-Wert-Paare in der Reihenfolge aus der `for`-Schleife.
 
 Fortgeschrittene Textanalyse
 ----------------------------

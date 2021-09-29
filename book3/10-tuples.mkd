@@ -314,9 +314,9 @@ for key, val in list(d.items()):
     print(val, key)
 ~~~~
 
-Diese Schleife hat zwei *Iterationsvariablen*, weil `items` eine Liste von Tupeln zurückgibt und `key, val` eine Tupel- bzw. *Unpacking*-Zuweisung ist, die nacheinander durch jedes der Schlüssel/Wert-Paare im Dictionary iteriert.
+Diese Schleife hat zwei *Iterationsvariablen*, weil `items` eine Liste von Tupeln zurückgibt und `key, val` eine Tupel- bzw. *Unpacking*-Zuweisung ist, die nacheinander durch jedes der Schlüssel-Wert-Paare im Dictionary iteriert.
 
-Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum nächsten Schlüssel/Wert-Paar im Dictionary vorgerückt (immer noch in Hash-Reihenfolge).
+Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum nächsten Schlüssel-Wert-Paar im Dictionary vorgerückt (immer noch in Hash-Reihenfolge).
 
 Der Ausgang dieser Schleife ist:
 

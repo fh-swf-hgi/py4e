@@ -280,8 +280,8 @@ if 0 < x and x < 10:
     print('x is a positive single-digit number.')
 ~~~~
 
-Abfangen von Ausnahmen mittels try und except
----------------------------------------------
+Abfangen von Ausnahmen mittels `try` und `except`
+-------------------------------------------------
 
 Im vorherigen Kapitel haben wir ein Codesegment gesehen, in dem wir die Funktionen `input` und `int` verwendet haben, um eine vom Benutzer eingegebene Ganzzahl zu lesen und zu analysieren. Wir haben auch gesehen, wie tückisch dies sein kann:
 
