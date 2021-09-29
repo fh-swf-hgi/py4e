@@ -15,8 +15,8 @@ diff tmp.sed tmp.tex
 python texpatch.py < tmp.sed > tmp.patch
 
 mv tmp.patch tmp.tex
-sed -i -e 's/?``/?{``}/g' tmp.tex # closing german quotation mark after question mark
-sed -i -e 's/!``/!{``}/g' tmp.tex # closing german quotation mark after exclamation mark
+./german.sh tmp.tex
+
 latex tmp
 makeindex tmp
 latex tmp
