@@ -11,7 +11,7 @@ Hypertext Transfer Protocol - HTTP
 
 Das Netzwerkprotokoll, das das Web antreibt, ist eigentlich recht einfach und es gibt eine eingebaute Unterstützung in Python namens `socket`, die es sehr einfach macht, Netzwerkverbindungen herzustellen und Daten über diese Sockets in einem Python-Programm abzurufen.
 
-Ein *Socket* ist ähnlich wie eine Datei, mit dem Unterschied, dass ein einzelner Socket eine bidirektionale Verbindung zwischen zwei Programmen ermöglicht. Sie können sowohl von einem Socket lesen als auch auf einen Socket schreiben. Wenn Sie etwas in eine Socket schreiben, wird es an die Anwendung am anderen Ende des Sockets gesendet. Wenn Sie aus dem Socket lesen, erhalten Sie die Daten, die die andere Anwendung gesendet hat.
+Ein *Socket* ist ähnlich wie eine Datei, mit dem Unterschied, dass ein einzelner Socket eine bidirektionale Verbindung zwischen zwei Programmen ermöglicht. Sie können sowohl von einem Socket lesen als auch auf einen Socket schreiben. Wenn Sie etwas in einen Socket schreiben, wird es an die Anwendung am anderen Ende des Sockets gesendet. Wenn Sie aus dem Socket lesen, erhalten Sie die Daten, die die andere Anwendung gesendet hat.
 
 Wenn Sie aber versuchen, einen Socket zu lesen, wenn das Programm am anderen Ende des Sockets keine Daten gesendet hat, sitzen Sie nur da und warten. Wenn die Programme an beiden Enden des Sockets einfach auf einige Daten warten, ohne etwas zu senden, werden sie sehr lange warten, daher ist ein wichtiger Teil von Programmen, die über das Internet kommunizieren, eine Art Protokoll zu haben.
 
@@ -224,7 +224,7 @@ Parsen von HTML und Erkunden des Webs
 \index{Web!Scraping}
 \index{HTML parsen}
 
-Eine der häufigsten Verwendungen der `urllib`-Fähigkeit in Python ist das *Scraping* des Webs. Beim Web-Scraping schreiben wir ein Programm, das vorgibt, ein Web-Browser zu sein, Seiten abruft, und dann die Daten auf diesen Seiten auf Muster untersucht.
+Eine der häufigsten Verwendungen der `urllib`-Fähigkeit in Python ist das *Scraping* des Webs. Beim Web-Scraping schreiben wir ein Programm, das vorgibt, ein Web-Browser zu sein, Seiten abruft und dann die Daten auf diesen Seiten auf Muster untersucht.
 
 Ein Beispiel: Eine Suchmaschine wie Google schaut sich die Quelle einer Webseite an, extrahiert die Links zu anderen Seiten und ruft diese Seiten auf, indem sie die Links extrahiert. Dies wird dann einfach wiederholt. Mit dieser Technik erkundet Google seinen Weg durch fast alle Seiten im Web.
 
@@ -254,7 +254,7 @@ href="http[s]?://.+?"
 
 Unser regulärer Ausdruck sucht nach Zeichenfolgen, die mit `href=\"http://` oder `href=\"https://` beginnen, gefolgt von einem oder mehreren Zeichen (`.+?`) und einem weiteren doppelten Anführungszeichen. Das Fragezeichen hinter dem `[s]?` zeigt an, dass nach der Zeichenkette `http`, nach keinem oder einem "s", gesucht werden soll.
 
-Das Fragezeichen hinter dem `.+?` zeigt an, dass der Abgleich im non-greedy-Modus und nicht "greedy" durchgeführt werden soll. Bei einem non-greedy-Match wird versucht, die *kleinstmögliche* übereinstimmende Zeichenfolge zu finden, bei einem greedy-Match wird versucht, die *größtmögliche* übereinstimmende Zeichenfolge zu finden.
+Das Fragezeichen hinter dem `.+?` zeigt an, dass der Abgleich im non-greedy-Modus und nicht „greedy“ durchgeführt werden soll. Bei einem non-greedy-Match wird versucht, die *kleinstmögliche* übereinstimmende Zeichenfolge zu finden, bei einem greedy-Match wird versucht, die *größtmögliche* übereinstimmende Zeichenfolge zu finden.
 
 \index{greedy}
 \index{non-greedy}
@@ -288,7 +288,7 @@ https://www.python.org/psf/donations/
 http://sphinx.pocoo.org/
 ~~~~
 
-Reguläre Ausdrücke funktionieren sehr gut, wenn ihr HTML gut formatiert und vorhersehbar ist. Da es aber eine Menge „defekter“ HTML-Seiten gibt, könnte eine Lösung, die nur reguläre Ausdrücke verwendet, entweder einige gültige Links übersehen oder mit unbrauchbaren Daten enden.
+Reguläre Ausdrücke funktionieren sehr gut, wenn das HTML gut formatiert und vorhersehbar ist. Da es aber eine Menge „defekter“ HTML-Seiten gibt, könnte eine Lösung, die nur reguläre Ausdrücke verwendet, entweder einige gültige Links übersehen oder mit unbrauchbaren Daten enden.
 
 Dies kann durch die Verwendung einer robusten HTML-Parsing-Bibliothek gelöst werden.
 

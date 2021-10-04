@@ -50,7 +50,7 @@ Diese Zeile erzeugt ein Element, das vom Schlüssel `'one'` auf den Wert `'eins'
 {'one': 'eins'}
 ~~~~
 
-Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Dictionary mit drei Einträgen erstellen.  Aber wenn man `eng2de` ausgeben möchte, wird man vielleicht überrascht sein:
+Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein neues Dictionary mit drei Einträgen erstellen. Aber wenn man `eng2de` ausgeben möchte, wird man vielleicht überrascht sein:
 
 ~~~~ {.python}
 >>> eng2de = {'one': 'eins', 'two': 'zwei', 'three': 'drei'}
@@ -58,7 +58,7 @@ Dieses Ausgabeformat ist auch ein Eingabeformat. Wir können zum Beispiel ein ne
 {'one': 'eins', 'three': 'drei', 'two': 'zwei'}
 ~~~~
 
-Die Reihenfolge der Schlüsselwert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Dictionary unvorhersehbar.
+Die Reihenfolge der Schlüssel-Wert-Paare ist nicht die gleiche. Wenn wir das gleiche Beispiel auf unserem Computer eingeben, erhalten wir möglicherweise ein anderes Ergebnis. Im Allgemeinen ist die Reihenfolge der Elemente in einem Dictionary unvorhersehbar.
 
 Das ist aber kein Problem, weil die Elemente eines Dictionarys nie mit ganzzahligen Indizes indiziert sind. Stattdessen verwenden wir die Schlüssel, um die entsprechenden Werte nachzuschlagen:
 
@@ -299,7 +299,7 @@ Wir sehen nur die Einträge mit einem Wert über 10.
 \index{keys (Methode)}
 \index{Methode!keys}
 
-Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüsselwert-Paare wie folgt ausgeben:
+Wenn wir die Schlüssel in alphabetischer Reihenfolge ausgeben möchten, erstellen wir zunächst eine Liste der Schlüssel des Dictionarys mit der in Dictionaryobjekten verfügbaren Methode `keys`. Dann sortieren diese Liste und iterieren anschließend durch sie, wobei wir jeden Schlüssel nachschlagen und die Schlüssel-Wert-Paare wie folgt ausgeben:
 
 ~~~~ {.python}
 counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
@@ -319,7 +319,7 @@ chuck 1
 jan 100
 ~~~~
 
-Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüsselwert-Paare in der Reihenfolge aus der `for`-Schleife.
+Zuerst sehen wir die Liste der Schlüssel in unsortierter Reihenfolge, die wir von der Methode `keys` erhalten. Dann sehen wir die Schlüssel-Wert-Paare in der Reihenfolge aus der `for`-Schleife.
 
 Fortgeschrittene Textanalyse
 ----------------------------
@@ -366,7 +366,7 @@ Wir nehmen die folgenden Änderungen an unserem Programm vor:
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Python oft eingebaute Fähigkeiten für viele gängige Datenanalyseprobleme hat. Mit der Zeit werden wir genug Beispielcode gesehen haben und genug von der Dokumentation gelesen haben, um zu wissen, wo man nachschauen muss. Vielleicht hat jemand bereits etwas geschrieben, dass unsere Arbeit viel einfacher macht.
+Ein Teil des Erlernens der „Kunst von Python“ ist die Erkenntnis, dass Python oft eingebaute Fähigkeiten für viele gängige Datenanalyseprobleme hat. Mit der Zeit werden wir genug Beispielcode gesehen haben und genug von der Dokumentation gelesen haben, um zu wissen, wo man nachschauen muss. Vielleicht hat jemand bereits etwas geschrieben, das unsere Arbeit viel einfacher macht.
 
 Im Folgenden finden wir eine gekürzte Version der Ausgabe:
 
@@ -457,7 +457,7 @@ Wert
 Übungen
 -------
 
-**Übung 2: Schreiben Sie ein Programm, dass jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag sie versendet wurde. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Dictionarys aus (die Reihenfolge spielt keine Rolle).**
+**Übung 2: Schreiben Sie ein Programm, das jede E-Mail-Nachricht danach kategorisiert, an welchem Wochentag sie versendet wurde. Suchen Sie dazu nach Zeilen, die mit „From“ beginnen, suchen Sie dann nach dem dritten Wort und führen Sie eine laufende Zählung der einzelnen Wochentage durch. Am Ende des Programms geben Sie den Inhalt Ihres Dictionarys aus (die Reihenfolge spielt keine Rolle).**
 
 **Sample Line:**
 

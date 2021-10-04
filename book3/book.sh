@@ -35,7 +35,8 @@ diff tmp.sed tmp.tex
 python texpatch.py < tmp.sed > tmp.patch
 
 mv tmp.patch tmp.tex
-sed -i -e 's/?``/?{``}/g' tmp.tex # german closing quotation mark after a question mark
+./german.sh tmp.tex
+
 if [ -f .chinese ] ; then
     xelatex tmp
     makeindex tmp

@@ -709,7 +709,7 @@ Ganzzahl
 \index{Ganzzahl}
 
 Schlüsselwort
-:   Ein reserviertes Wort, das vom Compiler verwendet wird, um ein Programm zu analysieren; Man kann Schlüsselwörter wie `if`, `def` und `while` nicht als Variablennamen verwenden.
+:   Ein reserviertes Wort, das vom Compiler verwendet wird, um ein Programm zu analysieren; man kann Schlüsselwörter wie `if`, `def` und `while` nicht als Variablennamen verwenden.
 \index{Schlüsselwort}
 
 Modulo-Operator

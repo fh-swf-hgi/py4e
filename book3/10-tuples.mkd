@@ -11,7 +11,7 @@ Tupel sind unveränderbar
 \index{Datentyp!Tupel}
 \index{Folge}
 
-Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Alles, wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Wörterbüchern verwenden können.
+Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Alles, wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Dictionaries verwenden können.
 
 \index{Veränderbarkeit}
 \index{vergleichbar}
@@ -116,7 +116,7 @@ Vergleichen von Tupeln
 \index{sort (Methode)}
 \index{Methode!sort}
 
-Die Vergleichsoperatoren funktionieren mit Tupeln und anderen Sequenzen. Python beginnt mit dem Vergleich des jeweils ersten Elements aus jeder Sequenz. Wenn beide gleich sind, geht es weiter zum nächsten Element und so weiter, bis zwei Elemente gefunden wurden, die sich unterscheiden. Diese werden entsprechend des verwendeten Operators verglichen. Damit endet der Vergleich der Tupeln. Alle danach kommenden Elemente werden also nicht mehr berücksichtigt.
+Die Vergleichsoperatoren funktionieren mit Tupeln und anderen Sequenzen. Python beginnt mit dem Vergleich des jeweils ersten Elements aus jeder Sequenz. Wenn beide gleich sind, geht es weiter zum nächsten Element und so weiter, bis zwei Elemente gefunden wurden, die sich unterscheiden. Diese werden entsprechend dem verwendeten Operator verglichen. Damit endet der Vergleich der Tupel. Alle danach kommenden Elemente werden also nicht mehr berücksichtigt.
 
 ~~~~ {.python .trinket}
 >>> (0, 1, 2) < (0, 3, 4)
@@ -188,7 +188,7 @@ In diesem Beispiel haben wir eine zweielementige Liste (die eine Sequenz ist) un
 >>>
 ~~~~
 
-Es ist keine Magie, Python übersetzt die Tupel-Zuweisungssyntax in etwa so, dass sie wie folgt aussieht:^[Python übersetzt die Syntax nicht wörtlich. Wenn wir dies zum Beispiel mit einem Wörterbuch versuchen, wird es nicht so funktionieren, wie wir es vielleicht erwarten.]
+Es ist keine Magie, Python übersetzt die Tupel-Zuweisungssyntax in etwa so, dass sie wie folgt aussieht:^[Python übersetzt die Syntax nicht wörtlich. Wenn wir dies zum Beispiel mit einem Dictionary versuchen, wird es nicht so funktionieren, wie wir es vielleicht erwarten.]
 
 ~~~~ {.python .trinket}
 >>> m = [ 'have', 'fun' ]
@@ -268,15 +268,15 @@ monty
 python.org
 ~~~~
 
-Wörterbüchern und Tupel
------------------------
+Dictionaries und Tupel
+----------------------
 
-\index{Wörterbuch}
+\index{Dictionary}
 \index{items (Methode)}
 \index{Methode!items}
 \index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
 
-Wörterbücher haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
+Dictionaries haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
 
 ~~~~ {.python .trinket}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -285,9 +285,9 @@ Wörterbücher haben eine Methode namens `items`, die eine Liste von Tupeln zur�
 [('b', 1), ('a', 10), ('c', 22)]
 ~~~~
 
-Wie wir es vermutlich von einem Wörterbuch erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
+Wie wir es vermutlich von einem Dictionary erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
 
-Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, können wir nun die Liste der Tupel sortieren. Das Konvertieren eines Wörterbuchs in eine Liste von Tupeln ist eine Möglichkeit, den Inhalt eines Wörterbuchs nach Schlüssel sortiert auszugeben:
+Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, können wir nun die Liste der Tupel sortieren. Das Konvertieren eines Dictionarys in eine Liste von Tupeln ist eine Möglichkeit, den Inhalt eines Dictionarys nach Schlüssel sortiert auszugeben:
 
 ~~~~ {.python}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -301,22 +301,22 @@ Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, könne
 
 Die neue Liste wird in aufsteigender alphabetischer Reihenfolge nach dem Schlüsselwert sortiert.
 
-Mehrfachzuweisung mit Wörterbüchern
------------------------------------
+Mehrfachzuweisung mit Dictionaries
+----------------------------------
 
-\index{Traversieren!Wörterbuch}
-\index{Wörterbuch!Traversieren}
+\index{Traversieren!Dictionary}
+\index{Dictionary!Traversieren}
 
-Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Wörterbuchs in einer einzigen Schleife sehen:
+Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Dictionarys in einer einzigen Schleife sehen:
 
 ~~~~ {.python}
 for key, val in list(d.items()):
     print(val, key)
 ~~~~
 
-Diese Schleife hat zwei *Iterationsvariablen*, weil `items` eine Liste von Tupeln zurückgibt und `key, val` eine Tupel- bzw. *Unpacking*-Zuweisung ist, die nacheinander durch jedes der Schlüssel-Wert-Paare im Wörterbuch iteriert.
+Diese Schleife hat zwei *Iterationsvariablen*, weil `items` eine Liste von Tupeln zurückgibt und `key, val` eine Tupel- bzw. *Unpacking*-Zuweisung ist, die nacheinander durch jedes der Schlüssel-Wert-Paare im Dictionary iteriert.
 
-Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum nächsten Schlüssel-Wert-Paar im Wörterbuch vorgerückt (immer noch in Hash-Reihenfolge).
+Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum nächsten Schlüssel-Wert-Paar im Dictionary vorgerückt (immer noch in Hash-Reihenfolge).
 
 Der Ausgang dieser Schleife ist:
 
@@ -328,7 +328,7 @@ Der Ausgang dieser Schleife ist:
 
 Auch hier gilt wieder die Reihenfolge der Hash-Schlüssel (d. h. letztendlich keine bestimmte Reihenfolge).
 
-Wenn wir diese beiden Techniken kombinieren, können wir den Inhalt eines Wörterbuchs sortiert nach dem *Wert*, der in jedem Schlüssel-Wert-Paar gespeichert ist, ausgeben.
+Wenn wir diese beiden Techniken kombinieren, können wir den Inhalt eines Dictionarys sortiert nach dem *Wert*, der in jedem Schlüssel-Wert-Paar gespeichert ist, ausgeben.
 
 Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel `(value, key)` ist. Die Methode `items` würde uns eine Liste von `(key, value)`-Tupeln liefern, aber dieses Mal wollen wir nach Wert und nicht nach Schlüssel sortieren. Sobald wir die Liste mit den Wert-Schlüssel-Tupeln aufgebaut haben, ist es eine einfache Sache, die Liste in umgekehrter Reihenfolge zu sortieren und die neue, sortierte Liste auszugeben.
 
@@ -346,7 +346,7 @@ Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel
 >>>
 ~~~~
 
-Indem wir die Liste der Tupel sorgfältig so konstruieren, dass der Wert das erste Element jedes Tupels ist, können wir die Liste der Tupel sortieren und erhalten unseren Wörterbuchinhalt nach dem Wert sortiert.
+Indem wir die Liste der Tupel sorgfältig so konstruieren, dass der Wert das erste Element jedes Tupels ist, können wir die Liste der Tupel sortieren und erhalten den Inhalt unseres Dictionarys nach dem Wert sortiert.
 
 Die häufigsten Wörter
 ---------------------
@@ -358,7 +358,7 @@ Wenn wir zu unserem laufenden Beispiel des Textes aus *Romeo und Juliet* Akt 2, 
 ../code3/romeo-full.txt
 \end{trinketfiles}
 
-Der erste Teil des Programms, der die Datei liest und das Wörterbuch erstellt, welches jedes Wort auf die Anzahl der Wörter im Dokument abbildet, bleibt unverändert. Aber anstatt einfach `counts` auszugeben und das Programm zu beenden, konstruieren wir eine Liste von `(val, key)`-Tupeln und sortieren die Liste dann in umgekehrter Reihenfolge.
+Der erste Teil des Programms, der die Datei liest und das Dictionary erstellt, welches jedes Wort auf die Anzahl der Wörter im Dokument abbildet, bleibt unverändert. Aber anstatt einfach `counts` auszugeben und das Programm zu beenden, konstruieren wir eine Liste von `(val, key)`-Tupeln und sortieren die Liste dann in umgekehrter Reihenfolge.
 
 Da der Wert an erster Stelle steht, wird er für die Vergleiche verwendet. Wenn es mehr als ein Tupel mit demselben Wert gibt, wird das zweite Element (der Schlüssel) betrachtet, sodass Tupel, bei denen der Wert gleich ist, weiter nach der alphabetischen Reihenfolge des Schlüssels sortiert werden.
 
@@ -381,21 +381,21 @@ Jetzt sieht die Ausgabe endlich so aus, wie wir es uns für unsere Worthäufigke
 
 Die Tatsache, dass dieses komplexe Parsen und Analysieren von Daten mit einem leicht verständlichen 19-zeiligen Python-Programm durchgeführt werden kann, ist ein Grund, warum Python eine gute Wahl als Sprache für die Erforschung von Informationen ist.
 
-Verwendung von Tupeln als Schlüssel in Wörterbüchern
-----------------------------------------------------
+Verwendung von Tupeln als Schlüssel in Dictionaries
+---------------------------------------------------
 
-\index{Tupel!als Schlüssel in Wörterbüchern}
+\index{Tupel!als Schlüssel in Dictionaries}
 \index{hashbar}
 
-Da Tupel *gehasht* werden können und Listen nicht, müssen wir ein Tupel als Schlüssel verwenden, wenn wir einen *zusammengesetzten* Schlüssel zur Verwendung in einem Wörterbuch erstellen wollen.
+Da Tupel *gehasht* werden können und Listen nicht, müssen wir ein Tupel als Schlüssel verwenden, wenn wir einen *zusammengesetzten* Schlüssel zur Verwendung in einem Dictionary erstellen wollen.
 
-Wir würden auf einen zusammengesetzten Schlüssel stoßen, wenn wir ein Telefonverzeichnis erstellen wollten, das von Nachnamen-Vornamen-Paaren auf Telefonnummern abbildet. Unter der Annahme, dass wir die Variablen `last`, `first` und `number` definiert haben, könnten wir eine Wörterbuchzuweisung wie folgt schreiben:
+Wir würden auf einen zusammengesetzten Schlüssel stoßen, wenn wir ein Telefonverzeichnis erstellen wollten, das von Nachnamen-Vornamen-Paaren auf Telefonnummern abbildet. Unter der Annahme, dass wir die Variablen `last`, `first` und `number` definiert haben, könnten wir eine Dictionaryzuweisung wie folgt schreiben:
 
 ~~~~ {.python}
 directory[last,first] = number
 ~~~~
 
-Der Ausdruck in Klammern ist ein Tupel. Wir könnten die Tupel-Zuweisung in einer `for`-Schleife verwenden, um dieses Wörterbuch zu durchlaufen.
+Der Ausdruck in Klammern ist ein Tupel. Wir könnten die Tupel-Zuweisung in einer `for`-Schleife verwenden, um dieses Dictionary zu durchlaufen.
 
 \index{Tupel!geklammert}
 
@@ -427,7 +427,7 @@ Listen sind üblicher als Tupel, hauptsächlich weil sie veränderbar sind. Aber
 
 1.  In manchen Kontexten, wie z. B. einer `return`-Anweisung, ist es syntaktisch einfacher, ein Tupel zu erstellen als eine Liste. In anderen Kontexten bevorzugen wir vielleicht eine Liste.
 
-2.  Wenn wir eine Sequenz als Wörterbuchschlüssel verwenden möchten, müssen wir einen unveränderlichen Typ wie ein Tupel oder einen String verwenden.
+2.  Wenn wir eine Sequenz als Dictionaryschlüssel verwenden möchten, müssen wir einen unveränderlichen Typ wie ein Tupel oder einen String verwenden.
 
 3.  Wenn wir eine Sequenz als Argument an eine Funktion übergeben, verringert die Verwendung von Tupeln das Potenzial für unerwartetes Verhalten aufgrund von Aliasbildung.
 
@@ -444,7 +444,7 @@ Debugging
 \index{Debugging}
 \index{Datenstruktur}
 
-Listen, Wörterbücher und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Wörterbücher, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
+Listen, Dictionaries und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Dictionaries, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
 
 Glossar
 -------
@@ -454,7 +454,7 @@ vergleichbar
 \index{vergleichbar}
 
 Datenstruktur
-:   Eine Sammlung zusammengehöriger Werte, oft organisiert in Listen, Wörterbüchern, Tupeln usw.
+:   Eine Sammlung zusammengehöriger Werte, oft organisiert in Listen, Dictionaries, Tupeln usw.
 \index{Datenstruktur}
 
 DSU
@@ -462,7 +462,7 @@ DSU
 \index{DSU-Muster}
 
 hashbar
-:   Ein Datentyp, der eine Hash-Funktion hat. Unveränderliche Typen wie Ganzzahlen, Fließkommazahlen und Zeichenketten sind hashfähig; veränderliche Typen wie Listen und Wörterbücher können nicht gehasht werden.
+:   Ein Datentyp, der eine Hash-Funktion hat. Unveränderliche Typen wie Ganzzahlen, Fließkommazahlen und Zeichenketten sind hashfähig; veränderliche Typen wie Listen und Dictionaries können nicht gehasht werden.
 \index{hashbar}
 
 Singleton
@@ -474,18 +474,16 @@ Tupel
 \index{Tupel}
 
 Tupelzuweisung
-:   Eine Zuweisung mit einer Sequenz auf der rechten Seite und einem Tupel von
-    Variablen auf der linken Seite. Die rechte Seite wird ausgewertet und dann werden ihre
-    Elemente den Variablen auf der linken Seite zugewiesen.
+:   Eine Zuweisung mit einer Sequenz auf der rechten Seite und einem Tupel von Variablen auf der linken Seite. Die rechte Seite wird ausgewertet und dann werden ihre Elemente den Variablen auf der linken Seite zugewiesen.
 \index{Tupelzuweisung}
 \index{Zuweisung!Tupel}
 
 Übungen
 -------
 
-**Übung 1: Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die „From“-Zeilen sollen gelesen und geparst werden, um im Folgenden die Adressen aus der Zeile zu extrahieren. Dabei soll mit Hilfe eines Wörterbuchs die Anzahl der Nachrichten von jeder Person gezählt werden.**
+**Übung 1: Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die „From“-Zeilen sollen gelesen und geparst werden, um im Folgenden die Adressen aus der Zeile zu extrahieren. Dabei soll mit Hilfe eines Dictionarys die Anzahl der Nachrichten von jeder Person gezählt werden.**
 
-**Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupeln aus dem Wörterbuch erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.**
+**Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupel aus dem Dictionary erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.**
 
 ~~~~
 Gib eine Datei an: mbox-short.txt

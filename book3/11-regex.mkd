@@ -68,7 +68,7 @@ Wir können die übereinstimmenden Zeilen weiter eingrenzen, indem wir im folgen
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gefolgt von einem oder mehreren    beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
+Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gefolgt von einem oder mehreren beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
 
 ~~~~
 From: stephen.marquard@uct.ac.za
@@ -142,7 +142,7 @@ Hier ist unser neuer regulärer Ausdruck:
 [a-zA-Z0-9]\S*@\S*[a-zA-Z]
 ~~~~
 
-Das wird jetzt etwas kompliziert und wir sehen, warum reguläre Ausdrücke eine eigene kleine Sprache für sich sind. Dieser regulärer Ausdruck sucht nach Teilzeichenketten, die mit einem *einzigen* Kleinbuchstaben, Großbuchstaben oder einer Zahl `[a-zA-Z0-9]` beginnen, gefolgt von keinem oder mehr Nicht-Leerzeichen (`\S*`), von einem at-Zeichen, von keinem oder mehr Nicht-Leerzeichen (`\S*`) und schließlich von einem Groß- oder Kleinbuchstaben. Es ist zu beachten, dass wir von `+` zu `*` gewechselt haben, um kein oder mehr Nicht-Leerzeichen anzuzeigen, da `[a-zA-Z0-9]` bereits ein Nicht-Leerzeichen ist. Es sei zu beachten, dass das `*` oder `+` auf das einzelne Zeichen unmittelbar links vom Plus oder Sternchen zutrifft.
+Das wird jetzt etwas kompliziert und wir sehen, warum reguläre Ausdrücke eine eigene kleine Sprache für sich sind. Dieser regulärer Ausdruck sucht nach Teilzeichenketten, die mit einem *einzigen* Kleinbuchstaben, Großbuchstaben oder einer Zahl `[a-zA-Z0-9]` beginnen, gefolgt von keinem oder mehr Nicht-Leerzeichen (`\S*`), von einem at-Zeichen, von keinem oder mehr Nicht-Leerzeichen (`\S*`) und schließlich von einem Groß- oder Kleinbuchstaben. Es ist zu beachten, dass wir von `+` zu `*` gewechselt haben, um kein oder mehr Nicht-Leerzeichen anzuzeigen, da `[a-zA-Z0-9]` bereits ein Nicht-Leerzeichen ist. Außerdem sei zu beachten, dass das `*` oder `+` auf das einzelne Zeichen unmittelbar links vom Plus oder Sternchen zutrifft.
 
 \index{Regex!Zeichenklassen}
 
@@ -165,7 +165,7 @@ Wenn wir diesen Ausdruck in unserem Programm verwenden, sind unsere Daten viel s
 ['apache@localhost']
 ~~~~
 
-Es sei zudem zu beachten, dass unser regulärer Ausdruck in den Zeilen `source@collab.sakaiproject.org` zwei Buchstaben am Ende der Zeichenfolge („>;“) entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das „>“ am Ende von „sakaiproject.org>;“ sieht, bleibt er einfach bei dem letzten „passenden” Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
+Es ist wichtig zu beachten, dass unser regulärer Ausdruck in den Zeilen `source@collab.sakaiproject.org` zwei Buchstaben am Ende der Zeichenfolge („>;“) entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das „>“ am Ende von „sakaiproject.org>;“ sieht, bleibt er einfach bei dem letzten „passenden” Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
 
 Zuletzt muss beachtet werden, dass die Ausgabe des Programms eine Python-Liste ist, die eine Zeichenkette als einziges Element in der Liste hat.
 
@@ -187,7 +187,7 @@ Wir können den folgenden regulären Ausdruck konstruieren, um die Zeilen auszuw
 ^X-.*: [0-9.]+
 ~~~~
 
-Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder mehr beliebigen Zeichen (`.*`),  von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Es sei zu beachten, dass der Punkt innerhalb der eckigen Klammern mit einem tatsächlichen Punkt übereinstimmt (d. h. es handelt sich nicht um einen Platzhalter).
+Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder mehr beliebigen Zeichen (`.*`),  von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Der Punkt innerhalb der eckigen Klammern stimmt mit einem tatsächlichen Punkt überein (d. h. es handelt sich nicht um einen Platzhalter)!
 
 Dies ist ein sehr strenger Ausdruck, der so ziemlich nur die Zeilen trifft, an denen wir interessiert sind:
 
@@ -262,7 +262,7 @@ Wenn wir das Programm ausführen, erhalten wir die folgende Ausgabe:
 ...
 ~~~~
 
-Es sei zu bedenken, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis sie auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
+Wir müssen bedenken, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis sie auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
 
 Jetzt können wir reguläre Ausdrücke verwenden, um eine Übung von früher im Buch zu wiederholen, bei der wir uns für die Tageszeit jeder Mail-Nachricht interessierten. Wir suchten nach Zeilen der Form:
 
@@ -372,7 +372,7 @@ Die Unterstützung für das Durchsuchen von Dateien mit regulären Ausdrücken w
 
 \index{grep}
 
-Tatsächlich gibt es ein in Unix eingebautes Kommandozeilenprogramm namens *grep* (Generalized Regular Expression Parser), das so ziemlich dasselbe tut wie die `search()`-Beispiele in diesem Kapitel. Wenn der Leser also ein Macintosh- oder Linux-System hat, kann er die folgenden Befehle im Kommandozeilenfenster ausprobieren.
+Tatsächlich gibt es ein in Unix eingebautes Kommandozeilenprogramm namens *grep* (Generalized Regular Expression Parser), das so ziemlich dasselbe tut wie die `search()`-Beispiele in diesem Kapitel. Wer also ein Macintosh- oder Linux-System hat, kann die folgenden Befehle im Kommandozeilenfenster ausprobieren.
 
 ~~~~ {.bash}
 $ grep '^From:' mbox-short.txt
@@ -382,7 +382,7 @@ From: zqian@umich.edu
 From: rjlowe@iupui.edu
 ~~~~
 
-Damit wird `grep` angewiesen, Zeilen anzuzeigen, die mit der Zeichenkette „From:“ in der Datei `mbox-short.txt` beginnen. Wenn wir ein wenig mit dem Befehl `grep` experimentieren und die Dokumentation zu `grep` lesen, werden wir einige subtile Unterschiede zwischen der Unterstützung regulärer Ausdrücke in Python und der Unterstützung regulärer Ausdrücke in `grep` feststellen. Zum Beispiel unterstützt `grep` nicht das Nicht-Leerzeichen `\S`, sodass die etwas komplexere Mengenschreibweise `[^ ]` verwendet werden muss. 
+Damit wird `grep` angewiesen, Zeilen anzuzeigen, die mit der Zeichenkette „From:“ in der Datei `mbox-short.txt` beginnen. Wenn wir ein wenig mit dem Befehl `grep` experimentieren und die Dokumentation zu `grep` lesen, werden wir einige subtile Unterschiede zwischen der Unterstützung regulärer Ausdrücke in Python und der Unterstützung regulärer Ausdrücke in `grep` feststellen. Zum Beispiel unterstützt `grep` nicht das Nicht-Leerzeichen `\S`, sodass die etwas komplexere Mengenschreibweise `[^ ]` verwendet werden muss.
 
 Debugging
 ---------

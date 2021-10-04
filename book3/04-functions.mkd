@@ -412,7 +412,7 @@ Dieses Programm enthält zwei Funktionsdefinitionen: `print_lyrics` und `repeat_
 
 \index{use before def}
 
-Wie man vielleicht erwartet, muss man eine Funktion erstellen, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf erfolgen.
+Wie man sich vielleicht schon denken kann, muss man eine Funktion erst definieren, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf erfolgen.
 
 **Übung 2: Versetzen Sie die letzte Zeile dieses Programms an den Anfang, sodass der Funktionsaufruf vor den Definitionen erscheint. Führen Sie das Programm aus und beobachten Sie, welche Fehlermeldung Sie erhalten.**
 
@@ -704,39 +704,39 @@ Monatsgehalt: 475.0
 
 **Übung 7: Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `notenberechnung` verwenden, die eine Punktzahl als Parameter annimmt und eine Note zurückgibt.**
 
-    ~~~~
-    Punkte   Note
-    >= 0.9     1
-    >= 0.8     2
-    >= 0.7     3
-    >= 0.6     4
-    < 0.6     5
-    ~~~~
+~~~~
+Punkte   Note
+>= 0.9     1
+>= 0.8     2
+>= 0.7     3
+>= 0.6     4
+ < 0.6     5
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.95
-    1
-    ~~~~
+Führen Sie das Programm wiederholt aus, um die verschiedenen Werte für die Eingabe zu testen:
 
-    ~~~~
-    Punkte eingeben: perfekt
-    Falsche Punkanzahl
-    ~~~~
+~~~~
+Punkte eingeben: 0.95
+1
+~~~~
 
-    ~~~~
-    Punkte eingeben: 10.0
-    Falsche Punkanzahl
-    ~~~~
+~~~~
+Punkte eingeben: perfekt
+Falsche Punktanzahl
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.75
-    3
-    ~~~~
+~~~~
+Punkte eingeben: 10.0
+Falsche Punktanzahl
+~~~~
 
-    ~~~~
-    Punkte eingeben: 0.5
-    5   
-    ~~~~
+~~~~
+Punkte eingeben: 0.75
+3
+~~~~
 
-Führen Sie das Programm wiederholt aus, um die verschiedenen Werte für die Eingabe zu testen.
+~~~~
+Punkte eingeben: 0.5
+5   
+~~~~
 

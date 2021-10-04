@@ -335,7 +335,7 @@ indiana.edu 2258
 unicon.net 2055
 ~~~~
 
-Es sei zu beachten, wie viel schneller `gbasic.py` im Vergleich zu `gmane.py` oder sogar `gmodel.py` läuft. Wir arbeiten alle mit den gleichen Daten, aber `gbasic.py` verwendet die komprimierten und normalisierten Daten in `index.sqlite`. Wenn wir viele Daten zu verwalten haben, kann ein mehrstufiger Prozess wie in dieser Anwendung etwas länger dauern, aber es kann viel Zeit gespart werden, wenn  Daten untersucht und visualisiert werden.
+Es sei zu beachten, wie viel schneller `gbasic.py` im Vergleich zu `gmane.py` oder sogar `gmodel.py` läuft. Wir arbeiten alle mit den gleichen Daten, aber `gbasic.py` verwendet die komprimierten und normalisierten Daten in `index.sqlite`. Wenn wir viele Daten zu verwalten haben, kann ein mehrstufiger Prozess wie in dieser Anwendung etwas länger dauern, aber es kann viel Zeit gespart werden, wenn Daten untersucht und visualisiert werden.
 
 Eine einfache Visualisierung der Worthäufigkeit in den Betreffzeilen können wir in der Datei `gword.py` erzeugen:
 
