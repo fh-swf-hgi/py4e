@@ -2,9 +2,11 @@
 Vernetzen von Programmen
 ========================
 
-Während sich viele der Beispiele in diesem Buch auf das Lesen von Dateien und die Suche nach Daten in diesen Dateien konzentriert haben, gibt es viele verschiedene Informationsquellen, wenn man das Internet betrachtet.
+In den vorangegangenen Beispielen dieses Buches haben wir Daten vor allem aus Dateien gelesen, die bei uns im Sekundärspeicher (also in der Regel auf der Festplatte) abgespeichert waren.
+Betrachtet man allerdings die Tatsache, das Computer heutzutage nahezu *immer online* sind, wird klar, dass da Internet eine wichtige Datenquelle für Programme ist.
 
-In diesem Kapitel werden wir so tun, als wären wir ein Webbrowser und würden Webseiten über das Hypertext Transfer Protocol (HTTP) abrufen. Dann werden wir die Daten der Webseite einlesen und parsen.
+In diesem Kapitel werden wir Programme schreiben, die wie Webbrowser auf Internetseiten zugreifen und Daten über das Hypertext Transfer Protocol (HTTP) abrufen.
+Wir werden die Daten der Webseite einlesen und parsen, um bestimmte Informationen von diesen Seiten zu extrahieren.
 
 Hypertext Transfer Protocol - HTTP
 ----------------------------------
