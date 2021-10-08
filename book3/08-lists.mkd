@@ -946,15 +946,15 @@ Referenz
 
 **Übung 5: Alle einzigartigen Wörter in einer Datei finden**
 
-**Shakespeare verwendete über 20,000 verschiedene Wörter in seinen Werken. Aber wie würden Sie das feststellen? Wie würden Sie die Liste aller Wörter erstellen, die Shakespeare verwendet hat? Würden Sie sein gesamtes Werk herunterladen, es lesen und alle einzigartigen Wörter von Hand nachverfolgen?**
+**Shakespeare hat über 20,000 verschiedene Wörter in seinen Werken verwendet. Aber wie könnte man das feststellen? Wie könnte man eine Liste aller Wörter erstellen, die Shakespeare verwendet hat? Würde man sein gesamtes Werk herunterladen, es lesen und alle einzigartigen Wörter von Hand nachverfolgen?**
 
-**Lassen Sie uns stattdessen Python verwenden, um das zu erreichen. Listen Sie alle eindeutigen Wörter, sortiert in alphabetischer Reihenfolge, auf, die in einer Datei `romeo.txt` gespeichert sind, die eine Teilmenge von Shakespeares Werk enthält.**
+**Lassen Sie uns stattdessen Python verwenden, um das zu erreichen. Listen Sie alle eindeutigen Wörter auf, sortiert in alphabetischer Reihenfolge, die in der Datei `romeo.txt` gespeichert sind, welche eine Teilmenge von Shakespeares Werk enthält.**
 
 **Um loszulegen, laden Sie eine Kopie der Datei herunter:**
 
 [**tiny.one/py4de/code3/romeo.txt**](https://tiny.one/py4de/code3/romeo.txt)
 
-**Erstellen Sie eine Liste mit eindeutigen Wörtern, die das Endergebnis enthalten wird. Schreiben Sie ein Programm, um die Datei `romeo.txt` zu öffnen und Zeile für Zeile zu lesen. Teilen jede Zeile mit der Funktion `split` in eine Liste von Wörtern auf. Prüfen Sie für jedes Wort, ob das Wort bereits in der Liste der eindeutigen Wörter enthalten ist. Wenn das Wort nicht in der Liste der eindeutigen Wörter enthalten ist, fügen Sie es der Liste hinzu. Wenn das Programm beendet ist, sortieren Sie die Liste der eindeutigen Wörter in alphabetischer Reihenfolge und geben Sie sie aus.**
+**Erstellen Sie eine Liste mit eindeutigen Wörtern. Schreiben Sie dazu ein Programm, um die Datei `romeo.txt` zu öffnen und Zeile für Zeile zu lesen. Teilen Sie jede Zeile mit der Funktion `split` in eine Liste von Wörtern auf. Prüfen Sie für jedes Wort, ob das Wort bereits in der Liste der eindeutigen Wörter enthalten ist. Wenn das Wort nicht in der Liste der eindeutigen Wörter enthalten ist, fügen Sie es der Liste hinzu. Wenn das Programm mit dem Lesen der Datei fertig, sortieren Sie die Liste der eindeutigen Wörter in alphabetischer Reihenfolge und geben Sie sie aus.**
 
 ~~~~
 Enter file: romeo.txt
@@ -967,7 +967,7 @@ Enter file: romeo.txt
 
 **Übung 6: Ein minimalistischer E-Mail-Client.**
 
-**MBOX (Mailbox) ist ein beliebtes Dateiformat zum Speichern und Freigeben einer Sammlung von E-Mails. Dies wurde von frühen E-Mail-Servern und Desktop-Apps verwendet. Ohne zu sehr ins Detail zu gehen, ist MBOX eine Textdatei, die E-Mails fortlaufend speichert. E-Mails werden durch eine spezielle Zeile getrennt, die mit `From ` beginnt (beachten Sie das Leerzeichen). Wichtig ist, dass Zeilen, die mit `From:` beginnen (beachten Sie den Doppelpunkt), die E-Mail selbst beschreiben und nicht als Trennzeichen fungieren. Stellen Sie sich vor, Sie schreiben eine minimalistische E-Mail-App, die die E-Mails der Absender im Posteingang des Benutzers auflistet und die Anzahl der E-Mails zählt.**
+**MBOX (Mailbox) ist ein beliebtes Dateiformat zum Speichern und Freigeben einer Sammlung von E-Mails. Dies wurde von frühen E-Mail-Servern und Desktop-Apps verwendet. Ohne zu sehr ins Detail zu gehen, ist MBOX eine Textdatei, die E-Mails fortlaufend speichert. E-Mails werden durch eine spezielle Zeile voneinander getrennt, die mit `From ` beginnt (beachten Sie das Leerzeichen). Wichtig ist, dass Zeilen, die mit `From:` beginnen (beachten Sie den Doppelpunkt), die E-Mail selbst beschreiben und nicht als Trennzeichen fungieren. Stellen Sie sich vor, Sie schreiben eine minimalistische E-Mail-App, die die E-Mails der Absender im Posteingang des Benutzers auflistet und die Anzahl der E-Mails zählt.**
 
 **Schreiben Sie ein Programm, das die Daten der Mailbox durchläuft, und wenn Sie eine Zeile finden, die mit `From` beginnt, teilen Sie die Zeile mit der Funktion `split` in Wörter auf. Wir sind daran interessiert, wer die Nachricht gesendet hat, also was das zweite Wort in der `From`-Zeile ist.**
 
