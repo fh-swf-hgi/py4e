@@ -294,7 +294,7 @@ Python bietet Methoden, die auf Listen operieren. Zum Beispiel fügt `append` ei
 
 In diesem Beispiel wird `t2` nicht verändert, wohl aber t1.
 
-`sort` ordnet die Elemente der Liste aufsteigend an. Beachten Sie bei der `sort`-Funktion *In-Place* arbeitet, d.h. sie verändert die Reihenfolge der Elemente **in** der Liste.
+`sort` ordnet die Elemente der Liste aufsteigend an. Beachten Sie bei der `sort`-Funktion, dass diese *in-place* arbeitet, d.h. sie verändert die Reihenfolge der Elemente **in** der Liste.
 
 \index{sort (Methode)}
 \index{Methode!sort}
@@ -306,14 +306,15 @@ In diesem Beispiel wird `t2` nicht verändert, wohl aber t1.
 ['a', 'b', 'c', 'd', 'e']
 ~~~~
 
-Um eine sortierte *Kopie* der Liste zu erhalten, können Sie die Built-in Funktion `sorted` verwenden. Diese lässt sich auf alle Python Datenstrukturen anwenden, die *iterierbar*, also „zu durchlaufen“ sind.
+Um eine sortierte *Kopie* der Liste zu erhalten, können Sie die eingebaute Funktion `sorted` verwenden. Diese lässt sich auf alle Python Datenstrukturen anwenden, die *iterierbar* sind.
 
 ~~~~ {.python .trinket}
 >>> t = ['d', 'c', 'e', 'b', 'a']
->>> l = sorted(l)
+>>> l = sorted(t)
 >>> print(t)
-['a', 'b', 'c', 'd', 'e']
+['d', 'c', 'e', 'b', 'a']
 >>> print(l)
+['a', 'b', 'c', 'd', 'e']
 >>> sorted("Hallo Welt!")
 [' ', '!', 'H', 'W', 'a', 'e', 'l', 'l', 'l', 'o', 't']
 ~~~~
@@ -458,7 +459,7 @@ Was passiert, wenn wir zufällig einen Namen einer eingebauten Funktion für eig
 ['H', 'a', 'l', 'l', 'o']
 ~~~~
 
-Hier definieren wir eine eigene Funktion `list`; Python lässt das ohne weiteres zu. Wenn wir die Funktion `list` später verwenden, ohne uns daran zu erinnern, dass wir sie „umdefiniert“ haben, können wir ein schwer zu erklärendes Fehlverhalten haben. Um die Sache Rückgängig zu machen, löchen wir mit `del` die aktuelle Bedeutung des Names `list`. So kommt die ursprüngliche Bedeutung wieder zum Vorschein und wir können die Funktion wie gewünscht verwenden.
+Hier definieren wir eine eigene Funktion `list`; Python lässt das ohne weiteres zu. Wenn wir die Funktion `list` später verwenden, ohne uns daran zu erinnern, dass wir sie „umdefiniert“ haben, können wir ein schwer zu erklärendes Fehlverhalten haben. Um die Sache rückgängig zu machen, löchen wir mit `del` die aktuelle Bedeutung des Names `list`. So kommt die ursprüngliche Bedeutung wieder zum Vorschein und wir können die Funktion wie gewünscht verwenden.
 
 Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn wir eine Zeichenkette in Wörter zerlegen wollen, können wir die Methode `split` verwenden:
 
@@ -546,11 +547,11 @@ a = 'Banane'
 b = 'Banane'
 ~~~~
 
-wissen wir, dass `a` und `b` sich beide auf eine Zeichenkette beziehen, aber die Frage ist, ob sie sich auf die *selbe* Zeichenkette beziehen. Es gibt zwei denkbare Szenarien:
+wissen wir, dass `a` und `b` sich beide auf eine Zeichenkette beziehen, aber die Frage ist, ob sie sich auf *dieselbe* Zeichenkette beziehen. Es gibt zwei denkbare Szenarien:
 
 \index{Alias}
 
-![Variablen und Objekte](height=0.5in@../images/list1)
+![Variablen und Objekte](height=0.5in@../images/de/list1)
 
 In einem Fall beziehen sich `a` und `b` auf zwei verschiedene Objekte, die den gleichen Wert haben. Im zweiten Fall beziehen sie sich auf das gleiche Objekt.
 
@@ -872,7 +873,6 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     ~~~~ {.python}
     fhand = open('mbox-short.txt')
-    count = 0
     for line in fhand:
         words = line.split()
         # print('Debug:', words)

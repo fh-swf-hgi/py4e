@@ -65,7 +65,7 @@ Zwei Wochen vor dem ersten Unterrichtstag beschloss ich, mein eigenes Buch zu sc
 
 Ich brauchte einen Titel und entschied mich aus einer Laune heraus für *How to Think Like a Computer Scientist*.
 
-Meine erste Version war holprig, aber sie funktionierte. Die Schüler haben die Lektüre gelesen und genug verstanden, so dass ich die Unterrichtszeit auf die schwierigen und interessanten Themen verwenden und (was am wichtigsten ist) die Schüler üben lassen konnte.
+Meine erste Version war holprig, aber sie funktionierte. Die Schüler haben die Lektüre gelesen und genug verstanden, sodass ich die Unterrichtszeit auf die schwierigen und interessanten Themen verwenden und (was am wichtigsten ist) die Schüler üben lassen konnte.
 
 Ich habe das Buch unter der GNU Free Documentation License veröffentlicht, die es den Benutzern erlaubt, das Buch zu kopieren, zu verändern und zu verbreiten.
 

@@ -299,7 +299,7 @@ if word < 'banane':
 elif word > 'Banane':
     print('Dein Wort,' + word + ', kommt nach banane.')
 else:
-    prrint('Genau, banane!')
+    print('Genau, banane!')
 ~~~~
 
 Python geht mit Groß- und Kleinbuchstaben nicht so um, wie es Menschen tun. Alle Großbuchstaben kommen vor allen Kleinbuchstaben, also:

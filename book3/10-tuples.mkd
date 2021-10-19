@@ -156,7 +156,7 @@ Die erste Schleife baut eine Liste von Tupeln auf, wobei jedes Tupel ein Wort is
 \index{Argument!Schlüsselwort}
 \index{Traversieren}
 
-Die zweite Schleife durchläuft die Liste aller Tupel und baut eine Liste der Wörter nach absteigender Wortlänge auf. Die vier Zeichen langen Wörter werden in *umgekehrter* alphabetischer Reihenfolge sortiert, sodass „what“ in der folgenden Liste vor „soft“ erscheint.
+Die zweite Schleife durchläuft die Liste aller Tupel und baut eine Liste der Wörter nach absteigender Wortlänge auf. Gleichlange Wörter werden in *umgekehrter* alphabetischer Reihenfolge sortiert, sodass „war“ in der folgenden Liste vor „und“ erscheint.
 
 Die Ausgabe des Programms ist wie folgt:
 

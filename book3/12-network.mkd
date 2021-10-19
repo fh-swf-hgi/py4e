@@ -427,7 +427,7 @@ Port
 \index{Port}
 
 Scraping
-:   Wenn ein Programm vorgibt, ein Webbrowser zu sein, und eine Webseite abruft, dann schaut es sich den Inhalt der Webseite an. Oft folgen Programme den Links auf einer Seite, um die nächste Seite zu finden, so dass sie ein Netzwerk von Seiten oder ein soziales Netzwerk durchqueren können.
+:   Wenn ein Programm vorgibt, ein Webbrowser zu sein, und eine Webseite abruft, dann schaut es sich den Inhalt der Webseite an. Oft folgen Programme den Links auf einer Seite, um die nächste Seite zu finden, sodass sie ein Netzwerk von Seiten oder ein soziales Netzwerk durchqueren können.
 \index{Socket}
 
 Socket

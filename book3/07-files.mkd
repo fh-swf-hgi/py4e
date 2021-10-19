@@ -177,7 +177,7 @@ From: rjlowe@iupui.edu
 ...
 ~~~~
 
-Die Ausgabe sieht gut aus, da die einzigen Zeilen, die wir sehen, die sind, die mit „From:“ beginnen, aber warum sehen wir die zusätzlichen Leerzeilen? Das liegt an dem unsichtbaren Zeichen *Newline*. Jede der Zeilen endet mit einem Zeilenumbruch, so dass die Anweisung `print` die Zeichenkette in der Variablen `line` ausgibt, die einen Zeilenumbruch enthält, und dann fügt `print` einen weiteren Zeilenumbruch hinzu, was zu der überschüssigen Leerzeile führt, den wir sehen.
+Die Ausgabe sieht gut aus, da die einzigen Zeilen, die wir sehen, die sind, die mit „From:“ beginnen, aber warum sehen wir die zusätzlichen Leerzeilen? Das liegt an dem unsichtbaren Zeichen *Newline*. Jede der Zeilen endet mit einem Zeilenumbruch, sodass die Anweisung `print` die Zeichenkette in der Variablen `line` ausgibt, die einen Zeilenumbruch enthält, und dann fügt `print` einen weiteren Zeilenumbruch hinzu, was zu der überschüssigen Leerzeile führt, den wir sehen.
 
 Wir könnten Zeilen-Slicing verwenden, um alle Zeichen bis auf das letzte auszugeben, aber ein besserer Ansatz ist die Verwendung der `rstrip`-Methode, die Leerzeichen auf der rechten Seite einer Zeichenkette wie folgt entfernt:
 

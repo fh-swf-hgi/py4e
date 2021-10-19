@@ -7,7 +7,7 @@ Was ist eine Datenbank?
 
 \index{Datenbank}
 
-Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Wörterbuch in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, so dass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Wörterbuch, das auf die Größe des Hauptspeichers beschränkt ist.
+Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Wörterbuch in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, sodass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Wörterbuch, das auf die Größe des Hauptspeichers beschränkt ist.
 
 \index{Datenbank!Index}
 
@@ -116,7 +116,7 @@ Unsere `for`-Schleife findet zwei Zeilen, und jede Zeile ist ein Python-Tupel mi
 
 *Hinweis: In anderen Büchern oder im Internet sehen Sie möglicherweise Zeichenketten, die mit `u'` beginnen. Dies war in Python 2 ein Hinweis darauf, dass es sich bei den Strings um *Unicode*-Strings handelt, die in der Lage sind, nicht-lateinische Zeichensätze zu speichern. In Python 3 sind alle Zeichenketten standardmäßig Unicode-Zeichenketten.*
 
-Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium angeben, so dass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
+Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium angeben, sodass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
 
 Zusammenfassung von SQL
 -----------------------
@@ -342,7 +342,7 @@ Jedes Mal, wenn wir auf eine Person stoßen, der `drchuck` folgt, würden wir ei
 INSERT INTO Pals (from_friend,to_friend) VALUES ('drchuck', 'lhawthorn')
 ~~~~
 
-Da wir die 20 Freunde aus dem Twitter-Feed `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, so dass die Zeichenkette am Ende viele Male in der Datenbank dupliziert wird.
+Da wir die 20 Freunde aus dem Twitter-Feed `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, sodass die Zeichenkette am Ende viele Male in der Datenbank dupliziert wird.
 
 Diese Duplizierung von Zeichenkettendaten verstößt gegen eine der besten Praktiken für die *Datenbanknormalisierung*, die im Grunde besagt, dass wir dieselben Zeichenkettendaten nie mehr als einmal in die Datenbank aufnehmen sollten. Wenn wir die Daten mehr als einmal benötigen, erstellen wir einen numerischen *Schlüssel* (einen *Primärschlüssel*) für die Daten und referenzieren die eigentlichen Daten über diesen Schlüssel.
 

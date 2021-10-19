@@ -96,7 +96,7 @@ Der Schleifenrumpf soll den Wert einer oder mehrerer Variablen so verändern, da
 \index{Endlosschleife}
 \index{Schleife!endlos}
 
-Im Fall von `n` können wir beweisen, dass die Schleife endet, weil wir wissen, dass der Wert von `n` endlich ist, und wir können sehen, dass der Wert von `n` jedes Mal, wenn wir die Schleife durchlaufen, kleiner wird, so dass wir schließlich bei 0 ankommen müssen. In vielen anderen Fällen ist eine Schleife häufig unendlich, zum Beispiel weil sie überhaupt keinem Schleifenzähler hat.
+Im Fall von `n` können wir beweisen, dass die Schleife endet, weil wir wissen, dass der Wert von `n` endlich ist, und wir können sehen, dass der Wert von `n` jedes Mal, wenn wir die Schleife durchlaufen, kleiner wird, sodass wir schließlich bei 0 ankommen müssen. In vielen anderen Fällen ist eine Schleife häufig unendlich, zum Beispiel weil sie überhaupt keinem Schleifenzähler hat.
 
 \index{break (Anweisung)}
 \index{Anweisung!break}
