@@ -14,9 +14,9 @@ Zu Beginn dieses Buches haben wir vier grundlegende Programmiermuster betrachtet
 * Wiederholter Code (Schleifen)
 * Wiederverwenden von Code (Funktionen)
 
-In späteren Kapiteln haben wir uns mit einfachen Variablen sowie mit Sammeldatenstrukturen wie Listen, Tupeln und Dictionaries beschäftigt.
+In den ersten Kapiteln haben wir vorwiegend *elementare Datentypen* wie ganze Zahlen oder Fließkommazahlen verwendet und in den späteren Kapiteln dann *zusammengesetzte Datentypen* wie Listen, Tupeln und Dictionaries eingeführt.
 
-Wenn wir Programme erstellen, entwerfen wir Datenstrukturen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, und andere, die „eleganter“ sind. Auch wenn unsere bisherigen Programme vielleicht klein sind, fängt man an zu erkennen, dass ein gewisses Gespür für Kunst und Ästhetik beim Schreiben von Code hilfreich ist.
+Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, und andere, die „eleganter“ sind. Auch wenn unsere bisherigen Programme vielleicht klein sind, fängt man an zu erkennen, dass ein gewisses Gespür für Kunst und Ästhetik beim Schreiben von Code hilfreich ist.
 
 Wenn Programme Millionen von Zeilen lang werden, wird es immer wichtiger, Code zu schreiben, der leicht zu verstehen ist. Wenn wir an einem millionenzeiligen Programm arbeiten, können wir nie das gesamte Programm gleichzeitig im Kopf behalten. Wir brauchen Möglichkeiten, große Programme in mehrere kleinere Teile zu zerlegen, damit wir weniger zu beachten haben, wenn wir ein Problem lösen, einen Fehler beheben oder eine neue Funktion hinzufügen.
 
@@ -129,7 +129,7 @@ Wir verwenden das Schlüsselwort `class`, um die Daten und den Code zu definiere
 
 \VerbatimInput{../code3/party2.py}
 
-Jede Methode sieht aus wie eine Funktion, die mit dem Schlüsselwort `def` beginnt und aus einem eingerückten Codeblock besteht.  Dieses Objekt hat ein Attribut (`x`) und eine Methode (`party`).  Die Methoden haben einen speziellen ersten Parameter, den wir per Konvention `self` nennen.
+Jede Methode sieht aus wie eine Funktion, die mit dem Schlüsselwort `def` beginnt und aus einem eingerückten Codeblock besteht.  Dieses Objekt hat nur eine Methode (`party`).  Die Methoden haben einen speziellen ersten Parameter, den wir per Konvention `self` nennen.
 
 Genauso wie das Schlüsselwort `def` nicht die Ausführung von Funktionscode bewirkt, wird mit dem Schlüsselwort `class` kein Objekt erzeugt.  Stattdessen definiert das Schlüsselwort `class` eine Art Vorlage, die angibt, welche Daten und welcher Code in jedem Objekt des Typs `PartyAnimal` enthalten sein werden.  Die Klasse ist wie eine Ausstechform und die mit der Klasse erzeugten Objekte sind die Kekse^[Cookie image copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099]. Sie kleben keinen Zuckerguss auf die Ausstechform, Sie kleben Zuckerguss auf die Kekse, und Sie können auf jeden Keks einen anderen Zuckerguss kleben.
 
@@ -156,35 +156,49 @@ Hier weisen wir Python an, ein Objekt unter Verwendung der Vorlage `dict` (in Py
 
 Wenn die Klasse `PartyAnimal` verwendet wird, um ein Objekt zu erstellen, wird die Variable `an` verwendet, um auf dieses Objekt zu zeigen. Wir verwenden `an`, um auf den Code und die Daten für diese bestimmte Instanz der Klasse `PartyAnimal` zuzugreifen.
 
-Jedes Partyanimal-Objekt/jede Partyanimal-Instanz enthält in sich eine Variable `x` und eine Methode namens `party`. Wir rufen die Methode `party` in dieser Zeile auf:
+Jedes Partyanimal-Objekt/jede Partyanimal-Instanz enthält in sich eine Methode namens `party`. Wir rufen die Methode `party` in dieser Zeile auf:
 
 ~~~~ {.python}
 an.party()
 ~~~~
 
-Wenn die Methode `party` aufgerufen wird, zeigt der erste Parameter (den wir per Konvention `self` nennen) auf die entsprechende Instanz des `PartyAnimal`-Objekts, von der aus `party` aufgerufen wird. Innerhalb der Methode `party` sehen wir die Zeile:
+Möglicherweise erscheint Ihnen der Aufruf von `party()` nicht ganz vollständig.
+In der Implementierung haben wir ja gesagt, dass die Methode einen Parameter namens `self` besitzt, dieser Parameter wird anscheinend beim obigen Aufruf nicht angegeben.
 
-~~~~ {.python}
-self.x = self.x + 1
-~~~~
+Dieser Anschein trügt allerdings, denn wir rufen die Methode schließlich *auf* einem `PartyAnimal`-Objekt, nämlich dem Objekt `an` auf.
+Dieses Objekt wird an den ersten Parameter einer Methode (den wir per Konvention `self` nennen) übergeben.
+Natürlich kann eine Methode neben der Selbstreferenz weitere Parameter besitzen, die bei einem Aufruf dann innerhalb der Klammern angegeben werden.
 
-Diese Syntax mit dem Punktoperator besagt, dass mit `x` das Datenattribut des eigenen Objektes gemeint ist. Jedes Mal, wenn `party()` aufgerufen wird, wird der interne `x`-Wert um 1 erhöht und der Wert wird ausgegeben.
-
-Die folgende Zeile ist eine weitere Möglichkeit, die Methode `party` innerhalb des Objekts `an` aufzurufen:
+Eine Methode kann nicht nur über ein Objekt aufgerufen werden, sondern auch über seine Klasse.
+Statt `an.party()` könnte man also auch folgenden, gleichbedeutenden Aufruf verwenden:
 
 ~~~~ {.python}
 PartyAnimal.party(an)
 ~~~~
 
-In dieser Variante greifen wir auf den Code aus der Klasse heraus zu und übergeben explizit den Objektzeiger `an` als ersten Parameter (d. h. `self` innerhalb der Methode). Sie können sich `an.party()` als Kurzform für die obige Zeile vorstellen.
+Hier sagen wir, welche `party()` Methode wir meinen (die aus der Klasse `PartyAnimal`) und welches Objekt wir der Methode übergeben wollen (nämlich das Objekt `an`).
+Dies ist quasi die Langform eines Methodenaufrufs, die in der Praxis eher seltener verwendet wird.
+
+Wenn wir nun in die Implementierung der Methode `party` gehen, sehen wir die folgenden Zeilen:
+
+~~~~ {.python}
+try:
+    self.x = self.x + 1
+except AttributeError:
+    self.x = 1
+~~~~
+
+Wir versuchen hier, ein Datenattribut `x`, das zu unserem `PartyAnimal`-Objekt gehört, um den Wert `1` zu erhöhen.
+Beim ersten Aufruf der Methode hat unser Objekt noch kein solches Attribut.
+Daher wird der Ausdruck `self.x + 1` einen `AttributeError` erzeugen, den wir behandeln, indem wir ein solches Attribut mit `self.x = 1` erzeugen und ihm den Wert `1` zuordnen.
 
 Wenn das Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
 
 ~~~~
-So far 1
-So far 2
-So far 3
-So far 4
+Partys bisher: 1
+Partys bisher: 2
+Partys bisher: 3
+Partys bisher: 4
 ~~~~
 
 Das Objekt wird konstruiert, und die Methode `party` wird viermal aufgerufen, wobei der Wert für `x` innerhalb des Objekts `an` sowohl inkrementiert als auch ausgegeben wird.
@@ -205,12 +219,12 @@ Wenn dieses Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
 Type <class '__main__.PartyAnimal'>
 Dir  ['__class__', '__delattr__', ...
 '__sizeof__', '__str__', '__subclasshook__',
-'__weakref__', 'party', 'x']
+'__weakref__', 'party']
 Type <class 'int'>
 Type <class 'method'>
 ~~~~
 
-Wir können sehen, dass wir mit dem Schlüsselwort `class` einen neuen Typ erstellt haben. Anhand der `dir`-Ausgabe können wir sehen, dass sowohl das Integer-Attribut `x` als auch die Methode `party` im Objekt verfügbar sind.
+Wir können sehen, dass wir mit dem Schlüsselwort `class` einen neuen Typ erstellt haben. Anhand der `dir`-Ausgabe können wir sehen, dass die Methode `party` im Objekt verfügbar ist.
 
 Lebenszyklus von Objekten
 -------------------------
@@ -219,20 +233,28 @@ Lebenszyklus von Objekten
 \index{Destruktor}
 \index{Lebenszyklus von Objekten}\index{Objekt-Lebenszyklus}
 
-In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen, und verwenden dann die Instanz.  Wenn das Programm beendet ist, werden alle Variablen verworfen. Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Variablen nach, aber umso häufiger, wenn unsere Objekte komplexer werden. Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
+In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen, und verwenden dann die Instanz.
+Wenn das Programm beendet ist, werden alle Variablen verworfen.
+Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Objekten nach.
+Dies wird allerdings von Bedeutung, wenn wir eigene Klassen definieren.
+Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
 
-Wenn wir wollen, dass unser Objekt diese Momente des Aufbaus und der Zerstörung wahrnimmt, fügen wir unserem Objekt speziell benannte Methoden hinzu:
+Selbst bei unserem einfachen `PartyAnimal` Beispiel sollten wir etwas tun, wenn wir ein neues Objekt erzeugen.
+Statt bei einem ersten Aufruf von `party()` das Attribut `x` zu erzeugen, sollten wir es beim Erstellen des Objekts anlegen.
+Gleichermaßen können wir auch „Aufräumarbeiten“ leisten, die immer dann ausgeführt werden, wenn ein Objekt verworfen wird.
+
+Um bestimmte aktionen beim Erstellen oder Löschen eines Objekts durchzuführen, fügen wir zu unser Klasse speziell benannte Methoden hinzu:
 
 \VerbatimInput{../code3/party4.py}
 
 Wenn dieses Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
 
 ~~~~
-I am constructed
-So far 1
-So far 2
-I am destructed 2
-an contains 42
+PartyAnimal wird erstellt
+Partys bisher: 1
+Partys bisher: 2
+Zerstört nach 2 Partys
+an speichert nun 42
 ~~~~
 
 Während Python unser Objekt konstruiert, ruft es unsere Methode `__init__` auf, um uns die Möglichkeit zu geben, einige Standard- oder Anfangswerte für das Objekt einzurichten. Wenn Python auf diese Zeile stößt:
@@ -243,7 +265,7 @@ an = 42
 
 dann wird unser Objekt tatsächlich „zerstört“, damit es die Variable `an` wiederverwenden kann, um den Wert `42` zu speichern.  Genau in dem Moment, in dem unser `an`-Objekt zerstört wird, wird unser Destruktor-Code (`__del__`) aufgerufen. Wir können nicht verhindern, dass unsere Variable zerstört wird, aber wir können alle notwendigen Aufräumarbeiten durchführen, kurz bevor unser Objekt nicht mehr existiert.
 
-Bei der Entwicklung von Objekten ist es durchaus üblich, einen Konstruktor zu einem Objekt hinzuzufügen, um Anfangswerte für das Objekt einzurichten. Es ist relativ selten, dass man einen Destruktor für ein Objekt benötigt.
+Bei der Entwicklung von Objekten ist es üblich, einen Konstruktor zu einer Klasse anzugeben, um Anfangswerte für Objekte einzurichten. Es ist hingegen relativ selten, dass man einen Destruktor für ein Objekt benötigt.
 
 Mehrere Instanzen
 -----------------
@@ -269,11 +291,11 @@ self.name = nam
 Die Ausgabe des Programms zeigt, dass jedes der Objekte (`s` und `j`) seine eigenen unabhängigen Kopien von `x` und `nam` enthält:
 
 ~~~~
-Sally constructed
-Jim constructed
-Sally party count 1
-Jim party count 1
-Sally party count 2
+Sally  wird erstellt
+Jim  wird erstellt
+Sally hat 1 Party(s) besucht
+Jim hat 1 Party(s) besucht
+Sally hat 2 Party(s) besucht
 ~~~~
 
 Vererbung
@@ -291,20 +313,21 @@ Für dieses Beispiel verschieben wir unsere Klasse `PartyAnimal` in eine eigene 
 
 Wenn wir die Klasse `CricketFan` definieren, geben wir an, dass wir die Klasse `PartyAnimal` erweitern.  Das bedeutet, dass alle Variablen (`x`) und Methoden (`party`) der Klasse `PartyAnimal` von der Klasse `CricketFan` *geerbt* werden. Zum Beispiel rufen wir innerhalb der Methode `six` in der Klasse `CricketFan` die Methode `party` aus der Klasse `PartyAnimal` auf.
 
+In unserem Konstruktor `__init__` rufen wir den Konstruktor der *Basisklasse* über die Funktion `super()` auf.
+Damit tun wir für unser `CricketFan`-Objekt alles, was wir auch beim Erzeugen eines `PartyAnimal`-Objektes tun würden.
+Zusätzlich fügen wir dem Objekt noch ein Attribut `points` hinzu.
+
 Während das Programm ausgeführt wird, erzeugen wir `s` und `j` als unabhängige Instanzen von `PartyAnimal` und `CricketFan`. Das `j`-Objekt hat zusätzliche Fähigkeiten, welche über die des `s`-Objektes hinausgehen.
 
 ~~~~
-Sally constructed
-Sally party count 1
-Jim constructed
-Jim party count 1
-Jim party count 2
-Jim points 6
-['__class__', '__delattr__', ... '__weakref__',
-'name', 'party', 'points', 'six', 'x']
-~~~~
 
-In der `dir`-Ausgabe für das `j`-Objekt (Instanz der Klasse `CricketFan`) sehen wir, dass es die Attribute und Methoden der übergeordneten Klasse hat, sowie die Attribute und Methoden, die hinzugefügt wurden, als die Klasse erweitert wurde, um die Klasse `CricketFan` zu erstellen.
+Sally  wird erstellt
+Sally hat 1 Party(s) besucht
+Jim  wird erstellt
+Jim hat 1 Party(s) besucht
+Jim hat 2 Party(s) besucht
+Jim hat 6 Punkte
+~~~~
 
 Zusammenfassung
 ---------------

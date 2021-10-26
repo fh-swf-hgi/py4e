@@ -31,3 +31,4 @@ gword.js
 *.sublime*
 .vscode/ltex.dictionary.de-DE.txt
 code3/tmp.py
+book3/py4e-de-*.pdf

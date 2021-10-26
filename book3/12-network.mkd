@@ -16,14 +16,12 @@ Das Netzwerkprotokoll, das das Web antreibt, ist eigentlich recht einfach und es
 Ein *Socket* ist ähnlich wie eine Datei, mit dem Unterschied, dass ein einzelner Socket eine bidirektionale Verbindung zwischen zwei Programmen ermöglicht. Sie können sowohl von einem Socket lesen als auch auf einen Socket schreiben. Wenn Sie etwas in einen Socket schreiben, wird es an die Anwendung am anderen Ende des Sockets gesendet. Wenn Sie aus dem Socket lesen, erhalten Sie die Daten, die die andere Anwendung gesendet hat.
 
 Wenn Sie aber versuchen, einen Socket zu lesen, wenn das Programm am anderen Ende des Sockets keine Daten gesendet hat, sitzen Sie nur da und warten. Wenn die Programme an beiden Enden des Sockets einfach auf einige Daten warten, ohne etwas zu senden, werden sie sehr lange warten, daher ist ein wichtiger Teil von Programmen, die über das Internet kommunizieren, eine Art Protokoll zu haben.
-
-Ein Protokoll ist ein Satz präziser Regeln, die festlegen, wer zuerst sendet, was er zu tun hat, was die Antworten auf diese Nachricht sind, wer als nächstes sendet und so weiter. In gewisser Weise führen die beiden Anwendungen an beiden Enden des Sockets einen Tanz auf und achten darauf, sich nicht gegenseitig auf die Füße zu treten.
-
+Ein Protokoll ist ein Satz präziser Regeln, die festlegen, wer zuerst sendet, was er zu tun hat, was die Antworten auf diese Nachricht sind, wer als nächstes sendet und so weiter.
 Es gibt viele Dokumente, die diese Netzwerkprotokolle beschreiben. Das Hypertext Transfer Protocol wird in dem folgenden Dokument beschrieben:
 
 <https://www.w3.org/Protocols/rfc2616/rfc2616.txt>
 
-Dies ist ein langes und komplexes 176-seitiges Dokument mit vielen Details. Wer es interessant findet, kann es gerne ganz lesen. Aber wenn wir uns auf Seite 36 von RFC2616 umsehen, finden wir die Syntax für den GET-Request. Um ein Dokument von einem Webserver anzufordern, stellen wir eine Verbindung zum `www.pr4e.org`-Server auf Port 80 her und senden dann eine Zeile der Form
+Dies ist ein langes und komplexes 176-seitiges Dokument mit vielen Details. Wer es interessant findet, kann es gerne ganz lesen, notwending ist das aber nicht, um HTTP zu verwenden. Auf Seite 36 von RFC2616 finden wir die Syntax für den GET-Request. Um ein Dokument von einem Webserver anzufordern, stellen wir eine Verbindung zum `www.pr4e.org`-Server auf Port 80 her und senden dann eine Zeile der Form
 
 `GET http://data.pr4e.org/romeo.txt HTTP/1.0 `
 

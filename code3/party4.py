@@ -1,18 +1,18 @@
 class PartyAnimal:
-   x = 0
 
    def __init__(self):
-     print('I am constructed')
+     self.x = 0
+     print("PartyAnimal wird erstellt")
 
    def party(self) :
      self.x = self.x + 1
-     print('So far',self.x)
+     print("Partys bisher:",self.x)
 
    def __del__(self):
-     print('I am destructed', self.x)
+     print("Zerstört nach", self.x, "Partys")
 
 an = PartyAnimal()
 an.party()
 an.party()
 an = 42
-print('an contains',an)
+print("an speichert nun", an)
