@@ -300,7 +300,7 @@ Wenn wir einen Ausdruck im interaktiven Modus eingeben, wird er vom Interpreter 
 
 Aber in einem Skript bewirkt ein Ausdruck für sich allein gar nichts! Dies ist eine häufige Ursache für Verwirrung bei Programmieranfängern.
 
-**Übung 1: Geben Sie die folgenden Anweisungen in den Python-Interpreter ein, um zu sehen, was sie bewirken:**
+**Übung 1:** Geben Sie die folgenden Anweisungen in den Python-Interpreter ein, um zu sehen, was sie bewirken:
 
 ~~~~ {.python}
 5
@@ -753,14 +753,14 @@ Variable
 Übungen
 -------
 
-**Übung 2: Schreiben Sie ein Programm, das mit `input` einen Benutzer zur Eingabe seines Namens auffordert und ihn dann begrüßt.**
+**Übung 2:** Schreiben Sie ein Programm, das mit `input` einen Benutzer zur Eingabe seines Namens auffordert und ihn dann begrüßt.
 
 ~~~~
 Gib deinen Namen ein: Heiner
 Hallo Heiner
 ~~~~
 
-**Übung 3: Schreiben Sie ein Programm, das den Benutzer nach Arbeitsstunden und Stundensatz fragt, um den Bruttolohn zu berechnen.**
+**Übung 3:** Schreiben Sie ein Programm, das den Benutzer nach Arbeitsstunden und Stundensatz fragt, um den Bruttolohn zu berechnen.
 
 ~~~~
 Gib die Arbeitsstunden an: 35
@@ -770,7 +770,7 @@ Zahlung: 96.25
 
 Wir werden uns erst einmal nicht darum kümmern, dass unsere Auszahlung genau zwei Stellen nach dem Komma hat. Wenn Sie möchten, können Sie mit der eingebauten Python-Funktion `round` experimentieren, um den resultierenden Lohn auf zwei Dezimalstellen zu runden.
 
-**Übung 4: Angenommen, wir führen die folgenden Zuweisungen aus:**
+**Übung 4:** Angenommen, wir führen die folgenden Zuweisungen aus:
 
 ~~~~
 breite = 17
@@ -789,9 +789,9 @@ Schreiben Sie für jeden der folgenden Ausdrücke den Wert des Ausdrucks und den
 
 Verwenden Sie den Python-Interpreter, um Ihre Antworten zu überprüfen.
 
-**Übung 5: Schreiben Sie ein Programm, das den Benutzer zur Eingabe einer Celsius-Temperatur auffordert, die Temperatur in Fahrenheit konvertiert und die konvertierte Temperatur ausgibt.**
+**Übung 5:** Schreiben Sie ein Programm, das den Benutzer zur Eingabe einer Celsius-Temperatur auffordert, die Temperatur in Fahrenheit konvertiert und die konvertierte Temperatur ausgibt.
 
-**Die Umrechnung von Celsius zu Fahrenheit lautet: °F = °C * 1,8 + 32**
+Die Umrechnung von Celsius zu Fahrenheit lautet: °F = °C * 1,8 + 32
 
 ~~~~
 Gib die Temperatur in Celsius ein: 37

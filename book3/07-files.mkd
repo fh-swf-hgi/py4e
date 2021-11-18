@@ -420,7 +420,7 @@ Textdatei
 Übungen
 -------
 
-**Übung 1: Schreiben Sie ein Programm, das eine Datei einliest und den Inhalt der Datei (Zeile für Zeile) in Großbuchstaben ausgibt. Das Ausführen des Programms sieht wie folgt aus:**
+**Übung 1:** Schreiben Sie ein Programm, das eine Datei einliest und den Inhalt der Datei (Zeile für Zeile) in Großbuchstaben ausgibt. Das Ausführen des Programms sieht wie folgt aus:
 
 ~~~~
 python shout.py
@@ -432,16 +432,16 @@ RECEIVED: FROM MURDER (MAIL.UMICH.EDU [141.211.14.90])
      SAT, 05 JAN 2008 09:14:16 -0500
 ~~~~
 
-**Sie können die Datei herunterladen von** [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
+Sie können die Datei herunterladen von [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
-**Übung 2: Schreiben Sie ein Programm, das nach einem Dateinamen fragt, und iterieren Sie dann
-durch die Datei und sucht nach Zeilen der Form:**
+**Übung 2:** Schreiben Sie ein Programm, das nach einem Dateinamen fragt, und iterieren Sie dann
+durch die Datei und sucht nach Zeilen der Form:
 
 ~~~~
 X-DSPAM-Confidence: 0.8475
 ~~~~
 
-**Wenn Sie auf eine Zeile stoßen, die mit „X-DSPAM-Confidence:“ beginnt, trennen Sie die Zeile auf, um die Fließkommazahl in der Zeile zu extrahieren. Zählen Sie diese Zeilen und berechnen Sie dann die Summe der Werte aus diesen Zeilen. Wenn Sie das Ende der Datei erreichen, geben Sie den Durchschnittswert aus.**
+Wenn Sie auf eine Zeile stoßen, die mit „X-DSPAM-Confidence:“ beginnt, trennen Sie die Zeile auf, um die Fließkommazahl in der Zeile zu extrahieren. Zählen Sie diese Zeilen und berechnen Sie dann die Summe der Werte aus diesen Zeilen. Wenn Sie das Ende der Datei erreichen, geben Sie den Durchschnittswert aus.
 
 ~~~~
 Gib eine Datei an: mbox.txt
@@ -451,9 +451,9 @@ Gib eine Datei an: mbox-short.txt
 Wahrscheinlichkeit fuer Kein-Spam: 0.750718518519
 ~~~~
 
-**Testen Sie Ihre Datei an den Dateien `mbox.txt` und `mbox-short.txt`.**
+Testen Sie Ihre Datei an den Dateien `mbox.txt` und `mbox-short.txt`.
 
-**Übung 3: Manchmal, wenn Programmierern langweilig ist oder sie ein bisschen Spaß haben wollen, fügen sie ein harmloses *Easter-Egg* in ihr Programm ein. Ändern Sie das Programm, das den Benutzer zur Eingabe des Dateinamens auffordert, so, dass es eine lustige Meldung ausgibt, wenn der Benutzer den genauen Dateinamen „blafabel“ eingibt. Für alle anderen existierenden und nicht existierenden Dateien sollte sich das Programm normal verhalten. Hier ist ein Beispiel für die Ausführung des Programms:**
+**Übung 3:** Manchmal, wenn Programmierern langweilig ist oder sie ein bisschen Spaß haben wollen, fügen sie ein harmloses *Easter-Egg* in ihr Programm ein. Ändern Sie das Programm, das den Benutzer zur Eingabe des Dateinamens auffordert, so, dass es eine lustige Meldung ausgibt, wenn der Benutzer den genauen Dateinamen „blafabel“ eingibt. Für alle anderen existierenden und nicht existierenden Dateien sollte sich das Programm normal verhalten. Hier ist ein Beispiel für die Ausführung des Programms:
 
 ~~~~
 python egg.py
@@ -469,5 +469,5 @@ Gib eine Datei an: blafabel
 Du laberst mich an?
 ~~~~
 
-**Wir möchten Sie natürlich nicht dazu verführen, ständig Easter-Eggs in Ihre Programme einzubauen; dies ist nur eine Übung!**
+Wir möchten Sie natürlich nicht dazu verführen, ständig Easter-Eggs in Ihre Programme einzubauen; dies ist nur eine Übung!
 

@@ -138,7 +138,7 @@ while index < len(frucht):
 
 Diese Schleife durchläuft die Zeichenkette und zeigt jeden Buchstaben einzeln in einer Zeile an. Die Schleifenbedingung ist `index < len(frucht)`, wenn also `index` gleich der Länge der Zeichenkette ist, ist die Bedingung falsch und der Schleifenrumpf wird nicht mehr ausgeführt. Das letzte Zeichen, auf das zugegriffen wird, ist dasjenige mit dem Index `len(frucht)-1`, also das letzte Zeichen in der Zeichenkette.
 
-**Übung 1: Schreiben Sie eine `while`-Schleife, die beim letzten Zeichen in der Zeichenkette beginnt und sich rückwärts bis zum ersten Zeichen in der Zeichenkette vorarbeitet, wobei jeder Buchstabe in einer eigenen Zeile ausgegeben wird, natürlich rückwärts.**
+**Übung 1:** Schreiben Sie eine `while`-Schleife, die beim letzten Zeichen in der Zeichenkette beginnt und sich rückwärts bis zum ersten Zeichen in der Zeichenkette vorarbeitet, wobei jeder Buchstabe in einer eigenen Zeile ausgegeben wird, natürlich rückwärts.
 
 Eine andere Möglichkeit, einen Traversierung zu schreiben, ist mit einer `for`-Schleife:
 
@@ -193,7 +193,7 @@ Wenn der erste Index größer oder gleich dem zweiten ist, ist das Ergebnis eine
 
 Eine leere Zeichenkette enthält keine Zeichen und hat die Länge 0, aber ansonsten verhält sie sich genauso wie jede andere Zeichenkette.
 
-**Übung 2: Wenn `frucht` eine Zeichenkette ist, was bewirkt dann `frucht[:]`?**
+**Übung 2:** Wenn `frucht` eine Zeichenkette ist, was bewirkt dann `frucht[:]`?
 
 \index{Kopieren!slice}
 \index{slice!Kopieren}
@@ -259,7 +259,7 @@ Dieses Programm demonstriert ein Vorgehen, das man als *Zähler* bezeichnet kön
 
 \index{Auslagern von Code in Funktionen}
 
-**Übung 3: Lagern Sie diesen Code in eine Funktion namens `count` aus, und verallgemeinern Sie diese so, dass sie die Zeichenkette und den Buchstaben als Argumente akzeptiert.**
+**Übung 3:** Lagern Sie diesen Code in eine Funktion namens `count` aus, und verallgemeinern Sie diese so, dass sie die Zeichenkette und den Buchstaben als Argumente akzeptiert.
 
 Der `in`-Operator
 -----------------
@@ -436,11 +436,11 @@ Im letzten Beispiel wird die Methode `lower` aufgerufen und dann wird mit `start
 \index{count (Methode)}
 \index{Methode!count}
 
-**Übung 4: Es gibt eine String-Methode namens `count`, die der Funktion in der vorherigen Übung ähnlich ist. Lesen Sie die Dokumentation zu dieser Methode unter:**
+**Übung 4:** Es gibt eine String-Methode namens `count`, die der Funktion in der vorherigen Übung ähnlich ist. Lesen Sie die Dokumentation zu dieser Methode unter:
 
 <https://docs.python.org/library/stdtypes.html#string-methods> 
 
-**Schreiben Sie ein Programm, das die Anzahl der Vorkommen des Buchstabens „a“ in „Banane“ mithilfe der count-Methode zählt.**
+Schreiben Sie ein Programm, das die Anzahl der Vorkommen des Buchstabens „a“ in „Banane“ mithilfe der count-Methode zählt.
 
 Parsen von Zeichenketten
 ------------------------
@@ -642,16 +642,20 @@ Traversieren
 Übungen
 -------
 
-**Übung 5: Nehmen Sie den folgenden Python-Code, der eine Zeichenkette speichert:**
+**Übung 5:** Nehmen Sie den folgenden Python-Code, der eine Zeichenkette speichert:
 
-`str = 'X-DSPAM-Confidence: `**`0.8475`**`'`
+`str = 'X-DSPAM-Confidence: 0.8475'`
 
-**Verwenden Sie `find` und String-Slicing, um den Teil der Zeichenkette nach dem Doppelpunkt zu extrahieren, und verwenden Sie dann die Funktion `float`, um die extrahierte Teilzeichenkette in eine Fließkommazahl zu konvertieren.**
+Verwenden Sie `find` und String-Slicing, um den Teil der Zeichenkette nach dem Doppelpunkt zu extrahieren, und verwenden Sie dann die Funktion `float`, um die extrahierte Teilzeichenkette in eine Fließkommazahl zu konvertieren.
 
 \index{Zeichenkette!Methode}
 \index{Methode!Zeichenkette}
 
-**Übung 6: Lesen Sie die Dokumentation der String-Methoden unter <https://docs.python.org/library/stdtypes.html#string-methods>. Vielleicht möchten Sie mit einigen von ihnen experimentieren, um sicherzustellen, dass Sie verstehen, wie sie funktionieren. `strip` und `replace` sind besonders nützlich.**
+**Übung 6:** Lesen Sie die Dokumentation der String-Methoden unter
 
-**Die Dokumentation verwendet eine Syntax, die verwirrend sein kann. Zum Beispiel in `find(sub[, start[, end]])` zeigen die Klammern optionale Argumente an. Also ist `sub` erforderlich, aber `start` ist optional, und wenn Sie `start` verwenden, dann ist `end` wiederum optional.**
+<https://docs.python.org/library/stdtypes.html#string-methods>
+
+Vielleicht möchten Sie mit einigen von ihnen experimentieren, um sicherzustellen, dass Sie verstehen, wie sie funktionieren. `strip` und `replace` sind besonders nützlich.
+
+Die Dokumentation verwendet eine Syntax, die verwirrend sein kann. Zum Beispiel in `find(sub[, start[, end]])` zeigen die Klammern optionale Argumente an. Also ist `sub` erforderlich, aber `start` ist optional, und wenn Sie `start` verwenden, dann ist `end` wiederum optional.
 

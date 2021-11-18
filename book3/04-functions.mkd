@@ -281,7 +281,7 @@ Dieses Programm erzeugt die folgende Liste von 10 Zufallszahlen zwischen 0,0 und
 0.028511805472785867
 ~~~~
 
-**Übung 1: Führen Sie das Programm auf Ihrem System aus und schauen Sie, welche Zahlen Sie erhalten. Führen Sie das Programm mehr als einmal aus und sehen Sie, welche Zahlen Sie erhalten.**
+**Übung 1:** Führen Sie das Programm auf Ihrem System aus und schauen Sie, welche Zahlen Sie erhalten. Führen Sie das Programm mehr als einmal aus und sehen Sie, welche Zahlen Sie erhalten.
 
 Die Funktion `random` ist nur eine von vielen Funktionen, die mit Zufallszahlen umgehen. Die Funktion `randint` nimmt die Parameter `low` und `high` und gibt eine ganze Zahl zwischen `low` und `high` (einschließlich) zurück.
 
@@ -414,9 +414,9 @@ Dieses Programm enthält zwei Funktionsdefinitionen: `print_lyrics` und `repeat_
 
 Wie man sich vielleicht schon denken kann, muss man eine Funktion erst definieren, bevor man sie ausführen kann. Mit anderen Worten: Die Funktionsdefinition muss vor dem ersten Aufruf erfolgen.
 
-**Übung 2: Versetzen Sie die letzte Zeile dieses Programms an den Anfang, sodass der Funktionsaufruf vor den Definitionen erscheint. Führen Sie das Programm aus und beobachten Sie, welche Fehlermeldung Sie erhalten.**
+**Übung 2:** Versetzen Sie die letzte Zeile dieses Programms an den Anfang, sodass der Funktionsaufruf vor den Definitionen erscheint. Führen Sie das Programm aus und beobachten Sie, welche Fehlermeldung Sie erhalten.
 
-**Übung 3: Verschieben Sie den Funktionsaufruf wieder nach unten und verschieben Sie die Definition von `print_lyrics` hinter die Definition von `repeat_lyrics`. Was passiert, wenn Sie dieses Programm ausführen?**
+**Übung 3:** Verschieben Sie den Funktionsaufruf wieder nach unten und verschieben Sie die Definition von `print_lyrics` hinter die Definition von `repeat_lyrics`. Was passiert, wenn Sie dieses Programm ausführen?
 
 Programmablauf
 --------------
@@ -666,7 +666,7 @@ void, Funktion ohne Rückgabewert
 Übungen
 -------
 
-**Übung 4: Was ist der Zweck des Schlüsselworts `def` in Python?**
+**Übung 4:** Was ist der Zweck des Schlüsselworts `def` in Python?
 
 a\) Es ist Slang und bedeutet „der folgende Code ist wirklich cool“\
 b) Es zeigt den Beginn einer Funktion an\
@@ -674,7 +674,7 @@ c) Es zeigt an, dass der folgende eingerückte Codeabschnitt für später gespei
 d) b und c sind beide wahr\
 e) Keiner der oben genannten Punkte
 
-**Übung 5: Was wird das folgende Python-Programm ausgeben?**
+**Übung 5:** Was wird das folgende Python-Programm ausgeben?
 
 ~~~~ {.python}
 def fred():
@@ -694,7 +694,7 @@ c) ABC Zap jane\
 d) ABC Zap ABC\
 e) Zap Zap Zap
 
-**Übung 6: Schreiben Sie ihr Programm zur Lohnberechnung (mit 1,4-fachem Stundenlohn bei Überstunden) um. Ergänzen Sie eine Funktion `lohnberechnung`, welche die beiden Parameter `arbeitsstunden` und `stundenlohn` entgegennimmt**
+**Übung 6:** Schreiben Sie ihr Programm zur Lohnberechnung (mit 1,4-fachem Stundenlohn bei Überstunden) um. Ergänzen Sie eine Funktion `lohnberechnung`, welche die beiden Parameter `arbeitsstunden` und `stundenlohn` entgegennimmt.
 
 ~~~~
 Anzahl Arbeitsstunden: 45
@@ -702,7 +702,7 @@ Stundenlohn: 10
 Monatsgehalt: 475.0
 ~~~~
 
-**Übung 7: Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `notenberechnung` verwenden, die eine Punktzahl als Parameter annimmt und eine Note zurückgibt.**
+**Übung 7:** Schreiben Sie das Benotungsprogramm aus dem vorigen Kapitel neu, indem Sie eine Funktion namens `notenberechnung` verwenden, die eine Punktzahl als Parameter annimmt und eine Note zurückgibt.
 
 ~~~~
 Punkte   Note

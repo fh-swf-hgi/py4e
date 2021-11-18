@@ -131,7 +131,7 @@ Unsere Ergebnisse können je nach der Netzwerkgeschwindigkeit unterschiedlich se
 \index{time}
 \index{time.sleep (Funktion)}
 
-Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` einkommentieren. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
+Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` auskommentieren. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
 
 ~~~~
 $ python urljpeg.py
@@ -401,7 +401,7 @@ Wenn wir einen Linux-, Unix- oder Macintosh-Computer haben, haben wir wahrschein
 $ curl -O http://www.py4e.com/cover.jpg
 ~~~~
 
-Der Befehl `curl` ist die Abkürzung für „Client for URLs“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) clevererweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt, für den Fall, dass der Leser dieses Vorgehen tatsächlich in einem Programm verwenden will.
+Der Befehl `curl` ist die Abkürzung für „copy URL“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) clevererweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt, für den Fall, dass der Leser dieses Vorgehen tatsächlich in einem Programm verwenden will.
 
 Ein zweiter Befehl, der sehr ähnlich funktioniert, ist `wget`:
 
@@ -439,13 +439,13 @@ Spider
 Übungen
 -------
 
-**Übung 1: Das Socket-Programm `socket1.py` soll so geändert werden, dass es den Benutzer nach der URL fragt und jede Webseite lesen kann. Hierbei kann `split('/')` verwendet werden, um die URL in ihre Bestandteile zu zerlegen, damit wir den Hostnamen für den Socket-Aufruf `connect` extrahieren können. Dabei soll eine Fehlerprüfung mit `try` und `except` hinzugefügt werden, um den Fall zu behandeln, dass der Benutzer eine falsch formatierte oder nicht existierende URL eingibt.**
+**Übung 1:** Das Socket-Programm `socket1.py` soll so geändert werden, dass es den Benutzer nach der URL fragt und jede Webseite lesen kann. Hierbei kann `split('/')` verwendet werden, um die URL in ihre Bestandteile zu zerlegen, damit wir den Hostnamen für den Socket-Aufruf `connect` extrahieren können. Dabei soll eine Fehlerprüfung mit `try` und `except` hinzugefügt werden, um den Fall zu behandeln, dass der Benutzer eine falsch formatierte oder nicht existierende URL eingibt.
 
-**Übung 2: Das Socket-Programm soll so geändert werden, dass es die Anzahl der empfangenen Zeichen zählt und keinen Text mehr anzeigt, wenn es 3000 Zeichen angezeigt hat. Das Programm sollte das gesamte Dokument abrufen und die Gesamtzahl der Zeichen zählen und die Zählung der Anzahl der Zeichen am Ende des Dokuments anzeigen.**
+**Übung 2:** Das Socket-Programm soll so geändert werden, dass es die Anzahl der empfangenen Zeichen zählt und keinen Text mehr anzeigt, wenn es 3000 Zeichen angezeigt hat. Das Programm sollte das gesamte Dokument abrufen und die Gesamtzahl der Zeichen zählen und die Zählung der Anzahl der Zeichen am Ende des Dokuments anzeigen.
 
-**Übung 3: Es soll `urllib` verwendet werden, um die vorherige Übung zu wiederholen: (1) Abrufen des Dokuments von einer URL, (2) Anzeigen von bis zu 3000 Zeichen und (3) Zählen der Gesamtanzahl der Zeichen im Dokument. Dabei soll sich bei dieser Übung nicht um die Überschriften gekümmert werden, sondern lediglich die ersten 3000 Zeichen des Dokumentinhalts angezeigt werden.**
+**Übung 3:** Es soll `urllib` verwendet werden, um die vorherige Übung zu wiederholen: (1) Abrufen des Dokuments von einer URL, (2) Anzeigen von bis zu 3000 Zeichen und (3) Zählen der Gesamtanzahl der Zeichen im Dokument. Dabei soll sich bei dieser Übung nicht um die Überschriften gekümmert werden, sondern lediglich die ersten 3000 Zeichen des Dokumentinhalts angezeigt werden.
 
-**Übung 4: Das Programm `urllinks.py` soll so geändert werden, dass es Paragraph-Tags (p) aus dem abgerufenen HTML-Dokument extrahiert und zählt sowie die Anzahl der Absätze als Ausgabe des Programms anzeigt. Dabei soll der Text dieser nicht angezeigt, sondern lediglich die Absätze gezählt werden. Das Programm soll auf mehreren kleinen sowie einigen größeren Webseiten getestet werden.**
+**Übung 4:** Das Programm `urllinks.py` soll so geändert werden, dass es Paragraph-Tags (p) aus dem abgerufenen HTML-Dokument extrahiert und zählt sowie die Anzahl der Absätze als Ausgabe des Programms anzeigt. Dabei soll der Text dieser nicht angezeigt, sondern lediglich die Absätze gezählt werden. Das Programm soll auf mehreren kleinen sowie einigen größeren Webseiten getestet werden.
 
-**Übung 5: (Erweiterung) Das Socket-Programm soll so geändert werden, dass es nur Daten anzeigt, nachdem die Kopfzeilen und eine Leerzeile empfangen wurden. Es sollte bedacht werden, dass `recv` Zeichen (Zeilenumbrüche usw.) empfängt, nicht Zeilen.**
+**Übung 5:** (Erweiterung) Das Socket-Programm soll so geändert werden, dass es nur Daten anzeigt, nachdem die Kopfzeilen und eine Leerzeile empfangen wurden. Es sollte bedacht werden, dass `recv` Zeichen (Zeilenumbrüche usw.) empfängt, nicht Zeilen.
 

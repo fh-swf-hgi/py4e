@@ -407,10 +407,10 @@ Wenn wir wissen, welches Modul wir verwenden möchten, können wir den Befehl `d
 'sre_parse', 'sub', 'subn', 'sys', 'template']
 ~~~~
 
-Wir können auch mit dem `help`-Befehl einen kleinen Teil der Dokumentation zu einer bestimmten Methode abrufen.
+Wir können auch mit dem `dir`-Befehl einen kleinen Teil der Dokumentation zu einer bestimmten Methode abrufen.
 
 ~~~~ {.python .trinket}
->>> help(re.search)
+>>> help (re.search)
 Help on function search in module re:
 
 search(pattern, string, flags=0)
@@ -443,7 +443,7 @@ Wildcard
 Übungen
 -------
 
-**Übung 1: Es soll ein einfaches Programm geschrieben werden, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Der Benutzer soll aufgefordert werden, einen regulären Ausdruck einzugeben, mit dem dann die Anzahl der Zeilen gezählt werden, die mit dem regulären Ausdruck übereinstimmen:**
+**Übung 1:** Es soll ein einfaches Programm geschrieben werden, das die Funktionsweise des Befehls `grep` unter Unix simuliert. Der Benutzer soll aufgefordert werden, einen regulären Ausdruck einzugeben, mit dem dann die Anzahl der Zeilen gezählt werden, die mit dem regulären Ausdruck übereinstimmen:
 
 ~~~~
 $ python grep.py
@@ -459,13 +459,13 @@ Gib eine RegEx an: java$
 mbox.txt hat 4175 Zeilen die auf den Ausdruck "java" passen
 ~~~~
 
-**Übung 2: Es soll ein Programm geschrieben werden, das nach Zeilen der folgenden Form sucht:**
+**Übung 2:** Es soll ein Programm geschrieben werden, das nach Zeilen der folgenden Form sucht:
 
 ~~~~
 New Revision: 39772
 ~~~~
 
-**Die Zahl soll aus jeder der Zeilen mit einem regulären Ausdruck und der Methode `findall()` extrahiert werden. Es soll dann der Durchschnitt der Zahlen berechnet und als Ganzzahl ausgegeben werden.**
+Die Zahl soll aus jeder der Zeilen mit einem regulären Ausdruck und der Methode `findall()` extrahiert werden. Es soll dann der Durchschnitt der Zahlen berechnet und als Ganzzahl ausgegeben werden.
 
 ~~~~
 Gib eine Datei an: mbox.txt

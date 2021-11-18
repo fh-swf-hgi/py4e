@@ -521,25 +521,25 @@ Quellcode
 Übungen
 -------
 
-**Übung 1: Welche Funktion hat der Sekundärspeicher in einem Computer?**
+**Übung 1:** Welche Funktion hat der Sekundärspeicher in einem Computer?
 
 a\) Alle Berechnungen und die Logik des Programms ausführen\
 b) Abruf von Webseiten über das Internet\
 c) Informationen langfristig zu speichern, auch über einen Stromausfall hinaus\
 d) Eingaben des Benutzers entgegennehmen
 
-**Übung 2: Was ist ein Programm?**
+**Übung 2:** Was ist ein Programm?
 
-**Übung 3: Was ist der Unterschied zwischen einem Compiler und einem Interpreter?**
+**Übung 3:** Was ist der Unterschied zwischen einem Compiler und einem Interpreter?
 
-**Aufgabe 4: Was enthält Maschinencode?**
+**Übung 4:** Was enthält Maschinencode?
 
 a\) Der Python-Interpreter\
 b) Die Tastatur\
 c) Die Python-Quelldatei\
 d) Ein Textverarbeitungsdokument
 
-**Aufgabe 5: Was ist falsch an folgendem Code?**
+**Übung 5:** Was ist falsch an folgendem Code?
 
 ~~~~ {.python}
 >>> primt 'Hello world!'
@@ -550,7 +550,7 @@ SyntaxError: invalid syntax
 >>>
 ~~~~
 
-**Übung 6: Wo im Computer wird eine Variable wie `x` gespeichert, nachdem die folgende Python-Zeile beendet ist?**
+**Übung 6:** Wo im Computer wird eine Variable wie `x` gespeichert, nachdem die folgende Python-Zeile beendet ist?
 
 ~~~~ {.python}
 x = 123
@@ -562,7 +562,7 @@ c) Sekundärspeicher\
 d) Eingabegeräte\
 e) Ausgabegeräte
 
-**Übung 7: Was wird das folgende Programm ausgeben:**
+**Übung 7:** Was wird das folgende Programm ausgeben:
 
 ~~~~ {.python}
 x = 43
@@ -575,7 +575,7 @@ b) 44\
 c) x + 1\
 d) Fehler, denn x = x + 1 ist mathematisch nicht möglich
 
-**Übung 8: Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) CPU, (2) Hauptspeicher, (3) Sekundärspeicher, (4) Eingabegerät und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU“?**
+**Übung 8:** Erläutern Sie die folgenden Punkte anhand eines Beispiels für eine menschliche Fähigkeit: (1) CPU, (2) Hauptspeicher, (3) Sekundärspeicher, (4) Eingabegerät und (5) Ausgabegerät. Zum Beispiel: „Was ist das menschliche Äquivalent zu einer CPU?“
 
-**Übung 9: Wie behebt man einen Syntaxfehler?**
+**Übung 9:** Wie behebt man einen Syntaxfehler?
 

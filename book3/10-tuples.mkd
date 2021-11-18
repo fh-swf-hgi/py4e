@@ -481,9 +481,9 @@ Tupelzuweisung
 Übungen
 -------
 
-**Übung 1: Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die `From `-Zeilen sollen gelesen und geparst werden, um daraus die Adressen zu extrahieren. Dabei soll mit Hilfe eines Dictionarys die Anzahl der Nachrichten von jeder Person gezählt werden.**
+**Übung 1:** Das vorherige Programm soll auf folgende Weise überarbeitet werden: Die `From `-Zeilen sollen gelesen und geparst werden, um daraus die Adressen zu extrahieren. Dabei soll mit Hilfe eines Dictionarys die Anzahl der Nachrichten von jeder Person gezählt werden.
 
-**Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupel aus dem Dictionary erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.**
+Nachdem alle Daten gelesen wurden, soll die Person mit den meisten Nachrichten ausgegeben werden, indem eine Liste von `(count, email)`-Tupel aus dem Dictionary erstellt wird. Dann muss die Liste in umgekehrter Reihenfolge sortiert und schließlich die Person mit den meisten Nachrichten ausgegeben werden.
 
 ~~~~
 Gib eine Datei an: mbox-short.txt
@@ -493,7 +493,7 @@ Gib eine Datei an: mbox.txt
 zqian@umich.edu 195
 ~~~~
 
-**Übung 2: Schreiben Sie ein Programm, welches die Häufigkeit von Nachrichten pro Tageszeit (ganze Stunden) ermittelt. Die Stunden sollen aus der `From `-Zeile extrahiert werden, indem die Uhrzeit gefunden und diese Zeichenfolge dann anhand des Doppelpunkts in Teile zergliedert wird. Sobald die Nachrichtenhäufigkeit für jede Stunde gesammelt wurde, sollen diese wie weiter unten gezeigt ausgegeben werden (eine pro Zeile, sortiert nach Stunde).**
+**Übung 2:** Schreiben Sie ein Programm, welches die Häufigkeit von Nachrichten pro Tageszeit (ganze Stunden) ermittelt. Die Stunden sollen aus der `From `-Zeile extrahiert werden, indem die Uhrzeit gefunden und diese Zeichenfolge dann anhand des Doppelpunkts in Teile zergliedert wird. Sobald die Nachrichtenhäufigkeit für jede Stunde gesammelt wurde, sollen diese wie weiter unten gezeigt ausgegeben werden (eine pro Zeile, sortiert nach Stunde).
 
 ~~~~
 python timeofday.py
@@ -512,7 +512,7 @@ Gib eine Datei an: mbox-short.txt
 19 1
 ~~~~
 
-**Übung 3: Schreiben Sie ein Programm, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele in verschiedenen Sprachen als Eingabe dienen, um zu analysieren, wie die Buchstabenhäufigkeit zwischen verschiedenen Sprachen variiert. Vergleichen Sie ihre Ergebnisse mit den Tabellen auf: <https://wikipedia.org/wiki/Letter_frequencies>**
+**Übung 3:** Schreiben Sie ein Programm, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele in verschiedenen Sprachen als Eingabe dienen, um zu analysieren, wie die Buchstabenhäufigkeit zwischen verschiedenen Sprachen variiert. Vergleichen Sie ihre Ergebnisse mit den Tabellen auf: <https://wikipedia.org/wiki/Letter_frequencies>
 
 \index{Buchstabenhäufigkeit}
 \index{Häufigkeit!Buchstaben}

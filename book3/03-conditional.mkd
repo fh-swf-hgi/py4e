@@ -501,7 +501,7 @@ abgekürzte Auswertung
 Übungen
 -------
 
-**Übung 1: Schreiben Sie Ihr Programm zur Lohnberechnung so um, dass ein Mitarbeiter das 1,5-fache des Stundensatzes für Arbeitsstunden über 40 Stunden erhält.**
+**Übung 1:** Schreiben Sie Ihr Programm zur Lohnberechnung so um, dass ein Mitarbeiter das 1,5-fache des Stundensatzes für Arbeitsstunden über 40 Stunden erhält.
 
 ~~~~
 Anzahl Arbeitsstunden: 45
@@ -509,7 +509,7 @@ Stundenlohn: 10
 Monatsgehalt: 475.0
 ~~~~
 
-**Übung 2: Schreiben Sie Ihr Programm zur Lohnberechnung unter Verwendung von `try` und `except` so um, dass Ihr es nichtnumerische Eingaben elegant behandelt, indem es eine Meldung ausgibt und das Programm beendet. Im Folgenden sehen Sie zwei beispielhafte Ausführungen des Programms:**
+**Übung 2:** Schreiben Sie Ihr Programm zur Lohnberechnung unter Verwendung von `try` und `except` so um, dass Ihr es nichtnumerische Eingaben elegant behandelt, indem es eine Meldung ausgibt und das Programm beendet. Im Folgenden sehen Sie zwei beispielhafte Ausführungen des Programms:
 
 ~~~~
 Anzahl Arbeitsstunden: 20
@@ -522,7 +522,7 @@ Anzahl Arbeitsstunden: vierzig
 Fehler, bitte gib eine Zahl ein
 ~~~~
 
-**Übung 3: Schreiben Sie ein Programm, das nach einem Wert zwischen 0,0 und 1,0 fragt. Wenn die Punktzahl außerhalb des Bereichs liegt, geben Sie eine Fehlermeldung aus. Wenn die Punktzahl zwischen 0,0 und 1,0 liegt, geben Sie eine Note anhand der folgenden Tabelle aus:**
+**Übung 3:** Schreiben Sie ein Programm, das nach einem Wert zwischen 0,0 und 1,0 fragt. Wenn die Punktzahl außerhalb des Bereichs liegt, geben Sie eine Fehlermeldung aus. Wenn die Punktzahl zwischen 0,0 und 1,0 liegt, geben Sie eine Note anhand der folgenden Tabelle aus:
 
 ~~~~
 Punkte   Note

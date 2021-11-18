@@ -335,10 +335,10 @@ Enter location:
 
 Wir können [www.py4e.com/code3/geoxml.py](http://www.py4e.com/code3/geoxml.py) herunterladen, um die XML-Variante der Google Geocoding API zu erkunden.
 
-**Übung 1: Es soll entweder**
-[**geojson.py**](http://www.py4e.com/code3/geojson.py) **oder**
-[**geoxml.py**](http://www.py4e.com/code3/geoxml.py)
-**geändert werden, um den zweistelligen Ländercode aus den abgerufenen Daten auszugeben. Es muss eine Fehlerprüfung hinzugefügt werden, damit das Programm keinen Traceback auslöst, wenn der Ländercode nicht vorhanden ist. Sobald es zum Laufen gebracht wurde, soll nach dem „Atlantic Ocean“ gesucht und sichergestellt werden, dass es mit Orten umgehen kann, die in keinem Land liegen.**
+**Übung 1:** Es soll entweder
+[geojson.py](http://www.py4e.com/code3/geojson.py) oder
+[geoxml.py](http://www.py4e.com/code3/geoxml.py)
+geändert werden, um den zweistelligen Ländercode aus den abgerufenen Daten auszugeben. Es muss eine Fehlerprüfung hinzugefügt werden, damit das Programm keinen Traceback auslöst, wenn der Ländercode nicht vorhanden ist. Sobald es zum Laufen gebracht wurde, soll nach dem „Atlantic Ocean“ gesucht und sichergestellt werden, dass es mit Orten umgehen kann, die in keinem Land liegen.
 
 Anwendungsbeispiel 2: Twitter
 -----------------------------
