@@ -131,7 +131,7 @@ Unsere Ergebnisse können je nach der Netzwerkgeschwindigkeit unterschiedlich se
 \index{time}
 \index{time.sleep (Funktion)}
 
-Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` auskommentieren. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
+Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` einkommentieren. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
 
 ~~~~
 $ python urljpeg.py
@@ -401,7 +401,7 @@ Wenn wir einen Linux-, Unix- oder Macintosh-Computer haben, haben wir wahrschein
 $ curl -O http://www.py4e.com/cover.jpg
 ~~~~
 
-Der Befehl `curl` ist die Abkürzung für „copy URL“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) clevererweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt, für den Fall, dass der Leser dieses Vorgehen tatsächlich in einem Programm verwenden will.
+Der Befehl `curl` ist die Abkürzung für „Client for URLs“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) clevererweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt, für den Fall, dass der Leser dieses Vorgehen tatsächlich in einem Programm verwenden will.
 
 Ein zweiter Befehl, der sehr ähnlich funktioniert, ist `wget`:
 
