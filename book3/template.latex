@@ -5,6 +5,7 @@ $if(fontfamily)$
 \usepackage{$fontfamily$}
 $else$
 \usepackage{lmodern}
+\usepackage[scaled=0.83]{GoMono}
 $endif$
 \usepackage{makeidx}
 $if(linestretch)$
