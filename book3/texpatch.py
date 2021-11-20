@@ -21,7 +21,7 @@ while True:
 
     if line == '\\begin{verbatim}' : 
         # print '\\vspace{0.0\\parskip\\fontsize{9}{11}}'
-        print '{' # print '{\\small'
+        print '{\\small'
         print line
     elif line == '\\end{verbatim}' : 
         print line
