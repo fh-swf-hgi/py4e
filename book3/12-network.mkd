@@ -2,20 +2,18 @@
 Vernetzen von Programmen
 ========================
 
-In den vorangegangenen Beispielen dieses Buches haben wir Daten vor allem aus Dateien gelesen, die bei uns im Sekundärspeicher (also in der Regel auf der Festplatte) abgespeichert waren.
-Betrachtet man allerdings die Tatsache, das Computer heutzutage nahezu *immer online* sind, wird klar, dass da Internet eine wichtige Datenquelle für Programme ist.
+In den vorangegangenen Beispielen dieses Buches haben wir Daten vor allem aus Dateien gelesen, die bei uns im Sekundärspeicher (also in der Regel auf der Festplatte) abgespeichert waren. Betrachtet man allerdings die Tatsache, dass Computer heutzutage nahezu *immer online* sind, wird klar, dass das Internet eine wichtige Datenquelle für Programme ist.
 
-In diesem Kapitel werden wir Programme schreiben, die wie Webbrowser auf Internetseiten zugreifen und Daten über das Hypertext Transfer Protocol (HTTP) abrufen.
-Wir werden die Daten der Webseite einlesen und parsen, um bestimmte Informationen von diesen Seiten zu extrahieren.
+In diesem Kapitel werden wir Programme schreiben, die wie Webbrowser auf Internetseiten zugreifen und Daten über das Hypertext Transfer Protocol (HTTP) abrufen. Wir werden die Daten der Webseite einlesen und parsen, um bestimmte Informationen von diesen Seiten zu extrahieren.
 
 Hypertext Transfer Protocol - HTTP
 ----------------------------------
 
 Das Netzwerkprotokoll, das das Web antreibt, ist eigentlich recht einfach und es gibt eine eingebaute Unterstützung in Python namens `socket`, die es sehr einfach macht, Netzwerkverbindungen herzustellen und Daten über diese Sockets in einem Python-Programm abzurufen.
 
-Ein *Socket* ist ähnlich wie eine Datei, mit dem Unterschied, dass ein einzelner Socket eine bidirektionale Verbindung zwischen zwei Programmen ermöglicht. Sie können sowohl von einem Socket lesen als auch auf einen Socket schreiben. Wenn Sie etwas in einen Socket schreiben, wird es an die Anwendung am anderen Ende des Sockets gesendet. Wenn Sie aus dem Socket lesen, erhalten Sie die Daten, die die andere Anwendung gesendet hat.
+Ein *Socket* ist ähnlich wie eine Datei, mit dem Unterschied, dass ein einzelner Socket eine bidirektionale Verbindung zwischen zwei Programmen ermöglicht. Wir können sowohl von einem Socket lesen als auch auf einen Socket schreiben. Wenn wir etwas in einen Socket schreiben, wird es an die Anwendung am anderen Ende des Sockets gesendet. Wenn wir aus dem Socket lesen, erhalten wir die Daten, die die andere Anwendung gesendet hat.
 
-Wenn Sie aber versuchen, einen Socket zu lesen, wenn das Programm am anderen Ende des Sockets keine Daten gesendet hat, sitzen Sie nur da und warten. Wenn die Programme an beiden Enden des Sockets einfach auf einige Daten warten, ohne etwas zu senden, werden sie sehr lange warten, daher ist ein wichtiger Teil von Programmen, die über das Internet kommunizieren, eine Art Protokoll zu haben.
+Wenn wir aber versuchen, einen Socket zu lesen, wenn das Programm am anderen Ende des Sockets noch keine Daten gesendet hat, sitzen wir nur da und warten. Wenn die Programme an beiden Enden des Sockets nur auf Daten warten, ohne etwas zu senden, werden sie sehr lange warten. Daher ist es für Programme, die über das Internet kommunizieren, wichtig, über eine Art Protokoll zu verfügen.
 Ein Protokoll ist ein Satz präziser Regeln, die festlegen, wer zuerst sendet, was er zu tun hat, was die Antworten auf diese Nachricht sind, wer als nächstes sendet und so weiter.
 Es gibt viele Dokumente, die diese Netzwerkprotokolle beschreiben. Das Hypertext Transfer Protocol wird in dem folgenden Dokument beschrieben:
 
@@ -30,7 +28,7 @@ wobei der zweite Parameter die von uns angeforderte Webseite ist. Außerdem send
 Der einfachste Webbrowser der Welt
 ----------------------------------
 
-Der vielleicht einfachste Weg zu zeigen, wie das HTTP-Protokoll funktioniert, ist, ein sehr einfaches Python-Programm zu schreiben, das eine Verbindung zu einem Webserver herstellt und den Regeln des HTTP-Protokolls folgt, um ein Dokument anzufordern und anzuzeigen, was der Server zurückschickt.
+Der vielleicht einfachste Weg zu zeigen, wie das HTTP-Protokoll funktioniert, ist, ein sehr einfaches Python-Programm zu schreiben, das eine Verbindung zu einem Webserver herstellt und den Regeln des HTTP-Protokolls folgt, um ein Dokument anzufordern und anzuzeigen, welches der Server zurückschickt.
 
 \VerbatimInput{../code3/socket1.py}
 
@@ -122,16 +120,16 @@ Connection: close
 Content-Type: image/jpeg
 ~~~~
 
-Wir können sehen, dass bei dieser URL der `Content-Type`-Header anzeigt, dass der Körper des Dokuments ein Bild ist (`image/jpeg`). Sobald das Programm beendet ist, können wir die Bilddaten anzeigen, indem wir die Datei `stuff.jpg` in einem Bildbetrachter öffnen.
+Wir können sehen, dass bei dieser URL der `Content-Type`-Header anzeigt, dass der Rumpf des Dokuments ein Bild ist (`image/jpeg`). Sobald das Programm beendet ist, können wir die Bilddaten anzeigen, indem wir die Datei `stuff.jpg` in einem Bildbetrachter öffnen.
 
-Während das Programm läuft, können wir sehen, dass wir nicht jedes Mal 5120 Zeichen erhalten, wenn wir die Methode `recv()` aufrufen. Wir erhalten so viele Zeichen, wie in dem Moment, in dem wir `recv()` aufrufen, vom Webserver über das Netzwerk zu uns übertragen wurden. In diesem Beispiel erhalten wir nur 3200 Zeichen, wenn wir bis zu 5120 Zeichen an Daten anfordern.
+Während das Programm läuft, können wir sehen, dass wir nicht jedes Mal 5120 Zeichen erhalten, wenn wir die Methode `recv()` aufrufen. Wir erhalten nur so viele Zeichen wie vom Webserver bis zu dem jeweiligen Aufruf von `recv()` tatsächlich über das Netzwerk zu uns übertragen wurden.
 
 Unsere Ergebnisse können je nach der Netzwerkgeschwindigkeit unterschiedlich sein. Beachten wir auch, dass wir beim letzten Aufruf von `recv()` 3167 Bytes erhalten, was das Ende des Streams ist, und dass wir beim nächsten Aufruf von `recv()` eine Zeichenkette der Länge 0 erhalten, die uns mitteilt, dass der Server an seinem Ende des Sockets `close()` aufgerufen hat und keine weiteren Daten mehr anstehen.
 
 \index{time}
 \index{time.sleep (Funktion)}
 
-Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` auskommentieren. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
+Wir können unsere aufeinanderfolgenden `recv()`-Aufrufe verlangsamen, indem wir den Aufruf von `time.sleep()` wieder einbinden. Auf diese Weise warten wir nach jedem Aufruf eine Viertelsekunde, damit der Server uns „zuvorkommen“ und weitere Daten an uns senden kann, bevor wir `recv()` erneut aufrufen. Mit der Verzögerung an Ort und Stelle wird das Programm wie folgt ausgeführt:
 
 ~~~~
 $ python urljpeg.py
@@ -158,7 +156,7 @@ Connection: close
 Content-Type: image/jpeg
 ~~~~
 
-Abgesehen vom ersten und letzten Aufruf von `recv()` erhalten wir jetzt jedes Mal 5120 Zeichen, wenn wir neue Daten anfordern.
+Abgesehen vom letzten Aufruf von `recv()` erhalten wir jetzt jedes Mal 5120 Zeichen, wenn wir neue Daten anfordern.
 
 Es gibt einen Puffer zwischen dem Server, der `send()`-Requests stellt, und unserer Anwendung, die `recv()`-Requests stellt. Wenn wir das Programm mit der Verzögerung laufen lassen, kann es sein, dass der Server irgendwann den Puffer im Socket füllt und gezwungen ist, eine Pause einzulegen, bis unser Programm beginnt, den Puffer zu leeren. Das Anhalten entweder der sendenden oder der empfangenden Anwendung wird *Flusskontrolle* (englisch *flow control*) genannt.
 
@@ -167,9 +165,9 @@ Es gibt einen Puffer zwischen dem Server, der `send()`-Requests stellt, und unse
 Abrufen von Webseiten mit `urllib`
 ----------------------------------
 
-Während wir mit der Socket-Bibliothek manuell Daten über HTTP senden und empfangen können, gibt es einen viel einfacheren Weg, diese allgemeine Aufgabe in Python auszuführen, indem wir die `urllib`-Bibliothek verwenden.
+Während wir mit der Socket-Bibliothek manuell Daten über HTTP senden und empfangen können, gibt es einen viel einfacheren Weg, diese Aufgabe in Python zu erledigen, indem wir die `urllib`-Bibliothek verwenden.
 
-Mit `urllib` können Sie eine Web-Seite ähnlich wie eine Datei behandeln. Sie geben einfach an, welche Webseite Sie abrufen möchten, und `urllib` kümmert sich um alle Details des HTTP-Protokolls und der Header.
+Mit `urllib` können wir eine Web-Seite ähnlich wie eine Datei behandeln. Wir geben einfach an, welche Webseite wir abrufen möchten, und `urllib` kümmert sich um alle Details des HTTP-Protokolls und der Header.
 
 Der äquivalente Code zum Lesen der Datei `romeo.txt` aus dem Web mit `urllib` sieht wie folgt aus:
 
@@ -186,16 +184,16 @@ Arise fair sun and kill the envious moon
 Who is already sick and pale with grief
 ~~~~
 
-Als Beispiel können wir ein Programm schreiben, um die Daten für `romeo.txt` abzurufen und die Häufigkeit jedes Worts in der Datei wie folgt zu berechnen:
+Als Beispiel können wir ein Programm schreiben, um die Daten für `romeo.txt` abzurufen und die Häufigkeit jedes Wortes in der Datei folgendermaßen zu berechnen:
 
 \VerbatimInput{../code3/urlwords.py}
 
-Auch hier können wir, nachdem wir die Webseite geöffnet haben, diese wie eine lokale Datei lesen.
+Auch hier können wir, nachdem wir die Webseite geöffnet haben, sie wie eine lokale Datei lesen.
 
 Lesen von Binärdateien mit `urllib`
 -----------------------------------
 
-Manchmal möchten Sie eine Nicht-Text- (oder Binär-) Datei abrufen, wie z. B. eine Bild- oder Videodatei. Die Daten in diesen Dateien sind in der Regel nicht zum Ausgeben geeignet, aber wir können mit `urllib` leicht eine Kopie einer URL in eine lokale Datei auf einer Festplatte erstellen.
+Manchmal möchten wir eine Binärdatei abrufen, wie z. B. eine Bild- oder Videodatei. Die Daten in diesen Dateien sind in der Regel nicht zum Ausgeben geeignet, aber wir können mit `urllib` leicht eine Datei von einer URL auf unsere Festplatte kopieren.
 
 \index{Binärdatei}\index{binary}
 
@@ -203,15 +201,15 @@ Das Vorgehen besteht darin, die URL zu öffnen und mit `read` den gesamten Inhal
 
 \VerbatimInput{../code3/curl1.py}
 
-Dieses Programm liest alle Daten auf einmal über das Netzwerk ein und speichert sie in der Variablen `img` im Hauptspeicher des Computers, öffnet dann die Datei `cover.jpg` und schreibt die Daten auf die Festplatte. Das Argument `wb` für `open()` öffnet eine Binärdatei nur zum Schreiben. Dieses Programm funktioniert, wenn die Größe der Datei kleiner ist als die Größe des Speichers Ihres Computers.
+Dieses Programm liest alle Daten auf einmal über das Netzwerk ein und speichert sie in der Variablen `img` im Hauptspeicher des Computers, erstellt und öffnet dann die neue Datei `cover.jpg` im Schreibmodus und schreibt die Daten auf die Festplatte. Das Argument `wb` für `open()` öffnet eine Binärdatei nur zum Schreiben. Dieses Programm funktioniert, solange die Größe der Datei kleiner ist als die Größe des Speichers unseres Computers.
 
-Wenn es sich jedoch um eine große Audio- oder Videodatei handelt, kann dieses Programm abstürzen oder zumindest extrem langsam laufen, wenn der Speicher Ihres Computers erschöpft ist. Um ein Überschreiten der Speicherkapazität zu vermeiden, werden die Daten in Blöcken (oder Puffern) abgerufen und dann jeder Block auf die Festplatte geschrieben, bevor der nächste Block abgerufen wird. Auf diese Weise kann das Programm Dateien beliebiger Größe lesen, ohne den gesamten Speicher des Computers zu verbrauchen.
+Wenn es sich jedoch um eine große Audio- oder Videodatei handelt, kann dieses Programm abstürzen oder zumindest extrem langsam laufen, wenn der Speicher unseres Computers erschöpft ist. Um ein Überschreiten der Speicherkapazität zu vermeiden, werden die Daten in Blöcken (oder Puffern) abgerufen und dann jeder Block auf die Festplatte geschrieben, bevor der nächste Block abgerufen wird. Auf diese Weise kann das Programm Dateien beliebiger Größe lesen, ohne den gesamten Speicher des Computers zu verbrauchen.
 
 \VerbatimInput{../code3/curl2.py}
 
 In diesem Beispiel werden jeweils nur 100.000 Zeichen gelesen und dann in die Datei `cover.jpg` geschrieben, bevor die nächsten 100.000 Zeichen an Daten aus dem Web abgerufen werden.
 
-Dieses Programm läuft wie folgt ab:
+Dieses Programm läuft so ab:
 
 ~~~~
 python curl2.py
@@ -224,16 +222,16 @@ Parsen von HTML und Erkunden des Webs
 \index{Web!Scraping}
 \index{HTML parsen}
 
-Eine der häufigsten Verwendungen der `urllib`-Fähigkeit in Python ist das *Scraping* des Webs. Beim Web-Scraping schreiben wir ein Programm, das vorgibt, ein Web-Browser zu sein, Seiten abruft und dann die Daten auf diesen Seiten auf Muster untersucht.
+Eine der häufigsten Verwendungen der `urllib` in Python ist das *Scraping* des Webs. Beim Web-Scraping schreiben wir ein Programm, das vorgibt, ein Web-Browser zu sein, Seiten abruft und dann die Daten auf diesen Seiten auf Muster untersucht.
 
 Ein Beispiel: Eine Suchmaschine wie Google schaut sich die Quelle einer Webseite an, extrahiert die Links zu anderen Seiten und ruft diese Seiten auf, indem sie die Links extrahiert. Dies wird dann einfach wiederholt. Mit dieser Technik erkundet Google seinen Weg durch fast alle Seiten im Web.
 
-Google verwendet auch die Häufigkeit der Links von Seiten, die es zu einer bestimmten Seite findet, als ein Maß dafür, wie „wichtig“ eine Seite ist und wie hoch die Seite in seinen Suchergebnissen erscheinen sollte.
+Google verwendet auch die Häufigkeit der Links von Seiten, die es zu einer bestimmten Seite findet, als ein Maß dafür, wie „wichtig“ eine Seite ist und wie weit oben die Seite in den Suchergebnissen erscheinen soll.
 
 Parsen von HTML mit regulären Ausdrücken
 ----------------------------------------
 
-Eine einfache Möglichkeit, HTML zu parsen, ist die Verwendung regulärer Ausdrücke, um wiederholt nach Teilzeichenketten zu suchen und die zu extrahieren, die einem bestimmten Muster entsprechen.
+Eine einfache Möglichkeit, HTML zu parsen, ist die Verwendung regulärer Ausdrücke, um wiederholt nach Teilzeichenketten zu suchen und diejenigen zu extrahieren, die einem bestimmten Muster entsprechen.
 
 Hier ist eine einfache Web-Seite:
 
@@ -246,20 +244,18 @@ Second Page</a>.
 </p>
 ~~~~
 
-Wir können einen wohlgeformten regulären Ausdruck konstruieren, um die Links aus dem obigen Text wie folgt zu extrahieren:
+Wir können einen wohlgeformten regulären Ausdruck konstruieren, um die Links aus dem obigen Text folgendermaßen zu extrahieren:
 
 ~~~~
 href="http[s]?://.+?"
 ~~~~
 
-Unser regulärer Ausdruck sucht nach Zeichenfolgen, die mit `href=\"http://` oder `href=\"https://` beginnen, gefolgt von einem oder mehreren Zeichen (`.+?`) und einem weiteren doppelten Anführungszeichen. Das Fragezeichen hinter dem `[s]?` zeigt an, dass nach der Zeichenkette `http`, nach keinem oder einem "s", gesucht werden soll.
-
-Das Fragezeichen hinter dem `.+?` zeigt an, dass der Abgleich im non-greedy-Modus und nicht „greedy“ durchgeführt werden soll. Bei einem non-greedy-Match wird versucht, die *kleinstmögliche* übereinstimmende Zeichenfolge zu finden, bei einem greedy-Match wird versucht, die *größtmögliche* übereinstimmende Zeichenfolge zu finden.
+Unser regulärer Ausdruck sucht nach Zeichenfolgen, die mit `href=\"http://` oder `href=\"https://` beginnen, gefolgt von einem oder mehreren Zeichen (`.+?`) und einem weiteren doppelten Anführungszeichen. Das Fragezeichen hinter dem `[s]` zeigt an, dass nach der Zeichenkette `http` nach keinem oder einem `s` gesucht werden soll. Das Fragezeichen hinter dem `.+` gibt an, dass der Abgleich im non-greedy-Modus (also nicht „greedy“) durchgeführt werden soll. Bei einem non-greedy-Match wird versucht, die *kleinstmögliche* übereinstimmende Zeichenfolge zu finden. Bei einem greedy-Match hingegen wird versucht, die *größtmögliche* übereinstimmende Zeichenfolge zu finden.
 
 \index{greedy}
 \index{non-greedy}
 
-Wir fügen unserem regulären Ausdruck Klammern hinzu, um anzugeben, welchen Teil der übereinstimmenden Zeichenfolge wir extrahieren möchten, und erzeugen das folgende Programm:
+Wir fügen unserem regulären Ausdruck Klammern hinzu, um anzugeben, welchen Teil der übereinstimmenden Zeichenfolge wir extrahieren möchten:
 
 \index{Regex!runde Klammern}
 \index{runde Klammern!regulärer Ausdruck}
@@ -268,7 +264,7 @@ Wir fügen unserem regulären Ausdruck Klammern hinzu, um anzugeben, welchen Tei
 
 Die `ssl`-Bibliothek ermöglicht diesem Programm den Zugriff auf Websites, die HTTPS strikt erzwingen. Die Methode `read` gibt den HTML-Quellcode als Byte-Objekt zurück, anstatt ein HTTP-Response-Objekt zu liefern. Die Methode `findall` für reguläre Ausdrücke liefert uns eine Liste aller Zeichenketten, die mit unserem regulären Ausdruck übereinstimmen, und gibt nur den Linktext zwischen den Anführungszeichen zurück.
 
-Wenn wir das Programm ausführen und eine URL eingeben, erhalten wir die folgende Ausgabe:
+Wenn wir das Programm ausführen und eine URL eingeben, erhalten wir diese Ausgabe:
 
 ~~~~
 Enter - https://docs.python.org
@@ -288,7 +284,7 @@ https://www.python.org/psf/donations/
 http://sphinx.pocoo.org/
 ~~~~
 
-Reguläre Ausdrücke funktionieren sehr gut, wenn das HTML gut formatiert und vorhersehbar ist. Da es aber eine Menge „defekter“ HTML-Seiten gibt, könnte eine Lösung, die nur reguläre Ausdrücke verwendet, entweder einige gültige Links übersehen oder mit unbrauchbaren Daten enden.
+Reguläre Ausdrücke funktionieren sehr gut, wenn das HTML gut formatiert und vorhersehbar ist. Da es aber eine ganze Menge „defekter“ HTML-Seiten gibt, könnte eine Lösung, die ausschließlich reguläre Ausdrücke verwendet, entweder einige gültige Links übersehen oder unbrauchbare Daten liefern.
 
 Dies kann durch die Verwendung einer robusten HTML-Parsing-Bibliothek gelöst werden.
 
@@ -297,9 +293,9 @@ Parsen von HTML mit BeautifulSoup
 
 \index{BeautifulSoup}
 
-Auch wenn HTML wie XML aussieht^[Das XML-Format wird im nächsten Kapitel beschrieben.] und einige Seiten sorgfältig so konstruiert sind, dass sie XML sind, ist das meiste HTML in der Regel so fehlerhaft, dass ein XML-Parser die gesamte HTML-Seite als nicht korrekt formatiert zurückweist.
+Auch wenn HTML wie XML aussieht^[Das XML-Format wird im nächsten Kapitel beschrieben.] und einige Seiten sorgfältig so konstruiert sind, dass sie XML-konform sind, ist das meiste HTML in der Regel so fehlerhaft, dass ein XML-Parser die gesamte HTML-Seite als nicht korrekt formatiert zurückweist.
 
-Es gibt eine Reihe von Python-Bibliotheken, die helfen können, HTML zu parsen und Daten aus den Seiten zu extrahieren. Jede der Bibliotheken hat ihre Stärken und Schwächen, und wir können eine nach unseren Bedürfnissen auswählen.
+Es gibt eine Reihe von Python-Bibliotheken, die helfen können, HTML zu parsen und Daten aus den Seiten zu extrahieren. Jede der Bibliotheken hat ihre Stärken und Schwächen und wir müssen eine entsprechend unseren Bedürfnissen auswählen.
 
 Als Beispiel werden wir einfach einige HTML-Eingaben parsen und Links mit Hilfe der *BeautifulSoup*-Bibliothek extrahieren. BeautifulSoup toleriert hochgradig fehlerhaftes HTML und lässt uns trotzdem einfach die benötigten Daten extrahieren. Auf der folgenden Seite können wir den BeautifulSoup-Code herunterladen und installieren:
 
@@ -368,7 +364,7 @@ bugs.html
 http://sphinx.pocoo.org/
 ~~~~
 
-Diese Liste ist viel länger, weil einige HTML-Anker-Tags relative Pfade (z. B. `tutorial/index.html`) oder seiteninterne Verweise (z. B. `#`) sind, die nicht `http://` oder `https://` enthalten, was eine Voraussetzung in unserem regulären Ausdruck war.
+Diese Liste ist viel länger, weil einige HTML-Anker-Tags relative Pfade (z. B. `tutorial/index.html`) oder seiteninterne Verweise (z. B. `#`) sind, die nicht `http://` oder `https://` enthalten, was in unserem regulären Ausdruck noch eine Voraussetzung war.
 
 Wir können auch BeautifulSoup verwenden, um verschiedene Teile der einzelnen Tags zu extrahieren:
 
@@ -401,7 +397,7 @@ Wenn wir einen Linux-, Unix- oder Macintosh-Computer haben, haben wir wahrschein
 $ curl -O http://www.py4e.com/cover.jpg
 ~~~~
 
-Der Befehl `curl` ist die Abkürzung für „copy URL“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) clevererweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt, für den Fall, dass der Leser dieses Vorgehen tatsächlich in einem Programm verwenden will.
+Der Befehl `curl` ist die Abkürzung für „Client for URLs“ und so heißen die beiden zuvor aufgeführten Beispiele zum Abrufen von Binärdateien mit `urllib` auf [www.py4e.com/code3](http://www.py4e.com/code3) schlauerweise `curl1.py` und `curl2.py`, da sie eine ähnliche Funktionalität wie der Befehl `curl` implementieren. Es gibt auch ein Beispielprogramm `curl3.py`, das diese Aufgabe etwas effektiver erledigt (für den Fall, dass jemand dies tatsächlich in einem Programm verwenden möchte).
 
 Ein zweiter Befehl, der sehr ähnlich funktioniert, ist `wget`:
 
@@ -411,22 +407,22 @@ Ein zweiter Befehl, der sehr ähnlich funktioniert, ist `wget`:
 $ wget http://www.py4e.com/cover.jpg
 ~~~~
 
-Diese beiden Befehle machen das Abrufen von Webseiten und entfernten Dateien zu einer einfachen Aufgabe.
+Diese beiden Befehle machen das Abrufen von Webseiten und Dateien zu einer einfachen Aufgabe.
 
 Glossar
 -------
 
 BeautifulSoup
-:   Eine Python-Bibliothek zum Parsen von HTML-Dokumenten und zum Extrahieren von Daten aus HTML-Dokumenten, die die meisten Unzulänglichkeiten im HTML kompensiert, die von Browsern im Allgemeinen ignoriert werden. Der BeautifulSoup-Code kann auf der folgenden Seite heruntergeladen werden: [www.crummy.com](http://www.crummy.com).
+:   Eine Python-Bibliothek zum Parsen von HTML-Dokumenten und zum Extrahieren von Daten aus HTML-Dokumenten, die die meisten erwartbaren Unzulänglichkeiten im HTML-Code kompensiert, die auch von Browsern im Allgemeinen ignoriert werden. Der BeautifulSoup-Code kann auf der folgenden Seite heruntergeladen werden: [www.crummy.com](http://www.crummy.com).
 \index{BeautifulSoup}
 
 Port
 :   Eine Nummer, die im Allgemeinen angibt, mit welcher Anwendung wir Kontakt aufnehmen, wenn wir eine Socket-Verbindung zu einem Server herstellen. Ein Beispiel: Der Webverkehr verwendet normalerweise Port 80, während der E-Mail-Verkehr Port 25 verwendet.
 \index{Port}
 
-Scraping
+Web-Scraping
 :   Wenn ein Programm vorgibt, ein Webbrowser zu sein, und eine Webseite abruft, dann schaut es sich den Inhalt der Webseite an. Oft folgen Programme den Links auf einer Seite, um die nächste Seite zu finden, sodass sie ein Netzwerk von Seiten oder ein soziales Netzwerk durchqueren können.
-\index{Socket}
+\index{Web-Scraping}
 
 Socket
 :   Eine Netzwerkverbindung zwischen zwei Anwendungen, bei der die Anwendungen Daten in beide Richtungen senden und empfangen können.
@@ -439,13 +435,13 @@ Spider
 Übungen
 -------
 
-**Übung 1:** Das Socket-Programm `socket1.py` soll so geändert werden, dass es den Benutzer nach der URL fragt und jede Webseite lesen kann. Hierbei kann `split('/')` verwendet werden, um die URL in ihre Bestandteile zu zerlegen, damit wir den Hostnamen für den Socket-Aufruf `connect` extrahieren können. Dabei soll eine Fehlerprüfung mit `try` und `except` hinzugefügt werden, um den Fall zu behandeln, dass der Benutzer eine falsch formatierte oder nicht existierende URL eingibt.
+**Übung 1:** Das Socket-Programm `socket1.py` soll so geändert werden, dass es den Benutzer nach der URL fragt und jede Webseite lesen kann. Hierbei kann `split('/')` verwendet werden, um die URL in ihre Bestandteile zu zerlegen, damit wir den Hostnamen für den Socket-Aufruf `connect` extrahieren können. Dabei soll eine Fehlerprüfung mit `try` und `except` hinzugefügt werden für den Fall, dass der Benutzer eine falsch formatierte oder nicht existierende URL eingibt.
 
-**Übung 2:** Das Socket-Programm soll so geändert werden, dass es die Anzahl der empfangenen Zeichen zählt und keinen Text mehr anzeigt, wenn es 3000 Zeichen angezeigt hat. Das Programm sollte das gesamte Dokument abrufen und die Gesamtzahl der Zeichen zählen und die Zählung der Anzahl der Zeichen am Ende des Dokuments anzeigen.
+**Übung 2:** Das Socket-Programm soll so geändert werden, dass es die Anzahl der empfangenen Zeichen zählt und keinen Text mehr anzeigt, nachdem es 3000 Zeichen ausgegeben hat. Das Programm soll das gesamte Dokument abrufen und die Gesamtzahl der Zeichen zählen und diese am Ende des Dokuments anzeigen.
 
-**Übung 3:** Es soll `urllib` verwendet werden, um die vorherige Übung zu wiederholen: (1) Abrufen des Dokuments von einer URL, (2) Anzeigen von bis zu 3000 Zeichen und (3) Zählen der Gesamtanzahl der Zeichen im Dokument. Dabei soll sich bei dieser Übung nicht um die Überschriften gekümmert werden, sondern lediglich die ersten 3000 Zeichen des Dokumentinhalts angezeigt werden.
+**Übung 3:** Es soll `urllib` verwendet werden, um die vorherige Übung zu wiederholen: (1) Abrufen des Dokuments von einer URL, (2) Anzeigen von bis zu 3000 Zeichen und (3) Zählen der Gesamtanzahl der Zeichen im Dokument. Dabei sollen diesmal die Header ignoriert und lediglich die ersten 3000 Zeichen des Dokumentinhalts angezeigt werden.
 
-**Übung 4:** Das Programm `urllinks.py` soll so geändert werden, dass es Paragraph-Tags (p) aus dem abgerufenen HTML-Dokument extrahiert und zählt sowie die Anzahl der Absätze als Ausgabe des Programms anzeigt. Dabei soll der Text dieser nicht angezeigt, sondern lediglich die Absätze gezählt werden. Das Programm soll auf mehreren kleinen sowie einigen größeren Webseiten getestet werden.
+**Übung 4:** Das Programm `urllinks.py` soll so geändert werden, dass es Paragraph-Tags (`p`) aus dem abgerufenen HTML-Dokument extrahiert und zählt sowie die Anzahl der Absätze als Ausgabe des Programms anzeigt. Der Text soll nicht angezeigt werden. Das Programm sollte auf mehreren kleinen sowie einigen größeren Webseiten getestet werden.
 
-**Übung 5:** (Erweiterung) Das Socket-Programm soll so geändert werden, dass es nur Daten anzeigt, nachdem die Kopfzeilen und eine Leerzeile empfangen wurden. Es sollte bedacht werden, dass `recv` Zeichen (Zeilenumbrüche usw.) empfängt, nicht Zeilen.
+**Übung 5:** (Erweiterung) Das Socket-Programm soll so geändert werden, dass es erst Daten anzeigt, nachdem die Header und eine Leerzeile empfangen wurden. Dabei muss bedacht werden, dass `recv` Zeichen empfängt, nicht aber ganze Zeilen.
 
