@@ -606,6 +606,7 @@ lookup : Lookup
 \index{API!key} : \index{API!Schlüssel}
 \index{web service} : \index{Webservice}
 \index{rate limiting} : WEG
+\index{geocoding} : \index{Geocoding}
 ```
 
 ### Kapitel 14
