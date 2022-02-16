@@ -9,36 +9,36 @@ Verwaltung größerer Programme
 
 Zu Beginn dieses Buches haben wir vier grundlegende Programmiermuster betrachtet, die wir zur Konstruktion von Programmen verwenden:
 
-* Sequentieller Code
+* Sequentieller Code (Folge von Anweisungen)
 * Bedingter Code (if-Anweisungen)
 * Wiederholter Code (Schleifen)
-* Wiederverwenden von Code (Funktionen)
+* Wiederverwendung von Code (Funktionen)
 
 In den ersten Kapiteln haben wir vorwiegend *elementare Datentypen* wie ganze Zahlen oder Fließkommazahlen verwendet und in den späteren Kapiteln dann *zusammengesetzte Datentypen* wie Listen, Tupeln und Dictionaries eingeführt.
 
-Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, und andere, die „eleganter“ sind. Auch wenn unsere bisherigen Programme vielleicht klein sind, fängt man an zu erkennen, dass ein gewisses Gespür für Kunst und Ästhetik beim Schreiben von Code hilfreich ist.
+Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, wie sie sein könnten, und andere, die uns vielleicht etwas geraten „eleganter“ sind. Auch wenn unsere bisherigen Programme eher überschaubar sind, fängt man an zu erkennen, dass ein gewisses Gespür für das Schreiben von gut lesbarem und übersichtlichem Code hilfreich ist.
 
-Wenn Programme Millionen von Zeilen lang werden, wird es immer wichtiger, Code zu schreiben, der leicht zu verstehen ist. Wenn wir an einem millionenzeiligen Programm arbeiten, können wir nie das gesamte Programm gleichzeitig im Kopf behalten. Wir brauchen Möglichkeiten, große Programme in mehrere kleinere Teile zu zerlegen, damit wir weniger zu beachten haben, wenn wir ein Problem lösen, einen Fehler beheben oder eine neue Funktion hinzufügen.
+Wenn Programme Millionen von Zeilen lang werden, wird es immer wichtiger, Code zu schreiben, der leicht zu verstehen ist. Wenn wir an einem millionen Zeilen langen Programm arbeiten, können wir nie einen Überblick über das gesamte Programm gleichzeitig im Kopf behalten. Wir brauchen also Möglichkeiten, große Programme in mehrere kleinere Teile zu zerlegen, damit wir weniger zu beachten haben, wenn wir ein Problem lösen, einen Fehler beheben oder eine neue Funktionalität hinzufügen.
 
 In gewisser Weise ist die objektorientierte Programmierung eine Möglichkeit, Code so anzuordnen, dass wir in 50 Zeilen des Codes hineinzoomen und ihn verstehen können, während wir die anderen 999.950 Zeilen des Codes für den Moment ignorieren können.
 
-Schon geht's los
-----------------
+Schon gehts los
+---------------
 
-Wie bei vielen Aspekten der Programmierung ist es notwendig, die Konzepte der objektorientierten Programmierung zu erlernen, bevor wir sie effektiv einsetzen können. Dieses Kapitel sollte so angegangen werden, einige Begriffe und Konzepte zu lernen und ein paar einfache Beispiele durcharbeiten, um eine Grundlage für das weitere Lernen zu schaffen.
+Wie bei vielen Aspekten der Programmierung ist es notwendig, die Konzepte der objektorientierten Programmierung zu erlernen, bevor wir sie effektiv einsetzen können. Dieses Kapitel gehen wir so an, dass wir zunächst einige Begriffe und Konzepte kennenlernen und dann ein paar einfache Beispiele durcharbeiten, um eine Grundlage für das weitere Lernen zu schaffen.
 
-Das wichtigste Ergebnis dieses Kapitels ist, ein grundlegendes Verständnis dafür zu haben, wie Objekte aufgebaut sind und wie sie funktionieren und vor allem, wie wir die Funktionen von Objekten nutzen, die uns von Python und den Python-Bibliotheken zur Verfügung gestellt werden.
+Das wichtigste Ergebnis dieses Kapitels ist, ein grundlegendes Verständnis dafür zu erlangen, wie Objekte aufgebaut sind und wie sie funktionieren und vor allem, wie wir die Funktionen von Objekten nutzen, die uns von Python und den Python-Bibliotheken zur Verfügung gestellt werden.
 
 Handhabung von Objekten
 -----------------------
 
-Wie sich herausstellt, haben wir in diesem Buch die ganze Zeit über Objekte verwendet. Python stellt uns viele eingebaute Objekte zur Verfügung. Hier ist ein einfache Beispiel, bei dem sich die ersten Zeilen sehr einfach und natürlich anfühlen sollten.
+Wie sich herausstellt, haben wir in diesem Buch die ganze Zeit über Objekte verwendet. Python stellt uns viele eingebaute Objekte zur Verfügung. Hier ist ein einfaches Beispiel, bei dem man die ersten paar Zeilen recht intuitiv nachvollziehen kann.
 
 \index{list (Objekt)}
 
 \VerbatimInput{../code3/party1.py}
 
-Anstatt sich darauf zu konzentrieren, was diese Zeilen bewirken, sollten wir uns ansehen, was aus der Sicht der objektorientierten Programmierung wirklich passiert. Es sollte uns keine Sorgen bereiten, wenn die folgenden Absätze beim ersten Lesen keinen Sinn ergeben, weil wir noch nicht alle diese Begriffe definiert haben.
+Wir wollen uns in den nächsten Abschnitten ansehen, was hier aus der Sicht der objektorientierten Programmierung tatsächlich passiert. Dabei ist es nicht schlimm, wenn wir nicht alle Details sofort verstehen. Am Ende des Kapitels oder spätestens nach einem zweiten Lesedurchgang werden wir über ein gutes Verständnis der Objektorientierung verfügen.
 
 Die erste Zeile *konstruiert* ein Objekt vom Typ `list`, die zweite und dritte Zeile *ruft* die `append()`-Methode auf, die vierte Zeile ruft die `sort()`-Methode auf, und die fünfte Zeile *liefert* das Element an Position 0.
 
@@ -74,7 +74,7 @@ Wir können einen Blick auf die Fähigkeiten eines Objekts werfen, indem wir uns
     'insert', 'pop', 'remove', 'reverse', 'sort']
     >>>
 
-Im weiteren Verlauf dieses Kapitels werden alle oben genannten Begriffe definiert. Nach Beendigung sollten die obigen Abschnitte erneut gelesen werden, um das Verständnis zu überprüfen.
+Im weiteren Verlauf dieses Kapitels werden alle oben genannten Begriffe definiert. Nach dem Durcharbeiten dieses Kapitels sollten wir die obigen Abschnitte erneut lesen, um unser Verständnis zu überprüfen.
 
 Betrachtung von außen
 ---------------------
@@ -97,20 +97,20 @@ Wenn wir auf das Programm zur Link-Extraktion zurückblicken, bei der wir die Be
 
 \VerbatimInput{../code3/urllinks.py}
 
-Wir lesen die URL in einen String und übergeben diesen dann an `urllib`, um die Daten aus dem Web abzurufen.  Die `urllib`-Bibliothek verwendet die `socket`-Bibliothek, um die eigentliche Netzwerkverbindung zum Abrufen der Daten herzustellen. Wir nehmen die Zeichenkette, die `urllib` zurückgibt und übergeben sie an BeautifulSoup zum Parsen. BeautifulSoup verwendet das Objekt `html.parser`^[https://docs.python.org/3/library/html.parser.html] und gibt ein Objekt zurück. Wir rufen die Methode `tags()` für das zurückgegebene Objekt auf, die ein Dictionary mit Tag-Objekten zurückgibt. Wir laufen in einer Schleife durch die Tags und rufen die Methode `get()` für jedes Tag auf, um das Attribut `href` auszugeben.
+Wir lesen die URL in einen String und übergeben diesen dann an `urllib`, um die Daten aus dem Web abzurufen.  Die `urllib`-Bibliothek verwendet die `socket`-Bibliothek, um die eigentliche Netzwerkverbindung zum Abrufen der Daten herzustellen. Wir nehmen die Zeichenkette, die `urllib` zurückgibt und übergeben sie an BeautifulSoup zum Parsen. BeautifulSoup verwendet das Objekt `html.parser`^[https://docs.python.org/3/library/html.parser.html] und gibt wiederum ein Objekt zurück. Wir rufen die Funktion `tags()` für das zurückgegebene Objekt auf, die ein Dictionary mit Tag-Objekten zurückgibt. Wir laufen in einer Schleife durch die Tags und rufen die Funktion `get()` für jedes Tag auf, um das Attribut `href` auszugeben.
 
 Wir können uns so ein Bild von diesem Programm machen und davon, wie die Objekte zusammenarbeiten.
 
 ![Ein Programm als Netzwerk von Objekten](height=1.50in@../images/program-oo)
 
-Das Ziel hier ist es nicht, perfekt zu verstehen, wie dieses Programm funktioniert, sondern zu sehen, wie wir ein Netzwerk aus interagierenden Objekten aufbauen und die Bewegung von Informationen zwischen den Objekten steuern, um ein Programm zu erstellen. Es ist auch wichtig zu bemerken, dass das Programm in den vorherigen Kapiteln, vollständig verstanden werden konnte, ohne überhaupt zu erkennen, dass das Programm die Bewegung von Informationen zwischen den Objekten steuert. Es waren einfach nur Codezeilen, die die Aufgabe erledigten.
+Das Ziel ist hier nicht, perfekt zu verstehen, wie dieses Programm funktioniert, sondern zu sehen, wie wir ein Netzwerk aus interagierenden Objekten aufbauen und die Bewegung von Informationen zwischen den Objekten steuern, um ein Programm zu erstellen. Es ist auch wichtig zu bemerken, dass das Programm in den vorherigen Kapiteln vollständig verstanden werden konnte, ohne überhaupt zu erkennen, dass das Programm die Bewegung von Informationen zwischen den Objekten steuert. Es waren einfach nur Codezeilen, die die Aufgabe erledigt haben.
 
 Unterteilen eines Problems
 --------------------------
 
-Einer der Vorteile des objektorientierten Ansatzes ist, dass er die Komplexität verbergen kann. Zum Beispiel müssen wir zwar wissen, wie man den `urllib`- und BeautifulSoup-Code verwendet, aber wir müssen nicht wissen, wie diese Bibliotheken intern funktionieren. Das erlaubt es uns, uns auf den Teil des Problems zu konzentrieren, den wir lösen müssen, und die anderen Teile des Programms zu ignorieren.
+Einer der Vorteile des objektorientierten Ansatzes ist, dass er Komplexität verbergen kann. Zum Beispiel müssen wir zwar wissen, wie man den `urllib`- und BeautifulSoup-Code verwendet, aber wir müssen nicht wissen, wie diese Bibliotheken intern funktionieren. Das erlaubt es uns, uns auf den Teil des Problems zu konzentrieren, den wir lösen müssen, und die anderen Teile des Programms zu ignorieren.
 
-![Ignorieren von Details bei Verwendung eines Objekts](height=1.50in@../images/program-oo-code)
+![Ignorieren von Details bei der Verwendung eines Objekts](height=1.50in@../images/program-oo-code)
 
 Diese Fähigkeit, sich ausschließlich auf den Teil eines Programms zu fokussieren, der uns interessiert, und den Rest zu ignorieren, ist auch für die Programmierer der Objekte hilfreich. Zum Beispiel müssen die Programmierer, die BeautifulSoup entwickeln, nicht wissen oder sich darum kümmern, wie wir unsere HTML-Seite abrufen, welche Teile wir lesen wollen oder was wir mit den Daten vorhaben, die wir aus der Webseite extrahieren.
 
@@ -121,17 +121,17 @@ Unser erstes Python-Objekt
 
 Auf einer grundlegenden Ebene ist ein Objekt einfach etwas Code plus Datenstrukturen, die kleiner sind als ein ganzes Programm. Das Definieren einer Funktion ermöglicht es uns, ein Stück Code zu speichern und ihm einen Namen zu geben und diesen Code dann später mit dem Namen der Funktion aufzurufen.
 
-Ein Objekt kann eine Reihe von Funktionen (die wir *Methoden* nennen) sowie Daten enthalten, die von diesen Funktionen verwendet werden. Wir nennen Datenelemente, die Teil des Objekts sind, *Attribute*.
+Ein Objekt kann eine Reihe von Funktionen (die wir *Methoden* nennen) sowie Daten enthalten, die von diesen Methoden verwendet werden. Wir nennen Datenelemente, die Teil des Objekts sind, *Attribute*.
 
 \index{class (Schlüsselwort)}\index{Schlüsselwort!class}
 
-Wir verwenden das Schlüsselwort `class`, um die Daten und den Code zu definieren, aus denen jedes der Objekte bestehen wird. Das Schlüsselwort `class` enthält den Namen der Klasse und beginnt einen eingerückten Codeblock, in den die Attribute (Daten) und Methoden (Code) aufgenommen werden.
+Wir verwenden das Schlüsselwort `class`, um die Daten und den Code zu definieren, aus denen jedes der Objekte bestehen wird. Das Schlüsselwort `class` wird gefolgt vom Namen der Klasse und beginnt einen eingerückten Codeblock, in den die Attribute (Daten) und Methoden (Code) aufgenommen werden.
 
 \VerbatimInput{../code3/party2.py}
 
-Jede Methode sieht aus wie eine Funktion, die mit dem Schlüsselwort `def` beginnt und aus einem eingerückten Codeblock besteht.  Dieses Objekt hat nur eine Methode (`party`).  Die Methoden haben einen speziellen ersten Parameter, den wir per Konvention `self` nennen.
+Jede Methode sieht aus wie eine Funktion, die mit dem Schlüsselwort `def` beginnt und aus einem eingerückten Codeblock besteht.  Dieses Objekt hat nur eine Methode (`party`). Die Methoden haben einen speziellen ersten Parameter, den wir per Konvention `self` nennen.
 
-Genauso wie das Schlüsselwort `def` nicht die Ausführung von Funktionscode bewirkt, wird mit dem Schlüsselwort `class` kein Objekt erzeugt.  Stattdessen definiert das Schlüsselwort `class` eine Art Vorlage, die angibt, welche Daten und welcher Code in jedem Objekt des Typs `PartyAnimal` enthalten sein werden.  Die Klasse ist wie eine Ausstechform und die mit der Klasse erzeugten Objekte sind die Kekse^[Cookie image copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099]. Sie kleben keinen Zuckerguss auf die Ausstechform, Sie kleben Zuckerguss auf die Kekse, und Sie können auf jeden Keks einen anderen Zuckerguss kleben.
+Genauso wie das Schlüsselwort `def` nicht die Ausführung von Funktionscode bewirkt, wird mit dem Schlüsselwort `class` kein Objekt erzeugt. Stattdessen definiert das Schlüsselwort `class` eine Art Vorlage, die angibt, welche Daten und welcher Code in jedem Objekt des Typs `PartyAnimal` enthalten sein werden.  Die Klasse ist wie eine Ausstechform und die mit der Klasse erzeugten Objekte sind die Kekse^[Cookie image copyright CC-BY https://www.flickr.com/photos/dinnerseries/23570475099]. Wir kleben keinen Zuckerguss auf die Ausstechform, wir kleben Zuckerguss stattdessen auf die Kekse, und wir können auf jeden Keks einen anderen Zuckerguss kleben.
 
 ![Eine Klasse und zwei Objekte](height=2.0in@../photos/cookie_cutter_flickr_Didriks)
 
@@ -156,28 +156,23 @@ Hier weisen wir Python an, ein Objekt unter Verwendung der Vorlage `dict` (in Py
 
 Wenn die Klasse `PartyAnimal` verwendet wird, um ein Objekt zu erstellen, wird die Variable `an` verwendet, um auf dieses Objekt zu zeigen. Wir verwenden `an`, um auf den Code und die Daten für diese bestimmte Instanz der Klasse `PartyAnimal` zuzugreifen.
 
-Jedes Partyanimal-Objekt/jede Partyanimal-Instanz enthält in sich eine Methode namens `party`. Wir rufen die Methode `party` in dieser Zeile auf:
+Jedes `Partyanimal`-Objekt/jede Partyanimal-Instanz enthält in sich eine Methode namens `party`. Wir rufen die Methode `party` in dieser Zeile auf:
 
 ~~~~ {.python}
 an.party()
 ~~~~
 
-Möglicherweise erscheint Ihnen der Aufruf von `party()` nicht ganz vollständig.
-In der Implementierung haben wir ja gesagt, dass die Methode einen Parameter namens `self` besitzt, dieser Parameter wird anscheinend beim obigen Aufruf nicht angegeben.
+Möglicherweise erscheint uns der Aufruf von `party()` nicht ganz vollständig.
+In der Implementierung haben wir ja gesagt, dass die Methode einen Parameter namens `self` besitzt, dieser Parameter wird anscheinend beim obigen Aufruf nicht angegeben. Dieser Anschein trügt allerdings, denn wir rufen die Methode schließlich *auf* einem `PartyAnimal`-Objekt, nämlich dem Objekt `an` auf.
+Dieses Objekt wird an den ersten Parameter einer Methode (den wir per Konvention `self` nennen) übergeben. Natürlich kann eine Methode neben der Selbstreferenz weitere Parameter besitzen, die bei einem Aufruf dann innerhalb der Klammern angegeben werden.
 
-Dieser Anschein trügt allerdings, denn wir rufen die Methode schließlich *auf* einem `PartyAnimal`-Objekt, nämlich dem Objekt `an` auf.
-Dieses Objekt wird an den ersten Parameter einer Methode (den wir per Konvention `self` nennen) übergeben.
-Natürlich kann eine Methode neben der Selbstreferenz weitere Parameter besitzen, die bei einem Aufruf dann innerhalb der Klammern angegeben werden.
-
-Eine Methode kann nicht nur über ein Objekt aufgerufen werden, sondern auch über seine Klasse.
-Statt `an.party()` könnte man also auch folgenden, gleichbedeutenden Aufruf verwenden:
+Eine Methode kann nicht nur über ein Objekt aufgerufen werden, sondern auch über seine Klasse. Statt `an.party()` könnte man also auch folgenden gleichbedeutenden Aufruf verwenden:
 
 ~~~~ {.python}
 PartyAnimal.party(an)
 ~~~~
 
-Hier sagen wir, welche `party()` Methode wir meinen (die aus der Klasse `PartyAnimal`) und welches Objekt wir der Methode übergeben wollen (nämlich das Objekt `an`).
-Dies ist quasi die Langform eines Methodenaufrufs, die in der Praxis eher seltener verwendet wird.
+Hier sagen wir, welche `party()` Methode wir meinen (die aus der Klasse `PartyAnimal`) und welches Objekt wir der Methode übergeben wollen (nämlich das Objekt `an`). Dies ist quasi die Langform eines Methodenaufrufs, die in der Praxis eher seltener verwendet wird.
 
 Wenn wir nun in die Implementierung der Methode `party` gehen, sehen wir die folgenden Zeilen:
 
@@ -188,9 +183,7 @@ except AttributeError:
     self.x = 1
 ~~~~
 
-Wir versuchen hier, ein Datenattribut `x`, das zu unserem `PartyAnimal`-Objekt gehört, um den Wert `1` zu erhöhen.
-Beim ersten Aufruf der Methode hat unser Objekt noch kein solches Attribut.
-Daher wird der Ausdruck `self.x + 1` einen `AttributeError` erzeugen, den wir behandeln, indem wir ein solches Attribut mit `self.x = 1` erzeugen und ihm den Wert `1` zuordnen.
+Wir versuchen hier, ein Datenattribut `x`, das zu unserem `PartyAnimal`-Objekt gehört, um den Wert `1` zu erhöhen. Beim ersten Aufruf der Methode hat unser Objekt noch kein solches Attribut. Daher wird der Ausdruck `self.x + 1` einen `AttributeError` erzeugen, den wir behandeln, indem wir ein solches Attribut mit `self.x = 1` erzeugen und ihm den Wert `1` zuweisen.
 
 Wenn das Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
 
@@ -201,7 +194,7 @@ Partys bisher: 3
 Partys bisher: 4
 ~~~~
 
-Das Objekt wird konstruiert, und die Methode `party` wird viermal aufgerufen, wobei der Wert für `x` innerhalb des Objekts `an` sowohl inkrementiert als auch ausgegeben wird.
+Das Objekt wird konstruiert und die Methode `party` wird viermal aufgerufen, wobei der Wert für `x` innerhalb des Objekts `an` sowohl inkrementiert als auch ausgegeben wird.
 
 Klassen als Datentypen
 ----------------------
@@ -209,11 +202,11 @@ Klassen als Datentypen
 \index{dir (Funktion)}
 \index{Datentyp}
 
-Wie wir gesehen haben, haben in Python alle Variablen einen Typ.  Wir können die eingebaute Funktion `dir` verwenden, um die Fähigkeiten einer Variablen zu untersuchen.  Wir können `type` und `dir` auch mit Klassen verwenden, die wir erstellen.
+Wie wir gesehen haben, haben in Python alle Variablen einen Typ.  Wir können die eingebaute Funktion `dir` verwenden, um die Fähigkeiten einer Variablen zu untersuchen. Wir können `type` und `dir` auch mit Klassen verwenden, die wir erstellen.
 
 \VerbatimInput{../code3/party3.py}
 
-Wenn dieses Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
+Bei der Ausführung erzeugt das Programm folgende Ausgabe:
 
 ~~~~
 Type <class '__main__.PartyAnimal'>
@@ -233,21 +226,15 @@ Lebenszyklus von Objekten
 \index{Destruktor}
 \index{Lebenszyklus von Objekten}\index{Objekt-Lebenszyklus}
 
-In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen, und verwenden dann die Instanz.
-Wenn das Programm beendet ist, werden alle Variablen verworfen.
-Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Objekten nach.
-Dies wird allerdings von Bedeutung, wenn wir eigene Klassen definieren.
-Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
+In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen, und verwenden dann diese Instanz. Wenn das Programm beendet ist, werden alle Variablen verworfen. Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Objekten nach. Dies wird allerdings von Bedeutung, wenn wir eigene Klassen definieren. Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
 
-Selbst bei unserem einfachen `PartyAnimal` Beispiel sollten wir etwas tun, wenn wir ein neues Objekt erzeugen.
-Statt bei einem ersten Aufruf von `party()` das Attribut `x` zu erzeugen, sollten wir es beim Erstellen des Objekts anlegen.
-Gleichermaßen können wir auch „Aufräumarbeiten“ leisten, die immer dann ausgeführt werden, wenn ein Objekt verworfen wird.
+Selbst bei unserem einfachen `PartyAnimal`-Beispiel sollten wir etwas tun, wenn wir ein neues Objekt erzeugen. Statt bei einem ersten Aufruf von `party()` das Attribut `x` zu erzeugen, sollten wir es beim Erstellen des Objekts anlegen. Gleichermaßen können wir auch „Aufräumarbeiten“ leisten, die immer dann ausgeführt werden, wenn ein Objekt verworfen wird.
 
-Um bestimmte aktionen beim Erstellen oder Löschen eines Objekts durchzuführen, fügen wir zu unser Klasse speziell benannte Methoden hinzu:
+Um bestimmte Aktionen beim Erstellen oder Löschen eines Objekts durchzuführen, fügen wir zu unser Klasse speziell benannte Methoden hinzu:
 
 \VerbatimInput{../code3/party4.py}
 
-Wenn dieses Programm ausgeführt wird, erzeugt es die folgende Ausgabe:
+Das Programm erzeugt nachfolgende Ausgabe:
 
 ~~~~
 PartyAnimal wird erstellt
@@ -257,20 +244,20 @@ Zerstört nach 2 Partys
 an speichert nun 42
 ~~~~
 
-Während Python unser Objekt konstruiert, ruft es unsere Methode `__init__` auf, um uns die Möglichkeit zu geben, einige Standard- oder Anfangswerte für das Objekt einzurichten. Wenn Python auf diese Zeile stößt:
+Während Python unser Objekt konstruiert, ruft es unsere Methode `__init__` auf, um uns die Möglichkeit zu geben, einige Standard- oder Anfangswerte für das Objekt einzurichten. Wenn Python auf die Zeile stößt
 
 ~~~~
 an = 42
 ~~~~
 
-dann wird unser Objekt tatsächlich „zerstört“, damit es die Variable `an` wiederverwenden kann, um den Wert `42` zu speichern.  Genau in dem Moment, in dem unser `an`-Objekt zerstört wird, wird unser Destruktor-Code (`__del__`) aufgerufen. Wir können nicht verhindern, dass unsere Variable zerstört wird, aber wir können alle notwendigen Aufräumarbeiten durchführen, kurz bevor unser Objekt nicht mehr existiert.
+wird unser Objekt tatsächlich „zerstört“, damit es die Variable `an` wiederverwenden kann, um den Wert `42` zu speichern.  Genau in dem Moment, in dem unser `an`-Objekt zerstört wird, wird unser Destruktor-Code (`__del__`) aufgerufen. Wir können nicht verhindern, dass unsere Variable zerstört wird, aber wir können alle notwendigen Aufräumarbeiten durchführen, kurz bevor unser Objekt nicht mehr existiert.
 
 Bei der Entwicklung von Objekten ist es üblich, einen Konstruktor zu einer Klasse anzugeben, um Anfangswerte für Objekte einzurichten. Es ist hingegen relativ selten, dass man einen Destruktor für ein Objekt benötigt.
 
 Mehrere Instanzen
 -----------------
 
-Bisher haben wir eine Klasse definiert, ein einzelnes Objekt konstruiert, dieses Objekt verwendet und dann das Objekt verworfen. Der eigentliche Vorteil in der objektorientierten Programmierung liegt jedoch darin, mehrere Instanzen unserer Klasse konstruieren zu können.
+Bisher haben wir eine Klasse definiert, daraus ein einzelnes Objekt konstruiert, dieses Objekt verwendet und dann das Objekt verworfen. Der eigentliche Vorteil in der objektorientierten Programmierung liegt jedoch darin, mehrere Instanzen unserer Klasse konstruieren zu können.
 
 Wenn wir mehrere Objekte aus unserer Klasse konstruieren, möchten wir vielleicht unterschiedliche Anfangswerte für jedes der Objekte einrichten. Wir können Daten an die Konstruktoren übergeben, um jedem Objekt einen anderen Anfangswert zu geben:
 
@@ -282,7 +269,7 @@ Der Konstruktor hat sowohl einen `self`-Parameter, der auf die Objektinstanz zei
 s = PartyAnimal('Sally')
 ~~~~
 
-Innerhalb des Konstruktors kopiert die zweite Zeile den Parameter (`nam`), der in das Attribut `name` innerhalb der Objektinstanz übergeben wird.
+Innerhalb des Konstruktors weist die zweite Anweisung den Parameter `nam` dem Attribut `name` innerhalb der Objektinstanz zu.
 
 ~~~~
 self.name = nam
@@ -311,11 +298,9 @@ Für dieses Beispiel verschieben wir unsere Klasse `PartyAnimal` in eine eigene 
 
 \VerbatimInput{../code3/party6.py}
 
-Wenn wir die Klasse `CricketFan` definieren, geben wir an, dass wir die Klasse `PartyAnimal` erweitern.  Das bedeutet, dass alle Variablen (`x`) und Methoden (`party`) der Klasse `PartyAnimal` von der Klasse `CricketFan` *geerbt* werden. Zum Beispiel rufen wir innerhalb der Methode `six` in der Klasse `CricketFan` die Methode `party` aus der Klasse `PartyAnimal` auf.
+Wenn wir die Klasse `CricketFan` definieren, geben wir an, dass wir die Klasse `PartyAnimal` erweitern. Das bedeutet, dass alle Variablen (`x`) und Methoden (`party`) der Klasse `PartyAnimal` von der Klasse `CricketFan` *geerbt* werden. Zum Beispiel rufen wir innerhalb der Methode `six` in der Klasse `CricketFan` die Methode `party` aus der Basisklasse `PartyAnimal` auf.
 
-In unserem Konstruktor `__init__` rufen wir den Konstruktor der *Basisklasse* über die Funktion `super()` auf.
-Damit tun wir für unser `CricketFan`-Objekt alles, was wir auch beim Erzeugen eines `PartyAnimal`-Objektes tun würden.
-Zusätzlich fügen wir dem Objekt noch ein Attribut `points` hinzu.
+In unserem Konstruktor `__init__` rufen wir den Konstruktor der *Basisklasse* über die Funktion `super()` auf. Damit tun wir für unser `CricketFan`-Objekt alles, was wir auch beim Erzeugen eines `PartyAnimal`-Objektes tun würden. Zusätzlich fügen wir dem Objekt noch ein Attribut `points` hinzu.
 
 Während das Programm ausgeführt wird, erzeugen wir `s` und `j` als unabhängige Instanzen von `PartyAnimal` und `CricketFan`. Das `j`-Objekt hat zusätzliche Fähigkeiten, welche über die des `s`-Objektes hinausgehen.
 
@@ -332,54 +317,54 @@ Jim hat 6 Punkte
 Zusammenfassung
 ---------------
 
-Dies war eine sehr schnelle Einführung in die objektorientierte Programmierung, die sich hauptsächlich auf die Terminologie und die Syntax der Definition und Verwendung von Objekten konzentriert. Der Code am Anfang dieses Kapitels sollte nun jedoch besser verständlich sein.
+Dies war eine sehr schnelle Einführung in die objektorientierte Programmierung, die sich hauptsächlich auf die Terminologie und die Syntax der Definition und Verwendung von Objekten konzentriert. Der Code am Anfang dieses Kapitels sollte nun jedoch besser verständlich sein:
 
 \VerbatimInput{../code3/party1.py}
 
-Die erste Zeile konstruiert ein `list`-Objekt.  Wenn Python das Objekt `list` erzeugt, ruft es den Konstruktor (namens `__init__`) auf, um die internen Datenattribute zu initialisieren, die zum Speichern der Listendaten verwendet werden. Wir haben keine Parameter an den Konstruktor übergeben. Wenn der Konstruktor seine Arbeit beendet, verwenden wir die Variable `stuff`, um auf die zurückgegebene Instanz der Klasse `list` zu zeigen.
+Die erste Zeile konstruiert ein `list`-Objekt. Wenn Python das Objekt `list` erzeugt, ruft es den Konstruktor (namens `__init__`) auf, um die internen Datenattribute zu initialisieren, die zum Speichern der Listendaten verwendet werden. Wir haben keine Parameter an den Konstruktor übergeben. Wenn der Konstruktor seine Arbeit beendet, verwenden wir die Variable `stuff`, um auf die zurückgegebene Instanz der Klasse `list` zu zeigen.
 
 Die zweite und dritte Zeile rufen die Methode `append` mit einem Parameter auf, um ein neues Element am Ende der Liste hinzuzufügen, indem die Attribute innerhalb von `stuff` aktualisiert werden. Dann, in der vierten Zeile, rufen wir die Methode `sort` ohne Parameter auf, um die Daten innerhalb des `stuff`-Objekts zu sortieren.
 
-Wir geben dann den ersten Eintrag in der Liste aus, indem wir die eckigen Klammern verwenden, die eine Abkürzung für den Aufruf der Methode `__getitem__` innerhalb von `stuff` sind.  Dies ist äquivalent zum Aufruf der Methode `__getitem__` in der Klasse `list` und der Übergabe des Objekts `stuff` als ersten Parameter und der gesuchten Position als zweiten Parameter.
+Wir geben dann den ersten Eintrag in der Liste aus, indem wir die eckigen Klammern verwenden, die eine Abkürzung für den Aufruf der Methode `__getitem__` innerhalb von `stuff` sind. Dies ist äquivalent zum Aufruf der Methode `__getitem__` in der Klasse `list` und der Übergabe des Objekts `stuff` als ersten Parameter und der gesuchten Position als zweiten Parameter.
 
-Am Ende des Programms wird das `stuff`-Objekt verworfen, aber nicht bevor der Destruktor (namens `__del__`) aufgerufen wurde, damit das Objekt bei Bedarf Aufräumarbeiten durchführen kann.
+Am Ende des Programms wird das `stuff`-Objekt verworfen, aber nicht bevor der Destruktor (namens `__del__`) automatisch aufgerufen wurde, damit das Objekt bei Bedarf Aufräumarbeiten durchführen kann.
 
-Das sind die Grundlagen der objektorientierten Programmierung. Es gibt viele zusätzliche Details, wie man objektorientierte Ansätze bei der Entwicklung großer Anwendungen und Bibliotheken am besten einsetzt, die den Rahmen dieses Kapitels sprengen würden.^[Wenn Sie neugierig sind, wo die Klasse `list` definiert ist, werfen Sie einen Blick auf (die URL wird sich hoffentlich nicht ändern) https://github.com/python/cpython/blob/master/Objects/listobject.c - die Klasse list ist in einer Sprache namens „C“ geschrieben.]
+Das sind die Grundlagen der objektorientierten Programmierung. Es gibt viele zusätzliche Details, wie man objektorientierte Ansätze bei der Entwicklung großer Anwendungen und Bibliotheken am besten einsetzt, die den Rahmen dieses Kapitels aber sprengen würden.^[Wenn Sie neugierig sind, wo die Klasse `list` definiert ist, werfen Sie einen Blick auf https://github.com/python/cpython/blob/master/Objects/listobject.c -- die Klasse `list` ist in einer Sprache namens „C“ geschrieben.]
 
 Glossar
 -------
-
-Attribut
-:   Eine Variable, die Teil einer Klasse ist.
-\index{Attribut}
 
 Klasse
 :   Eine Art Vorlage, die zum Konstruieren eines Objekts verwendet werden kann. Sie definiert die Attribute und Methoden, aus denen das Objekt bestehen wird.
 \index{Klasse}
 
-abgeleitete Klasse
-:   Eine neue Klasse, die erstellt wird, wenn eine übergeordnete Klasse erweitert wird. Die untergeordnete Klasse erbt alle Attribute und Methoden der übergeordneten Klasse.
-\index{abgeleitete Klasse}
+Attribut
+:   Eine Variable, die Teil einer Klasse ist.
+\index{Attribut}
+
+Methode
+:   Eine Funktion, die in einer Klasse und den Objekten, die aus der Klasse konstruiert werden, enthalten ist.
+\index{Methode}
 
 Konstruktor
 :   Eine optionale, speziell benannte Methode (`__init__`), die in dem Moment aufgerufen wird, in dem eine Klasse verwendet wird, um ein Objekt zu konstruieren. Normalerweise wird dies verwendet, um Anfangswerte für das Objekt einzurichten.
 \index{Konstruktor}
 
 Destruktor
-:   Eine optionale, speziell benannte Methode (`__del__`), die in dem Moment aufgerufen wird, kurz bevor ein Objekt zerstört wird. Destruktoren werden selten verwendet.
+:   Eine optionale, speziell benannte Methode (`__del__`), die in dem Moment aufgerufen wird, kurz bevor ein Objekt zerstört wird.
 \index{Destruktor}
-
-Vererbung
-:   Wenn wir eine neue abgeleitete Klasse erstellen, indem wir eine vorhandene Klasse (Basisklasse) erweitern.  Die untergeordnete Klasse hat alle Attribute und Methoden der übergeordneten Klasse plus zusätzliche Attribute und Methoden, die von der untergeordneten Klasse definiert werden.
-\index{Vererbung}
-
-Methode
-:   Eine Funktion, die in einer Klasse und den Objekten, die aus der Klasse konstruiert werden, enthalten ist.
-\index{Methode}
 
 Objekt
 :   Eine Instanz einer Klasse. Ein Objekt enthält alle Attribute und Methoden, die von der Klasse definiert wurden. Häufig werden die Begriffe „Instanz“ und „Objekt“ austauschbar verwendet.
 \index{Objekt}
+
+Vererbung
+:   Wenn wir eine neue abgeleitete Klasse erstellen, indem wir eine vorhandene Klasse (Basisklasse) erweitern.  Die untergeordnete Klasse hat alle Attribute und Methoden der übergeordneten Klasse plus zusätzliche Attribute und Methoden, die von der untergeordneten Klasse neu definiert werden.
+\index{Vererbung}
+
+abgeleitete Klasse
+:   Eine neue Klasse, die man erstellt, indem man eine übergeordnete Klasse (Basisklasse) erweitert. Die untergeordnete Klasse erbt alle Attribute und Methoden der übergeordneten Klasse.
+\index{abgeleitete Klasse}
 
 Basisklasse
 :   Die Klasse, die erweitert wird, um eine neue abgeleitete Klasse zu erstellen. Die übergeordnete Klasse bringt alle ihre Methoden und Attribute in die neue untergeordnete Klasse ein.
