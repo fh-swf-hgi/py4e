@@ -3,21 +3,21 @@ Datenbanken und SQL
 ===================
 
 Was ist eine Datenbank?
--------------------
+-----------------------
 
 \index{Datenbank}
 
-Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Wörterbuch in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, sodass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Wörterbuch, das auf die Größe des Hauptspeichers beschränkt ist.
+Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Dictionary in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, sodass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Dictionary, das auf die Größe des Hauptspeichers beschränkt ist.
 
 \index{Datenbank!Index}
 
-Ähnlich wie ein Wörterbuch ist Datenbanksoftware darauf ausgelegt, das Einfügen und den Zugriff auf Daten sehr schnell zu halten, auch bei großen Datenmengen. Datenbanksoftware hält ihre Leistung aufrecht, indem sie *Indizes* aufbaut, wenn Daten in die Datenbank eingefügt werden, damit der Computer schnell zu einem bestimmten Eintrag springen kann.
+Ähnlich wie ein Dictionary ist Datenbanksoftware darauf ausgelegt, das Einfügen und den Zugriff auf Daten sehr schnell zu halten, auch bei großen Datenmengen. Datenbanksoftware hält ihre Leistung aufrecht, indem sie *Indizes* aufbaut, wenn Daten in die Datenbank eingefügt werden, damit der Computer schnell zu einem bestimmten Eintrag springen kann.
 
-Es gibt viele verschiedene Datenbanksysteme, die für die unterschiedlichsten Zwecke eingesetzt werden, darunter: Oracle, MySQL, Microsoft SQL Server, PostgreSQL und SQLite. Wir konzentrieren uns in diesem Buch auf SQLite, weil es eine sehr verbreitete Datenbank ist und bereits in Python integriert ist. SQLite ist dafür ausgelegt, in andere Anwendungen *eingebettet* zu werden, um Datenbankunterstützung innerhalb der Anwendung zu bieten. Zum Beispiel verwendet der Firefox-Browser wie viele andere Produkte auch intern die SQLite-Datenbank.
+Es gibt viele verschiedene Datenbanksysteme, die für die unterschiedlichsten Zwecke eingesetzt werden, darunter: Oracle, MySQL, Microsoft SQL Server, PostgreSQL und SQLite. Wir konzentrieren uns in diesem Buch auf SQLite, weil es eine sehr verbreitete Datenbank ist, die bereits in Python integriert ist. SQLite ist dafür ausgelegt, in andere Anwendungen *eingebettet* zu werden, um Datenbankunterstützung innerhalb der Anwendung zu bieten. Zum Beispiel verwendet der Firefox-Browser wie viele andere Produkte auch intern die SQLite-Datenbank.
 
 <http://sqlite.org/>
 
-SQLite eignet sich gut für einige der Datenmanipulationsprobleme, die wir in der Informatik sehen, wie z. B. die Twitter-Spidering-Anwendung, die wir in diesem Kapitel beschreiben.
+SQLite eignet sich gut für einige der Datenverarbeitungsprobleme, die uns in der Informatik begegnen, wie z. B. die Twitter-Spider-Anwendung, die wir in diesem Kapitel beschreiben.
 
 Datenbankkonzepte
 -----------------
@@ -26,7 +26,7 @@ Auf den ersten Blick sieht eine Datenbank aus wie eine Tabellenkalkulation mit m
 
 ![Relationale Datenbanken](height=2.0in@../images/relational)
 
-In technischen Beschreibungen von relationalen Datenbanken werden die Konzepte Tabelle, Zeile und Spalte formaler als *Relation*, *Tupel* bzw. *Attribut* bezeichnet. Wir werden in diesem Kapitel die weniger formalen Begriffe verwenden.
+In technischen Beschreibungen von relationalen Datenbanken werden die Konzepte Tabelle, Zeile und Spalte formaler als *Relation*, *Tupel* und *Attribut* bezeichnet. Wir werden in diesem Kapitel die weniger formalen Begriffe verwenden.
 
 Datenbank-Browser für SQLite
 ----------------------------
@@ -42,7 +42,7 @@ In gewisser Weise ähnelt der Datenbank-Browser einem Texteditor beim Arbeiten m
 Erstellen einer Datenbanktabelle
 --------------------------------
 
-Datenbanken erfordern eine definiertere Struktur als Python-Listen oder Python-Dictionaries^[SQLite erlaubt tatsächlich eine gewisse Flexibilität bei der Art der in einer Spalte gespeicherten Daten, aber wir werden unsere Datentypen in diesem Kapitel strikt einhalten, damit die Konzepte auch für andere Datenbanksysteme wie MySQL gelten].
+Datenbanken erfordern eine strenger definierte Struktur als Python-Listen oder Python-Dictionaries^[SQLite erlaubt zwar eine gewisse Flexibilität bei der Speicherung von Daten in einer Tabellenspalte, aber wir werden uns strikt an bestimmte Datentypen halten, damit die hier vorgestellten Konzepte auch auf andere Datenbanksysteme wie MySQL übertragbar sind].
 
 Wenn wir eine *Datenbanktabelle* erstellen, müssen wir der Datenbank im Voraus die Namen der einzelnen *Spalten* in der Tabelle und die Art der Daten mitteilen, die wir in jeder *Spalte* zu speichern beabsichtigen. Wenn die Datenbanksoftware den Typ der Daten in jeder Spalte kennt, kann sie den effizientesten Weg zum Speichern und Nachschlagen der Daten auf der Grundlage des Datentyps wählen.
 
@@ -66,19 +66,19 @@ Der Code zum Erstellen einer Datenbankdatei und einer Tabelle namens `Tracks` mi
 
 Die Operation `connect` stellt eine *Verbindung* zu der Datenbank her, die in der Datei `music.sqlite` im aktuellen Verzeichnis gespeichert ist. Wenn die Datei nicht vorhanden ist, wird sie erstellt. Der Grund, warum dies als *Verbindung* bezeichnet wird, ist, dass die Datenbank manchmal auf einem anderen *Datenbankserver* als dem Server gespeichert ist, auf dem wir unsere Anwendung ausführen. In unseren einfachen Beispielen ist die Datenbank nur eine lokale Datei im gleichen Verzeichnis wie der Python-Code, den wir ausführen.
 
-Ein *Cursor* ist wie ein Dateihandler, mit dem wir Operationen mit den in der Datenbank gespeicherten Daten durchführen können. Der Aufruf von `cursor()` ist konzeptionell sehr ähnlich wie der Aufruf von `open()` beim Umgang mit Textdateien.
+Ein *Cursor* ist wie ein Dateihandler, mit dem wir Operationen mit den in der Datenbank gespeicherten Daten durchführen können. Der Aufruf von `cursor()` ist in etwa vergleichbar mit dem Aufruf von `open()` beim Umgang mit Textdateien.
 
 ![Ein Datenbank-Cursor](height=2.0in@../images/cursor)
 
-Sobald wir den Cursor haben, können wir damit beginnen, Befehle auf dem Inhalt der Datenbank mit der Methode `execute()` auszuführen.
+Sobald wir den Cursor erhalten haben, können wir damit beginnen, mithilfe der Methode `execute()` Datenbankoperationen auszuführen.
 
-Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viele verschiedene Datenbankanbieter hinweg standardisiert wurde, damit wir eine einzige Datenbanksprache erlernen können. Die Datenbanksprache wird *Structured Query Language* oder kurz *SQL* genannt.
+Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viele verschiedene Datenbankanbieter hinweg standardisiert wurde, sodass wir nur eine einzige Datenbanksprache erlernen müssen. Die Datenbanksprache wird *Structured Query Language* oder kurz *SQL* genannt. Eine Datenbankabfrage wird entsprechend als *Query* bezeichnet.
 
 <http://en.wikipedia.org/wiki/SQL>
 
-In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Als Konvention zeigen wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. die Tabellen- und Spaltennamen), werden in Kleinbuchstaben dargestellt.
+In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Per Konvention schreiben wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. unsere Tabellen- und Spaltennamen), in Kleinbuchstaben. Das Datenbanksystem selbst unterscheidet nicht zwischen Groß- und Kleinschreibung.
 
-Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie existiert. Dieses Muster dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Es sei zu beachten, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt aus der Datenbank löscht (d. h. es gibt kein „Undo“).
+Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie schon existieren sollte. Dies dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Es sei zu beachten, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt sofort aus der Datenbank löscht. Diese Operation kann ohne Weiteres nicht rückgängig gemacht werden.
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Tracks ')
@@ -92,17 +92,17 @@ cur.execute('CREATE TABLE Tracks (title TEXT, plays INTEGER)')
 
 Nachdem wir nun eine Tabelle namens `Tracks` erstellt haben, können wir mit der SQL-Operation `INSERT` Daten in diese Tabelle einfügen. Wieder beginnen wir damit, eine Verbindung zur Datenbank herzustellen und einen „Cursor“ zu erhalten. Dann können wir SQL-Befehle mit dem Cursor ausführen.
 
-Der SQL-Befehl `INSERT` gibt an, welche Tabelle wir verwenden und definiert dann eine neue Zeile, indem er die Felder auflistet, die wir einschließen `(title, plays)`, gefolgt von den `VALUES`, die wir in der neuen Zeile platzieren wollen. Wir geben die Werte als Fragezeichen `(?, ?)` an, um anzuzeigen, dass die tatsächlichen Werte als Tupel `( 'My Way', 15 ) ` als zweiter Parameter an den Aufruf von `execute()` übergeben werden.
+Der `INSERT`-Befehl gibt zunächst an, in welche Tabelle wir die Daten einfügen möchten. In runden Klammern folgen die Spalten, in die die Werte geschrieben werden sollen. Zuletzt werden die Werte (`VALUES`) aufgelistet. Statt konkreter Werte verwenden wir hier zwei Fragezeichen als Platzhalter. Als zweites Argument von `execute()` übergeben wir dann ein Python-Tupel, das die eigentlichen Werte enthält. Intern ersetzt die `execute()`-Methode dann die Platzhalter durch die tatsächlichen Werte.
 
 \VerbatimInput{../code3/db2.py}
 
-Zuerst fügen wir mit `INSERT` zwei Zeilen (Datensätze) in unsere Tabelle ein und benutzen `commit()`, um das Schreiben der Daten in die Datenbankdatei zu erzwingen.
+Zuerst fügen wir mit `INSERT` zwei Zeilen (Datensätze) in unsere Tabelle ein und benutzen `commit()`, um das Schreiben der Daten in die Datenbankdatei zu veranlassen.
 
-![Zeilen in einer Tabelle](height=1.5in@../images/tracks)
+![Eine Tabelle mit zwei Datensätzen](height=1.5in@../images/tracks)
 
-Dann verwenden wir den Befehl `SELECT`, um die Zeilen, die wir gerade eingefügt haben, aus der Tabelle abzurufen. Beim `SELECT`-Befehl geben wir an, welche Spalten wir haben möchten `(title, plays)` und aus welcher Tabelle wir die Daten abrufen möchten. Nachdem wir die `SELECT`-Anweisung ausgeführt haben, können wir den Cursor in einer `for`-Anweisung in einer Schleife durchlaufen. Um die Effizienz zu erhöhen, liest der Cursor nicht alle Daten aus der Datenbank, wenn wir die Anweisung `SELECT` ausführen. Stattdessen werden die Daten bei Bedarf gelesen, wenn wir in der `for`-Schleife durch die Zeilen iterieren.
+Dann verwenden wir den Befehl `SELECT`, um die Zeilen, die wir gerade eingefügt haben, aus der Tabelle abzurufen. Beim `SELECT`-Befehl geben wir an, welche Spalten wir abfragen möchten `(title, plays)` und aus welcher Tabelle wir die Daten abrufen möchten. Nachdem wir die `SELECT`-Anweisung ausgeführt haben, können wir den Cursor in einer `for`-Schleife durchlaufen. Um die Effizienz zu erhöhen, liest der Cursor nicht alle Daten aus der Datenbank, wenn wir die Anweisung `SELECT` ausführen. Stattdessen werden die Daten bei Bedarf gelesen, während wir in der Schleife durch die Zeilen iterieren.
 
-Die Ausgabe des Programms ist wie folgt:
+Die Ausgabe des Programms sieht dann so aus:
 
 ~~~~
 Tracks:
@@ -114,14 +114,14 @@ Tracks:
 
 Unsere `for`-Schleife findet zwei Zeilen, und jede Zeile ist ein Python-Tupel mit dem ersten Wert als `title` und dem zweiten Wert als die Anzahl der `plays`.
 
-*Hinweis: In anderen Büchern oder im Internet sehen Sie möglicherweise Zeichenketten, die mit `u'` beginnen. Dies war in Python 2 ein Hinweis darauf, dass es sich bei den Strings um *Unicode*-Strings handelt, die in der Lage sind, nicht-lateinische Zeichensätze zu speichern. In Python 3 sind alle Zeichenketten standardmäßig Unicode-Zeichenketten.*
+**Hinweis:** In anderen Büchern oder im Internet sehen wir möglicherweise Zeichenketten, die mit `u'` beginnen. Dies war in Python 2 ein Hinweis darauf, dass es sich bei den Strings um *Unicode*-Strings handelt, die in der Lage sind, nicht-lateinische Zeichensätze zu speichern. In Python 3 sind alle Zeichenketten standardmäßig Unicode-Zeichenketten.
 
-Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium angeben, sodass wir die Datenbank bitten können, den Befehl nur auf die Zeilen anzuwenden, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium zufällig auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem das `DELETE` ausgeführt wurde, rufen wir auch `commit()` auf, um die Entfernung der Daten aus der Datenbank zu erzwingen.
+Ganz am Ende des Programms führen wir einen SQL-Befehl aus, um die gerade erstellten Zeilen mit `DELETE` zu löschen, damit wir das Programm immer wieder ausführen können. Der `DELETE`-Befehl zeigt die Verwendung einer `WHERE`-Klausel, mit der wir ein Auswahlkriterium angeben. Damit wird der Befehl nur auf die Datensätze angewendet, die das Kriterium erfüllen. In diesem Beispiel trifft das Kriterium auf alle Zeilen zu, also leeren wir die Tabelle, damit wir das Programm wiederholt ausführen können. Nachdem `DELETE` ausgeführt wurde, rufen wir wieder `commit()` auf, um die Entfernung der Daten aus der Datenbank zu veranlassen.
 
 Zusammenfassung von SQL
 -----------------------
 
-Bisher haben wir die Structured Query Language in unseren Python-Beispielen verwendet und viele der Grundlagen der SQL-Befehle behandelt. In diesem Abschnitt gehen wir auf die SQL-Sprache im Speziellen ein und geben einen Überblick über die SQL-Syntax.
+Bisher haben wir die Structured Query Language in unseren Python-Beispielen verwendet und einige wesentliche Grundlagen ausgewählter SQL-Befehle behandelt. In diesem Abschnitt gehen wir auf die SQL-Sprache im Speziellen ein und geben einen Überblick über die SQL-Syntax.
 
 Da es so viele verschiedene Datenbankanbieter gibt, wurde die Structured Query Language (SQL) standardisiert, damit wir in einer portablen Weise mit Datenbanksystemen verschiedener Anbieter kommunizieren können.
 
@@ -137,9 +137,9 @@ Um eine Zeile in eine Tabelle einzufügen, verwenden wir den SQL-Befehl `INSERT`
 INSERT INTO Tracks (title, plays) VALUES ('My Way', 15)
 ~~~~
 
-Die Anweisung `INSERT` gibt den Tabellennamen an, dann eine Liste der Spalten, in die Sie Werte schreiben möchten, und dann das Schlüsselwort `VALUES` und eine Liste der entsprechenden Werte für jedes der Felder.
+Die Anweisung `INSERT` gibt den Tabellennamen an, dann eine Liste der Spalten, in die wir Werte schreiben möchten, und dann das Schlüsselwort `VALUES` und eine Liste der entsprechenden Werte für jedes der Felder.
 
-Der SQL-Befehl `SELECT` wird zum Abrufen von Zeilen und Spalten aus einer Datenbank verwendet. Mit der `SELECT`-Anweisung können wir angeben, welche Spalten wir abrufen möchten, sowie eine `WHERE`-Klausel definieren, um die Zeilen auszuwählen, die wir sehen möchten. Sie erlaubt auch eine optionale "ORDER BY"-Klausel, um die Sortierung der zurückgegebenen Zeilen zu steuern.
+Der SQL-Befehl `SELECT` wird zum Abrufen von Zeilen und Spalten aus einer Datenbank verwendet. Mit der `SELECT`-Anweisung können wir angeben, welche Spalten wir abrufen möchten, sowie eine `WHERE`-Klausel definieren, um die Zeilen auszuwählen, die wir sehen möchten. Sie erlaubt auch eine optionale `ORDER BY`-Klausel, um die Sortierung der zurückgegebenen Zeilen zu steuern.
 
 ~~~~ {.sql}
 SELECT * FROM Tracks WHERE title = 'My Way'
@@ -147,7 +147,7 @@ SELECT * FROM Tracks WHERE title = 'My Way'
 
 Die Verwendung von `*` zeigt an, dass die Datenbank alle Spalten für jede Zeile zurückgeben soll, die mit der `WHERE`-Klausel übereinstimmt.
 
-Es sei zu beachten, dass anders als in Python in einer SQL-`WHERE`-Klausel ein einzelnes Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit anzuzeigen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um unsere logischen Ausdrücke aufzubauen.
+Es ist zu beachten, dass anders als in Python in einer SQL-`WHERE`-Klausel ein *einzelnes* Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit durchzuführen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um unsere logischen Ausdrücke aufzubauen.
 
 Wir können anfordern, dass die zurückgegebenen Zeilen nach einem der Felder wie folgt sortiert werden:
 
@@ -167,36 +167,36 @@ Es ist möglich, eine oder mehrere Spalten in einer oder mehreren Zeilen einer T
 UPDATE Tracks SET plays = 16 WHERE title = 'My Way'
 ~~~~
 
-Die `UPDATE`-Anweisung spezifiziert eine Tabelle, eine Liste von Feldern und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
+Die `UPDATE`-Anweisung gibt eine Tabelle an, eine Liste von Spalten und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
 
 Diese vier grundlegenden SQL-Befehle (`INSERT`, `SELECT`, `UPDATE` und `DELETE`) ermöglichen die vier grundlegenden Operationen, die zum Erstellen und Verwalten von Daten erforderlich sind.
 
 Auslesen von Twitter-Daten mithilfe einer Datenbank 
 ---------------------------------------------------
 
-In diesem Abschnitt werden wir ein einfaches Spidering-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Vorsicht, wenn das Programm ausgeführt wird. Wir möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit der Zugang nicht gesperrt wird.*
+In diesem Abschnitt werden wir ein einfaches Spider-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Vorsicht, wenn das Programm ausgeführt wird. Wir möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit der Zugang nicht gesperrt wird.*
 
-Eines der Probleme bei jeder Art von Spidering-Programm ist, dass es in der Lage sein muss, viele Male angehalten und neu gestartet zu werden, ohne das wir dabei die Daten verlieren, die wir bisher abgerufen haben. Wir wollen unsere Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
+Eines der Probleme von Spider-Programmen ist, dass sie in der Lage sein müssen, viele Male angehalten und neu gestartet zu werden, ohne das wir dabei die Daten verlieren, die wir bisher abgerufen haben. Wir wollen unsere Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
 
-Wir beginnen damit, dass wir die Twitter-Freunde einer Person und deren Status abrufen, die Liste der Freunde in einer Schleife durchlaufen und jeden der Freunde zu einer Datenbank hinzufügen, um sie in Zukunft abrufen zu können. Nachdem wir die Twitter-Freunde einer Person verarbeitet haben, schauen wir in unserer Datenbank nach und rufen einen der Freunde des Freundes ab. Wir machen das immer wieder, wählen eine „nicht besuchte“ Person aus, rufen ihre Freundesliste ab und fügen die Freunde, die wir nicht gesehen haben, unserer Liste für einen zukünftigen Besuch hinzu.
+Wir beginnen damit, dass wir die Twitter-Freunde einer Person und deren Status („schon verarbeitet“/„noch nicht verarbeitet“) abrufen, die Liste der Freunde in einer Schleife durchlaufen und jeden der Freunde zu einer Datenbank hinzufügen, um sie in Zukunft abrufen zu können. Nachdem wir die Twitter-Freunde einer Person verarbeitet haben, schauen wir in unserer Datenbank nach und rufen einen der Freunde des Freundes ab. Wir machen das immer wieder, wählen eine „nicht besuchte“ Person aus, rufen ihre Freundesliste ab und fügen die Freunde, die wir bisher nicht besucht haben, unserer Liste der noch nicht besuchten Freunde hinzu.
 
 Wir verfolgen auch, wie oft wir einen bestimmten Freund in der Datenbank gesehen haben, um ein Gefühl für seine Beliebtheit zu bekommen.
 
-Indem wir unsere Liste der bekannten Konten und ob wir das Konto bereits abgerufen haben oder nicht, sowie wie beliebt das Konto ist, in einer Datenbank auf der Festplatte des Computers speichern, können wir unser Programm beliebig oft anhalten und neu starten.
+In einer Datenbank speichern wir die Liste der bekannten Konten, deren Beliebtheit und die Information, ob wir das Konto bereits besucht (d.h. schon abgearbeitet) haben. Dadurch können wir unser Programm beliebig oft anhalten und neu starten.
 
-Dieses Programm ist ein wenig komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
+Dieses Programm ist ein recht komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
 
-Hier ist der Quellcode für unsere Twitter Spidering-Anwendung:
+Hier ist der Quellcode für unsere Twitter Spider-Anwendung:
 
 \VerbatimInput{../code3/twspider.py}
 
 Unsere Datenbank ist in der Datei `spider.sqlite` gespeichert und sie hat eine Tabelle namens `Twitter`. Jede Zeile in der `Twitter`-Tabelle hat eine Spalte für den Kontonamen, ob wir die Freunde dieses Kontos abgerufen haben und wie oft dieses Konto „befreundet“ wurde.
 
-In der Hauptschleife des Programms wird der Benutzer aufgefordert, den Namen eines Twitter-Kontos einzugeben oder das Programm mit `quit` zu beenden. Wenn der Benutzer einen Twitter-Account eingibt, rufen wir die Liste der Freunde und Status für diesen Benutzer ab und fügen jeden Freund zur Datenbank hinzu, wenn er nicht bereits in der Datenbank vorhanden ist. Wenn der Freund bereits in der Liste ist, fügen wir 1 zum Feld `friends` in der Zeile in der Datenbank hinzu.
+In der Hauptschleife des Programms wird der Benutzer aufgefordert, den Namen eines Twitter-Kontos einzugeben oder das Programm mit `quit` zu beenden. Wenn der Benutzer einen Twitter-Account eingibt, rufen wir die Liste der Freunde und den Status dieses Users ab und fügen jeden Freund zur Datenbank hinzu, wenn er nicht bereits in der Datenbank vorhanden ist. Wenn der Freund bereits in der Liste ist, fügen wir 1 zum Feld `friends` in der Zeile in der Datenbank hinzu.
 
 Wenn der Benutzer die Eingabetaste drückt, suchen wir in der Datenbank nach dem nächsten Twitter-Konto, das wir noch nicht abgerufen haben, rufen die Freunde und den Status dieses Kontos ab, fügen sie der Datenbank hinzu oder aktualisieren sie und erhöhen die Anzahl ihrer `friends`.
 
-Sobald wir die Liste der Freunde und Status abgerufen haben, gehen wir in einer Schleife durch alle `user`-Elemente im zurückgegebenen JSON und rufen den `screen_name` für jeden Benutzer ab. Dann verwenden wir die Anweisung `SELECT`, um zu sehen, ob wir diesen bestimmten `screen_name` bereits in der Datenbank gespeichert haben und rufen die Anzahl der Freunde (`friends`) ab, wenn der Datensatz existiert.
+Sobald wir die Liste der Freunde und deren Status abgerufen haben, gehen wir in einer Schleife durch alle `user`-Elemente im zurückgegebenen JSON und rufen den `screen_name` für jeden Benutzer ab. Dann verwenden wir die Anweisung `SELECT`, um zu sehen, ob wir diesen bestimmten `screen_name` bereits in der Datenbank gespeichert haben und rufen die Anzahl der Freunde (`friends`) ab, wenn der Datensatz existiert.
 
 ~~~~ {.python}
 countnew = 0
@@ -219,9 +219,9 @@ print('New accounts=',countnew,' revisited=',countold)
 conn.commit()
 ~~~~
 
-Sobald der Cursor die `SELECT`-Anweisung ausführt, müssen wir die Zeilen abrufen. Wir könnten dies mit einer `for`-Schleife tun, aber da wir nur eine Zeile abrufen (`LIMIT 1`), können wir die Methode `fetchone()` verwenden, um die erste (und einzige) Zeile zu laden, die das Ergebnis der `SELECT`-Anweisung ist. Da `fetchone()` die Zeile als *Tupel* zurückgibt (auch wenn es nur ein Feld gibt), nehmen wir den ersten Wert aus dem Tupel, um die aktuelle Anzahl der Freunde in die Variable `count` zu bekommen.
+Sobald der Cursor (`cur`) die `SELECT`-Anweisung ausführt, müssen wir die Zeilen abrufen. Wir könnten dies mit einer `for`-Schleife tun, aber da wir nur eine Zeile abrufen (`LIMIT 1`), können wir die Methode `fetchone()` verwenden, um die erste (und einzige) Zeile zu laden, die durch `SELECT` ermittelt wurde. Da `fetchone()` die Zeile als *Tupel* zurückgibt (auch wenn es nur ein Feld gibt), nehmen wir den ersten Wert aus dem Tupel, um die aktuelle Anzahl der Freunde in die Variable `count` zu speichern.
 
-Wenn dieser Abruf erfolgreich ist, verwenden wir die SQL-Anweisung `UPDATE` mit einer `WHERE`-Klausel, um der Spalte `friends` für die Zeile, die dem Konto des Freundes entspricht, um eins zu erhöhen. Es sei zu beachten, dass es zwei Platzhalter (d. h. Fragezeichen) in der SQL-Anweisung gibt und der zweite Parameter von `execute()` ein Tupel mit zwei Elementen ist, das die Werte enthält, die in der SQL-Anweisung anstelle der Fragezeichen eingesetzt werden sollen.
+Wenn dieser Abruf erfolgreich ist, verwenden wir die SQL-Anweisung `UPDATE` mit einer `WHERE`-Klausel, um der Spalte `friends` für die Zeile, die dem Konto des Freundes entspricht, um eins zu erhöhen. Es ist zu beachten, dass es zwei Platzhalter (Fragezeichen) in der SQL-Anweisung gibt und der zweite Parameter von `execute()` ein Tupel mit zwei Elementen ist, das die Werte enthält, die in der SQL-Anweisung anstelle der Fragezeichen eingesetzt werden sollen.
 
 Wenn der Code im `try`-Block fehlschlägt, liegt es wahrscheinlich daran, dass kein Datensatz mit der `WHERE name = ?`-Klausel der `SELECT`-Anweisung übereinstimmt. Im `except`-Block verwenden wir also die SQL-Anweisung `INSERT`, um den `screen_name` des Freundes zur Tabelle hinzuzufügen, mit dem Hinweis, dass wir den `screen_name` noch nicht abgerufen haben, und setzen die Anzahl der Freunde auf eins.
 
@@ -236,13 +236,13 @@ Enter a Twitter account, or quit: quit
 
 Da wir das Programm zum ersten Mal ausführen, ist die Datenbank leer. Wir erstellen die Datenbank in der Datei `spider.sqlite` und fügen eine Tabelle namens `Twitter` zur Datenbank hinzu. Dann rufen wir einige Freunde ab und fügen sie alle zur Datenbank hinzu, da die Datenbank leer ist.
 
-An dieser Stelle möchten wir vielleicht einen einfachen Datenbank-Dumper schreiben, um zu sehen, was in unserer Datei `spider.sqlite` steht:
+An dieser Stelle möchten wir vielleicht einen einfachen Datenbank-„Dumper“ implementieren, um zu sehen, was in unserer Datei `spider.sqlite` steht:
 
 \VerbatimInput{../code3/twdump.py}
 
 Dieses Programm öffnet einfach die Datenbank und wählt alle Spalten aller Zeilen in der Tabelle `Twitter` aus, geht dann in einer Schleife durch die Zeilen und gibt jede Zeile aus.
 
-Wenn wir dieses Programm nach der ersten Ausführung unseres obigen Twitter-Spiders ausführen, sieht seine Ausgabe wie folgt aus:
+Wenn wir dieses Programm nach der ersten Ausführung unseres obigen Twitter-Spiders ausführen, sieht seine Ausgabe so aus:
 
 ~~~~
 ('opencontent', 0, 1)
@@ -254,9 +254,9 @@ Wenn wir dieses Programm nach der ersten Ausführung unseres obigen Twitter-Spid
 20 rows.
 ~~~~
 
-Wir sehen eine Zeile für jeden `screen_name`. Weiterhin sehen wir dass wir die Daten für diesen `screen_name` noch nicht abgerufen haben und dass jeder in der Datenbank einen Freund hat.
+Wir sehen eine Zeile für jeden `screen_name`. Weiterhin sehen wir, dass wir die Daten für diesen `screen_name` noch nicht abgerufen haben und dass jeder User in der Datenbank einen Freund hat.
 
-Jetzt spiegelt unsere Datenbank den Abruf der Freunde unseres ersten Twitter-Accounts wider (*drchuck*). Wir können das Programm erneut starten und ihm sagen, dass es die Freunde des nächsten „unverarbeiteten“ Kontos abrufen soll, indem wir die Eingabetaste anstelle eines Twitter-Kontos drücken. Etwa wie folgt:
+Jetzt spiegelt unsere Datenbank den Abruf der Freunde unseres ersten Twitter-Accounts wider (*drchuck*). Wir können das Programm erneut starten und ihm sagen, dass es die Freunde des nächsten „unverarbeiteten“ Kontos abrufen soll, indem wir die Eingabetaste anstelle eines Twitter-Kontos drücken:
 
 ~~~~
 Enter a Twitter account, or quit:
@@ -268,10 +268,10 @@ New accounts= 17  revisited= 3
 Enter a Twitter account, or quit: quit
 ~~~~
 
-Da wir die Eingabetaste gedrückt haben (d. h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
+Da wir die Eingabetaste gedrückt haben (d.h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
 
 ~~~~ {.python}
-if ( len(acct) < 1 ):
+if(len(acct) < 1):
     cur.execute('SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
     try:
         acct = cur.fetchone()[0]
@@ -282,7 +282,7 @@ if ( len(acct) < 1 ):
 
 Wir verwenden die SQL-Anweisung `SELECT`, um den Namen des ersten (`LIMIT 1`) Benutzers abzurufen, bei dem der Wert für „haben wir diesen Benutzer abgerufen?“ noch auf Null gesetzt ist. Wir verwenden auch `fetchone()[0]` innerhalb eines `try`/`except`-Blocks, um entweder einen `screen_name` aus den abgerufenen Daten zu extrahieren oder eine Fehlermeldung auszugeben und die Schleife erneut zu starten.
 
-Wenn wir erfolgreich einen unverarbeiteten `screen_name` abgerufen haben, rufen wir dessen Daten wie folgt ab:
+Wenn wir erfolgreich einen unverarbeiteten `screen_name` abgerufen haben, rufen wir dessen Daten folgendermaßen ab:
 
 ~~~~ {.python}
 url=twurl.augment(TWITTER_URL,{'screen_name': acct,'count': '20'})
@@ -294,9 +294,9 @@ js = json.loads(data)
 cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?',(acct, ))
 ~~~~
 
-Sobald wir die Daten erfolgreich abgerufen haben, verwenden wir die Anweisung `UPDATE`, um die Spalte `retrieved` auf 1 zu setzen, um anzuzeigen, dass wir den Abruf der Freunde dieses Kontos abgeschlossen haben. Dies verhindert, dass wir die gleichen Daten immer wieder abrufen, und sorgt dafür, dass wir im Netzwerk der Twitter-Freunde vorankommen.
+Sobald wir die Daten erfolgreich abgerufen haben, verwenden wir die Anweisung `UPDATE`, um die Spalte `retrieved` auf 1 zu setzen, um damit anzuzeigen, dass wir den Abruf der Freunde dieses Kontos abgeschlossen haben. Dies verhindert, dass wir die gleichen Daten immer wieder abrufen, und sorgt dafür, dass wir im Netzwerk der Twitter-Freunde vorankommen.
 
-Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, um die Freunde des nächsten nicht besuchten Freundes abzurufen, und dann das dumping-Programm ausführen, erhalten wir die folgende Ausgabe:
+Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, um die Freunde des nächsten nicht besuchten Freundes abzurufen, und dann das Dumper-Programm ausführen, erhalten wir die folgende Ausgabe:
 
 ~~~~
 ('opencontent', 1, 1)
@@ -315,9 +315,9 @@ Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, u
 
 Wir können sehen, dass wir `lhawthorn` und `opencontent` besucht haben. Auch die Konten `cnxorg` und `kthanos` haben bereits zwei Follower. Da wir nun die Freunde von drei Personen (`drchuck`, `opencontent` und `lhawthorn`) abgerufen haben, hat unsere Tabelle 55 Zeilen mit Freunden zum Abrufen.
 
-Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z. B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
+Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z.B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
 
-Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeichert werden, kann die Spidering-Aktivität beliebig oft ohne Datenverlust unterbrochen und wieder aufgenommen werden.
+Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeichert werden, kann die Spider-Aktivität beliebig oft ohne Datenverlust unterbrochen und wieder aufgenommen werden.
 
 Grundlegende Datenmodellierung
 ------------------------------
