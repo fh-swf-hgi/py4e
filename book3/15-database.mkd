@@ -319,10 +319,10 @@ Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt e
 
 Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeichert werden, kann die Spider-Aktivität beliebig oft ohne Datenverlust unterbrochen und wieder aufgenommen werden.
 
-Grundlegende Datenmodellierung
-------------------------------
+Grundlagen der Datenmodellierung
+--------------------------------
 
-Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir mehrere Tabellen erstellen und zwischen diesen Tabellen Verknüpfungen herstellen. Die Entscheidung, wie wir unseren Anwendungsdaten in mehrere Tabellen aufteilen und die Beziehungen zwischen den Tabellen herstellen, wird *Datenmodellierung* genannt. Das Entwurfsdokument, das die Tabellen und ihre Beziehungen zeigt, wird als *Datenmodell* bezeichnet.
+Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir mehrere Tabellen erstellen und zwischen diesen Tabellen Verknüpfungen herstellen können. Der Entwurfsprozess, in welchem wir unsere Anwendungsdaten in mehrere Tabellen aufteilen und die Beziehungen zwischen den Tabellen herstellen, wird *Datenmodellierung* genannt. Ein Diagramm, das die Tabellen und ihre Beziehungen darstellt, wird als *Datenmodell* bezeichnet.
 
 Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in diesem Abschnitt nur die grundlegendsten Konzepte der relationalen Datenmodellierung vorstellen. Weitere Details zur Datenmodellierung können hier eingesehen werden:
 
@@ -330,25 +330,25 @@ Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in 
 
 Nehmen wir an, für unsere Twitter-Spider-Anwendung wollten wir nicht nur die Freunde einer Person zählen, sondern eine Liste aller eingehenden Beziehungen führen, damit wir eine Liste aller Personen finden, die einem bestimmten Konto folgen.
 
-Da jeder potenziell viele Konten hat, die ihm folgen, können wir nicht einfach eine einzelne Spalte zu unserer `Twitter`-Tabelle hinzufügen. Also erstellen wir eine neue Tabelle, die die Freundespaare aufzeichnet. Im Folgenden sehen wir eine einfache Möglichkeit, eine solche Tabelle zu erstellen:
+Da jeder User viele Konten haben kann, die ihm folgen, können wir nicht einfach eine einzelne Spalte zu unserer `Twitter`-Tabelle hinzufügen. Also erstellen wir eine neue Tabelle, die die Freundespaare speichert. Im Folgenden sehen wir eine einfache Möglichkeit, eine solche Tabelle zu erstellen:
 
 ~~~~ {.sql}
 CREATE TABLE Pals (from_friend TEXT, to_friend TEXT)
 ~~~~
 
-Jedes Mal, wenn wir auf eine Person stoßen, der `drchuck` folgt, würden wir eine Zeile der Form einfügen:
+Jedes Mal, wenn wir auf eine Person stoßen, der `drchuck` folgt, würden wir eine Zeile dieser Form einfügen:
 
 ~~~~ {.sql}
-INSERT INTO Pals (from_friend,to_friend) VALUES ('drchuck', 'lhawthorn')
+INSERT INTO Pals (from_friend, to_friend) VALUES ('drchuck', 'lhawthorn')
 ~~~~
 
-Da wir die 20 Freunde aus dem Twitter-Feed `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, sodass die Zeichenkette am Ende viele Male in der Datenbank dupliziert wird.
+Da wir die 20 Freunde aus dem Twitter-Feed von `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, sodass die Zeichenkette am Ende viele Male in der Datenbank auftaucht.
 
-Diese Duplizierung von Zeichenkettendaten verstößt gegen eine der besten Praktiken für die *Datenbanknormalisierung*, die im Grunde besagt, dass wir dieselben Zeichenkettendaten nie mehr als einmal in die Datenbank aufnehmen sollten. Wenn wir die Daten mehr als einmal benötigen, erstellen wir einen numerischen *Schlüssel* (einen *Primärschlüssel*) für die Daten und referenzieren die eigentlichen Daten über diesen Schlüssel.
+Diese redundante Datenhaltung verstößt gegen eines der Prinzipien der *Normalisierung* von Datenbanken, die im Grunde besagt, dass wir dieselben Daten nie mehr als einmal in die Datenbank aufnehmen sollten. Wenn wir die Daten mehr als einmal benötigen, erstellen wir einen numerischen *Schlüssel* (einen *Primärschlüssel*) für die Daten und *referenzieren* die eigentlichen Daten über diesen Schlüssel.
 
-In der Praxis nimmt eine Zeichenkette viel mehr Platz auf der Festplatte und im Speicher unseres Computers ein als eine Ganzzahl und benötigt mehr Prozessorzeit zum Vergleichen und Sortieren. Wenn wir nur ein paar hundert Einträge haben, spielt die Speicher- und Prozessorzeit kaum eine Rolle. Aber wenn wir eine Million Personen in unserer Datenbank haben und eine Möglichkeit von 100 Millionen Freundschaftsverbindungen, ist es wichtig, die Daten so schnell wie möglich durchsuchen zu können.
+In der Praxis nimmt eine Zeichenkette viel mehr Platz auf der Festplatte und im Speicher unseres Computers ein als eine Ganzzahl und benötigt mehr Prozessorzeit beim Vergleichen und Sortieren. Wenn wir nur ein paar hundert Einträge haben, spielt die Speicher- und Prozessorzeit kaum eine Rolle. Aber wenn wir eine Million Personen in unsere Datenbank aufnehmen und möglicherweise 100 Millionen Freundschaftsverbindungen, ist es wichtig, die Daten so schnell wie möglich durchsuchen zu können.
 
-Wir speichern unsere Twitter-Konten in einer Tabelle namens `People` anstelle der im vorherigen Beispiel verwendeten Tabelle `Twitter`. Die Tabelle `People` hat eine zusätzliche Spalte, um den numerischen Schlüssel zu speichern, der mit der Zeile für diesen Twitter-Benutzer verbunden ist. SQLite hat eine Funktion, die automatisch den Schlüsselwert für jede Zeile hinzufügt, die wir in eine Tabelle mit einem speziellen Typ von Datenspalte (`INTEGER PRIMARY KEY`) einfügen.
+Wir speichern unsere Twitter-Konten in einer Tabelle namens `People` anstelle der im vorherigen Beispiel verwendeten Tabelle `Twitter`. Die Tabelle `People` hat eine zusätzliche Spalte, um den numerischen Schlüssel zu speichern, der mit der Zeile für diesen Twitter-Benutzer verbunden ist. SQLite verfügt über eine Funktionalität, die automatisch den Schlüsselwert (`INTEGER PRIMARY KEY`) für jede Zeile hinzufügt, die wir in eine Tabelle einfügen.
 
 Wir können die Tabelle `People` mit dieser zusätzlichen Spalte `id` wie folgt erstellen:
 
@@ -357,23 +357,23 @@ CREATE TABLE People
     (id INTEGER PRIMARY KEY, name TEXT UNIQUE, retrieved INTEGER)
 ~~~~
 
-Es sei zu beachten, dass wir nicht mehr in jeder Zeile der Tabelle `People` eine Freundesanzahl führen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
+Es ist zu beachten, dass wir nicht mehr in jeder Zeile der Tabelle `People` die Anzahl der Freunde mitführen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
 
-Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und einer Einschränkung (englisch Constraint) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d. h. wir können keine doppelten Zeilen einfügen) in unserer Datenbank.
+Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und der Einschränkung (englisch *Constraint*) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d.h. wir können keine zwei identischen Zeilen einfügen).
 
 ~~~~ {.sql}
 CREATE TABLE Follows
-    (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id) )
+    (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))
 ~~~~
 
-Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, kommunizieren wir eine Reihe von Regeln, die wir von der Datenbank verlangen, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen. Die Regeln halten uns davon ab, Fehler zu machen, und machen es einfacher, einen Teil unseres Codes zu schreiben.
+Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, vereinbaren wir eine Reihe von Regeln, die die Datenbank befolgen wird, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen. Die Regeln halten uns davon ab, Fehler zu machen, und erleichtern uns obendrein die Programmierung.
 
 Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“, und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung verdeutlicht.
 
 ![Beziehungen zwischen Tabellen](height=3.5in@figs2/twitter)
 
-Programmierung mit mehreren Tabellen
-------------------------------------
+Arbeiten mit mehreren Tabellen
+------------------------------
 
 Wir werden nun das Twitter-Spider-Programm mit zwei Tabellen, den Primärschlüsseln und den Schlüsselreferenzen wie oben beschrieben neu erstellen. Hier ist der Code für die neue Version des Programms:
 
