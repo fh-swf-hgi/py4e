@@ -174,7 +174,7 @@ Diese vier grundlegenden SQL-Befehle (`INSERT`, `SELECT`, `UPDATE` und `DELETE`)
 Auslesen von Twitter-Daten mithilfe einer Datenbank 
 ---------------------------------------------------
 
-In diesem Abschnitt werden wir ein einfaches Spider-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. *Hinweis: Vorsicht, wenn das Programm ausgeführt wird. Wir möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit der Zugang nicht gesperrt wird.*
+In diesem Abschnitt werden wir ein einfaches Spider-Programm erstellen, das Twitter-Konten durchgeht und eine Datenbank von ihnen erstellt. **Hinweis:** Vorsicht, wenn das Programm ausgeführt wird. Wir möchten nicht zu viele Daten abrufen oder das Programm zu lange laufen lassen, damit der Zugang nicht gesperrt wird.
 
 Eines der Probleme von Spider-Programmen ist, dass sie in der Lage sein müssen, viele Male angehalten und neu gestartet zu werden, ohne das wir dabei die Daten verlieren, die wir bisher abgerufen haben. Wir wollen unsere Datenabfrage nicht immer wieder von vorne beginnen, also wollen wir die Daten speichern, während wir sie abrufen, damit unser Programm wieder starten und dort weitermachen kann, wo es aufgehört hat.
 
@@ -508,24 +508,24 @@ Wir können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen 
 Drei Arten von Schlüsseln
 -------------------------
 
-Nachdem wir nun mit dem Aufbau eines Datenmodells begonnen haben, in dem wir unsere Daten in mehreren verknüpften Tabellen ablegen und die Zeilen in diesen Tabellen mit *Schlüsseln* verknüpfen, müssen wir uns mit der Terminologie rund um Schlüssel beschäftigen. Im Allgemeinen gibt es drei Arten von Schlüsseln, die in einem Datenbankmodell verwendet werden.
+Nachdem wir nun mit dem Aufbau eines Datenmodells begonnen haben, in dem wir unsere Daten in mehreren verknüpften Tabellen ablegen und die Zeilen in diesen Tabellen mit *Schlüsseln* verknüpfen, müssen wir uns nun mit der Terminologie rund um Schlüssel beschäftigen. Im Allgemeinen gibt es drei Arten von Schlüsseln, die in einem Datenbankmodell verwendet werden.
 
--   Ein *logischer Schlüssel* ist ein Schlüssel, den die „reale Welt“ zum Nachschlagen eines Datensatzes verwenden könnte. In unserem Beispiel-Datenmodell ist das Feld `name` ein logischer Schlüssel. Es ist der Benutzername des Benutzers, und wir schlagen die Zeile eines Benutzers in der Tat mehrmals im Programm über das Feld `name` nach. Sie werden oft feststellen, dass es sinnvoll ist, eine `UNIQUE'-Einschränkung zu einem logischen Schlüssel hinzuzufügen. Da der logische Schlüssel einen Datensatz identifiziert, ergibt es wenig Sinn, mehrere Zeilen mit demselben Wert in der Tabelle zuzulassen.
+-   Ein *logischer Schlüssel* ist ein Schlüssel, den die „reale Welt“ zum Nachschlagen eines Datensatzes verwenden könnte. In unserem Beispiel-Datenmodell ist das Feld `name` ein logischer Schlüssel. Es ist der Benutzername des Benutzers und wir schlagen die Zeile eines Benutzers in der Tat mehrmals im Programm über das Feld `name` nach. Wir werden oft feststellen, dass es sinnvoll ist, eine `UNIQUE'-Einschränkung zu einem logischen Schlüssel hinzuzufügen. Da der logische Schlüssel einen Datensatz identifiziert, ergibt es wenig Sinn, mehrere Zeilen mit demselben Wert in der Tabelle zuzulassen.
 
--   Ein *Primärschlüssel* (englisch Primary Key, kurz *PK*) ist normalerweise eine Nummer, die von der Datenbank automatisch vergeben wird. Er hat in der Regel keine Bedeutung außerhalb des Programms und wird nur verwendet, um Zeilen aus verschiedenen Tabellen miteinander zu verknüpfen. Wenn wir eine Zeile in einer Tabelle nachschlagen wollen, ist die Suche nach der Zeile über den Primärschlüssel normalerweise der schnellste Weg, die Zeile zu finden. Da es sich bei den Primärschlüsseln um ganze Zahlen handelt, nehmen sie sehr wenig Speicherplatz ein und können sehr schnell verglichen oder sortiert werden. In unserem Datenmodell ist das Feld `id` ein Beispiel für einen Primärschlüssel.
+-   Ein *Primärschlüssel* (englisch *Primary Key*, kurz *PK*) ist meist eine Nummer, die von der Datenbank automatisch vergeben wird. Er hat in der Regel keine Bedeutung außerhalb des Programms und wird nur verwendet, um Zeilen aus verschiedenen Tabellen miteinander zu verknüpfen. Wenn wir eine Zeile in einer Tabelle nachschlagen wollen, ist die Suche nach der Zeile über den Primärschlüssel normalerweise der schnellste Weg, die Zeile zu finden. Da es sich bei den Primärschlüsseln um ganze Zahlen handelt, nehmen sie sehr wenig Speicherplatz ein und können sehr schnell verglichen oder sortiert werden. In unserem Datenmodell ist das Feld `id` ein Beispiel für einen Primärschlüssel.
 
--   Ein *Fremdschlüssel* (englich *Foreign Key* , kurz *FK*) ist normalerweise eine Zahl, die auf den Primärschlüssel einer zugehörigen Zeile in einer anderen Tabelle verweist. Ein Beispiel für einen Fremdschlüssel in unserem Datenmodell ist die `from_id`.
+-   Ein *Fremdschlüssel* (englisch *Foreign Key* , kurz *FK*) ist normalerweise eine Zahl, die auf den Primärschlüssel einer zugehörigen Zeile in einer *anderen* Tabelle verweist. Ein Beispiel für einen Fremdschlüssel in unserem Datenmodell ist die Spalte `from_id`.
 
-Wir verwenden die Namenskonvention, den Primärschlüsselfeldnamen immer `id` zu nennen und das Suffix `_id` an jeden Feldnamen anzuhängen, der ein Fremdschlüssel ist.
+Wir verwenden die Namenskonvention, den Primärschlüssel immer `id` zu nennen und das Suffix `_id` an jeden Spaltennamen anzuhängen, der ein Fremdschlüssel ist.
 
-JOIN zum Abrufen von Daten
---------------------------
+Abrufen von Daten mit `JOIN`
+----------------------------
 
-Da wir nun die Regeln der Datenbanknormalisierung befolgt haben und die Daten in zwei Tabellen aufgeteilt sind, die über Primär- und Fremdschlüssel miteinander verknüpft sind, müssen wir in der Lage sein, einen `SELECT` zu erstellen, der die Daten in den Tabellen wieder zusammensetzt.
+Da wir nun die Regeln der Datenbanknormalisierung befolgt haben und die Daten in zwei Tabellen aufgeteilt sind, die über Primär- und Fremdschlüssel miteinander verknüpft sind, müssen wir in der Lage sein, einen `SELECT` zu implementieren, der die Daten in den Tabellen wieder zusammensetzt.
 
 SQL verwendet die `JOIN`-Klausel, um diese Tabellen wieder zu verbinden. In der `JOIN`-Klausel geben wir die Felder an, die zum Wiederverbinden der Zeilen zwischen den Tabellen verwendet werden.
 
-Im Folgenden sehen Sie ein Beispiel für einen `SELECT` mit einer `JOIN`-Klausel:
+Im Folgenden sehen wir ein Beispiel für einen `SELECT` mit einer `JOIN`-Klausel:
 
 ~~~~ {.sql}
 SELECT * FROM Follows JOIN People
@@ -534,11 +534,11 @@ SELECT * FROM Follows JOIN People
 
 Die `JOIN`-Klausel gibt an, dass die ausgewählten Felder sowohl die `Follows`- als auch die `People`-Tabelle betreffen. Die `ON`-Klausel gibt an, wie die beiden Tabellen verbunden werden sollen: Es wird eine passende Zeile aus `Follows` entnommen und an die Zeile aus `People` angefügt, bei der das Feld `from_id` in `Follows` gleich dem Wert `id` in der Tabelle `People` ist.
 
-![Verbinden von Tabellen mit JOIN](height=3.5in@figs2/join)
+![Datenabfrage über mehrere Tabellen mit JOIN](height=3.5in@figs2/join)
 
-Das Ergebnis des JOIN ist die Erstellung von Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Follows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
+Das Ergebnis des JOIN sind Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Follows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
 
-Der folgende Code demonstriert die Daten, die wir in der Datenbank erhalten, nachdem das Multi-Table-Twitter-Spider-Programm (oben) mehrmals ausgeführt wurde.
+Der folgende Code zeigt die Daten, die wir in der Datenbank erhalten, nachdem das obige Spider-Programm mehrmals ausgeführt wurde.
 
 \VerbatimInput{../code3/twjoin.py}
 
@@ -571,27 +571,29 @@ Connections for id=2:
 20 rows.
 ~~~~
 
-Wir sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN` Klausel.
+Wir sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN`-Klausel.
 
-Im letzten Select suchen wir nach Konten, die mit `opencontent` befreundet sind (d. h., `People.id=2`).
+Im letzten `SELECT` suchen wir nach Konten, die mit `opencontent` befreundet sind (d.h. `People.id=2`).
 
-In jeder der Zeilen des letzten Selects stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Wir können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
+In jeder der Zeilen des letzten `SELECT` stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Wir können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
 
 Zusammenfassung
 ---------------
 
-In diesem Kapitel wurde viel Stoff behandelt, um einen Überblick über die Grundlagen der Verwendung einer Datenbank in Python zu geben. Es ist komplizierter, den Code zu schreiben, um eine Datenbank zum Speichern von Daten zu verwenden als Python-Dictionaries oder einfache Dateien, sodass es wenig Grund gibt, eine Datenbank zu verwenden, es sei denn, die Anwendung benötigt wirklich die Fähigkeiten einer Datenbank. Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) wenn die Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn die Daten so groß sind, dass sie nicht in ein Dictionary passen und Sie wiederholt Informationen nachschlagen müssen, oder (3) wenn wir einen lang laufenden Prozess haben, den wir stoppen und neu starten möchten, um die Daten von einem Lauf zum nächsten beibehalten zu wollen.
+Datenbanktabellen anzulegen, zu verwalten und Datensätze einzufügen und abzufragen, ist mit einem gewissen programmiertechnischen Aufwand verbunden. Die Verwendung von Python-Datenstrukturen wie zum Beispiel Dictionaries ist dagegen recht simpel. Datenbanken verfügen jedoch über Eigenschaften und Funktionalitäten, wegen der man sie in bestimmten Szenarien präferiert.
 
-Wir können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Verknüpfungen/Beziehungen zwischen Zeilen in verschiedenen Tabellen erfordern. Wenn wir damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, mit einer großen Menge von Daten zu arbeiten, ist es wichtig, Daten effizient zu modellieren, damit Programme so schnell wie möglich ausgeführt werden.
+Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) Wenn die Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn die Daten so groß sind, dass sie nicht in ein Dictionary passen und wir wiederholt Informationen nachschlagen müssen, oder (3) wenn wir einen lange laufenden Prozess haben, den wir stoppen und neu starten möchten und die Daten von einem Lauf zum nächsten beibehalten wollen.
+
+Wir können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Beziehungen zwischen diesen erfordern. Wenn wir damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, mit einer großen Menge von Daten zu arbeiten, ist es wichtig, Daten effizient zu modellieren, um damit auch die Performanz unserer Programme zu optimieren.
 
 Debugging
 ---------
 
-Ein häufiges Schema, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass Sie ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können Sie schnell überprüfen, ob Ihr Programm richtig funktioniert.
+Ein häufiges Vorgehen, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass wir ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können wir schnell überprüfen, ob unser Programm richtig funktioniert.
 
-Sie müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn Sie z. B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere Ihr Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
+Wir müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn wir z.B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere unser Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
 
-Eine Lösung ist also, sicherzustellen, dass Sie entweder den Datenbank-Browser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor Sie versuchen, von Python aus auf die Datenbank zuzugreifen, um das Problem zu vermeiden, dass Ihr Python-Code fehlschlägt, weil die Datenbank gesperrt ist.
+Eine Lösung ist also, sicherzustellen, dass wir entweder den Datenbank-Browser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor wir versuchen, von Python aus auf die Datenbank zuzugreifen.
 
 Glossar
 -------
@@ -601,7 +603,7 @@ Attribut
 \index{Attribut}
 
 Constraint
-:   Die Anweisung an die Datenbank, eine Regel für ein Feld oder eine Zeile in einer Tabelle zu erzwingen. Eine übliche Einschränkung ist, darauf zu bestehen, dass es in einem bestimmten Feld keine doppelten Werte geben darf (d. h. alle Werte müssen eindeutig sein).
+:   Eine Anweisung an die Datenbank, eine Regel für ein Feld oder eine Zeile in einer Tabelle zu erzwingen. Eine übliche Einschränkung ist, darauf zu bestehen, dass es in einem bestimmten Feld keine doppelten Werte geben darf, also alle Werte eindeutig sein müssen.
 \index{Constraint}
 
 Cursor
@@ -609,7 +611,7 @@ Cursor
 \index{Cursor}
 
 Datenbankenbrowser
-:   Eine Software, die es ermöglicht, eine direkte Verbindung zu einer Datenbank herzustellen und die Datenbank direkt zu manipulieren, ohne ein Programm zu schreiben.
+:   Eine Software, die es ermöglicht, eine direkte Verbindung zu einer Datenbank herzustellen und die Datenbank direkt zu manipulieren, ohne dafür ein gesondertes Programm schreiben zu müssen.
 \index{Datenbankenbrowser}
 
 Fremdschlüssel
@@ -617,12 +619,11 @@ Fremdschlüssel
 \index{Fremdschlüssel}
 
 Index
-:   Zusätzliche Daten, die die Datenbanksoftware verwaltet und in eine Tabelle einfügt, um Nachschlagen sehr schnell zu machen.
+:   Zusätzliche Daten, die vom Datenbanksystem verwaltet und in eine Tabelle einfügt werden, um Abfragen sehr schnell zu machen.
 \index{Index}
-\index{}
 
 Logischer Schlüssel
-:   Ein Schlüssel, den die „Außenwelt“ verwendet, um eine bestimmte Zeile nachzuschlagen. In einer Tabelle mit Benutzerkonten könnte z. B. die E-Mail-Adresse einer Person ein guter Kandidat als logischer Schlüssel für die Daten des Benutzers sein.
+:   Ein Schlüssel, den die „Außenwelt“ verwendet, um eine bestimmte Zeile nachzuschlagen. In einer Tabelle mit Benutzerkonten könnte z.B. die E-Mail-Adresse einer Person ein guter Kandidat als logischer Schlüssel für die Daten des Benutzers sein.
 \index{Logischer Schlüssel}
 
 Normalisierung
@@ -639,6 +640,6 @@ Relation
 \index{Relation}
 
 Tupel
-:   Ein einzelner Eintrag in einer Datenbanktabelle, der eine Menge von Attributen darstellt. Typischerweise als Zeile bezeichnet.
+:   Ein einzelner Eintrag in einer Datenbanktabelle, der eine Menge von Attributen darstellt. Er wird typischerweise als Zeile bezeichnet.
 \index{Tupel}
 
