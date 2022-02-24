@@ -375,15 +375,15 @@ Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine
 Arbeiten mit mehreren Tabellen
 ------------------------------
 
-Wir werden nun das Twitter-Spider-Programm mit zwei Tabellen, den Primärschlüsseln und den Schlüsselreferenzen wie oben beschrieben neu erstellen. Hier ist der Code für die neue Version des Programms:
+Wir werden nun das Twitter-Spider-Programm mit zwei Tabellen, Primärschlüsseln und Schlüsselreferenzen wie oben beschrieben neu erstellen. Hier ist der Code für die neue Version des Programms:
 
 \VerbatimInput{../code3/twfriends.py}
 
-Dieses Programm fängt an, ein bisschen kompliziert zu werden, aber es veranschaulicht die Muster, die wir verwenden müssen, wenn wir Integer-Schlüssel zur Verknüpfung von Tabellen verwenden. Das grundlegende Vorgehen ist:
+Dieses Programm ist recht komplex, aber es veranschaulicht die Vorgehensweisen, die wir verwenden müssen, wenn wir Integer-Schlüssel zur Verknüpfung von Tabellen verwenden. Das grundlegende Vorgehen ist:
 
 1.  Erstellen der Tabellen mit Primärschlüsseln und Constraints.
 
-2.  Wenn wir einen logischen Schlüssel für eine Person haben (z. B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
+2.  Wenn wir einen logischen Schlüssel für eine Person haben (z.B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
 
 3.  Einfügen der Zeilen, die die `Follows`-Beziehung erfasst.
 
@@ -391,7 +391,7 @@ Wir werden jeden dieser Punkte nacheinander behandeln.
 
 ### Constraints in Datenbanktabellen
 
-Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mitteilen, dass wir möchten, dass es uns ein paar Regeln auferlegt. Diese Regeln helfen uns, Fehler zu vermeiden und falsche Daten in unsere Tabellen einzufügen. 
+Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mitteilen, dass wir möchten, dass es gewisse Regeln verfolgt. Diese Regeln helfen uns, Fehler zu vermeiden und falsche Daten in unsere Tabellen einzufügen. 
 
 ~~~~ {.python}
 cur.execute('''CREATE TABLE IF NOT EXISTS People
@@ -400,13 +400,13 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 ~~~~
 
-Wenn wir unsere Tabellen erstellen, dann geben wir an, dass die Spalte `name` in der Tabelle `People` `UNIQUE` sein muss. Wir geben außerdem an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z. B. dieselbe Beziehung mehr als einmal hinzufügen.
+Wenn wir unsere Tabellen erstellen, dann geben wir an, dass die Spalte `name` in der Tabelle `People` eindeutig (`UNIQUE`) sein muss. Wir geben außerdem an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z.B. dieselbe Beziehung mehr als einmal hinzufügen.
 
 Wir können diese Einschränkungen im folgenden Code ausnutzen:
 
 ~~~~ {.python}
 cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
-    VALUES ( ?, 0)''', ( friend, ) )
+    VALUES ( ?, 0)''', ( friend, ))
 ~~~~
 
 Wir fügen die Klausel `OR IGNORE` zu unserer `INSERT`-Anweisung hinzu, um anzugeben, dass das Datenbanksystem die `INSERT`-Anweisung ignorieren soll, wenn dieser eine Verletzung der Regel, dass `name` eindeutig sein muss, verursachen würde. Wir verwenden die Datenbankbeschränkung als Sicherheitsnetz, um zu gewährleisten, dass wir nicht versehentlich etwas Falsches tun.
@@ -415,33 +415,33 @@ In ähnlicher Weise stellt der folgende Code sicher, dass wir nicht genau die gl
 
 ~~~~ {.python}
 cur.execute('''INSERT OR IGNORE INTO Follows
-    (from_id, to_id) VALUES (?, ?)''', (id, friend_id) )
+    (from_id, to_id) VALUES (?, ?)''', (id, friend_id))
 ~~~~
 
-Auch hier sagen wir der Datenbank einfach, dass sie unser versuchtes `INSERT` ignorieren soll, wenn sie die `UNIQUE`-Constraint verletzen würde, die wir für die `Follows`-Zeilen angegeben haben.
+Auch hier sagen wir der Datenbank, dass sie ein `INSERT` ignorieren soll, wenn die `UNIQUE`-Constraint verletzen werden würde, die wir für die `Follows`-Zeilen definiert haben.
 
-### Abrufen und/oder Einfügen eines Datensatzes
+### Abrufen und Einfügen eines Datensatzes
 
-Wenn wir den Benutzer nach einem Twitter-Konto fragen, müssen wir, wenn das Konto existiert, seinen `id`-Wert nachschlagen. Wenn das Konto noch nicht in der Tabelle `People` vorhanden ist, müssen wir den Datensatz einfügen und den Wert `id` aus der eingefügten Zeile holen.
+Wenn wir den Benutzer nach einem Twitter-Konto fragen, müssen wir, sofern das Konto existiert, den `id`-Wert nachschlagen. Wenn das Konto noch nicht in der Tabelle `People` vorhanden ist, müssen wir den Datensatz einfügen und den Wert `id` aus der eingefügten Zeile holen.
 
-Dies ist ein sehr häufiges Schema und wird in dem obigen Programm zweimal ausgeführt. Dieser Code zeigt, wie wir die `id` für das Konto eines Freundes nachschlagen, wenn wir einen `screen_name` aus einem `user` Knoten im abgerufenen Twitter JSON extrahiert haben.
+Dies ist ein sehr häufiges Schema und wird in dem obigen Programm zweimal ausgeführt. Dieser Code zeigt, wie wir die `id` für das Konto eines Freundes nachschlagen, wenn wir einen `screen_name` aus einem `user`-Knoten im abgerufenen Twitter JSON extrahiert haben.
 
 Da es im Laufe der Zeit immer wahrscheinlicher wird, dass das Konto bereits in der Datenbank vorhanden ist, prüfen wir zunächst mit einer `SELECT`-Anweisung, ob der Datensatz `People` existiert.
 
-Wenn alles gut geht^[Wenn ein Satz mit „wenn alles gut geht“ beginnt, werden wir im Allgemeinen feststellen, dass der Code `try`/`except` verwenden sollte.] rufen wir den Datensatz mit `fetchone()` ab und erhalten dann das erste (und einzige) Element des zurückgegebenen Tupels und speichern es in `friend_id`.
+Wenn alles gut geht^[Wenn ein Satz schon mit „wenn alles gut geht“ beginnt, ist es häufig ratsam, den Code in `try`/`except`-Blöcke einzuschließen.] rufen wir den Datensatz mit `fetchone()` ab und erhalten dann das erste (und einzige) Element des zurückgegebenen Tupels und speichern es in `friend_id`.
 
-Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die Kontrolle wird in den `except` Abschnitt übertragen.
+Wenn der `SELECT` fehlschlägt, schlägt `fetchone()[0]` fehl und die Kontrolle wird in den `except` Abschnitt übertragen.
 
 ~~~~ {.python}
     friend = u['screen_name']
     cur.execute('SELECT id FROM People WHERE name = ? LIMIT 1',
-        (friend, ) )
+        (friend, ))
     try:
         friend_id = cur.fetchone()[0]
         countold = countold + 1
     except:
         cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
-            VALUES ( ?, 0)''', ( friend, ) )
+            VALUES ( ?, 0)''', ( friend, ))
         conn.commit()
         if cur.rowcount != 1:
             print('Error inserting account:',friend)
@@ -450,7 +450,7 @@ Wenn der `SELECT` fehlschlägt, schlägt der `fetchone()[0]` Code fehl und die K
         countnew = countnew + 1
 ~~~~
 
-Wenn wir im `except`-Code landen, bedeutet das schlichtweg, dass die Zeile nicht gefunden wurde, also müssen wir die Zeile einfügen. Wir verwenden `INSERT OR IGNORE` nur, um Fehler zu vermeiden und rufen dann `commit()` auf, um die Aktualisierung der Datenbank zu erzwingen. Nachdem der Schreibvorgang abgeschlossen ist, können wir die `cur.rowcount` überprüfen, um zu sehen, wie viele Zeilen betroffen waren. Da wir versuchen, eine einzelne Zeile einzufügen, ist es ein Fehler, wenn die Anzahl der betroffenen Zeilen etwas anderes als 1 ist.
+Wenn wir im `except`-Teil landen, bedeutet das schlichtweg, dass die Zeile nicht gefunden wurde, also müssen wir die Zeile einfügen. Wir verwenden `INSERT OR IGNORE` nur, um Fehler zu vermeiden und rufen dann `commit()` auf, um die Aktualisierung der Datenbank zu erzwingen. Nachdem der Schreibvorgang abgeschlossen ist, können wir die `cur.rowcount` überprüfen, um zu sehen, wie viele Zeilen betroffen waren. Da wir versuchen, eine einzelne Zeile einzufügen, ist es ein Fehler, wenn die Anzahl der betroffenen Zeilen etwas anderes als 1 ist.
 
 Wenn das `INSERT` erfolgreich war, können wir uns `cur.lastrowid` ansehen, um herauszufinden, welchen Wert die Datenbank der Spalte `id` in unserer neu erstellten Zeile zugewiesen hat.
 
@@ -460,12 +460,12 @@ Sobald wir den Schlüsselwert sowohl für den Twitter-Benutzer als auch für den
 
 ~~~~ {.python}
 cur.execute('INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
-    (id, friend_id) )
+    (id, friend_id))
 ~~~~
 
-Beachten Sie, dass wir es der Datenbank überlassen, uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellen und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzufügen.
+Es ist wichtig zu beachten, dass wir es der Datenbank überlassen, uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellt und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzugefügt haben.
 
-Hier ist ein Beispiel für die Ausführung dieses Programms zu erkennen:
+Hier ist ein Beispiel für die Ausführung dieses Programms:
 
 ~~~~
 Enter a Twitter account, or quit:
@@ -484,7 +484,7 @@ Enter a Twitter account, or quit: quit
 
 Wir haben mit dem Konto `drchuck` begonnen und dann das Programm automatisch die nächsten beiden Konten auswählen lassen, um sie abzurufen und zu unserer Datenbank hinzuzufügen.
 
-Es folgen die ersten Zeilen in den Tabellen `People` und `Follows`, nachdem dieser Lauf abgeschlossen ist:
+Hier sind die ersten paar Zeilen der Tabellen `People` und `Follows`, nachdem der Programmlauf abgeschlossen ist:
 
 ~~~~
 People:
@@ -503,7 +503,7 @@ Follows:
 60 rows.
 ~~~~
 
-Wir können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen und sehen die Nummern der beiden Enden der Beziehung in der Tabelle `Follows`. In der Tabelle `People` können wir sehen, dass die ersten drei Personen besucht und ihre Daten abgerufen wurden. Die Daten in der Tabelle `Follows` zeigen, dass `drchuck` (Benutzer 1) ein Freund aller Personen ist, die in den ersten fünf Zeilen angezeigt werden. Dies ergibt Sinn, denn die ersten Daten, die wir abgerufen und gespeichert haben, waren die Twitter-Freunde von `drchuck`. Wenn Sie weitere Zeilen aus der Tabelle `Follows` ausgeben würden, würden Sie auch die Freunde der Benutzer 2 und 3 sehen.
+Wir können die Felder `id`, `name` und `visited` in der Tabelle `People` sehen und in der Tabelle `Follows` die IDs der Konten, die in einer Freundschaftsbeziehung zueinander stehen. In der Tabelle `People` können wir sehen, dass die ersten drei Personen besucht und ihre Daten abgerufen wurden. Die Daten in der Tabelle `Follows` zeigen, dass `drchuck` (Benutzer 1) ein Freund aller Personen ist, die in den ersten fünf Zeilen angezeigt werden. Dies ergibt Sinn, denn die ersten Daten, die wir abgerufen und gespeichert haben, waren die Twitter-Freunde von `drchuck`. Wenn wir weitere Zeilen aus der Tabelle `Follows` ausgeben würden, würden wir auch die Freunde der Benutzer 2 und 3 sehen.
 
 Drei Arten von Schlüsseln
 -------------------------
