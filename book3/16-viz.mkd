@@ -2,14 +2,14 @@
 Visualisierung von Daten
 ========================
 
-Bisher haben wir Python erlernt und uns damit beschäftigt, wie man Python, das Netzwerk und Datenbanken verwendet, um Daten zu manipulieren.
+Bisher haben wir Python erlernt und uns damit beschäftigt, wie man Python, das Internet und Datenbanken verwendet, um Daten zu verarbeiten.
 
 In diesem Kapitel werfen wir einen Blick auf drei vollständige Anwendungen, die all diese Dinge zusammenbringen, um Daten zu verwalten und zu visualisieren. Wir können diese Anwendungen als Beispielcode verwenden, um mit dem Lösen eines realen Problems zu beginnen.
 
-Jede der Anwendungen liegt als ZIP-Datei vor, die wir herunterladen und auf unseren Computern entpacken und ausführen können.
+Jede der Anwendungen liegt als ZIP-Datei vor, die wir herunterladen, entpacken und ausführen können.
 
-Erstellen einer OpenStreetMap aus geokodierten Daten
--------------------------------------------
+Erstellen einer OpenStreetMap aus Geodaten
+------------------------------------------
 
 \index{Google!Map}
 \index{OpenStreetMap}
@@ -17,21 +17,21 @@ Erstellen einer OpenStreetMap aus geokodierten Daten
 
 In diesem Projekt verwenden wir die OpenStreetMap-API, um die Standorte einiger vom Benutzer eingegebenen Universitätsnamen auf einer aktuellen OpenStreetMap zu platzieren.
 
-![Eine OpenStreetMap](../images/openstreet-map)
+![OpenStreetMap](../images/openstreet-map)
 
 Um loszulegen, laden wir die Anwendung hier herunter:
 
 [www.py4e.com/code3/opengeo.zip](http://www.py4e.com/code3/opengeo.zip)
 
-Das erste zu lösende Problem ist, dass diese Geokodierungs-APIs auf eine bestimmte Anzahl von Anfragen pro Tag begrenzt sind. Wenn wir viele Daten haben, müssen wir den Lookup-Prozess möglicherweise mehrmals anhalten und neu starten. Also teilen wir das Problem in zwei Phasen auf.
+Das erste zu lösende Problem ist, dass die Geocoding-APIs auf eine bestimmte Anzahl von Anfragen pro Tag begrenzt sind. Wenn wir viele Daten haben, müssen wir den Lookup-Prozess möglicherweise mehrmals anhalten und neu starten. Also teilen wir das Problem in zwei Phasen auf.
 
 \index{Cache}
 
-In der ersten Phase nehmen wir die Daten (Universitätsnamen) in der Datei `where.data` und lesen sie zeilenweise ein, rufen die geokodierten Informationen von Google ab und speichern sie in einer Datenbank `geodata.sqlite`. Bevor wir die Geokodierungs-API für jeden vom Benutzer eingegebenen Ort verwenden, prüfen wir zunächst, ob wir die Daten für diese bestimmte Eingabezeile bereits haben. Die Datenbank fungiert als lokaler *Zwischenspeicher* (*Cache*) unserer Geokodierungsdaten, um sicherzustellen, dass wir Google nie zweimal nach denselben Daten fragen.
+In der ersten Phase nehmen wir die Daten (Universitätsnamen) in der Datei `where.data` und lesen sie zeilenweise ein, rufen die Geoinformationen von Google ab und speichern sie in einer Datenbank `geodata.sqlite`. Bevor wir die Geocoding-API für jeden vom Benutzer eingegebenen Ort verwenden, prüfen wir zunächst, ob wir die Daten für diese bestimmte Eingabezeile bereits haben. Die Datenbank fungiert als lokaler *Zwischenspeicher* (*Cache*) unserer Geodaten, um sicherzustellen, dass wir Google nie zweimal nach denselben Daten fragen.
 
 Wir können den Prozess jederzeit neu starten, indem wir die Datei `geodata.sqlite` löschen.
 
-Nun sollte das Programm `geoload.py` ausgeführt werden. Dieses Programm liest die Eingabezeilen in `where.data` und prüft für jede Zeile, ob sie bereits in der Datenbank vorhanden ist. Wenn wir die Daten für den Ort nicht haben, wird es die Geokodierungs-API aufrufen, um die Daten abzurufen und in der Datenbank zu speichern.
+Nun führen wir das Programm `geoload.py` aus. Das Programm liest die Eingabezeilen in `where.data` und prüft für jede Zeile, ob sie bereits in der Datenbank vorhanden ist. Wenn wir die Daten für den Ort nicht haben, wird es die Geocoding-API aufrufen, um die Daten abzurufen und in der Datenbank zu speichern.
 
 Hier ist ein Beispiellauf, nachdem bereits einige Daten in der Datenbank vorhanden sind:
 
@@ -62,7 +62,7 @@ Retrieved 866 characters {"type":"FeatureColl
 
 Die ersten fünf Orte sind bereits in der Datenbank und werden daher übersprungen. Das Programm scannt bis zu dem Punkt, an dem es neue Orte findet und beginnt, diese abzurufen.
 
-Das Programm `geoload.py` kann jederzeit gestoppt werden und es gibt einen Zähler, mit dem wir die Anzahl der Aufrufe der Geokodierungs-API für jeden Lauf begrenzen können. In Anbetracht der Tatsache, dass die Datei `where.data` nur ein paar hundert Datenelemente enthält, sollten wir nicht an das tägliche Google-Zugriffslimit stoßen, aber wenn wir mehr Daten hätten, könnte es mehrere Durchläufe über mehrere Tage hinweg erfordern, bis unsere Datenbank alle geokodierten Daten für unsere Eingabe enthält.
+Das Programm `geoload.py` kann jederzeit gestoppt werden und es gibt einen Zähler, mit dem wir die Anzahl der Aufrufe der Geocoding-API für jeden Lauf begrenzen können. In Anbetracht der Tatsache, dass die Datei `where.data` nur ein paar hundert Datenelemente enthält, sollten wir nicht an das tägliche Google-Zugriffslimit stoßen, aber wenn wir mehr Daten hätten, könnte es mehrere Durchläufe über mehrere Tage hinweg erfordern, bis unsere Datenbank alle Geodaten für unsere Eingabe enthält.
 
 Sobald wir einige Daten in `geodata.sqlite` geladen haben, können wir die Daten mit dem Programm `geodump.py` visualisieren. Dieses Programm liest die Datenbank und schreibt die Datei `where.js` mit dem Standort, dem Breitengrad und dem Längengrad in Form von ausführbarem JavaScript-Code.
 
@@ -97,9 +97,9 @@ Masovian Voivodeship, 00-046, Poland'],
 ];
 ~~~~
 
-Dies ist eine JavaScript-Variable, die eine Liste von Listen enthält. Die Syntax für JavaScript-Listenkonstanten ist der von Python sehr ähnlich, daher sollte Ihnen die Syntax vertraut sein.
+Dies ist eine JavaScript-Variable, die eine Liste von Listen enthält. Die Syntax für JavaScript-Listenkonstanten ist der von Python sehr ähnlich, daher sollte uns die Syntax vertraut sein.
 
-Nun muss die `where.html` in einem Browser geöffnet werden, um die Standorte zu sehen. Wir können den Mauszeiger über jede Pin bewegen, um den Standort zu finden, den die Geokodierungs-API für die vom Benutzer eingegebene Eingabe zurückgegeben hat. Wenn wir beim Öffnen der Datei `where.html` keine Daten sehen, sollten wir die JavaScript- oder Entwicklerkonsole für unseren Browser überprüfen.
+Nun muss die `where.html` in einem Browser geöffnet werden, um die Standorte zu sehen. Wir können den Mauszeiger über jeden Pin bewegen, um den Standort zu finden, den die Geocoding-API für die vom Benutzer eingegebene Eingabe zurückgegeben hat. Wenn wir beim Öffnen der Datei `where.html` keine Daten vorfinden, sollten wir die JavaScript- oder Entwicklerkonsole für unseren Browser überprüfen.
 
 Visualisierung von Netzwerken
 -----------------------------
@@ -108,7 +108,7 @@ Visualisierung von Netzwerken
 \index{Visualisierung!Netzwerke}
 \index{Visualisierung!Page-Ranking}
 
-In dieser Anwendung werden wir einige der Funktionen einer Suchmaschine ausführen. Wir werden zunächst eine kleine Teilmenge des Webs durchforsten und eine vereinfachte Version des Google-Page-Ranking-Algorithmus ausführen, um festzustellen, welche Seiten am stärksten miteinander verbunden sind, und dann den Seitenrang und die Verbindung in unserer kleinen Ecke des Webs visualisieren. Wir werden die D3-JavaScript-Visualisierungsbibliothek <http://d3js.org/> verwenden, um die Visualisierungsausgabe zu erzeugen.
+In dieser Anwendung werden wir einige der Funktionen einer Suchmaschine nachbilden. Wir werden zunächst eine kleine Teilmenge des Webs durchforsten und eine eigene vereinfachte Version des Page-Ranking-Algorithmus von Google ausführen, um festzustellen, welche Seiten am stärksten miteinander verbunden sind, und dann den Page-Rank und die Verbindung in einem kleinen Teil des Webs visualisieren. Wir werden die D3-JavaScript-Visualisierungsbibliothek <http://d3js.org/> verwenden, um die Visualisierung zu erzeugen.
 
 Wir können diese Anwendung hier herunterladen:
 
@@ -127,7 +127,7 @@ How many pages:2
 How many pages:
 ~~~~
 
-In diesem Beispieldurchlauf haben wir das Programm angewiesen, eine Website zu crawlen (zu durchforsten) und zwei Seiten abzurufen. Wenn wir das Programm neu starten und ihm sagen, dass es weitere Seiten crawlen soll, wird es keine Seiten, die sich bereits in der Datenbank befinden, erneut crawlen. Beim Neustart wechselt es zu einer zufälligen, nicht gecrawlten Seite und beginnt dort. Also ist jeder nachfolgende Lauf von `spider.py` additiv.
+In diesem Beispieldurchlauf haben wir das Programm angewiesen, eine Website zu durchforsten und zwei Seiten abzurufen. Wenn wir das Programm neu starten und ihm sagen, dass es weitere Seiten besuchen soll, wird es keine Seiten, die sich bereits in der Datenbank befinden, erneut besuchten. Beim Neustart wechselt es zu einer zufälligen, nicht besuchten Seite und beginnt dort. Somit verhält sich jeder erneute Lauf von `spider.py` additiv.
 
 ~~~~
 Enter web url or enter: http://www.dr-chuck.com/
@@ -139,7 +139,7 @@ How many pages:3
 How many pages:
 ~~~~
 
-Wir können mehrere Startpunkte in derselben Datenbank haben - im Programm werden diese als „Webs“ bezeichnet. Der Spider wählt nach dem Zufallsprinzip aus allen nicht besuchten Links über alle Webs hinweg die nächste zu durchsuchende Seite aus.
+Wir können mehrere Startpunkte in derselben Datenbank haben -- im Programm werden diese als `webs` bezeichnet. Der Spider wählt nach dem Zufallsprinzip aus allen nicht besuchten Links über alle `webs` hinweg die nächste zu durchsuchende Seite aus.
 
 Wenn wir den Inhalt der Datei `spider.sqlite` ausgeben möchten, können wir `spdump.py` wie folgt ausführen:
 
@@ -151,9 +151,9 @@ Wenn wir den Inhalt der Datei `spider.sqlite` ausgeben möchten, können wir `sp
 4 rows.
 ~~~~
 
-Dies zeigt die Anzahl der eingehenden Links, den alten Page Rank, den neuen Page Rank, die ID der Seite und die URL der Seite. Das Programm `spdump.py` zeigt nur Seiten an, die mindestens einen eingehenden Link auf sie haben.
+Dies zeigt die Anzahl der eingehenden Links, den alten Page-Rank, den neuen Page-Rank, die ID der Seite und die URL der Seite. Das Programm `spdump.py` zeigt nur Seiten an, die mindestens einen eingehenden Link auf sie haben.
 
-Sobald wir ein paar Websites in der Datenbank haben, können wir mit dem Programm `sprank.py` das Page-Ranking in Gang setzen. Wir teilen ihm einfach mit, wie viele Page-Rank-Iterationen es ausführen soll.
+Sobald wir ein paar Websites in der Datenbank haben, können wir mit dem Programm `sprank.py` das Page-Ranking in Gang setzen. Wir teilen ihm einfach mit, wie viele Iterationen es ausführen soll.
 
 ~~~~
 How many iterations:2
@@ -162,7 +162,7 @@ How many iterations:2
 [(1, 0.559), (2, 0.659), (3, 0.985), (4, 2.135), (5, 0.659)]
 ~~~~
 
-Wir können die Datenbank erneut ausgeben, um zu sehen, dass der Seitenrang aktualisiert wurde:
+Wir können die Datenbank erneut ausgeben, um zu sehen, dass der Page-Rank aktualisiert wurde:
 
 ~~~~
 (5, 1.0, 0.985, 3, 'http://www.dr-chuck.com/csev-blog')
@@ -172,7 +172,7 @@ Wir können die Datenbank erneut ausgeben, um zu sehen, dass der Seitenrang aktu
 4 rows.
 ~~~~
 
-Wir können `sprank.py` so oft ausführen, wie wir möchten und es wird einfach das Page-Ranking jedes Mal verfeinern, wenn wir es ausführen. Wir können `sprank.py` sogar ein paar Mal laufen lassen und dann ein paar weitere Seiten mit `spider.py` durchforsten und dann `sprank.py` laufen lassen, um die Page-Ranking-Werte neu zu konvertieren. Eine Suchmaschine lässt normalerweise sowohl das Crawling- als auch das Ranking-Programm ständig laufen.
+Wir können `sprank.py` so oft ausführen wie wir möchten und es wird das Page-Ranking jedes Mal verfeinern. Wir können `sprank.py` sogar ein paar Mal laufen lassen und dann ein paar weitere Seiten mit `spider.py` durchforsten und dann `sprank.py` laufen lassen, um die Page-Ranking-Werte neu zu berechnen. Eine Suchmaschine lässt normalerweise sowohl das Crawling- als auch das Ranking-Programm ständig laufen.
 
 Wenn wir die Page-Ranking-Berechnungen neu starten wollen, ohne die Webseiten neu zu laden, können wir `spreset.py` verwenden und dann `sprank.py` neu starten.
 
@@ -197,7 +197,7 @@ How many iterations:50
 [(512, 0.0296), (1, 12.79), (2, 28.93), (3, 6.808), (4, 13.46)]
 ~~~~
 
-Für jede Iteration des Page-Ranking-Algorithmus wird die durchschnittliche Änderung des Page-Ranks pro Seite ausgegeben. Das Netzwerk ist anfangs recht unausgewogen, sodass sich die einzelnen Page-Rank-Werte zwischen den Iterationen stark ändern. Aber in ein paar kurzen Iterationen konvergiert der Page-Rank. Wir sollten `sprank.py` lange genug laufen lassen, damit die Page-Ranking-Werte konvergieren.
+Für jede Iteration des Page-Ranking-Algorithmus wird die durchschnittliche Änderung des Page-Ranks pro Seite ausgegeben. Das Netzwerk ist anfangs recht unausgewogen, sodass sich die einzelnen Page-Rank-Werte zwischen den Iterationen stark ändern. Aber in ein paar kurzen Iterationen konvergiert der Page-Rank. Wir müssen `sprank.py` lange genug laufen lassen, damit die Page-Ranking-Werte konvergieren.
 
 Wenn wir die aktuellen Top-Seiten in Bezug auf den Page-Rank visualisieren möchten, führen wir `spjson.py` aus, um die Datenbank zu lesen und die Daten für die am stärksten verlinkten Seiten in ein JSON-Format zu schreiben, das in einem Webbrowser angezeigt werden kann.
 
@@ -207,7 +207,7 @@ How many nodes? 30
 Open force.html in a browser to view the visualization
 ~~~~
 
-Wir können diese Daten betrachten, indem wir die Datei `force.html` in unserem Webbrowser öffnen. Dies zeigt ein automatisches Layout der Knoten und Links. Wir können jeden Knoten anklicken sowie ziehen und wir können auch auf einen Knoten doppelklicken, um die URL zu sehen, die durch den Knoten dargestellt wird.
+Wir können diese Daten betrachten, indem wir die Datei `force.html` in unserem Webbrowser öffnen. Dies zeigt ein automatisches Layout der Knoten und Links. Wir können jeden Knoten anklicken und ziehen und wir können auch auf einen Knoten doppelklicken, um die URL zu sehen, die durch den Knoten dargestellt wird.
 
 Wenn wir die anderen Dienstprogramme erneut ausführen, führen wir `spjson.py` ebenfalls erneut aus. Dann drücken wir im Browser auf Aktualisieren, um die neuen Daten aus `spider.json` zu erhalten.
 
@@ -216,7 +216,7 @@ Visualisierung von Mail-Daten
 
 Bis zu diesem Punkt im Buch sind wir mit unseren Datendateien `mbox-short.txt` und `mbox.txt` ziemlich vertraut geworden. Jetzt ist es an der Zeit, unsere Analyse der E-Mail-Daten auf die nächste Stufe zu bringen.
 
-In der realen Welt müssen wir manchmal Mail-Daten von Servern abrufen. Das kann einige Zeit in Anspruch nehmen und die Daten können inkonsistent und fehlerhaft sein und eine Menge Bereinigungen oder Anpassungen erfordern. In diesem Abschnitt arbeiten wir mit einer Anwendung, die bisher die komplexeste ist, und rufen fast ein Gigabyte an Daten ab und visualisieren sie.
+In der realen Welt müssen wir manchmal Mail-Daten von Servern abrufen. Das kann einige Zeit in Anspruch nehmen und die Daten können inkonsistent und fehlerhaft sein und eine Menge Bereinigungen oder Anpassungen erfordern. In diesem Abschnitt arbeiten wir mit einer Anwendung, die bisher die komplexeste ist, und rufen fast ein Gigabyte an Daten ab und visualisieren diese.
 
 ![Eine Wortwolke aus der Sakai-Entwicklerliste](height=3.5in@../images/wordcloud)
 
@@ -224,17 +224,17 @@ Wir können diese Anwendung hier herunterladen:
 
 [https://www.py4e.com/code3/gmane.zip](https://www.py4e.com/code3/gmane.zip)
 
-Wir werden Daten von einem freien E-Mail-Listen-Archivierungsdienst namens [http://www.gmane.org](http://www.gmane.org) verwenden. Dieser Dienst ist sehr beliebt bei Open-Source-Projekten, weil er ein schönes durchsuchbares Archiv der E-Mail-Aktivitäten bietet. Sie haben auch eine sehr liberale Richtlinie bezüglich des Zugriffs auf Daten durch ihre API. Die API hat keine Zugriffsbeschränkungen, wir sollten jedoch darauf achten, den Dienst nicht zu überlasten und nur die Daten zu verwenden, die wir benötigen. Allgemeinen Geschäftsbedingungen von *gmane* sind auf der folgenden Seite zu finden:
+Wir werden Daten von einem freien E-Mail-Listen-Archivierungsdienst namens [http://www.gmane.org](http://www.gmane.org) verwenden. Dieser Dienst ist sehr beliebt bei Open-Source-Projekten, weil er ein schönes durchsuchbares Archiv der E-Mail-Aktivitäten bietet. Sie haben auch eine sehr liberale Richtlinie bezüglich des Zugriffs auf Daten durch ihre API. Die API hat keine Zugriffsbeschränkungen, wir sollten jedoch darauf achten, den Dienst nicht zu überlasten und nur die Daten zu verwenden, die wir benötigen. Die allgemeinen Geschäftsbedingungen von *gmane* sind auf der folgenden Seite zu finden:
 
 [http://www.gmane.org/export.php](http://www.gmane.org/export.php)
 
-*Es ist sehr wichtig, dass wir die Daten von gmane.org verantwortungsvoll nutzen, indem wir unseren Zugriff auf deren Dienste verzögern und lang laufende Aufträge über einen längeren Zeitraum verteilen. Missbrauchen wir diesen kostenlosen Dienst nicht und ruinieren ihn nicht für den Rest von uns.*
+**Hinweis:** Es ist sehr wichtig, dass wir die Daten von **gmane.org** verantwortungsvoll nutzen, indem wir unseren Zugriff auf deren Dienste verzögern und lang laufende Aufträge über einen längeren Zeitraum verteilen. So missbrauchen wir diesen kostenlosen Dienst nicht und ruinieren ihn nicht für andere Entwickler.
 
-Als die Sakai-E-Mail-Daten mit dieser Software gesichtet wurden, produzierte dies fast ein Gigabyte an Daten und erforderte eine Reihe von Durchläufen an mehreren Tagen. Die Datei `README.txt` im obigen ZIP-Archiv enthält möglicherweise Anweisungen, wie wir eine vorab erstellte Kopie der Datei `content.sqlite` für einen Großteil des Sakai-E-Mail-Korpus herunterladen können, damit wir nicht fünf Tage lang „spidern“ müssen, nur um die Programme auszuführen. Wenn wir den vorgespiderten Inhalt herunterladen, sollten wir trotzdem den Spidering-Prozess ausführen, um neuere Nachrichten einzuholen.
+Als die Sakai-E-Mail-Daten mit dieser Software gesichtet wurden, produzierte dies fast ein Gigabyte an Daten und erforderte eine Reihe von Durchläufen an mehreren Tagen. Die Datei `README.txt` im obigen ZIP-Archiv enthält möglicherweise Anweisungen, wie wir eine vorab erstellte Kopie der Datei `content.sqlite` für einen Großteil des Sakai-E-Mail-Korpus herunterladen können, damit wir nicht fünf Tage lang „spidern“ müssen, bevor wir unsere Programme endlich auszuführen können. Wenn wir den vorbereiteten Inhalt herunterladen, sollten wir trotzdem den Spider-Prozess ausführen, um neuere Nachrichten einzuholen.
 
-Der erste Schritt besteht darin, das gmane-Repository zu durchforsten. Die Basis-URL ist in der `gmane.py` fest codiert und mit der Sakai-Entwicklerliste verknüpft. Wir können ein anderes Repository spidern, indem wir diese Basis-URL ändern. Es ist sicherzustellen, dass die Datei `content.sqlite` gelöscht wird, wenn wir die Basis-URL ändern.
+Der erste Schritt besteht darin, das gmane-Repository zu durchforsten. Die Basis-URL ist in `gmane.py` fest codiert und mit der Sakai-Entwicklerliste verknüpft. Wir können ein anderes Repository spidern, indem wir diese Basis-URL ändern. Es ist sicherzustellen, dass die Datei `content.sqlite` gelöscht wird, wenn wir die Basis-URL ändern.
 
-Die Datei `gmane.py` arbeitet als verantwortlicher Caching-Spider, indem sie langsam läuft und eine Mail-Nachricht pro Sekunde abruft, um nicht von gmane gedrosselt zu werden. Das Programm speichert alle Daten in einer Datenbank und kann so oft wie nötig unterbrochen und neu gestartet werden. Es kann viele Stunden dauern, bis alle Daten heruntergeladen sind. Wir müssen also möglicherweise mehrmals neu starten.
+Das Programm Datei `gmane.py` arbeitet als verantwortlicher Caching-Spider, indem es langsam läuft und nur eine Mail-Nachricht pro Sekunde abruft, um nicht von gmane gedrosselt zu werden. Das Programm speichert alle Daten in einer Datenbank und kann so oft wie nötig unterbrochen und neu gestartet werden. Es kann viele Stunden dauern, bis alle Daten heruntergeladen sind. Wir müssen also möglicherweise mehrmals neu starten.
 
 Hier ist ein Lauf von `gmane.py`, der die letzten fünf Nachrichten der Sakai-Entwicklerliste abruft:
 
@@ -255,15 +255,15 @@ http://download.gmane.org/gmane.comp.cms.sakai.devel/51415/51416 0
 Does not start with From
 ~~~~
 
-Das Programm durchsucht die Datei `content.sqlite` von der ersten bis zur ersten noch nicht gespiderten Nachricht und beginnt das Spidering bei dieser Nachricht. Es fährt mit dem Spidering fort, bis es die gewünschte Anzahl von Nachrichten gespidert hat oder es eine Seite erreicht, die nicht als ordnungsgemäß formatierte Nachricht erscheint.
+Das Programm durchsucht die Datei `content.sqlite` von der allerersten bis zur ersten noch nicht verarbeiteten Nachricht und beginnt das Spidering bei dieser Nachricht. Es fährt mit dem Spidering fort, bis es die gewünschte Anzahl von Nachrichten durchforstet hat oder es eine Seite erreicht, die nicht als ordnungsgemäß formatierte Nachricht erscheint.
 
-Manchmal fehlt auf __gmane.org__ eine Nachricht. Vielleicht können Administratoren Nachrichten löschen oder vielleicht gehen sie verloren. Wenn Ihr Spider anhält und es scheint, dass er auf eine fehlende Nachricht gestoßen ist, gehen wir in den SQLite Manager und fügen eine Zeile mit der fehlenden ID hinzu, wobei wir alle anderen Felder leer lassen und `gmane.py` neu starten. Dies wird den Spidering-Prozess wieder freigeben und ihm erlauben, fortzufahren. Diese leeren Nachrichten werden in der nächsten Phase des Prozesses ignoriert.
+Manchmal fehlt auf **gmane.org** eine Nachricht. Vielleicht können Administratoren Nachrichten löschen oder vielleicht gehen sie verloren. Wenn unser Spider anhält und es scheint, dass er auf eine fehlende Nachricht gestoßen ist, gehen wir in den SQLite Manager und fügen eine Zeile mit der fehlenden ID hinzu, wobei wir alle anderen Felder leer lassen und `gmane.py` neu starten. Dies wird den Spider-Prozess wieder freigeben und ihm erlauben, fortzufahren. Diese leeren Nachrichten werden in der nächsten Phase des Prozesses ignoriert.
 
-Eine nette Sache ist, dass wir, sobald wir alle Nachrichten gespidert haben und sie in `content.sqlite` vorliegen, `gmane.py` erneut ausführen können, um neue Nachrichten zu erhalten, sobald sie in die Liste übertragen werden.
+Eine schöne Sache ist, dass wir, sobald wir alle Nachrichten gespidert haben und sie in `content.sqlite` vorliegen, `gmane.py` erneut ausführen können, um neue Nachrichten zu erhalten, sobald sie in die Liste übertragen werden.
 
-Die `content.sqlite`-Daten sind unbearbeitet, mit einem ineffizienten Datenmodell gespeichert, und nicht komprimiert. Dies ist beabsichtigt, da es Ihnen ermöglicht, `content.sqlite` im SQLite-Manager zu betrachten, um Probleme mit dem Spidering-Prozess zu beheben. Es wäre eine schlechte Idee, irgendwelche Abfragen über diese Datenbank laufen zu lassen, da sie ziemlich langsam wären.
+Die `content.sqlite`-Daten sind unbearbeitet, mit einem ineffizienten Datenmodell gespeichert, und nicht komprimiert. Dies ist beabsichtigt, da es Ihnen ermöglicht, `content.sqlite` im SQLite-Manager zu betrachten, um Probleme mit dem Spider-Prozess zu beheben. Es wäre eine schlechte Idee, irgendwelche Abfragen über diese Datenbank laufen zu lassen, da sie ziemlich langsam wären.
 
-Der zweite Vorgang ist die Ausführung des Programms `gmodel.py`. Dieses Programm liest die Rohdaten aus `content.sqlite` und erzeugt eine bereinigte und gut modellierte Version der Daten in der Datei `index.sqlite`. Diese Datei wird viel kleiner sein (oft 10-mal kleiner) als `content.sqlite`, weil auch der Header- und Body-Text komprimiert wird.
+Der zweite Vorgang ist die Ausführung des Programms `gmodel.py`. Dieses Programm liest die Rohdaten aus `content.sqlite` und erzeugt eine bereinigte und gut modellierte Version der Daten in der Datei `index.sqlite`. Diese Datei wird viel kleiner sein (oft 10 Mal kleiner) als `content.sqlite`, weil auch der Header- und Body-Text komprimiert wird.
 
 Jedes Mal, wenn `gmodel.py` läuft, löscht es die Datei `index.sqlite` und baut sie neu auf, sodass wir die Parameter anpassen und die Mapping-Tabellen in `content.sqlite` bearbeiten können, um den Datenbereinigungsprozess zu optimieren. Dies ist ein Beispiellauf von `gmodel.py`. Jedes Mal, wenn 250 Mail-Nachrichten verarbeitet werden, wird eine Zeile ausgegeben, damit wir den Fortschritt sehen können, denn dieses Programm kann eine Weile laufen und fast ein Gigabyte an Mail-Daten verarbeiten.
 
@@ -294,7 +294,7 @@ sgithens@cam.ac.uk
 swgithen@mtu.edu
 ~~~~
 
-Wir können zwei Einträge in die Mapping-Tabelle in `mapping.sqlite` hinzufügen, sodass `gmodel.py` alle drei auf eine Adresse mappt:
+Wir können zwei Einträge in die Mapping-Tabelle in `mapping.sqlite` hinzufügen, sodass `gmodel.py` alle drei auf eine Adresse abbildet:
 
 ~~~~
 s-githens@northwestern.edu ->  swgithen@mtu.edu
@@ -309,10 +309,10 @@ Zuordnung wurde zu den Sakai-Daten hinzugefügt:
 iupui.edu -> indiana.edu
 ~~~~
 
-damit alle Konten der verschiedenen Standorte der Indiana University
-zusammen verfolgt werden.
+So werden alle Konten der verschiedenen Standorte der Indiana University
+zusammen verfolgt.
 
-Wir können die `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten aufgeräumter zu machen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datei, die für die Datenanalyse verwendet wird. Mit dieser Datei wird die Datenanalyse wirklich schnell sein.
+Wir können `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten immer mehr zu bereinigen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datenbank-Datei, die für die Datenanalyse verwendet wird. Mit ihr wird die Datenanalyse wirklich schnell sein.
 
 Die erste und einfachste Datenanalyse besteht darin, festzustellen, wer die meisten Mails verschickt hat und welche Organisation die meisten Mails verschickt hat. Dies wird mit `gbasic.py` durchgeführt:
 
@@ -335,9 +335,9 @@ indiana.edu 2258
 unicon.net 2055
 ~~~~
 
-Es sei zu beachten, wie viel schneller `gbasic.py` im Vergleich zu `gmane.py` oder sogar `gmodel.py` läuft. Wir arbeiten alle mit den gleichen Daten, aber `gbasic.py` verwendet die komprimierten und normalisierten Daten in `index.sqlite`. Wenn wir viele Daten zu verwalten haben, kann ein mehrstufiger Prozess wie in dieser Anwendung etwas länger dauern, aber es kann viel Zeit gespart werden, wenn Daten untersucht und visualisiert werden.
+Es ist zu beachten, wie viel schneller `gbasic.py` im Vergleich zu `gmane.py` oder sogar `gmodel.py` läuft. Sie arbeiten alle mit den gleichen Daten, aber `gbasic.py` verwendet die komprimierten und normalisierten Daten in `index.sqlite`. Wenn wir viele Daten zu verwalten haben, kann ein mehrstufiger Prozess wie in dieser Anwendung etwas länger dauern, aber es kann viel Zeit gespart werden, wenn Daten untersucht und visualisiert werden.
 
-Eine einfache Visualisierung der Worthäufigkeit in den Betreffzeilen können wir in der Datei `gword.py` erzeugen:
+Eine einfache Visualisierung der Worthäufigkeit in den Betreffzeilen können wir mit `gword.py` erzeugen:
 
 ~~~~
 Range of counts: 33229 129
@@ -361,5 +361,5 @@ Die Ausgabe wird in `gline.js` geschrieben, die mit `gline.htm` visualisiert wir
 
 ![Sakai-Mail-Aktivität pro Organisation](../images/mailorg)
 
-Dies ist eine relativ komplexe und ausgefeilte Anwendung und verfügt über Funktionen zum Abrufen, Bereinigen und Visualisieren von Daten.
+Dies ist eine relativ komplexe und ausgefeilte Anwendung und sie verfügt über Funktionen zum Abrufen, Bereinigen und Visualisieren von Daten.
 
