@@ -51,15 +51,15 @@ Vorwort von „Think Python“
 
 Im Januar 1999 bereitete ich mich darauf vor, einen Einführungskurs in die Programmierung mit Java zu geben. Ich hatte ihn bereits dreimal unterrichtet und war frustriert. Die Durchfallquote in der Klasse war zu hoch, und selbst bei den Schülern, die erfolgreich waren, war das Leistungsniveau insgesamt zu niedrig.
 
-Eines der Probleme, die ich sah, waren die Bücher. Sie waren zu umfangreich, enthielten zu viele unnötige Details über Java und nicht genug Anleitungen von guter Qualität, wie man programmiert. Außerdem litten sie alle unter dem Falltür-Effekt: Sie fingen einfach an, gingen allmählich voran, und dann, etwa ab Kapitel 5, fiel der Boden heraus. Die Studenten lernten zu schnell zu viel neues Material, und ich musste den Rest des Semesters damit verbringen, die Scherben aufzusammeln.
+Eines der Probleme, die ich sah, waren die Bücher. Sie waren zu umfangreich, enthielten zu viele unnötige Details über Java und nicht genug Anleitungen von guter Qualität, wie man programmiert. Außerdem hatten die Bücher folgenden Fallstrick: Sie fingen gemächlich an, gingen allmählich voran, und dann plötzlich, etwa ab Kapitel 5, zog das Tempo enorm an. Die Studenten lernten zu schnell zu viel neues Material, und ich musste den Rest des Semesters damit verbringen, die Scherben aufzusammeln.
 
 Zwei Wochen vor dem ersten Unterrichtstag beschloss ich, mein eigenes Buch zu schreiben. Meine Ziele waren:
 
--   Machen Sie es kurz. Es ist besser für die Schüler, 10 Seiten zu lesen, als 50 Seiten nicht zu lesen.
+-   Es kurz halten. Es ist besser für die Schüler, 10 Seiten zu lesen, als 50 Seiten nicht zu lesen.
 
--   Vorsichtig mit dem Vokabular sein. Ich habe versucht, den Jargon zu minimieren und jeden Begriff bei der ersten Verwendung zu definieren.
+-   Vorsichtig mit dem Vokabular sein. Ich habe versucht, den Jargon einfach zu halten und jeden Begriff bei der ersten Verwendung zu definieren.
 
--   Schrittweises Vorgehen. Um Falltüren zu vermeiden, habe ich die schwierigsten Themen in eine Reihe kleiner Schritte aufgeteilt.
+-   Schrittweises Vorgehen. Um zu vermeiden, dass die Leser abgehängt werden, habe ich die schwierigsten Themen in eine Reihe kleiner Schritte aufgeteilt.
 
 -   Konzentrieren auf die Programmierung, nicht auf die Programmiersprache. Ich habe die kleinste nützliche Teilmenge von Java einbezogen und den Rest weggelassen.
 
@@ -72,13 +72,13 @@ Ich habe das Buch unter der GNU Free Documentation License veröffentlicht, die 
 \index{GNU Free Documentation License}
 \index{Free Documentation License, GNU}
 
-Was dann geschah, ist der coole Teil. Jeff Elkner, ein Highschool-Lehrer in Virginia, nahm sich meines Buches an und übersetzte es in Python. Er schickte mir eine Kopie seiner Übersetzung, und ich machte die ungewöhnliche Erfahrung, Python zu lernen, indem ich mein eigenes Buch las.
+Was dann passierte, ist der coole Teil. Jeff Elkner, ein Highschool-Lehrer in Virginia, nahm sich meines Buches an und übersetzte es in Python. Er schickte mir eine Kopie seiner Übersetzung, und ich machte die ungewöhnliche Erfahrung, Python zu lernen, indem ich mein eigenes Buch las.
 
 Jeff und ich überarbeiteten das Buch, fügten eine Fallstudie von Chris Meyers ein und veröffentlichten im Jahr 2001 *How to Think Like a Computer Scientist: Learning with Python*, ebenfalls unter der GNU Free Documentation License. Als Green Tea Press veröffentlichte ich das Buch und begann mit dem Verkauf von gedruckten Exemplaren über Amazon.com und College-Buchläden. Andere Bücher von Green Tea Press sind unter [greenteapress.com](greenteapress.com) erhältlich.
 
 Im Jahr 2003 begann ich am Olin College zu unterrichten, und ich durfte zum ersten Mal Python unterrichten. Der Unterschied zu Java war frappierend. Die Studenten hatten weniger Mühe, lernten mehr, arbeiteten an interessanteren Projekten und hatten allgemein viel mehr Spaß.
 
-In den letzten fünf Jahren habe ich das Buch weiterentwickelt, Fehler korrigiert, einige der Beispiele verbessert und Material hinzugefügt, insbesondere Übungen. Im Jahr 2008 begann ich mit der Arbeit an einer umfassenden Überarbeitung - zur gleichen Zeit wurde ich von einem Redakteur der Cambridge University Press kontaktiert, der an der Veröffentlichung der nächsten Ausgabe interessiert war. Gutes Timing!
+In den letzten fünf Jahren habe ich das Buch weiterentwickelt, Fehler korrigiert, einige der Beispiele verbessert und Material hinzugefügt, insbesondere Übungen. Im Jahr 2008 begann ich mit der Arbeit an einer umfassenden Überarbeitung -- zur gleichen Zeit wurde ich von einem Redakteur der Cambridge University Press kontaktiert, der an der Veröffentlichung der nächsten Ausgabe interessiert war. Gutes Timing!
 
 Ich wünsche Ihnen viel Spaß bei der Arbeit mit diesem Buch und hoffe, dass es Ihnen hilft, zu programmieren und zumindest ein bisschen wie ein Informatiker zu denken.
 
