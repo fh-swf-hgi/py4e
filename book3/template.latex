@@ -162,7 +162,8 @@ $header-includes$
 $endfor$
 
 \makeatletter
-\renewcommand*\l@section{\@dottedtocline{1}{1em}{3em}}
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3.5em}}
 \makeatother
 \makeindex
 
@@ -188,7 +189,7 @@ $endfor$
 
 $if(toc)$
 {
-\hypersetup{linkcolor=blue}
+\hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
 \tableofcontents
 }
