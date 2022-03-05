@@ -113,7 +113,6 @@ $endif$
 \fi
 \hypersetup{breaklinks=true,
             linktoc=all,
-            linktocpage,
             bookmarks=true,
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
