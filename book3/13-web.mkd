@@ -38,7 +38,7 @@ Hier ist eine einfache Anwendung, die ein XML-Dokument parst und einige Datenele
 
 \VerbatimInput{../code3/xml1.py} 
 
-Das dreifache einfache Anführungszeichen (`'''`) sowie das dreifache doppelte Anführungszeichen (`"""`) ermöglichen die Erstellung von Zeichenketten, die sich über mehrere Zeilen erstrecken.
+Das dreifache einfache Anführungszeichen (`'''`) sowie das dreifache doppelte Anführungszeichen (`"`{}`"`{}`"`) ermöglichen die Erstellung von Zeichenketten, die sich über mehrere Zeilen erstrecken.
 
 Der Aufruf von `fromstring` konvertiert die String-Darstellung des XML in einen Baum von XML-Elementen. Wenn das XML in einem Baum vorliegt, haben wir eine Reihe von Methoden, die wir aufrufen können, um Teile der Daten aus dem XML-String zu extrahieren.  Die Funktion `find` durchsucht den XML-Baum und ruft das Element ab, das mit dem angegebenen Tag übereinstimmt.
 

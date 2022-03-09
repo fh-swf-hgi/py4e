@@ -141,7 +141,7 @@ Programmierer wählen für ihre Variablen in der Regel Namen, die aussagekräfti
 
 Variablennamen können beliebig lang sein. Sie können sowohl Buchstaben als auch Zahlen enthalten, aber sie dürfen nicht mit einer Zahl beginnen. Es ist erlaubt, Großbuchstaben zu verwenden, aber es ist eine gute Idee, Variablennamen mit einem Kleinbuchstaben zu beginnen (Wir werden später sehen, warum).
 
-Das Unterstrich (`\_`) kann in einem Variablennamen vorkommen. Es wird häufig in Variablen mit mehreren Wörtern verwendet, z. B. `my_name` oder `airspeed_of_light`. Variablennamen können mit einem Unterstrich beginnen, aber wir vermeiden dies im Allgemeinen. Variablen die mit einem oder mit zwei Unterstrichen beginnen, haben eine spezielle Bedeutung. Wenn wir also „normale“ Variablen mit einem Unterstrich beginnen lassen, würde dies Personen verwirren, die unseren Code lesen und nachvollziehen wollen.
+Der Unterstrich (`_`) kann in einem Variablennamen vorkommen. Es wird häufig in Variablen mit mehreren Wörtern verwendet, z. B. `my_name` oder `airspeed_of_light`. Variablennamen können mit einem Unterstrich beginnen, aber wir vermeiden dies im Allgemeinen. Variablen die mit einem oder mit zwei Unterstrichen beginnen, haben eine spezielle Bedeutung. Wenn wir also „normale“ Variablen mit einem Unterstrich beginnen lassen, würde dies Personen verwirren, die unseren Code lesen und nachvollziehen wollen.
 
 \index{Unterstrich}
 
