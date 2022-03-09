@@ -245,12 +245,12 @@ Es gibt noch weitere Stellen in Python, an denen man mit einem vorangestellten A
 
 Beachten Sie übrigens, dass im Beispiel oben das Resultat in `b` eine Liste ist, obwohl auf der linken Seite der Zuweisung ein Tupel steht. Beim Packing werden die einzelenen Elemente immer in eine Liste gepackt, ganz gleich aus welcher Datenstruktur sie entnommen werden.
 
-\index{Packing)
+\index{Packing}
 \index{Unpacking}
 
 (Un)packing lässt sich nicht nur auf numerische Werte anwenden, sondern auch auf andere Typen, wie etwa Zeichenketten. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten wir schreiben:
 
-\index{split (Methode)
+\index{split (Methode)}
 \index{Methode!split}
 \index{E-Mail-Adresse}
 

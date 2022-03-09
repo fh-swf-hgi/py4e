@@ -456,7 +456,7 @@ line slicing : Zeilen-Slicing
 \index{method!remove} : \index{Methode!remove}
 \index{list!function} : \index{list!Funktion}
 \index{function!list} : \index{Funktion!list}
-\index{split method} : \index{split (Methode)
+\index{split method} : \index{split (Methode)}
 \index{method!split} : \index{Methode!split}
 \index{delimiter} : \index{Delimiter}
 \index{join method} : \index{join (Methode)}

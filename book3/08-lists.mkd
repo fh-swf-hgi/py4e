@@ -463,7 +463,7 @@ Hier definieren wir eine eigene Funktion `list`; Python lässt das ohne weiteres
 
 Die Funktion `list` zerlegt eine Zeichenkette in einzelne Buchstaben. Wenn wir eine Zeichenkette in Wörter zerlegen wollen, können wir die Methode `split` verwenden:
 
-\index{split (Methode)
+\index{split (Methode)}
 \index{Methode!split}
 
 ~~~~ {.python .trinket}
