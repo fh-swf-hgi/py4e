@@ -4,7 +4,7 @@ rm tmp.* *.tmp *.aux
 pandoc A0-preface.mkd -o tmp.prefacex.tex
 sed < tmp.prefacex.tex 's/section{/section*{/' > tmp.preface.tex
 #cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V lang:ngerman -V highlighting-macros:'\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\},fontsize=\small}' -V fontsize:10pt -V documentclass:book --template=template.latex -o tmp.tex
-cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V lang:ngerman -V fontsize:10pt -V documentclass:book --template=template.latex -o tmp.tex
+cat [0-9]*.mkd | python verbatim.py | tee tmp.verbatim | pandoc -s -N -f markdown+definition_lists -t latex --toc --default-image-extension=eps -V lang:ngerman -V fontsize:10pt -V documentclass:book -V title-meta="Python für alle" --template=template.latex -o tmp.tex
 pandoc [A-Z][A-Z]*.mkd -o tmp.app.tex
 
 sed < tmp.app.tex -e 's/subsubsection{/xyzzy{/' -e 's/subsection{/plugh{/' -e 's/section{/chapter{/' -e 's/xyzzy{/subsection{/' -e 's/plugh{/section{/'  > tmp.appendix.tex
