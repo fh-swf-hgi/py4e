@@ -63,7 +63,6 @@ Listen sind veränderbar
 \index{Liste!Element}
 \index{Zugriff}
 \index{Index}
-\index{}
 \index{Indexoperator}\index{Zugriff, indexbasiert}
 \index{Operator!indexbasierter Zugriff}
 
@@ -589,7 +588,6 @@ False
 
 In diesem Fall würden wir sagen, dass die beiden Listen *äquivalent* sind, weil sie die gleichen Elemente haben, aber nicht *identisch*, weil sie nicht das selbe Objekt sind. Wenn zwei Objekte identisch sind, sind sie auch äquivalent, aber wenn sie äquivalent sind, sind sie nicht unbedingt identisch.
 
-\index{Äquivalenz}
 \index{Identität}
 
 Bis jetzt haben wir „Objekt“ und „Wert“ austauschbar verwendet, aber es ist präziser zu sagen, dass ein Objekt einen Wert hat. Wenn wir `a = [1,2,3]` ausführen, bezieht sich `a` auf ein Listenobjekt, dessen Wert eine bestimmte Folge von Elementen ist. Wenn eine andere Liste die gleichen Elemente hat, würden wir sagen, sie hat den gleichen Wert.
@@ -908,12 +906,10 @@ Element
 
 äquivalent
 :   Den gleichen Wert haben.
-\index{äquivalent}
 
 Index
 :   Ein ganzzahliger Wert, der ein Element in einer Liste indiziert.
 \index{Index}
-\index{}
 
 identisch
 :   Dasselbe Objekt sein (was Äquivalenz impliziert).
