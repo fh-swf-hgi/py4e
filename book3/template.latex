@@ -206,6 +206,8 @@ $if(toc)$
 {
 \hypersetup{linkcolor=black}
 \setcounter{tocdepth}{$toc-depth$}
+\cleardoublepage
+\pdfbookmark{\contentsname}{toc}
 \tableofcontents
 }
 $endif$
