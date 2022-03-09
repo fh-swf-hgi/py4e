@@ -69,9 +69,6 @@ Meine erste Version war holprig, aber sie funktionierte. Die Schüler haben die 
 
 Ich habe das Buch unter der GNU Free Documentation License veröffentlicht, die es den Benutzern erlaubt, das Buch zu kopieren, zu verändern und zu verbreiten.
 
-\index{GNU Free Documentation License}
-\index{Free Documentation License, GNU}
-
 Was dann passierte, ist der coole Teil. Jeff Elkner, ein Highschool-Lehrer in Virginia, nahm sich meines Buches an und übersetzte es in Python. Er schickte mir eine Kopie seiner Übersetzung, und ich machte die ungewöhnliche Erfahrung, Python zu lernen, indem ich mein eigenes Buch las.
 
 Jeff und ich überarbeiteten das Buch, fügten eine Fallstudie von Chris Meyers ein und veröffentlichten im Jahr 2001 *How to Think Like a Computer Scientist: Learning with Python*, ebenfalls unter der GNU Free Documentation License. Als Green Tea Press veröffentlichte ich das Buch und begann mit dem Verkauf von gedruckten Exemplaren über Amazon.com und College-Buchläden. Andere Bücher von Green Tea Press sind unter [greenteapress.com](greenteapress.com) erhältlich.
@@ -92,9 +89,6 @@ Ich danke auch Chris Meyers, der mehrere Abschnitte zu *How to Think Like a Comp
 
 Und ich danke der Free Software Foundation für die Entwicklung der GNU Free Documentation License, die meine Zusammenarbeit mit Jeff und Chris erst möglich gemacht hat.
 
-\index{GNU Free Documentation License}
-\index{Free Documentation License, GNU}
-
 Ich danke auch den Redakteuren bei Lulu, die an *How to Think Like a Computer Scientist* gearbeitet haben.
 
 Ich danke allen Studierenden, die an früheren Fassungen dieses Buches mitgearbeitet haben, und allen Autoren (die in einem Anhang aufgeführt sind), die mir Korrekturen und Vorschläge zugesandt haben.
@@ -108,8 +102,6 @@ Allen Downey ist außerordentlicher Professor für Computerwissenschaften am Fra
 
 Mitwirkende an „Think Python“ 
 -----------------------------
-
-\index{Beiträge}\index{Mitwirkende}
 
 (Allen B. Downey)
 
