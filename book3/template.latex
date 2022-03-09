@@ -6,7 +6,7 @@ $if(fontfamily)$
 $else$
 \usepackage{lmodern}
 $endif$
-\usepackage{makeidx}
+\usepackage{imakeidx}
 $if(linestretch)$
 \usepackage{setspace}
 \setstretch{$linestretch$}
@@ -58,7 +58,7 @@ $if(lang)$
   \usepackage{polyglossia}
   \setmainlanguage{$mainlang$}
 \else
-  \usepackage[shorthands=off,$lang$]{babel}
+  \usepackage[$lang$]{babel}
 \fi
 $endif$
 $if(natbib)$
@@ -104,6 +104,21 @@ $if(graphics)$
 % using explicit options in \includegraphics[width, height, ...]{}
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 $endif$
+
+% BEGIN page header
+\usepackage{emptypage} % suppress page numbers and headings from appearing on empty pages
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhf[roh,leh]{\thepage}
+\fancyhf[reh]{\nouppercase{\leftmark}}
+\fancyhf[loh]{\nouppercase{\rightmark}}
+\fancypagestyle{plain}{
+  \fancyhf{} 
+  \fancyfoot[LE,RO]{} % same placement as with page style "fancy"
+  \renewcommand{\headrulewidth}{0pt}}
+% END page header
+
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -114,6 +129,7 @@ $endif$
 \hypersetup{breaklinks=true,
             linktoc=all,
             bookmarks=true,
+            bookmarksnumbered,
             pdfauthor={$author-meta$},
             pdftitle={$title-meta$},
             colorlinks=true,
@@ -164,7 +180,7 @@ $endfor$
 \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3.5em}}
 \makeatother
-\makeindex
+\makeindex[intoc, columnsep=1.5em]
 
 \begin{document}
 \frontmatter
