@@ -3,14 +3,14 @@
 Mitwirkende
 -----------
 
+    Übersetzung und Bearbeitung: Fabian Eberts, Heiner Giefers
     Redaktionelle Unterstützung: Elliott Hauser, Sue Blumenberg
-                Covergestaltung: Aimee Andrion
-           Deutsche Übersetzung: Fabian Eberts, Heiner Giefers,
-                                 Sebastian Schmidt, Julia Warnke
+    Covergestaltung: Aimee Andrion
 
 Historie
 --------
 
+* 2022-März-?? Erste Druckversion der deutschen Ausgabe
 * 2021-Okt-10 Erste Version der deutschen Übersetzung
 * 2016-Jul-05 Erste vollständige Python 3.0 Version
 * 2015-Dez-20 Initiale Übertragung zu Python 3.0
@@ -34,7 +34,7 @@ Vorwort
 Vorwort zur deutschen Ausgabe
 -----------------------------
 
-Die Deutsche Nationalbibliothek listet über 500 Titel zum Thema Python Programmierung, digitale Medien eingeschlossen sind es sogar über 1000.
+Die Deutsche Nationalbibliothek listet über 500 Titel zum Thema Python"=Programmierung, digitale Medien eingeschlossen sind es sogar über 1000.
 Man kann sich also die Frage stellen, ob das *1001. Buch über Python* wirklich notwendig ist.
 Wir finden *ja*, denn der Ansatz dieses Buches unterscheidet sich von den meisten anderen zum Thema.
 *Python für alle* ist Teil eines offenen Curriculums zu Python, das bereits in verschiedene Sprachen übersetzt wurde und in diversen Hochschulen als auch in Online-Kursen Anwendung findet.
