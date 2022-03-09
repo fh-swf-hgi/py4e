@@ -180,7 +180,7 @@ $endfor$
 \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3.5em}}
 \makeatother
-\makeindex[intoc, columnsep=1.5em]
+\makeindex[intoc, columnsep=1.5em, options= -s index_style.ist]
 
 \begin{document}
 \frontmatter
@@ -249,6 +249,7 @@ $endfor$
 
 \normalsize
 
+\cleardoublepage
 \printindex
 
 % \newpage\null\thispagestyle{empty}\newpage
