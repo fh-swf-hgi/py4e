@@ -1,33 +1,3 @@
-\thispagestyle{empty}
-
-Mitwirkende
------------
-
-Übersetzung und Bearbeitung: Fabian Eberts, Heiner Giefers
-
-Redaktionelle Unterstützung: Elliott Hauser, Sue Blumenberg
-
-Covergestaltung: Aimee Andrion
-
-Historie
---------
-
-* 2022-März-09 Erste Druckversion der deutschen Ausgabe
-* 2021-Oktober-10 Erste Version der deutschen Übersetzung
-* 2016-Juli-05 Erste vollständige Python 3.0 Version
-* 2015-Dezember-20 Initiale Übertragung zu Python 3.0
-
-Hinweise zum Urheberrecht
--------------------------
-
-Copyright 2009- Dr. Charles R. Severance.
-
-Dieses Werk ist lizenziert unter einer Creative Commons Attribution - Non Commercial - Share Alike 3.0 Unported License. Diese Lizenz ist verfügbar unter:
-
-http://creativecommons.org/licenses/by-nc-sa/3.0/
-
-Weitere Details zur kommerziellen und nicht-kommerziellen Nutzung dieses Materials sowie zu den Lizenzausnahmen sind im Anhang unter „Hinweise zum Urheberrecht“ zu finden.
-
 \cleardoublepage
 \pdfbookmark{Vorwort}{preface}
 
