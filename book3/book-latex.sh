@@ -17,9 +17,8 @@ python texpatch.py < tmp.sed > tmp.patch
 mv tmp.patch tmp.tex
 ./german.sh tmp.tex
 
-latex tmp
-makeindex tmp
-latex tmp
-dvipdf tmp.dvi x.pdf
+pdflatex -shell-escape tmp.tex
+pdflatex -shell-escape tmp.tex
+mv tmp.pdf x.pdf
 
 echo "Output on x.pdf"

@@ -43,10 +43,9 @@ if [ -f .chinese ] ; then
     xelatex tmp
     mv tmp.pdf x.pdf
 else
-    latex tmp
-    makeindex tmp
-    latex tmp
-    dvipdf tmp.dvi x.pdf
+    pdflatex -shell-escape tmp.tex
+    pdflatex -shell-escape tmp.tex
+    mv tmp.pdf x.pdf
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
