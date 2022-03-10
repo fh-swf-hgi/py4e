@@ -250,6 +250,7 @@ $endfor$
 \normalsize
 
 \cleardoublepage
+\fancyhead[RE, LO]{Index}
 \printindex
 
 % \newpage\null\thispagestyle{empty}\newpage
