@@ -140,7 +140,6 @@ Undecorate
 
 \index{DSU-Muster}
 \index{Muster!DSU}
-\index{Decorate-Sort-Undecorate-Muster}
 \index{Muster!Decorate-Sort-Undecorate}
 \index{Romeo and Juliet}
 

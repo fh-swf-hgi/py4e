@@ -257,7 +257,7 @@ print(count)
 
 Dieses Programm demonstriert ein Vorgehen, das man als *Zähler* bezeichnet könnte. Die Variable `count` wird mit 0 initialisiert und dann jedes Mal inkrementiert, wenn ein `'a'` gefunden wird. Wenn die Schleife beendet wird, enthält `count` das Ergebnis: die Gesamtzahl der „a“.
 
-\index{Auslagern von Code in Funktionen}
+\index{Auslagern von Code}
 
 **Übung 3:** Lagern Sie diesen Code in eine Funktion namens `count` aus, und verallgemeinern Sie diese so, dass sie die Zeichenkette und den Buchstaben als Argumente akzeptiert.
 

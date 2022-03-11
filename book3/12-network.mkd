@@ -219,8 +219,8 @@ python curl2.py
 Parsen von HTML und Erkunden des Webs
 -------------------------------------
 
-\index{Web!Scraping}
-\index{HTML parsen}
+\index{Web-Scraping}
+\index{HTML!parsen}
 
 Eine der häufigsten Verwendungen der `urllib` in Python ist das *Scraping* des Webs. Beim Web-Scraping schreiben wir ein Programm, das vorgibt, ein Web-Browser zu sein, Seiten abruft und dann die Daten auf diesen Seiten auf Muster untersucht.
 

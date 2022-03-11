@@ -21,7 +21,7 @@ Wir werden uns in erster Linie auf das Lesen und Schreiben von Textdateien konze
 Öffnen von Dateien
 ------------------
 
-\index{Datei!open}
+\index{Datei!öffnen}
 \index{open (Funktion)}
 \index{Funktion!open}
 
@@ -34,7 +34,7 @@ Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, 
 <_io.TextIOWrapper name='mbox.txt' mode='r' encoding='cp1252'>
 ~~~~
 
-\index{Dateihandle}
+\index{Dateihandler}
 
 Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandle* zurück. Dieses Handle beeinhaltet nicht eigentlichen Daten der Datei, sondern er sagt dem Python-Programm, *wo* das Betriebssystem die Datei abgelegt hat. Über dieses Handle können dann aller weiteren Operation für die Datei (mithilfe des Betriebssystems) ausgeführt werden. 
 

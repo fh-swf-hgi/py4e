@@ -220,7 +220,7 @@ Das zweite Beispiel ermittelt den Sinus von `rad`. Der Name der Variablen ist ei
 
 Der Ausdruck `math.pi` holt die Variable `pi` aus dem Mathematikmodul. Der Wert dieser Variablen ist eine Näherung von $\pi$, die auf etwa 15 Stellen genau ist.
 
-\index{pi}
+\index{pi (Konstante)}
 
 Wenn man sich in Trigonometrie auskennt, kann man das vorherige Ergebnis überprüfen, indem man es mit der Quadratwurzel aus zwei geteilt durch zwei vergleicht:
 
@@ -502,7 +502,7 @@ Funktionen mit und ohne Rückgabewert
 ------------------------------------
 
 \index{Rückgabewert einer Funktion}
-\index{void, Funktion ohne Rückgabewert}
+\index{void-Funktion}
 \index{Funktion mit Rückgabewert}
 \index{Funktion ohne Rückgabewert, void}
 
@@ -641,7 +641,7 @@ Funktionskopf
 Importanweisung
 :   Eine Anweisung, die eine Moduldatei liest und ein Modulobjekt erstellt.
 \index{Importanweisung}
-\index{Anweisung!Import}
+\index{Anweisung!import}
 
 Modulobjekt
 :   Ein durch eine `import`-Anweisung erzeugter Wert, der den Zugriff auf die in einem Modul definierten Daten und den Code ermöglicht.
@@ -661,7 +661,7 @@ Rückgabewert
 
 void, Funktion ohne Rückgabewert
 :   Eine Funktion, die keinen Wert zurückgibt.
-\index{void, Funktion ohne Rückgabewert}
+\index{void-Funktion}
 
 Übungen
 -------

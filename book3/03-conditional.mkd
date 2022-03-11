@@ -38,7 +38,7 @@ False
 \index{False (Wahrheitswert)}
 \index{Wert!True}
 \index{Wert!False}
-\index{bool Datentyp}
+\index{bool (Datentyp)}
 \index{Datentyp!bool}
 
 ~~~~ {.python}

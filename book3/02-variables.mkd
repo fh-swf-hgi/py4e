@@ -663,7 +663,7 @@ NameError: name 'kapitel' is not defined
 
 Bei Variablennamen wird zwischen Groß- und Kleinschreibung unterschieden (englisch *case-sensitivity*), daher ist `LaTeX` nicht dasselbe wie `latex`.
 
-\index{case-sensitivity, Variablennamen}
+\index{Groß-/Kleinschreibung}
 \index{semantischer Fehler}
 \index{Fehler!semantischer}
 

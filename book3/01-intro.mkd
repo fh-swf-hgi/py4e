@@ -414,8 +414,7 @@ Das Lesen des Codes kann zum Beispiel helfen, wenn das Problem ein Tippfehler is
 
 Experimentieren kann hilfreich sein, vor allem, wenn man kleine, einfache Tests durchführt. Wenn man jedoch Experimente durchführt, ohne nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, dass man „Random-Walk-Programmierung“ nennt. Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm das Richtige tut. Es ist unnötig, zu erwähnen, dass die Random-Walk-Programmierung sehr lange dauern kann.
 
-\index{Random-Walk-Programmierung}
-\index{Vorgehensmodell!Random-Walk-Programmierung}
+\index{Vorgehensmodell}
 
 Man muss sich Zeit zum Nachdenken nehmen. Fehlersuche ist wie eine experimentelle Wissenschaft. Man sollte mindestens eine Hypothese darüber haben, was das Problem ist. Wenn es zwei oder mehr Möglichkeiten gibt, versucht man, einen Test zu finden, der eine von ihnen ausschließt.
 

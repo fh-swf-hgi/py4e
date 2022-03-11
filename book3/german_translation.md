@@ -70,8 +70,8 @@ Mit Bedacht verwenden und **nicht** für alleinstehende Wörter, also nur für m
 \index{program} : \index{Programm}
 \index{typographical error} : \index{typographischer Fehler}
 \index{experimental debugging} : \index{experimentelles Debugging}
-\index{random walk programming} : \index{Random-Walk-Programmierung}
-\index{development plan!random walk programming} : \index{Vorgehensmodell!Random-Walk-Programmierung}
+\index{random walk programming} : WEG
+\index{development plan!random walk programming} : \index{Vorgehensmodell}
 \index{bug} : \index{Bug}
 \index{central processing unit} : \index{Central Processing Unit}\index{Prozessor}
 \index{CPU} : \index{CPU}
@@ -144,7 +144,7 @@ name : Bezeichner
 \index{exception!ValueError} : \index{Ausnahme!ValueError}
 \index{runtime error} : \index{Laufzeitfehler}
 \index{error!runtime} : \index{Fehler!Laufzeit}
-\index{case-sensitivity, variable names} : \index{case-sensitivity, Variablennamen}
+\index{case-sensitivity, variable names} : \index{Groß-/Kleinschreibung}
 Glossary : Glossar
 assignment : Zuweisung
 \index{assignment} : \index{Zuweisung}
@@ -165,13 +165,13 @@ Conditional execution : Bedingte Ausführung
 \index{special value!True} : \index{Wert!True}
 \index{special value!False} : \index{Wert!False}
 \index{False special value} : \index{False (Wahrheitswert)}
-\index{bool type} : \index{bool Datentyp}
+\index{bool type} : \index{bool (Datentyp)}
 \index{type!bool} : \index{Datentyp!bool}
 \index{comparison operator} : \index{Vergleichsoperator}
 \index{operator!comparison} : \index{Operator!Vergleich}
-\index{and operator} : \index{and Operator}
-\index{or operator} : \index{or Operator}
-\index{not operator} : \index{not Operator}
+\index{and operator} : \index{and (Operator)}
+\index{or operator} : \index{or (Operator)}
+\index{not operator} : \index{not (Operator)}
 \index{Operator!and} : \index{Operator!and}
 \index{Operator!or} : \index{Operator!or}
 \index{Operator!not} : \index{Operator!not}
@@ -262,7 +262,7 @@ body : Block
 \index{function parameter} : \index{Funktionsparameter}
 \index{function argument} : \index{Funktionsargument}
 \index{fruitful function} : \index{Rückgabewert einer Funktion}
-\index{void function} : \index{void, Funktion ohne Rückgabewert}
+\index{void function} : \index{void-Funktion}
 \index{function, fruitful} : \index{Funktion mit Rückgabewert}
 \index{function, void} : \index{Funktion ohne Rückgabewert, void}
 \index{None special value} : \index{None (Wert)}
@@ -271,7 +271,8 @@ body : Block
 \index{flow of execution} : \index{Programmablauf}
 import statement : Importanweisung
 \index{import statement} : \index{Importanweisung}
-\index{statement!import} : \index{Anweisung!Import}
+\index{statement!import} : \index{Anweisung!import}
+\index{pi} : \index{pi (Konstante)}
 ```
 
 ### Kapitel 5
@@ -343,7 +344,7 @@ import statement : Importanweisung
 \index{counting and looping} : \index{Zählen mit Schleifen}
 \index{looping and counting} : \index{Schleifen und Zählen}
 \index{looping!with strings} : \index{Schleife!mit Zeichenketten}\index{Iteration!durch Zeichenketten}
-\index{encapsulation} : \index{Auslagern von Code in Funktionen}
+\index{encapsulation} : \index{Auslagern von Code}
 \index{in operator} : \index{in (Operator)}
 \index{operator!in} : \index{Operator!in}
 \index{boolean operator} : \index{boolescher Operator}
@@ -383,7 +384,7 @@ item : Element
 \index{type!file} : \index{Datentyp!Datei}
 \index{persistence} : \index{Persistenz}
 \index{secondary memory} : \index{Sekundärspeicher}
-\index{file!open} : \index{Datei!open}
+\index{file!open} : \index{Datei!öffnen}
 \index{open function} : \index{open (Funktion)}
 \index{function!open} : \index{Funktion!open}
 \index{file handle} : \index{Dateihandler}
@@ -473,7 +474,7 @@ line slicing : Zeilen-Slicing
 \index{argument!list} : \index{Argument!Liste}
 \index{idiom} : \index{Idiom}
 \index{aliasing!copying to avoid} : \index{Alias!Vermeidung durch Kopieren}
-\index{copy!to avoid aliasing} : \index{Kopieren!um Aliase zu vermeiden}
+\index{copy!to avoid aliasing} : WEG
 \index{equivalent} : \index{äquivalent}
 \index{identical} : \index{identisch}
 ```
@@ -534,7 +535,7 @@ lookup : Lookup
 \index{tuple!comparison} : \index{Tupel!Vergleich}
 \index{DSU pattern} : \index{DSU-Muster}
 \index{pattern!DSU} : \index{Muster!DSU}
-\index{decorate-sort-undecorate pattern} : \index{Decorate-Sort-Undecorate-Muster}
+\index{decorate-sort-undecorate pattern} : WEG
 \index{pattern!decorate-sort-undecorate} : \index{Muster!Decorate-Sort-Undecorate}
 \index{keyword argument} : \index{Schlüsselwortargument}
 \index{argument!keyword} : \index{Argument!Schlüsselwort}
@@ -591,8 +592,8 @@ lookup : Lookup
 \index{time.sleep} : \index{time.sleep (Funktion)}
 \index{flow control} : \index{flow control}\index{Flusskontrolle}
 \index{binary file} : \index{Binärdatei}\index{binary}
-\index{web!scraping} : \index{Web!Scraping}
-\index{parsing HTML} : \index{HTML parsen}
+\index{web!scraping} : \index{Web-Scraping}
+\index{parsing HTML} : \index{HTML!parsen}
 \index{non-greedy} : \index{non-greedy}
 \index{port} : \index{Port}
 \index{socket} : \index{Socket}
@@ -603,10 +604,11 @@ lookup : Lookup
 
 ```
 \index{ElementTree} : \index{ElementTree XML-Parser}
-\index{API!key} : \index{API!Schlüssel}
+\index{API!key} : \index{API-Schlüssel}
 \index{web service} : \index{Webservice}
 \index{rate limiting} : WEG
 \index{geocoding} : \index{Geocoding}
+\index{eXtensible Markup Language} : \index{eXtensible Markup Language (XML)}
 ```
 
 ### Kapitel 14

@@ -181,7 +181,7 @@ Sicherheit und API-Nutzung
 --------------------------
 
 \index{OAuth}
-\index{API!Schlüssel}
+\index{API-Schlüssel}
 
 Es ist durchaus üblich, dass wir einen API-Schlüssel benötigen, um die API eines Anbieters nutzen zu können. Der Grund dafür ist, dass der Anbieter wissen möchte, wer seine Dienste nutzt und wie viel Endbenutzer auf sie zugreifen. Häufig gibt es eine kostenlose und eine kostenpflichtige Version der Dienste oder es gibt eine Richtlinie, die die Anzahl der Anfragen begrenzt, die eine einzelne Person während eines bestimmten Zeitraums stellen kann. Den API-Schlüssel fügen wir als Teil der POST-Daten oder auch als Parameter in der URL beim Aufruf der API ein. Das kann je nach Dienst variieren.
 
@@ -212,7 +212,7 @@ SOA
 XML
 :   eXtensible Markup Language -- Ein Format, das die Auszeichnung von strukturierten Daten ermöglicht.
 \index{XML}
-\index{eXtensible Markup Language}
+\index{eXtensible Markup Language (XML)}
 
 Anwendungsbeispiel 1: Google Geocoding Web Service
 --------------------------------------------------
