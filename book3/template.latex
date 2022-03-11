@@ -119,6 +119,12 @@ $endif$
   \renewcommand{\headrulewidth}{0pt}}
 % END page header
 
+% BEGIN dotted chapter numbers
+\usepackage{titlesec}
+\titlelabel{\thetitle.\quad}
+\usepackage[dotinlabels]{titletoc}
+% END dotted chapter numbers
+
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
               unicode=false, % unicode breaks when used with xetex
@@ -137,6 +143,12 @@ $endif$
             urlcolor=$if(urlcolor)$$urlcolor$$else$blue$endif$,
             linkcolor=$if(linkcolor)$$linkcolor$$else$blue$endif$,
             pdfborder={0 0 0}}
+
+% pdf bookmarks with dotted numbers:
+\makeatletter
+\renewcommand{\Hy@numberline}[1]{#1. }
+\makeatother
+
 \urlstyle{same}  % don't use monospace font for urls
 $if(links-as-notes)$
 % Make links footnotes instead of hotlinks:
@@ -176,10 +188,13 @@ $for(header-includes)$
 $header-includes$
 $endfor$
 
+% TOC indentation:
 \makeatletter
 \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3em}}
 \renewcommand*\l@subsection{\@dottedtocline{2}{4.5em}{3.5em}}
 \makeatother
+
+% Index:
 \makeindex[intoc, columnsep=1.5em, options= -s index_style.ist]
 
 \begin{document}
@@ -208,7 +223,9 @@ $if(toc)$
 \setcounter{tocdepth}{$toc-depth$}
 \cleardoublepage
 \pdfbookmark{\contentsname}{toc}
-\tableofcontents
+\begin{spacing}{0.0}
+    \tableofcontents
+\end{spacing}
 }
 $endif$
 $if(lot)$
