@@ -785,7 +785,6 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
 3.  Kopien erstellen, um die Nutzung von Aliasen zu vermeiden.
 
-    \index{Alias!Vermeidung durch Kopieren}
     \index{Kopieren!um Aliase zu vermeiden}
 
     Wenn wir eine Methode wie `sort` verwenden wollen, die das Argument verändert, wir aber die ursprüngliche Liste ebenfalls behalten möchten, müssen wir eine Kopie erstellen.

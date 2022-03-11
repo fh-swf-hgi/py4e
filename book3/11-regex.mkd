@@ -361,9 +361,9 @@ Die Fragezeichen in `*?`, `+?` und `??` fordern, dass der Abgleich im sogenannte
 
 `\B` leere Zeichenkette (aber *nicht* am Anfang oder Ende eines Wortes)
 
-`\d` Dezimalziffer; entspricht der Menge [0-9]
+`\d` Dezimalziffer; entspricht der Menge `[0-9]`
 
-`\D` jedes Zeichen, das keine Ziffer ist; entspricht der Menge [^0-9].
+`\D` jedes Zeichen, das keine Ziffer ist; entspricht der Menge `[^0-9]`
 
 Bonuskapitel für Unix/Linux-User
 --------------------------------

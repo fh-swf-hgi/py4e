@@ -86,9 +86,9 @@ Es gibt drei *logische Operatoren*: `and`, `or`, und `not`. Die Semantik (Bedeut
 
 ist nur wahr, wenn `x` größer als 0 *und* kleiner als 10 ist.
 
-\index{and Operator}
-\index{or Operator}
-\index{not Operator}
+\index{and (Operator)}
+\index{or (Operator)}
+\index{not (Operator)}
 \index{Operator!and}
 \index{Operator!or}
 \index{Operator!not}
