@@ -55,7 +55,7 @@ Die Built-in-Funktionen `max` und `min`, beispielsweise, geben uns den größten
 ~~~~
 
 Die Funktion `max` sagt uns den „größten Wert“ der Argumente, die Funktion `min` zeigt uns den kleinsten Wert.
-Viele Funktionen sind dabei sehr flexibel programmiert, d.h. man kann Sie mit unterschiedlichen Argumenten aufrufen.
+Viele Funktionen sind dabei sehr flexibel programmiert, d. h. man kann Sie mit unterschiedlichen Argumenten aufrufen.
 
 ~~~~ {.python}
 >>> max('Hello world')
@@ -65,7 +65,7 @@ Viele Funktionen sind dabei sehr flexibel programmiert, d.h. man kann Sie mit un
 >>>
 ~~~~
 
-Im obigen Beispiel sehen wir die Funktionen `max` und `min` erneut, aber diesmal aufgerufen mit der Zeichenkette `'Hello world'`. Nun gibt uns die Funktion `max` das "größte Zeichen" in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) zurück und die Funktion `min` liefert uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
+Im obigen Beispiel sehen wir die Funktionen `max` und `min` erneut, aber diesmal aufgerufen mit der Zeichenkette `'Hello world'`. Nun gibt uns die Funktion `max` das „größte“ Zeichen in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) zurück und die Funktion `min` liefert uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
 
 Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die uns sagt, wie viele Elemente in unserem Argument enthalten sind. Wenn das Argument von `len` eine Zeichenkette ist, gibt sie die Anzahl der Zeichen in der Zeichenkette zurück.
 
@@ -75,7 +75,7 @@ Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die
 >>>
 ~~~~
 
-Wie viele weitere Funktionen, die uns Python bereitstellt, ist auch `len` nicht auf die Verarbeitung genau eines Datentyps (wie z.B. hier von Zeichenketten) beschränkt. Wir können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
+Wie viele weitere Funktionen, die uns Python bereitstellt, ist auch `len` nicht auf die Verarbeitung genau eines Datentyps (wie z. B. hier von Zeichenketten) beschränkt. Wir können mit jeder Menge von Werten arbeiten, wie wir in späteren Kapiteln sehen werden.
 
 Funktionen zur Typumwandlung
 ----------------------------
@@ -553,7 +553,7 @@ Der Wert `None` ist nicht dasselbe wie die Zeichenkette `'None'`. Er ist ein spe
 <class 'NoneType'>
 ~~~~
 
-Es mag Ihnen seltsam erscheinen, dass Python einen eignen Typ besitzt, der nur einen Wert `None`, also nur *das Nichts* kennt. Tatsächlich ist das aber sehr praktisch und wird von vielen Programmiersprachen so oder in ähnlicher Form verwendet. Wir können damit nämlich an verschiedensten Stellen ausdrücken, dass etwas *nicht oder noch nicht* existiert. Z.B. können wir einen Variablennamen anlegen, der aber noch keinen Wert hat. Und wir können in einem booleschen Ausdruck überprüfen, ob ein Wert existiert oder nicht. 
+Es mag Ihnen seltsam erscheinen, dass Python einen eignen Typ besitzt, der nur einen Wert `None`, also nur *das Nichts* kennt. Tatsächlich ist das aber sehr praktisch und wird von vielen Programmiersprachen so oder in ähnlicher Form verwendet. Wir können damit nämlich an verschiedensten Stellen ausdrücken, dass etwas *nicht oder noch nicht* existiert. Z. B. können wir einen Variablennamen anlegen, der aber noch keinen Wert hat. Und wir können in einem booleschen Ausdruck überprüfen, ob ein Wert existiert oder nicht. 
 
 Um ein Ergebnis aus einer Funktion heraus zurückzugeben, verwenden wir die Anweisung `return`. Wir könnten zum Beispiel eine sehr einfache Funktion namens `addtwo` erstellen, die zwei Zahlen addiert und ein Ergebnis zurückgibt.
 

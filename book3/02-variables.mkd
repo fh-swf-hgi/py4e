@@ -99,7 +99,7 @@ Werte benennen
 
 Die zentrale Eigenschaft einer Programmiersprache ist die Fähigkeit, *Daten* zu manipulieren. In Python sind alle Daten als sogenannte *Objekte* abgespeichert. Übrigens sind auch die einzelnen Funktionen *Objekte* und Objekte selbst sind *Objekte*, weswegen der Leitsatz gilt: *Alles in Python ist ein Objekt*. Zu verwirrend? Ich kann Sie gut verstehen, wir werden uns dieses Thema später noch einmal vornehmen, dann wird sicher klarer, was hier mit *Objekt* gemeint ist.
 
-Unsere Objekte, also z.B. Ganzzahlen oder Zeichenketten sind im Hauptspeicher abgelegt. Um Sie sinnvoll verwenden zu können, geben wir Ihnen Namen. Ein solches Paar, also einen Wert (bzw. ein Objekt) und einen dazugehörigen Namen nennt man auch *Variable*.
+Unsere Objekte, also z. B. Ganzzahlen oder Zeichenketten sind im Hauptspeicher abgelegt. Um Sie sinnvoll verwenden zu können, geben wir Ihnen Namen. Ein solches Paar, also einen Wert (bzw. ein Objekt) und einen dazugehörigen Namen nennt man auch *Variable*.
 Wir werden im Folgenden den Begriff *Variable* synonym für den Namen verwenden. Lassen Sie sich davon nicht verwirren, wenn wir von „Variable“ sprechen, ist immer der Name eines Wert-Objekts gemeint.
 
 Die Bindung eines Namens an einen Wert erfolgt durch eine *Zuweisung*. Existiert der Name vorher noch nicht, wird er im Zuge der Zuweisung neu erzeugt:
@@ -653,7 +653,7 @@ Dabei gibt es doch auch führende Nullen, oder? Nicht ganz! Folgen von beliebig 
 \index{Laufzeitfehler}
 \index{Fehler!Laufzeit}
 
-Ein Laufzeitfehler, den man am Anfang gelegentlich verursacht, ist ein „use before definition“, d. h. der Versuch, eine Variable zu verwenden, bevor man einen Wert zugewiesen hat. Dies kann z.B. passieren, wenn man einen Variablennamen falsch schreibt:
+Ein Laufzeitfehler, den man am Anfang gelegentlich verursacht, ist ein „use before definition“, d. h. der Versuch, eine Variable zu verwenden, bevor man einen Wert zugewiesen hat. Dies kann z. B. passieren, wenn man einen Variablennamen falsch schreibt:
 
 ~~~~ {.python}
 >>> kapital = 327.68

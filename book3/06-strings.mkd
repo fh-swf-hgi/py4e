@@ -14,7 +14,7 @@ Was ist eine Zeichenkette?
 
 
 
-Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Wir können die Folge von Zeichen einfach „wie Text“ im Programm angeben. Wichtig ist nur, dass sie in Anführungszeichen gesetzt wird, denn sonst würde Python die Zeichen als Bezeichner (also z.B. als Variable) deuten.
+Eine Zeichenkette (englisch *String*) ist eine Folge einzelner Zeichen (englisch *Character*). Wir können die Folge von Zeichen einfach „wie Text“ im Programm angeben. Wichtig ist nur, dass sie in Anführungszeichen gesetzt wird, denn sonst würde Python die Zeichen als Bezeichner (also z. B. als Variable) deuten.
 
 Python lässt übrigens sowohl einfache (`'...'`), als auch die im Deutschen verwendeten doppelten (`"..."`) Anführungszeichen zu. Es macht also keinen Unterschied, ob Sie die Zeichenkette als `'Hallo Welt'` oder als `"Hallo Welt"` angeben.
 
@@ -449,7 +449,7 @@ Oft wollen wir in eine Zeichenkette schauen und eine Teilzeichenkette finden. We
 
 `From giefers.heiner@`*`fh-swf.de`*` Mon, 30 Aug 2021 16:20:09 +0200`
 
-Wollten wir nur die *Domäne* der e-Mail Adresse (d.h. `fh-swf.de`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
+Wollten wir nur die *Domäne* der e-Mail Adresse (d. h. `fh-swf.de`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
 
 Zuerst wird die Position des at-Zeichens in der Zeichenkette ermittelt. Dann werden wir die Position des ersten Leerzeichens *nach* dem at-Zeichen finden. Und dann verwenden wir String-Slicing, um den Teil der Zeichenkette zu extrahieren, den wir suchen.
 
@@ -480,7 +480,7 @@ Formatierte Strings
 \index{Formatierungszeichen}
 
 
-Wir haben nun schon mehrfach `print`-Anweisungen verwendet, bei denen wir sowohl Zeichenketten als auch die Werte bestimmter Variablen ausgegeben haben. Also z.B. so:
+Wir haben nun schon mehrfach `print`-Anweisungen verwendet, bei denen wir sowohl Zeichenketten als auch die Werte bestimmter Variablen ausgegeben haben. Also z. B. so:
 
 ~~~~ {.python}
 >>> count = 2
@@ -502,7 +502,7 @@ Buchstabe: a Anzahl: 2
 
 In Format Strings erkennt man die eingebetteten Variablen sehr schnell durch die geschweiften Klammern. Gleichzeitig benötigt man keine zusätzlichen Kommas oder schließenden und öffnenden Anführungszeichen.
 
-Ein weiterer Vorteil von Format Strings ist, dass man die Darstellungsweise der Variablen beeinflussen kann. Das ist z.B. nützlich, wenn man Fließkommazahlen ausgeben möchte. Im folgenden Beispiel berechnen wir `10/3` was in einen Wert mit unendlich vielen Nachkommastellen resultiert^[Natürlich kann kein Computer dieser Welt reelle Zahlen *genau* abspeichern. Intern werden reelle Werte mit einer bestimmten Genauigkeit gespeichert, die auch in Berechnungen immer wieder zu *Rundungsfehlern* führen. Mit diesen Fragestellungen beschäftigt sich die *Computer-Arithmetik*, wir werden das Thema hier nicht genauer beleuchten. Allerdings sieht man die Auswirkungen auch im täglichen Umgang mit Python. Achten Sie mal auf die letzte Ziffer bei der Darstellung von 10/3 als Kommazahl.].
+Ein weiterer Vorteil von Format Strings ist, dass man die Darstellungsweise der Variablen beeinflussen kann. Das ist z. B. nützlich, wenn man Fließkommazahlen ausgeben möchte. Im folgenden Beispiel berechnen wir `10/3` was in einen Wert mit unendlich vielen Nachkommastellen resultiert^[Natürlich kann kein Computer dieser Welt reelle Zahlen *genau* abspeichern. Intern werden reelle Werte mit einer bestimmten Genauigkeit gespeichert, die auch in Berechnungen immer wieder zu *Rundungsfehlern* führen. Mit diesen Fragestellungen beschäftigt sich die *Computer-Arithmetik*, wir werden das Thema hier nicht genauer beleuchten. Allerdings sieht man die Auswirkungen auch im täglichen Umgang mit Python. Achten Sie mal auf die letzte Ziffer bei der Darstellung von 10/3 als Kommazahl.].
 
 ~~~~ {.python}
 >>> anteil = 10/3

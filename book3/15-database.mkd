@@ -182,7 +182,7 @@ Wir beginnen damit, dass wir die Twitter-Freunde einer Person und deren Status (
 
 Wir verfolgen auch, wie oft wir einen bestimmten Freund in der Datenbank gesehen haben, um ein Gefühl für seine Beliebtheit zu bekommen.
 
-In einer Datenbank speichern wir die Liste der bekannten Konten, deren Beliebtheit und die Information, ob wir das Konto bereits besucht (d.h. schon abgearbeitet) haben. Dadurch können wir unser Programm beliebig oft anhalten und neu starten.
+In einer Datenbank speichern wir die Liste der bekannten Konten, deren Beliebtheit und die Information, ob wir das Konto bereits besucht (d. h. schon abgearbeitet) haben. Dadurch können wir unser Programm beliebig oft anhalten und neu starten.
 
 Dieses Programm ist ein recht komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
 
@@ -268,7 +268,7 @@ New accounts= 17  revisited= 3
 Enter a Twitter account, or quit: quit
 ~~~~
 
-Da wir die Eingabetaste gedrückt haben (d.h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
+Da wir die Eingabetaste gedrückt haben (d. h. wir haben kein Twitter-Konto angegeben), wird der folgende Code ausgeführt:
 
 ~~~~ {.python}
 if(len(acct) < 1):
@@ -315,7 +315,7 @@ Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, u
 
 Wir können sehen, dass wir `lhawthorn` und `opencontent` besucht haben. Auch die Konten `cnxorg` und `kthanos` haben bereits zwei Follower. Da wir nun die Freunde von drei Personen (`drchuck`, `opencontent` und `lhawthorn`) abgerufen haben, hat unsere Tabelle 55 Zeilen mit Freunden zum Abrufen.
 
-Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z.B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
+Jedes Mal, wenn wir das Programm starten und die Eingabetaste drücken, wählt es das nächste nicht besuchte Konto aus (z. B. wird das nächste Konto `steve_coppin` sein), ruft dessen Freunde ab, markiert sie als abgerufen und fügt sie für jeden der Freunde von `steve_coppin` entweder am Ende der Datenbank hinzu oder aktualisiert ihre Freundesanzahl, wenn sie bereits in der Datenbank sind.
 
 Da die Daten des Programms alle auf der Festplatte in einer Datenbank gespeichert werden, kann die Spider-Aktivität beliebig oft ohne Datenverlust unterbrochen und wieder aufgenommen werden.
 
@@ -359,7 +359,7 @@ CREATE TABLE People
 
 Es ist zu beachten, dass wir nicht mehr in jeder Zeile der Tabelle `People` die Anzahl der Freunde mitführen. Wenn wir `INTEGER PRIMARY KEY` als Typ unserer `id`-Spalte wählen, geben wir an, dass SQLite diese Spalte verwaltet und jeder Zeile, die wir einfügen, automatisch einen eindeutigen numerischen Schlüssel zuweist. Wir fügen auch das Schlüsselwort `UNIQUE` hinzu, um anzugeben, dass wir SQLite nicht erlauben, zwei Zeilen mit demselben Wert für `name` einzufügen.
 
-Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und der Einschränkung (englisch *Constraint*) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d.h. wir können keine zwei identischen Zeilen einfügen).
+Statt der obigen Tabelle `Pals` erstellen wir nun eine Tabelle namens `Follows` mit zwei Integer-Spalten `from_id` und `to_id` und der Einschränkung (englisch *Constraint*) für die Tabelle, dass die *Kombination* von `from_id` und `to_id` in dieser Tabelle eindeutig sein muss (d. h. wir können keine zwei identischen Zeilen einfügen).
 
 ~~~~ {.sql}
 CREATE TABLE Follows
@@ -383,7 +383,7 @@ Dieses Programm ist recht komplex, aber es veranschaulicht die Vorgehensweisen, 
 
 1.  Erstellen der Tabellen mit Primärschlüsseln und Constraints.
 
-2.  Wenn wir einen logischen Schlüssel für eine Person haben (z.B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
+2.  Wenn wir einen logischen Schlüssel für eine Person haben (z. B. den Kontonamen) und den `id`-Wert für die Person benötigen, müssen wir je nachdem, ob die Person bereits in der Tabelle `People` enthalten ist oder nicht, entweder (1) die Person in der Tabelle `People` nachschlagen und den Wert `id` für die Person abrufen oder (2) die Person zur Tabelle `People` hinzufügen und den Wert `id` für die neu hinzugefügte Zeile abrufen.
 
 3.  Einfügen der Zeilen, die die `Follows`-Beziehung erfasst.
 
@@ -400,7 +400,7 @@ cur.execute('''CREATE TABLE IF NOT EXISTS Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 ~~~~
 
-Wenn wir unsere Tabellen erstellen, dann geben wir an, dass die Spalte `name` in der Tabelle `People` eindeutig (`UNIQUE`) sein muss. Wir geben außerdem an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z.B. dieselbe Beziehung mehr als einmal hinzufügen.
+Wenn wir unsere Tabellen erstellen, dann geben wir an, dass die Spalte `name` in der Tabelle `People` eindeutig (`UNIQUE`) sein muss. Wir geben außerdem an, dass die Kombination der beiden Zahlen in jeder Zeile der Tabelle `Follows` eindeutig sein muss. Diese Einschränkungen verhindern, dass wir Fehler machen, z. B. dieselbe Beziehung mehr als einmal hinzufügen.
 
 Wir können diese Einschränkungen im folgenden Code ausnutzen:
 
@@ -573,7 +573,7 @@ Connections for id=2:
 
 Wir sehen die Spalten aus den Tabellen `People` und `Follows`. Der letzte Satz von Zeilen ist das Ergebnis des `SELECT` mit der `JOIN`-Klausel.
 
-Im letzten `SELECT` suchen wir nach Konten, die mit `opencontent` befreundet sind (d.h. `People.id=2`).
+Im letzten `SELECT` suchen wir nach Konten, die mit `opencontent` befreundet sind (d. h. `People.id=2`).
 
 In jeder der Zeilen des letzten `SELECT` stammen die ersten beiden Spalten aus der Tabelle `Follows`, gefolgt von den Spalten drei bis fünf aus der Tabelle `People`. Wir können auch sehen, dass die zweite Spalte (`Follows.to_id`) mit der dritten Spalte (`People.id`) in jeder der verknüpften Zeilen übereinstimmt.
 
@@ -591,7 +591,7 @@ Debugging
 
 Ein häufiges Vorgehen, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass wir ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können wir schnell überprüfen, ob unser Programm richtig funktioniert.
 
-Wir müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn wir z.B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere unser Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
+Wir müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn wir z. B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere unser Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
 
 Eine Lösung ist also, sicherzustellen, dass wir entweder den Datenbank-Browser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor wir versuchen, von Python aus auf die Datenbank zuzugreifen.
 
@@ -623,7 +623,7 @@ Index
 \index{Index}
 
 Logischer Schlüssel
-:   Ein Schlüssel, den die „Außenwelt“ verwendet, um eine bestimmte Zeile nachzuschlagen. In einer Tabelle mit Benutzerkonten könnte z.B. die E-Mail-Adresse einer Person ein guter Kandidat als logischer Schlüssel für die Daten des Benutzers sein.
+:   Ein Schlüssel, den die „Außenwelt“ verwendet, um eine bestimmte Zeile nachzuschlagen. In einer Tabelle mit Benutzerkonten könnte z. B. die E-Mail-Adresse einer Person ein guter Kandidat als logischer Schlüssel für die Daten des Benutzers sein.
 \index{Logischer Schlüssel}
 
 Normalisierung

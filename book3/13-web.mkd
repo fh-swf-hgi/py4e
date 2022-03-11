@@ -6,8 +6,8 @@ Wir haben gesehen, wie einfach es ist, Dokumente über HTTP abzurufen und zu par
 
 Es gibt zwei gängige Formate, die wir beim Austausch von Daten über das Web verwenden. eXtensible Markup Language (XML) wird schon sehr lange verwendet und eignet sich am besten für den Austausch von dokumentenähnlichen Daten. Wenn Programme nur Dictionaries, Listen oder andere interne Informationen miteinander austauschen wollen, verwenden wir dagegen die JavaScript Object Notation (JSON) (siehe [www.json.org](http://www.json.org)). Wir werden uns beide Formate ansehen.
 
-eXtensible Markup Language - XML
---------------------------------
+eXtensible Markup Language -- XML
+---------------------------------
 
 XML sieht HTML zwar sehr ähnlich, ist aber strenger strukturiert. Hier ist ein Beispiel für ein XML-Dokument:
 
@@ -106,8 +106,8 @@ User count: 2
 User count: 0
 ~~~~
 
-JavaScript Object Notation - JSON
----------------------------------
+JavaScript Object Notation -- JSON
+----------------------------------
 
 \index{JSON}
 \index{JavaScript Object Notation}

@@ -65,7 +65,7 @@ Obwohl Ihnen diese Operationen wahrscheinlich bekannt sind, unterscheiden sich d
 Etwas unklar mag Ihnen zum jetzigen Zeitpunkt der Unterschied zwischen `==` und `is` erscheinen.
 Um das zu erklären, muss man etwas mehr über die Funktionsweise der Programmiersprache selbst verstehen.
 Kurz gesagt, vergleicht `==` Werte und `is` Objekte.
-Was bedeutet das? Nun, unterschiedliche Objekte, also z.B. Daten im Speicher können gleiche Werte haben.
+Was bedeutet das? Nun, unterschiedliche Objekte, also z. B. Daten im Speicher können gleiche Werte haben.
 Ganzzahl Objekte mit einem bestimmten Wert, sagen wir `1234`, kann es beispielsweise mehrfach, unter verschiedenen Namen im Programm geben.
 Wenn einer dieser Werte als `a`, der andere als `b` benannt ist, wäre `a is b` falsch, denn wir haben es mit unterschiedlichen Objekten zu tun. `a == b` ist hingegen wahr, schließlich tragen `a` und `b` den gleichen Wert.
 
@@ -93,7 +93,7 @@ ist nur wahr, wenn `x` größer als 0 *und* kleiner als 10 ist.
 \index{Operator!or}
 \index{Operator!not}
 
-`n%2 == 0 or n%3 == 0` ist wahr, wenn *eine* der beiden Bedingungen wahr ist, d.h. wenn die Zahl durch 2 *oder* 3 teilbar ist.
+`n%2 == 0 or n%3 == 0` ist wahr, wenn *eine* der beiden Bedingungen wahr ist, d. h. wenn die Zahl durch 2 *oder* 3 teilbar ist.
 
 Schließlich negiert der Operator `not` einen booleschen Ausdruck, sodass `not (x > y)` wahr ist, wenn `x > y` falsch ist; das heißt, wenn `x` kleiner oder gleich `y` ist.
 
@@ -304,7 +304,7 @@ Hier ist ein Beispielprogramm zur Umrechnung einer Fahrenheit-Temperatur in eine
 
 \VerbatimInput{../code3/fahren.py}
 
-Probieren wir diesen Code einmal mit einer korrekten Eingabe, z.B. mit 99 °F:
+Probieren wir diesen Code einmal mit einer korrekten Eingabe, z. B. mit 99 °F:
 
 ~~~~
 python fahren.py

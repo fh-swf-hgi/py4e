@@ -241,7 +241,7 @@ Um das Beispiel oben doch funktionstüchtig zu machen, müssen wir die Informati
 [2, 3]
 ~~~~
 
-Es gibt noch weitere Stellen in Python, an denen man mit einem vorangestellten Asterisk ausdrückt, dass mehrere einzelne Werte *zusammengefasst* oder aber eine Sequenz zu einzelnen Werten *entpackt* wird. Dieses Konzept nennt man dementsprechend *Packing* bzw. *Unpacking*. Funktionen verwenden es z.B. um eine beliebig lange lange Liste von Parametern zuzulassen.
+Es gibt noch weitere Stellen in Python, an denen man mit einem vorangestellten Asterisk ausdrückt, dass mehrere einzelne Werte *zusammengefasst* oder aber eine Sequenz zu einzelnen Werten *entpackt* wird. Dieses Konzept nennt man dementsprechend *Packing* bzw. *Unpacking*. Funktionen verwenden es z. B. um eine beliebig lange lange Liste von Parametern zuzulassen.
 
 Beachten Sie übrigens, dass im Beispiel oben das Resultat in `b` eine Liste ist, obwohl auf der linken Seite der Zuweisung ein Tupel steht. Beim Packing werden die einzelenen Elemente immer in eine Liste gepackt, ganz gleich aus welcher Datenstruktur sie entnommen werden.
 

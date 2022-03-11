@@ -146,7 +146,7 @@ an = PartyAnimal()
 \index{Instanz}
 \index{Klasse}
 
-Hier weisen wir Python an, ein *Objekt* oder eine *Instanz* der Klasse `PartyAnimal` zu konstruieren (d.h. zu erzeugen). Python konstruiert das Objekt mit den richtigen Daten und Methoden und gibt das Objekt zurück, das dann der Variablen `an` zugewiesen wird. In gewisser Weise ähnelt dies der folgenden Zeile, die wir schon die ganze Zeit verwendet haben:
+Hier weisen wir Python an, ein *Objekt* oder eine *Instanz* der Klasse `PartyAnimal` zu konstruieren (d. h. zu erzeugen). Python konstruiert das Objekt mit den richtigen Daten und Methoden und gibt das Objekt zurück, das dann der Variablen `an` zugewiesen wird. In gewisser Weise ähnelt dies der folgenden Zeile, die wir schon die ganze Zeit verwendet haben:
 
 ~~~~ {.python}
 counts = dict()

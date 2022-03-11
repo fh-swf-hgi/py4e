@@ -40,7 +40,7 @@ Der Zirkumflex (`^`) wird zum Beispiel in regulären Ausdrücken verwendet, um d
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Jetzt werden wir nur Zeilen abgleichen, die *mit* der Zeichenkette "From:" beginnen. Dies ist immer noch ein sehr einfaches Beispiel, das wir äquivalent mit der Methode `startswith()` aus der String-Bibliothek hätten erledigen können. Aber es dient dazu, die Vorstellung einzuführen, dass reguläre Ausdrücke spezielle Zeichen enthalten, die uns mehr Kontrolle darüber geben, was mit dem regulären Ausdruck übereinstimmen wird.
+Jetzt werden wir nur Zeilen abgleichen, die *mit* der Zeichenkette „From:“ beginnen. Dies ist immer noch ein sehr einfaches Beispiel, das wir äquivalent mit der Methode `startswith()` aus der String-Bibliothek hätten erledigen können. Aber es dient dazu, die Vorstellung einzuführen, dass reguläre Ausdrücke spezielle Zeichen enthalten, die uns mehr Kontrolle darüber geben, was mit dem regulären Ausdruck übereinstimmen wird.
 
 \index{Zeichenkette!startswith}
 
@@ -68,7 +68,7 @@ Wir können die übereinstimmenden Zeilen weiter eingrenzen, indem wir im folgen
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit "From:" beginnen, gefolgt von einem oder mehreren beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
+Die Suchzeichenfolge `^From:.+@` passt auf Zeilen, die mit `From:` beginnen, gefolgt von einem oder mehreren beliebigen Zeichen (`.+`), gefolgt von einem at-Zeichen. Dies wird also auf die folgende Zeile passen:
 
 ~~~~
 From: stephen.marquard@uct.ac.za
@@ -132,9 +132,9 @@ Wenn wir das Programm auf `mbox.txt` anwenden, erhalten wir die folgende Ausgabe
 ['source@collab.sakaiproject.org;']
 ~~~~
 
-Einige unserer E-Mail-Adressen haben falsche Zeichen wie „<“ oder „;“ am Anfang oder Ende. Lassen wir uns definieren, dass wir nur an dem Teil der Zeichenkette interessiert sind, der mit einem Buchstaben oder einer Zahl beginnt und endet.
+Einige unserer E-Mail-Adressen haben falsche Zeichen wie `<` oder `;` am Anfang oder Ende. Lassen wir uns definieren, dass wir nur an dem Teil der Zeichenkette interessiert sind, der mit einem Buchstaben oder einer Zahl beginnt und endet.
 
-Dazu verwenden wir eine weitere Funktion regulärer Ausdrücke. Eckige Klammern werden verwendet, um eine Menge von mehreren akzeptablen Zeichen anzugeben, die wir als übereinstimmend betrachten. In gewissem Sinne bittet das `\S` darum, auf die Menge der "Nicht-Leerzeichen" zu passen. Jetzt werden wir ein wenig expliziter in Bezug auf die Zeichen, die wir abgleichen werden.
+Dazu verwenden wir eine weitere Funktion regulärer Ausdrücke. Eckige Klammern werden verwendet, um eine Menge von mehreren akzeptablen Zeichen anzugeben, die wir als übereinstimmend betrachten. In gewissem Sinne bittet das `\S` darum, auf die Menge der „Nicht-Leerzeichen“ zu passen. Jetzt werden wir ein wenig expliziter in Bezug auf die Zeichen, die wir abgleichen werden.
 
 Hier ist unser neuer regulärer Ausdruck:
 

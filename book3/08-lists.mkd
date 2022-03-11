@@ -2,7 +2,7 @@
 Listen
 ======
 
-Python ist eine ideale Sprache um Daten zu verarbeiten und Daten stehen meist nicht allein, als einzelner Wert, sondern sie liegen als „Ansammlung“ vor. Entweder ungeordnet, geordnet (d.h. mit einer Reihenfolge) oder, wie in einer Kartei, unter einem Suchbegriff abgelegt. All diese Arten von „Datensammlungen“ gibt es in Python und dazu noch eine große Menge von Funktionen, um die Daten zu verarbeiten.
+Python ist eine ideale Sprache um Daten zu verarbeiten und Daten stehen meist nicht allein, als einzelner Wert, sondern sie liegen als „Ansammlung“ vor. Entweder ungeordnet, geordnet (d. h. mit einer Reihenfolge) oder, wie in einer Kartei, unter einem Suchbegriff abgelegt. All diese Arten von „Datensammlungen“ gibt es in Python und dazu noch eine große Menge von Funktionen, um die Daten zu verarbeiten.
 
 In den nächsten drei Kapiteln werden wir die wichtigsten *zusammengesetzten Datentypen* (englisch *Composite Data Types*) in Python behandel. Den Anfang macht der Typ *List*, den man sehr vielfältig verwenden kann.
 
@@ -154,7 +154,7 @@ Die Built-in Funktion `range` ist sehr nützlich und kann immer dann verwendet w
 [-10, -7, -4, -1, 2, 5, 8, 11, 14, 17]
 ~~~~
 
-Um eine Liste zu durchlaufen und gleichzeitig die Indizes der Listenelemente zu erhalten, gibt es noch eine (im Vergleich zu `range`) etwas schönere Lösung. Die Funktion `enumerate` liefert uns zwei Werte^[Eigentlich liefert die Funktion ein 2-Tupel zurück, also *ein* Element, das aus zwei Werten besteht. Da wir bei der Zuweisung zwei Variablennamen hinschreiben, wird das Tupel „ausgepackt“, d.h. die Werte werden aus dem Tupel entnommen und den einzelnen Variablen. Dies nennt man auch *unpacking*. Um Tupel und ihre verwendung geht es in Kapitel 10.] zurück: Als ersten den Index des Elements und als zweiten den Wert des Elements. Das folgende Beispiel tut also genau dasselbe, wie die `for`-Schleife mit dem `range(len(...))` oben.
+Um eine Liste zu durchlaufen und gleichzeitig die Indizes der Listenelemente zu erhalten, gibt es noch eine (im Vergleich zu `range`) etwas schönere Lösung. Die Funktion `enumerate` liefert uns zwei Werte^[Eigentlich liefert die Funktion ein 2-Tupel zurück, also *ein* Element, das aus zwei Werten besteht. Da wir bei der Zuweisung zwei Variablennamen hinschreiben, wird das Tupel „ausgepackt“, d. h. die Werte werden aus dem Tupel entnommen und den einzelnen Variablen. Dies nennt man auch *unpacking*. Um Tupel und ihre verwendung geht es in Kapitel 10.] zurück: Als ersten den Index des Elements und als zweiten den Wert des Elements. Das folgende Beispiel tut also genau dasselbe, wie die `for`-Schleife mit dem `range(len(...))` oben.
 
 ~~~~ {.python}
 for i, wert in enumerate(numbers):
@@ -293,7 +293,7 @@ Python bietet Methoden, die auf Listen operieren. Zum Beispiel fügt `append` ei
 
 In diesem Beispiel wird `t2` nicht verändert, wohl aber t1.
 
-`sort` ordnet die Elemente der Liste aufsteigend an. Beachten Sie bei der `sort`-Funktion, dass diese *in-place* arbeitet, d.h. sie verändert die Reihenfolge der Elemente **in** der Liste.
+`sort` ordnet die Elemente der Liste aufsteigend an. Beachten Sie bei der `sort`-Funktion, dass diese *in-place* arbeitet, d. h. sie verändert die Reihenfolge der Elemente **in** der Liste.
 
 \index{sort (Methode)}
 \index{Methode!sort}

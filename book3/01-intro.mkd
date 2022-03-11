@@ -56,13 +56,13 @@ Wir müssen jeweils die Person sein, die der CPU die Frage „Was nun?“ beantw
 Programmierung verstehen
 ------------------------
 
-Im weiteren Verlauf dieses Buches werden wir versuchen, aus uns Personen zu machen, die die Kunst des Programmierens beherrschen. Am Ende werden wir echte *Programmierer* sein - vielleicht keine professionellen Programmierer, aber zumindest werden wir die Fähigkeit besitzen, ein Daten-/Informationsanalyseproblem zu betrachten und ein Programm zur Lösung des Problems zu entwickeln.
+Im weiteren Verlauf dieses Buches werden wir versuchen, aus uns Personen zu machen, die die Kunst des Programmierens beherrschen. Am Ende werden wir echte *Programmierer* sein -- vielleicht keine professionellen Programmierer, aber zumindest werden wir die Fähigkeit besitzen, ein Daten-/Informationsanalyseproblem zu betrachten und ein Programm zur Lösung des Problems zu entwickeln.
 
 \index{Problemlösung}
 
 In gewissem Sinne braucht man zwei Fähigkeiten, um ein Programmierer zu sein:
 
--   Erstens müssen wir die Programmiersprache (Python) kennen - Wir müssen das Vokabular und die Grammatik kennen. Wir müssen in der Lage sein, die Wörter in dieser neuen Sprache richtig zu schreiben und wissen, wie man wohlgeformte „Sätze“ in dieser neuen Sprache konstruiert.
+-   Erstens müssen wir die Programmiersprache (Python) kennen -- wir müssen das Vokabular und die Grammatik kennen. Wir müssen in der Lage sein, die Wörter in dieser neuen Sprache richtig zu schreiben und wissen, wie man wohlgeformte „Sätze“ in dieser neuen Sprache konstruiert.
 
 -   Zweitens müssen wir „eine Geschichte erzählen“ können. Beim Schreiben einer Geschichte kombinieren wir Wörter und Sätze, um dem Leser eine Idee zu vermitteln. Es ist eine Kunst, eine Geschichte zu konstruieren, und die Fähigkeit, eine Geschichte zu schreiben, wird verbessert, indem man etwas schreibt und Feedback erhält. Beim Programmieren ist unser Programm die „Geschichte“ und das Problem, das wir zu lösen versuchen, ist die „Idee“.
 
@@ -101,7 +101,7 @@ Damit haben wir unseren ersten syntaktisch korrekten Python-Satz geschrieben. De
 
 Wie Sie der Tabelle oben entnehmen können, ist *print* kein reserviertes Wort, sondern ein *Bezeichner*.
 In diesem Fall haben aber nicht wir den Bezeichner (also den Namen) eingeführt, sondern es gibt ihn bereits *in Python*.
-Bezeichner, auf denen im Programm direkt eine öffnende Klammer folgt bezeichnen i.d.R. Funktionen, also soetwas wie Unterprogramme, die eine bestimmte Teilaufgabe erledigen. Python bietet eine Vielzahl von solchen Funktionen, die Ihnen das Leben als Programmierer sehr erleichtern. Wir werden im Verlauf des Buches noch viele dieser Funktionen kennen lernen.
+Bezeichner, auf denen im Programm direkt eine öffnende Klammer folgt bezeichnen i. d. R. Funktionen, also soetwas wie Unterprogramme, die eine bestimmte Teilaufgabe erledigen. Python bietet eine Vielzahl von solchen Funktionen, die Ihnen das Leben als Programmierer sehr erleichtern. Wir werden im Verlauf des Buches noch viele dieser Funktionen kennen lernen.
 
 Konversation mit Python
 -----------------------
@@ -215,9 +215,9 @@ Bei den Anweisungen in Programmiersprachen kommt es häufig vor, dass wir uns ei
 In Python können wir das ganz einfach erledigen, indem wir uns einen Namen ausdenken und den Wert mittels eines Gleichheitszeichens an den Namen *zuweisen*.
 
 Wir kennen das Prinzip aus der Mathematik, wo man spätestens in der 5. oder 6. Schulklasse das Rechnen mit *Variablen* erlernt. Höhere Mathematik ohne die Verwendung von Variablen ist praktisch nicht möglich, denn sie sind *das* zentrale Mittel, um Regeln oder Aussagen zu verallgemeinern.
-Auch in der Programmierung nennt man einen Platzhalter für Werte i.d.R. *Variable*.
+Auch in der Programmierung nennt man einen Platzhalter für Werte i. d. R. *Variable*.
 Dass Python eigentlich keine Variablen verwendet, sondern ausschließlich Namen ist ein technisches Detail.
-Weil der Begriff der *Variablen* aber so verbreitet ist - in den allermeisten Python Büchern wird von Variablen gesprochen - verwenden wir ihn auch in diesem Buch.
+Weil der Begriff der *Variablen* aber so verbreitet ist -- in den allermeisten Python Büchern wird von Variablen gesprochen -- verwenden wir ihn auch in diesem Buch.
 
 ~~~~ {.python}
 >>> x = 6

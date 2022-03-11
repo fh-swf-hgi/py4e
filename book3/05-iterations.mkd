@@ -76,7 +76,7 @@ Wir können die `while`-Schleife fast wörtlich lesen. Sie bedeutet: „Solange 
 
 \index{Programmablauf}
 
-Formaler ausgedrückt, ist das hier der Ablauf der Ausführung einer "while"-Schleife:
+Formaler ausgedrückt, ist das hier der Ablauf der Ausführung einer `while`-Schleife:
 
 1.  Werte die Bedingung aus und liefere `True` oder `False`.
 
@@ -204,7 +204,7 @@ Insbesondere ist `friend` die *Iterationsvariable* für die `for`-Schleife. Die 
 Typische Anwendungen von Schleifen
 ----------------------------------
 
-Oft verwenden wir eine "for"- oder "while"-Schleife, um eine Liste von Elementen oder den Inhalt einer Datei zu durchlaufen, und wir suchen nach etwas wie dem größten oder kleinsten Wert einer Liste, die wir durchlaufen.
+Oft verwenden wir eine `for`- oder `while`-Schleife, um eine Liste von Elementen oder den Inhalt einer Datei zu durchlaufen, und wir suchen nach etwas wie dem größten oder kleinsten Wert einer Liste, die wir durchlaufen.
 
 Diese Schleifen werden in der Regel so konstruiert:
 

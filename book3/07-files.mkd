@@ -75,7 +75,7 @@ Eine gekürzte Version der Datei ist verfügbar unter:
 
 [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
-Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit "From:" beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
+Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit `From:` beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
 
 Um die Datei in Zeilen zu unterteilen, gibt es ein spezielles Zeichen, das das Zeilenende darstellt, das *Newline*-Zeichen.
 
