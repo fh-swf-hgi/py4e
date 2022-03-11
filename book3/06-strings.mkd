@@ -255,7 +255,7 @@ for zeichen in word:
 print(count)
 ~~~~
 
-Dieses Programm demonstriert ein Vorgehen, das man als *Zähler* bezeichnet könnte. Die Variable `count` wird mit 0 initialisiert und dann jedes Mal inkrementiert, wenn ein `'a'` gefunden wird. Wenn die Schleife beendet wird, enthält `count` das Ergebnis: die Gesamtzahl der „a's“.
+Dieses Programm demonstriert ein Vorgehen, das man als *Zähler* bezeichnet könnte. Die Variable `count` wird mit 0 initialisiert und dann jedes Mal inkrementiert, wenn ein `'a'` gefunden wird. Wenn die Schleife beendet wird, enthält `count` das Ergebnis: die Gesamtzahl der „a“.
 
 \index{Auslagern von Code in Funktionen}
 
@@ -447,7 +447,7 @@ Parsen von Zeichenketten
 
 Oft wollen wir in eine Zeichenkette schauen und eine Teilzeichenkette finden. Wenn wir zum Beispiel eine Liste von Zeilen erhalten, die wie folgt formatiert sind:
 
-`From giefers.heiner@`*`fh-swf.de`*` Mon, 30 Aug 2021 16:20:09 +0200`
+`From giefers.heiner@`*`fh-swf.de` * ` Mon, 30 Aug 2021 16:20:09 +0200`
 
 Wollten wir nur die *Domäne* der e-Mail Adresse (d. h. `fh-swf.de`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
 

@@ -75,7 +75,7 @@ Eine gekürzte Version der Datei ist verfügbar unter:
 
 [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
-Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit „From“ beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit `From:` beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
+Diese Dateien haben ein Standardformat für eine Datei, die mehrere E-Mail-Nachrichten enthält. Die Zeilen, die mit `From` beginnen, trennen die einzelnen Nachrichten voneinander. Die Zeilen, die mit `From:` beginnen, sind dagegen Teil der Nachrichten. Weitere Informationen über das mbox-Format findet man unter <https://en.wikipedia.org/wiki/Mbox>.
 
 Um die Datei in Zeilen zu unterteilen, gibt es ein spezielles Zeichen, das das Zeilenende darstellt, das *Newline*-Zeichen.
 
@@ -157,7 +157,7 @@ Beim Durchsuchen von Daten in einer Datei ist es ein sehr gängiges Vorgehen, ei
 \index{Filtermuster}
 \index{Muster!Filter}
 
-Wenn wir z. B. eine Datei lesen und nur Zeilen ausgeben wollen, die mit dem Präfix „From:“ beginnen, könnten wir mit der String-Methode `startswith` nur die Zeilen mit dem gewünschten Präfix auswählen:
+Wenn wir z. B. eine Datei lesen und nur Zeilen ausgeben wollen, die mit dem Präfix `From:` beginnen, könnten wir mit der String-Methode `startswith` nur die Zeilen mit dem gewünschten Präfix auswählen:
 
 \VerbatimInput{../code3/search1.py}
 \begin{trinketfiles}
@@ -177,7 +177,7 @@ From: rjlowe@iupui.edu
 ...
 ~~~~
 
-Die Ausgabe sieht gut aus, da die einzigen Zeilen, die wir sehen, die sind, die mit „From:“ beginnen, aber warum sehen wir die zusätzlichen Leerzeilen? Das liegt an dem unsichtbaren Zeichen *Newline*. Jede der Zeilen endet mit einem Zeilenumbruch, sodass die Anweisung `print` die Zeichenkette in der Variablen `line` ausgibt, die einen Zeilenumbruch enthält, und dann fügt `print` einen weiteren Zeilenumbruch hinzu, was zu der überschüssigen Leerzeile führt, den wir sehen.
+Die Ausgabe sieht gut aus, da die einzigen Zeilen, die wir sehen, die sind, die mit `From:` beginnen, aber warum sehen wir die zusätzlichen Leerzeilen? Das liegt an dem unsichtbaren Zeichen *Newline*. Jede der Zeilen endet mit einem Zeilenumbruch, sodass die Anweisung `print` die Zeichenkette in der Variablen `line` ausgibt, die einen Zeilenumbruch enthält, und dann fügt `print` einen weiteren Zeilenumbruch hinzu, was zu der überschüssigen Leerzeile führt, den wir sehen.
 
 Wir könnten Zeilen-Slicing verwenden, um alle Zeichen bis auf das letzte auszugeben, aber ein besserer Ansatz ist die Verwendung der `rstrip`-Methode, die Leerzeichen auf der rechten Seite einer Zeichenkette wie folgt entfernt:
 
@@ -208,7 +208,7 @@ Wir können die Schleife wie folgt strukturieren, um uninteressante Zeilen zu ü
 ../code3/mbox-short.txt
 \end{trinketfiles}
 
-Die Ausgabe des Programms ist die gleiche. Die uninteressanten Zeilen sind diejenigen, die nicht mit „From:“ beginnen, die wir also mit `continue` überspringen. Für die „interessanten“ Zeilen (d. h. diejenigen, die mit „From:“ beginnen) führen wir die Verarbeitung auf diesen Zeilen durch.
+Die Ausgabe des Programms ist die gleiche. Die uninteressanten Zeilen sind diejenigen, die nicht mit `From:` beginnen, die wir also mit `continue` überspringen. Für die „interessanten“ Zeilen (d. h. diejenigen, die mit `From:` beginnen) führen wir die Verarbeitung auf diesen Zeilen durch.
 
 Wir können die String-Methode `find` verwenden, um eine Texteditor-Suche zu simulieren, die Zeilen findet, in denen die gesuchte Zeichenkette irgendwo in der Zeile steht. Da `find` nach einem Vorkommen einer Zeichenkette innerhalb einer anderen Zeichenkette sucht und entweder die Position der Zeichenkette oder -1 zurückgibt, wenn die Zeichenkette nicht gefunden wurde, können wir die folgende Schleife schreiben, um Zeilen anzuzeigen, die die Zeichenkette `@uct.ac.za` (University of Cape Town in South Africa) enthalten:
 
