@@ -937,8 +937,6 @@ Referenz
 Übungen
 -------
 
-\index{Romeo und Julia}
-
 **Übung 5:** Alle einzigartigen Wörter in einer Datei finden
 
 Shakespeare hat über 20,000 verschiedene Wörter in seinen Werken verwendet. Aber wie könnte man das feststellen? Wie könnte man eine Liste aller Wörter erstellen, die Shakespeare verwendet hat? Würde man sein gesamtes Werk herunterladen, es lesen und alle einzigartigen Wörter von Hand nachverfolgen?
