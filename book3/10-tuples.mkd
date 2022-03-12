@@ -347,7 +347,7 @@ Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel
 
 Indem wir die Liste der Tupel sorgfältig so konstruieren, dass der Wert das erste Element jedes Tupels ist, können wir die Liste der Tupel sortieren und erhalten den Inhalt unseres Dictionarys nach dem Wert sortiert.
 
-Die häufigsten Wörter
+Worthäufigkeit zählen
 ---------------------
 
 Wenn wir zu unserem laufenden Beispiel des Textes aus *Romeo und Juliet* Akt 2, Szene 2 zurückkehren, können wir unser Programm erweitern, um diese Technik zu verwenden und die zehn häufigsten Wörter im Text wie folgt auszugeben:

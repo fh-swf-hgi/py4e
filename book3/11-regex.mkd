@@ -44,8 +44,8 @@ Jetzt werden wir nur Zeilen abgleichen, die *mit* der Zeichenkette `From:` begin
 
 \index{Zeichenkette!startswith}
 
-Zeichenübereinstimmung in regulären Ausdrücken
-----------------------------------------------
+Wildcards
+---------
 
 Es gibt eine Reihe weiterer Sonderzeichen, mit denen sich noch mächtigere reguläre Ausdrücke erstellen lassen. Das am häufigsten verwendete Sonderzeichen ist der Punkt, der auf jedes beliebige Zeichen passt.
 
@@ -76,8 +76,8 @@ From: stephen.marquard@uct.ac.za
 
 Wir können uns den Platzhalter `.+` so vorstellen, dass er auf alle Zeichen zwischen dem Doppelpunkt und dem at-Zeichen passt.
 
-Extrahieren von Daten mit regulären Ausdrücken
-----------------------------------------------
+Extrahieren von Daten
+---------------------
 
 Wenn wir in Python Daten aus einer Zeichenkette extrahieren wollen, können wir die Methode `findall()` verwenden, um alle Teilstrings zu extrahieren, die einem regulären Ausdruck entsprechen. Nehmen wir als Beispiel, dass wir alles, was wie eine E-Mail-Adresse aussieht, aus jeder Zeile extrahieren wollen, unabhängig vom Format. Zum Beispiel wollen wir die E-Mail-Adressen aus jeder der folgenden Zeilen extrahieren:
 
@@ -169,7 +169,7 @@ Es ist wichtig zu beachten, dass unser regulärer Ausdruck in den Zeilen mit `so
 
 Zuletzt muss beachtet werden, dass die Ausgabe des Programms eine Python-Liste ist, die eine Zeichenkette als einziges Element in der Liste hat.
 
-Kombinieren von Suchen und Extrahieren
+Kombination von Suchen und Extrahieren
 --------------------------------------
 
 Wenn wir Zahlen in Zeilen finden wollen, die mit der Zeichenkette `X-` beginnen, wie z. B.
@@ -365,8 +365,8 @@ Die Fragezeichen in `*?`, `+?` und `??` fordern, dass der Abgleich im sogenannte
 
 `\D` jedes Zeichen, das keine Ziffer ist; entspricht der Menge `[^0-9]`
 
-Bonuskapitel für Unix/Linux-User
---------------------------------
+Bonuskapitel für Unix/Linux-Benutzer
+------------------------------------
 
 Die Unterstützung für das Durchsuchen von Dateien mit regulären Ausdrücken wurde seit den 1960er Jahren in das Unix-Betriebssystem eingebaut und ist heute in fast allen Programmiersprachen in der einen oder anderen Form vorhanden.
 

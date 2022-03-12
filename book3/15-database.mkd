@@ -28,8 +28,8 @@ Auf den ersten Blick sieht eine Datenbank aus wie eine Tabellenkalkulation mit m
 
 In technischen Beschreibungen von relationalen Datenbanken werden die Konzepte Tabelle, Zeile und Spalte formaler als *Relation*, *Tupel* und *Attribut* bezeichnet. Wir werden in diesem Kapitel die weniger formalen Begriffe verwenden.
 
-Datenbank-Browser für SQLite
-----------------------------
+Datenbankbrowser für SQLite
+---------------------------
 
 Während sich dieses Kapitel auf die Verwendung von Python für die Arbeit mit Daten in SQLite-Datenbankdateien konzentriert, können viele Operationen bequemer mit einer Software namens *Database Browser for SQLite* durchgeführt werden, die frei erhältlich ist:
 

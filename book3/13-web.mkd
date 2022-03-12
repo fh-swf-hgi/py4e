@@ -160,8 +160,8 @@ Attribute 7
 
 Im Allgemeinen gibt es bei Webservices in der IT-Branche einen Trend weg von XML und hin zu JSON. Da JSON einfacher ist und direkter auf native Datenstrukturen abgebildet wird, die in verschiedenen Programmiersprachen bereits vorhanden sind, ist der Code für das Parsen und die Datenextraktion bei der Verwendung von JSON normalerweise einfacher. XML ist jedoch selbstbeschreibender als JSON und daher gibt es einige Anwendungen, in denen XML weiterhin einen Vorteil bietet. So speichern die meisten Textverarbeitungsprogramme Dokumente intern in XML und nicht in JSON.
 
-Application Programming Interfaces (API)
-----------------------------------------
+Application Programming Interfaces -- API
+-----------------------------------------
 
 Wir haben inzwischen die Fähigkeit erlernt, Daten zwischen Anwendungen über das HyperText Transport Protocol (HTTP) auszutauschen und wir haben eine Möglichkeit kennengelernt, komplexe Daten, die wir zwischen diesen Anwendungen hin- und herschicken möchten, mittels eXtensible Markup Language (XML) oder JavaScript Object Notation (JSON) darzustellen.
 

@@ -233,8 +233,8 @@ Author: david.horwitz@uct.ac.za
 
 Auch hier verwenden wir verkürzte Form der `if`-Anweisung, bei der wir das `continue` in dieselbe Zeile wie das `if` setzen. Diese verkürzte Form der `if`-Anweisung funktioniert genauso, als ob das `continue` in der nächsten Zeile und eingerückt wäre.
 
-Wahl des Dateinamens durch den User
------------------------------------
+Wahl des Dateinamens durch den Benutzer
+---------------------------------------
 
 Wir wollen nicht jedes Mal unseren Python-Code bearbeiten müssen, wenn wir eine andere Datei verarbeiten wollen. Es wäre sinnvoller, den Benutzer aufzufordern, die Zeichenkette für den Dateinamen jedes Mal einzugeben, wenn das Programm ausgeführt wird, damit er unser Programm für verschiedene Dateien verwenden kann, ohne den Python-Code zu ändern.
 

@@ -473,12 +473,11 @@ Die Dokumentation für die Methode `find` ist verfügbar unter
 
 <https://docs.python.org/library/stdtypes.html#string-methods>.
 
-Formatierte Strings
----------------------
+Formatierte Zeichenketten
+-------------------------
 
 \index{Format-String}
 \index{Formatierungszeichen}
-
 
 Wir haben nun schon mehrfach `print`-Anweisungen verwendet, bei denen wir sowohl Zeichenketten als auch die Werte bestimmter Variablen ausgegeben haben. Also z. B. so:
 

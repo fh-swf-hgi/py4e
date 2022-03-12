@@ -280,8 +280,8 @@ if 0 < x and x < 10:
     print('x is a positive single-digit number.')
 ~~~~
 
-Abfangen von Ausnahmen mittels `try` und `except`
--------------------------------------------------
+Abfangen von Ausnahmen mit `try` und `except`
+---------------------------------------------
 
 Im vorherigen Kapitel haben wir ein Codesegment gesehen, in dem wir die Funktionen `input` und `int` verwendet haben, um eine vom Benutzer eingegebene Ganzzahl zu lesen und zu analysieren. Wir haben auch gesehen, wie tückisch dies sein kann:
 
@@ -350,17 +350,18 @@ Bitte gib eine Zahl ein!
 
 Die Behandlung einer Ausnahme mit einer `try`-Anweisung wird als *Fangen* einer Ausnahme bezeichnet. In diesem Beispiel gibt die `except`-Klausel eine Fehlermeldung aus. Im Allgemeinen gibt Ihnen das Abfangen einer Ausnahme die Möglichkeit, das Problem zu beheben, es erneut zu versuchen oder zumindest das Programm ordnungsgemäß zu beenden.
 
-Abgekürzte Auswertung logischer Ausdrücke
------------------------------------------
+Verkürzte Auswertung logischer Ausdrücke
+----------------------------------------
 
-\index{verkürzte Auswertung}\index{short circuit}
+\index{verkürzte Auswertung}\index{short-circuit evaluation}\index{Kurzschlussauswertung}
 
-Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` logisch falsch (also gleich `False`) und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
+Wenn Python einen logischen Ausdruck wie `x >= 2 and (x/y) > 2` verarbeitet, wertet es den Ausdruck von links nach rechts aus. Aufgrund der Definition von `and` ist, wenn `x` kleiner als 2 ist, der Ausdruck `x >= 2` logisch falsch (also `False`) und somit ist der gesamte Ausdruck `False`, unabhängig davon, ob `(x/y) > 2` als `True` oder `False` ausgewertet wird.
 
-Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks sich am Endergebnis nichts mehr ändern wird, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *abgekürzte Auswertung* (englisch *short-circuit evaluation* oder *short-circuiting*).
+Wenn Python feststellt, dass durch die Auswertung des restlichen Teils eines logischen Ausdrucks sich am Endergebnis nichts mehr ändern wird, bricht es die Auswertung ab und führt die Berechnungen im restlichen Teil des logischen Ausdrucks nicht aus. Wenn die Auswertung eines logischen Ausdrucks stoppt, weil der Gesamtwert bereits bekannt ist, bezeichnet man dies als *verkürzte Auswertung* (auch *Kurzschlussauswertung* oder *bedingte Auswertung*, englisch *short-circuit evaluation*).
 
 \index{Wächter-Muster}
 \index{Muster!Wächter}
+\index{guardian pattern}
 
 Auch wenn dies wie eine Kleinigkeit erscheinen mag, führt die abgekürzte Auswertung zu einer cleveren Technik, die als *Wächter-Muster* (englisch *guardian pattern*) bezeichnet wird. Betrachten wir die folgende Codesequenz im Python-Interpreter:
 
@@ -383,7 +384,7 @@ ZeroDivisionError: division by zero
 ~~~~
 
 Die dritte Berechnung schlug fehl, weil Python `(x/y)` auswertete und `y` null war, was einen Laufzeitfehler (`division by zero`) verursacht. Eine Division durch null ist mathematisch nicht definiert, Python *kann* die Berechnung also nicht durchführen (und Sie wissen ja, dass Python nicht „rät“).
-Allerdings schlug das zweite Beispiel *nicht* fehl, obwohl hier auch `(x/y) > 2` stand und `y` zu dem Zeitpunkt den Wert `0` hatte. Dass es zu keinem Fehler kam, liegt daran, dass der erste Teil dieses Ausdrucks `x >= 2` zu `False` ausgewertet wurde, sodass `(x/y)` aufgrund der *abgekürzten Auswertung* nie ausgeführt wurde und es damit keinen Fehler gab.
+Allerdings schlug das zweite Beispiel *nicht* fehl, obwohl hier auch `(x/y) > 2` stand und `y` zu dem Zeitpunkt den Wert `0` hatte. Dass es zu keinem Fehler kam, liegt daran, dass der erste Teil dieses Ausdrucks `x >= 2` zu `False` ausgewertet wurde, sodass `(x/y)` aufgrund der verkürzten Auswertung nie ausgeführt wurde und es damit keinen Fehler gab.
 
 Wir können den logischen Ausdruck so konstruieren, dass wir strategisch eine *Schutz*-Auswertung direkt vor der Auswertung platzieren, die einen Fehler verursachen könnte, wie folgt:
 
@@ -414,7 +415,6 @@ Traceback (most recent call last):
 ZeroDivisionError: division by zero
 >>>
 ~~~~
-
 
 Debugging
 ---------

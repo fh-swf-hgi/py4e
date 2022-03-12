@@ -216,7 +216,7 @@ Diese Schleifen werden in der Regel so konstruiert:
 
 Wir werden eine Liste von Zahlen verwenden, um die typischen Anwendungen von Schleifen zu demonstrieren.
 
-### Zählen und Summieren mit Schleifen
+### Zählen und Summieren
 
 Um zum Beispiel die Anzahl der Elemente in einer Liste zu zählen, würden wir die folgende `for`-Schleife schreiben:
 

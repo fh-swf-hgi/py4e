@@ -211,8 +211,8 @@ Wir können diese Daten betrachten, indem wir die Datei `force.html` in unserem 
 
 Wenn wir die anderen Dienstprogramme erneut ausführen, führen wir `spjson.py` ebenfalls erneut aus. Dann drücken wir im Browser auf Aktualisieren, um die neuen Daten aus `spider.json` zu erhalten.
 
-Visualisierung von Mail-Daten
------------------------------
+Visualisierung von Maildaten
+----------------------------
 
 Bis zu diesem Punkt im Buch sind wir mit unseren Datendateien `mbox-short.txt` und `mbox.txt` ziemlich vertraut geworden. Jetzt ist es an der Zeit, unsere Analyse der E-Mail-Daten auf die nächste Stufe zu bringen.
 
