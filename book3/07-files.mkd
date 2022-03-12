@@ -12,7 +12,7 @@ Bisher haben wir gelernt, wie man Programme schreibt und der *CPU* unsere Absich
 
 Aber wenn man sich an unsere Diskussionen über die Hardware-Architektur erinnert stellt man fest, alles wird, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht ist, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
 
-![Sekundärspeicher](height=1.75in@../images/de/arch)
+![Arbeitsspeicher und Sekundärspeicher (Festspeicher)](height=1.75in@../images/de/arch)
 
 In diesem Kapitel beginnen wir mit dem *Sekundär-* oder auch *Festspeicher* (also den Dateien) zu arbeiten. Der Sekundärspeicher wird nicht gelöscht, wenn der Strom abgeschaltet wird. Oder im Fall eines USB-Sticks können die Daten, die wir von unseren Programmen schreiben, aus dem System entfernt und zu einem anderen System transportiert werden.
 

@@ -223,7 +223,7 @@ else:
 
 `elif` ist eine Abkürzung für „else if“. Auch hier wird genau eine Verzweigung ausgeführt.
 
-![If-Then-ElseIf Logic](height=2.0in@../images/elif)
+![If-Then-ElseIf-Logik](height=2.0in@../images/elif)
 
 Es gibt keine Begrenzung für die Anzahl der `elif`-Anweisungen. Wenn es eine `else`-Klausel gibt, muss sie am Ende stehen, aber es muss nicht unbedingt eine geben.
 
@@ -261,7 +261,7 @@ else:
 
 Die äußere Bedingung enthält zwei Verzweigungen. Der erste Zweig enthält eine einfache Anweisung. Der zweite Zweig enthält eine weitere `if`-Anweisung, die ihrerseits zwei Zweige hat. Diese beiden Zweige sind beide einfache Anweisungen, obwohl sie auch bedingte Anweisungen hätten sein können.
 
-![Nested If Statements](height=2.0in@../images/nested)
+![Verschachtelte If-Anweisungen](height=2.0in@../images/nested)
 
 Obwohl die Einrückung der Anweisungen die Struktur deutlich macht, werden *verschachtelte Bedingungen* sehr schnell unübersichtlich. Im Allgemeinen ist es eine gute Idee, sie wenn möglich zu vermeiden.
 

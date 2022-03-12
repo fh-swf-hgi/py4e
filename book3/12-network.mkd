@@ -34,7 +34,7 @@ Der vielleicht einfachste Weg zu zeigen, wie das HTTP-Protokoll funktioniert, is
 
 Zunächst stellt das Programm eine Verbindung zu Port 80 auf dem Server [www.py4e.com](http://www.py4e.com) her. Da unser Programm die Rolle des Webbrowsers spielt, sagt das HTTP-Protokoll, dass wir den GET-Befehl gefolgt von einer Leerzeile senden müssen. `\r\n` bedeutet ein EOL (End-of-Line), also steht `\r\n\r\n` für „nichts“ zwischen zwei EOL-Sequenzen. Das ist das Äquivalent zu einer Leerzeile.
 
-![Eine Socket-Verbindung](height=2.0in@../images/socket)
+![Eine Socketverbindung](height=2.0in@../images/socket)
 
 Sobald wir diese Leerzeile gesendet haben, schreiben wir eine Schleife, die Daten in 512-Zeichen-Blöcken vom Socket empfängt und die Daten ausgibt, bis es keine weiteren Daten mehr zu lesen gibt (d. h., bis `recv()` eine leere Zeichenkette liefert).
 

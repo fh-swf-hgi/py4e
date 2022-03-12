@@ -68,7 +68,7 @@ Die Operation `connect` stellt eine *Verbindung* zu der Datenbank her, die in de
 
 Ein *Cursor* ist wie ein Dateihandler, mit dem wir Operationen mit den in der Datenbank gespeicherten Daten durchführen können. Der Aufruf von `cursor()` ist in etwa vergleichbar mit dem Aufruf von `open()` beim Umgang mit Textdateien.
 
-![Ein Datenbank-Cursor](height=2.0in@../images/cursor)
+![Ein Datenbankcursor](height=2.0in@../images/cursor)
 
 Sobald wir den Cursor erhalten haben, können wir damit beginnen, mithilfe der Methode `execute()` Datenbankoperationen auszuführen.
 
@@ -543,7 +543,7 @@ SELECT * FROM Follows JOIN People
 
 Die `JOIN`-Klausel gibt an, dass die ausgewählten Felder sowohl die `Follows`- als auch die `People`-Tabelle betreffen. Die `ON`-Klausel gibt an, wie die beiden Tabellen verbunden werden sollen: Es wird eine passende Zeile aus `Follows` entnommen und an die Zeile aus `People` angefügt, bei der das Feld `from_id` in `Follows` gleich dem Wert `id` in der Tabelle `People` ist.
 
-![Datenabfrage über mehrere Tabellen mit JOIN](height=3.5in@figs2/join)
+![Datenabfrage über mehrere Tabellen mit `JOIN`](height=3.5in@figs2/join)
 
 Das Ergebnis des JOIN sind Tabellenzeilen, die sowohl die Felder aus `People` als auch die passenden Felder aus `Follows` enthalten. Wenn es mehr als eine Übereinstimmung zwischen dem Feld `id` aus `People` und der `from_id` aus `People` gibt, dann erzeugt JOIN eine Zeile für *jedes* der übereinstimmenden Zeilenpaare und dupliziert Daten bei Bedarf.
 
