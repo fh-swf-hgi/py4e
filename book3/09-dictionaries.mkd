@@ -1,6 +1,6 @@
 
-Dictionaries
-============
+Dictionarys
+===========
 
 \index{Dictionary}
 
@@ -12,7 +12,7 @@ Dictionaries
 
 Listen sind sehr gut geeignet, um alles Mögliche zu speichern, was eine Reihenfolge hat. Sie können bei einer Liste über den *Index* das entsprechende Element finden, also z. B. das erste, das fünfte oder auch das letzte Element. Oftmals ist beim Abspeichern der Daten die Reihenfolge allerdings unerheblich, es kommt eher darauf an, Datensätze schnell „wiederzufinden“.
 
-Stellen Sie sich die Mitarbeiterkartei einer Personalabteilung vor. Als Liste abgelegt würde es bedeuten, dass wir alle Akten übereinander stapeln. Wir könnten zwar schnell eine beliebige Akte herausziehen, um eine bestimmte Akte zu finden, müssten wir aber im Stapel suchen und im Zweifelsfall jede öffnen, um herauszufinden, zu welcher Person sie gehört. Daher legt man Akten unter einem geeigneten Stichwort ab, in diesem Fall z. B. den Namen der Person. In diesem Kapitel geht es um *Dictionaries*, einem zusammengesetzten Datentyp in Python, mit dem genau solche Ablage- und Zugriffsmöglichkeiten für beliebige Daten möglich sind.
+Stellen Sie sich die Mitarbeiterkartei einer Personalabteilung vor. Als Liste abgelegt würde es bedeuten, dass wir alle Akten übereinander stapeln. Wir könnten zwar schnell eine beliebige Akte herausziehen, um eine bestimmte Akte zu finden, müssten wir aber im Stapel suchen und im Zweifelsfall jede öffnen, um herauszufinden, zu welcher Person sie gehört. Daher legt man Akten unter einem geeigneten Stichwort ab, in diesem Fall z. B. den Namen der Person. In diesem Kapitel geht es um *Dictionarys*, einem zusammengesetzten Datentyp in Python, mit dem genau solche Ablage- und Zugriffsmöglichkeiten für beliebige Daten möglich sind.
 
 Was ist ein Dictionary
 ----------------------
@@ -79,7 +79,7 @@ Wenn der Schlüssel nicht im Dictionary enthalten ist, erhalten wir eine Ausnahm
 KeyError: 'four'
 ~~~~
 
-Die Funktion `len` arbeitet mit Dictionaries; sie gibt die Anzahl der Schlüssel-Wert-Paare zurück:
+Die Funktion `len` arbeitet mit Dictionarys; sie gibt die Anzahl der Schlüssel-Wert-Paare zurück:
 
 \index{len (Funktion)}
 \index{Funktion!len}
@@ -89,7 +89,7 @@ Die Funktion `len` arbeitet mit Dictionaries; sie gibt die Anzahl der Schlüssel
 3
 ~~~~
 
-Der `in`-Operator arbeitet mit Dictionaries; er sagt Ihnen, ob etwas als *Schlüssel* im Dictionary vorkommt (als Wert zu erscheinen ist nicht gut genug).
+Der `in`-Operator arbeitet mit Dictionarys; er sagt Ihnen, ob etwas als *Schlüssel* im Dictionary vorkommt (als Wert zu erscheinen ist nicht gut genug).
 
 \index{Zugehörigkeit!Dictionary}
 \index{in (Operator)}
@@ -113,7 +113,7 @@ Um zu sehen, ob etwas als Wert in einem Dictionary vorkommt, können wir die Met
 True
 ~~~~
 
-Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Dictionaries. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Dictionaries verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Dictionary vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [https://de.wikipedia.org/wiki/Hashtabelle](https://de.wikipedia.org/wiki/Hashtabelle) lesen.
+Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Dictionarys. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Dictionarys verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Dictionary vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [https://de.wikipedia.org/wiki/Hashtabelle](https://de.wikipedia.org/wiki/Hashtabelle) lesen.
 
 \index{Hashtabelle}
 \index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}
@@ -175,7 +175,7 @@ Das Histogramm zeigt an, dass die Buchstaben „a“ und „b“ einmal vorkomme
 \index{get (Methode)}
 \index{Methode!get}
 
-Dictionaries haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Dictionary vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
+Dictionarys haben eine Methode namens `get`, die einen Schlüssel und einen Standardwert annimmt. Wenn der Schlüssel im Dictionary vorkommt, gibt `get` den entsprechenden Wert zurück; andernfalls wird der Standardwert zurückgegeben. Zum Beispiel:
 
 ~~~~ {.python .trinket}
 >>> counts = { 'chuck': 1 , 'annie': 42, 'jan': 100}
@@ -199,8 +199,8 @@ Die Verwendung der `get`-Methode zur Vereinfachung dieser Zählschleife ist schl
 
 \index{Idiom}
 
-Dictionaries und Dateien
-------------------------
+Dictionarys und Dateien
+-----------------------
 
 Eine der häufigsten Verwendungen eines Dictionarys ist das Zählen des Vorkommens von Wörtern in einer Datei mit einem geschriebenen Text. Beginnen wir mit einer sehr einfachen Datei mit Wörtern aus dem Text von *Romeo and Juliet*.
 
@@ -251,8 +251,8 @@ Enter the file name: romeo.txt
 
 Es ist etwas umständlich, das Dictionary zu durchforsten, um die häufigsten Wörter und ihre Anzahl zu finden, also müssen wir noch etwas Python-Code hinzufügen, um die Ausgabe zu erhalten, die nützlicher für uns sein wird.
 
-Schleifen und Dictionaries
---------------------------
+Schleifen und Dictionarys
+-------------------------
 
 \index{Dictionary!Iteration durch}
 \index{Schleife!über Dictionary}\index{Iteration!durch Dictionary}
@@ -418,7 +418,7 @@ Dictionary
 \index{Dictionary}
 
 Hash-Tabelle
-:   Der Algorithmus, der zur Implementierung von Python-Dictionaries verwendet wird.
+:   Der Algorithmus, der zur Implementierung von Python-Dictionarys verwendet wird.
 \index{Hashtabelle}
 
 Hashfunktion

@@ -324,8 +324,8 @@ Debugging
 
 Wenn wir anfangen, größere Programme zu schreiben, werden wir möglicherweise mehr Zeit mit der Fehlersuche verbringen. Mehr Code bedeutet mehr Möglichkeiten, einen Fehler zu machen und mehr Stellen, an denen sich Bugs verstecken können.
 
-\index{Debugging!mittels Bisektion}
-\index{Bisektion, Debugging mittels}
+\index{Debugging!Bisektion}
+\index{Bisektion (Debugging)}
 
 Eine Möglichkeit, die Debugging-Zeit zu verkürzen, ist das „Debugging durch Bisektion“ (*Halbierung*). Wenn das Programm z. B. 100 Zeilen enthält und man diese nacheinander überprüft, würde dies 100 Schritte erfordern.
 

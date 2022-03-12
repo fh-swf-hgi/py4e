@@ -11,7 +11,7 @@ Tupel sind unveränderbar
 \index{Datentyp!Tupel}
 \index{Folge}
 
-Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Alles, wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Dictionaries verwenden können.
+Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Alles, wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Dictionarys verwenden können.
 
 \index{Veränderbarkeit}
 \index{vergleichbar}
@@ -267,15 +267,15 @@ monty
 python.org
 ~~~~
 
-Dictionaries und Tupel
-----------------------
+Dictionarys und Tupel
+---------------------
 
 \index{Dictionary}
 \index{items (Methode)}
 \index{Methode!items}
 \index{Key-Value-Paar}\index{Schlüssel-Wert-Paar}
 
-Dictionaries haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
+Dictionarys haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
 
 ~~~~ {.python .trinket}
 >>> d = {'a':10, 'b':1, 'c':22}
@@ -300,8 +300,8 @@ Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, könne
 
 Die neue Liste wird in aufsteigender alphabetischer Reihenfolge nach dem Schlüsselwert sortiert.
 
-Mehrfachzuweisung mit Dictionaries
-----------------------------------
+Mehrfachzuweisung mit Dictionarys
+---------------------------------
 
 \index{Traversieren!Dictionary}
 \index{Dictionary!Traversieren}
@@ -380,10 +380,10 @@ Jetzt sieht die Ausgabe endlich so aus, wie wir es uns für unsere Worthäufigke
 
 Die Tatsache, dass dieses komplexe Parsen und Analysieren von Daten mit einem leicht verständlichen 19-zeiligen Python-Programm durchgeführt werden kann, ist ein Grund, warum Python eine gute Wahl als Sprache für die Erforschung von Informationen ist.
 
-Verwendung von Tupeln als Schlüssel in Dictionaries
----------------------------------------------------
+Verwendung von Tupeln als Schlüssel in Dictionarys
+--------------------------------------------------
 
-\index{Tupel!als Schlüssel in Dictionaries}
+\index{Tupel!als Schlüssel in Dictionarys}
 \index{hashbar}
 
 Da Tupel *gehasht* werden können und Listen nicht, müssen wir ein Tupel als Schlüssel verwenden, wenn wir einen *zusammengesetzten* Schlüssel zur Verwendung in einem Dictionary erstellen wollen.
@@ -443,7 +443,7 @@ Debugging
 \index{Debugging}
 \index{Datenstruktur}
 
-Listen, Dictionaries und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Dictionaries, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
+Listen, Dictionarys und Tupel sind allgemein als *Datenstrukturen* bekannt; in diesem Kapitel beginnen wir, zusammengesetzte Datenstrukturen zu nutzen, wie Listen von Tupeln und Dictionarys, die Tupel als Schlüssel und Listen als Werte enthalten. Zusammengesetzte Datenstrukturen sind nützlich, aber sie sind anfällig für das, was man als *Formatfehler* bezeichnen könnte; das heißt, Fehler, die entstehen, wenn eine Datenstruktur den falschen Typ, die falsche Größe oder die falsche Zusammensetzung hat, oder wenn wir vielleicht etwas Code schreiben und das Format der Daten vergessen und einen Fehler einführen. Wenn wir zum Beispiel eine Liste mit einer Ganzzahl erwarten und ich dem Programm eine einfache Ganzzahl (nicht in einer Liste) gebe, wird es nicht funktionieren.
 
 Glossar
 -------
@@ -453,7 +453,7 @@ vergleichbar
 \index{vergleichbar}
 
 Datenstruktur
-:   Eine Sammlung zusammengehöriger Werte, oft organisiert in Listen, Dictionaries, Tupeln usw.
+:   Eine Sammlung zusammengehöriger Werte, oft organisiert in Listen, Dictionarys, Tupeln usw.
 \index{Datenstruktur}
 
 DSU
@@ -461,7 +461,7 @@ DSU
 \index{DSU-Muster}
 
 hashbar
-:   Ein Datentyp, der eine Hash-Funktion hat. Unveränderliche Typen wie Ganzzahlen, Fließkommazahlen und Zeichenketten sind hashfähig; veränderliche Typen wie Listen und Dictionaries können nicht gehasht werden.
+:   Ein Datentyp, der eine Hash-Funktion hat. Unveränderliche Typen wie Ganzzahlen, Fließkommazahlen und Zeichenketten sind hashfähig; veränderliche Typen wie Listen und Dictionarys können nicht gehasht werden.
 \index{hashbar}
 
 Singleton

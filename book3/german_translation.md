@@ -299,8 +299,8 @@ import statement : Importanweisung
 \index{accumulator!sum} : \index{Akkumulator!Summe}
 \index{loop!maximum} : \index{Schleife!Maximum}
 \index{loop!minimum} : \index{Schleife!Minimum}
-\index{debugging!by bisection} : \index{Debugging!mittels Bisektion}
-\index{bisection, debugging by} : \index{Bisektion, Debugging mittels}
+\index{debugging!by bisection} : \index{Debugging!Bisektion}
+\index{bisection, debugging by} : \index{Bisektion (Debugging)}
 \index{accumulator} : \index{Akkumulator}
 \index{counter} : \index{Schleifenzähler}
 ```

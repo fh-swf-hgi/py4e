@@ -14,7 +14,7 @@ Zu Beginn dieses Buches haben wir vier grundlegende Programmiermuster betrachtet
 * Wiederholter Code (Schleifen)
 * Wiederverwendung von Code (Funktionen)
 
-In den ersten Kapiteln haben wir vorwiegend *elementare Datentypen* wie ganze Zahlen oder Fließkommazahlen verwendet und in den späteren Kapiteln dann *zusammengesetzte Datentypen* wie Listen, Tupeln und Dictionaries eingeführt.
+In den ersten Kapiteln haben wir vorwiegend *elementare Datentypen* wie ganze Zahlen oder Fließkommazahlen verwendet und in den späteren Kapiteln dann *zusammengesetzte Datentypen* wie Listen, Tupeln und Dictionarys eingeführt.
 
 Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, wie sie sein könnten, und andere, die uns vielleicht etwas geraten „eleganter“ sind. Auch wenn unsere bisherigen Programme eher überschaubar sind, fängt man an zu erkennen, dass ein gewisses Gespür für das Schreiben von gut lesbarem und übersichtlichem Code hilfreich ist.
 
