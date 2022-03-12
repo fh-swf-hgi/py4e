@@ -29,4 +29,3 @@ def urlopen(url):
     str_json = connection.read().decode()
     headers = dict(connection.getheaders())
     return (str_json, headers)
-

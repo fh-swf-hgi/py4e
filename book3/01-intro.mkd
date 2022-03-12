@@ -351,8 +351,10 @@ Wie wir in unseren ersten „Gesprächen“ mit Python gesehen haben, müssen wi
 
 ~~~~ {.python}
 C:\Python> python.exe
-Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit (AMD64)]
-Type "help", "copyright", "credits" or "license" for more information.
+Python 3.8.5 (default, Sep  3 2020, 21:29:08) [MSC v.1916 64 bit
+(AMD64)]
+Type "help", "copyright", "credits" or "license" for more
+information.
 >>> primt 'Hello World'
   File "<stdin>", line 1
     primt 'Hello World'

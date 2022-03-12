@@ -1,7 +1,7 @@
 import socket
 
-# This is using HTTP 1.0 - not all servers support the oldest protocol
-# Try http://data.pr4e.org/romeo.txt if your server fails.
+# This is using HTTP 1.0 - not all servers support the oldest
+# protocol. Try http://data.pr4e.org/romeo.txt if your server fails.
 
 url = input('Enter: ')
 words = url.split('/')

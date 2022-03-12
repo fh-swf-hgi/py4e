@@ -1,5 +1,5 @@
 # Wie in re07.py aber etwas praeziser für E-Mail Adressen,
-# da Sonderzeichen in Mailadressen erlaubt sind
+# da Sonderzeichen in Mailadressen erlaubt sind.
 import re
 hand = open('mbox-short.txt')
 for line in hand:

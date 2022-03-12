@@ -6,7 +6,7 @@ class PartyAnimal:
 
    def party(self) :
      self.x = self.x + 1
-     print("Partys bisher:",self.x)
+     print("Partys bisher:", self.x)
 
    def __del__(self):
      print("Zerstört nach", self.x, "Partys")

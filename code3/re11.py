@@ -1,6 +1,7 @@
-# Finde Zeilen, die mit 'X' beginnen, gefolgt von beliebig vielen (nicht Leer-)
-# Zeichen, gefolgt von einem ':' und einem Leerzeichen. Danach kann eine Zahl
-# mit einer oder mehr Ziffern und Dezimalpunkten folgen. Diese Zahl ist der Match
+# Finde Zeilen, die mit 'X' beginnen, gefolgt von beliebig vielen
+# (nicht-Leer-)Zeichen, gefolgt von einem ':' und einem
+# Leerzeichen. Danach kann eine Zahl mit einer oder mehreren
+# Ziffern und Dezimalpunkten folgen. Diese Zahl ist dann der Match.
 import re
 hand = open('mbox-short.txt')
 for line in hand:

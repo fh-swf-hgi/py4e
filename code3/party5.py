@@ -7,7 +7,7 @@ class PartyAnimal:
 
    def party(self) :
      self.x = self.x + 1
-     print(self.name, "hat",self.x, "Party(s) besucht")
+     print(self.name, "hat", self.x, "Party(s) besucht")
 
 s = PartyAnimal('Sally')
 j = PartyAnimal('Jim')

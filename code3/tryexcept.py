@@ -13,4 +13,3 @@ except:
     istr = -1
 
 print('Second', istr)
-

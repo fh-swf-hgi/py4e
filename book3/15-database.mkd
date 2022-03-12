@@ -204,18 +204,21 @@ countold = 0
 for u in js['users']:
     friend = u['screen_name']
     print(friend)
-    cur.execute('SELECT friends FROM Twitter WHERE name = ? LIMIT 1',
-        (friend, ) )
+    cur.execute(
+        'SELECT friends FROM Twitter WHERE name = ? LIMIT 1',
+        (friend, ))
     try:
         count = cur.fetchone()[0]
-        cur.execute('UPDATE Twitter SET friends = ? WHERE name = ?',
-            (count+1, friend) )
+        cur.execute(
+            'UPDATE Twitter SET friends = ? WHERE name = ?',
+            (count+1, friend))
         countold = countold + 1
     except:
-        cur.execute('''INSERT INTO Twitter (name, retrieved, friends)
-            VALUES ( ?, 0, 1 )''', ( friend, ) )
+        cur.execute(
+            '''INSERT INTO Twitter (name, retrieved, friends)
+            VALUES (?, 0, 1)''', (friend, ))
         countnew = countnew + 1
-print('New accounts=',countnew,' revisited=',countold)
+print('New accounts=', countnew, ' revisited=', countold)
 conn.commit()
 ~~~~
 
@@ -272,7 +275,8 @@ Da wir die Eingabetaste gedrückt haben (d. h. wir haben kein Twitter-Konto ange
 
 ~~~~ {.python}
 if(len(acct) < 1):
-    cur.execute('SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
+    cur.execute(
+        'SELECT name FROM Twitter WHERE retrieved = 0 LIMIT 1')
     try:
         acct = cur.fetchone()[0]
     except:
@@ -291,7 +295,8 @@ connection = urllib.urlopen(url)
 data = connection.read()
 js = json.loads(data)
 
-cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?',(acct, ))
+cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?',
+            (acct, ))
 ~~~~
 
 Sobald wir die Daten erfolgreich abgerufen haben, verwenden wir die Anweisung `UPDATE`, um die Spalte `retrieved` auf 1 zu setzen, um damit anzuzeigen, dass wir den Abruf der Freunde dieses Kontos abgeschlossen haben. Dies verhindert, dass wir die gleichen Daten immer wieder abrufen, und sorgt dafür, dass wir im Netzwerk der Twitter-Freunde vorankommen.
@@ -339,7 +344,8 @@ CREATE TABLE Pals (from_friend TEXT, to_friend TEXT)
 Jedes Mal, wenn wir auf eine Person stoßen, der `drchuck` folgt, würden wir eine Zeile dieser Form einfügen:
 
 ~~~~ {.sql}
-INSERT INTO Pals (from_friend, to_friend) VALUES ('drchuck', 'lhawthorn')
+INSERT INTO Pals (from_friend, to_friend) 
+    VALUES ('drchuck', 'lhawthorn')
 ~~~~
 
 Da wir die 20 Freunde aus dem Twitter-Feed von `drchuck` verarbeiten, fügen wir 20 Datensätze mit `drchuck` als erstem Parameter ein, sodass die Zeichenkette am Ende viele Male in der Datenbank auftaucht.
@@ -395,7 +401,8 @@ Wenn wir unsere Tabellenstrukturen entwerfen, können wir dem Datenbanksystem mi
 
 ~~~~ {.python}
 cur.execute('''CREATE TABLE IF NOT EXISTS People
-    (id INTEGER PRIMARY KEY, name TEXT UNIQUE, retrieved INTEGER)''')
+    (id INTEGER PRIMARY KEY, name TEXT UNIQUE,
+    retrieved INTEGER)''')
 cur.execute('''CREATE TABLE IF NOT EXISTS Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))''')
 ~~~~
@@ -440,7 +447,8 @@ Wenn der `SELECT` fehlschlägt, schlägt `fetchone()[0]` fehl und die Kontrolle 
         friend_id = cur.fetchone()[0]
         countold = countold + 1
     except:
-        cur.execute('''INSERT OR IGNORE INTO People (name, retrieved)
+        cur.execute(
+            '''INSERT OR IGNORE INTO People (name, retrieved)
             VALUES ( ?, 0)''', ( friend, ))
         conn.commit()
         if cur.rowcount != 1:
@@ -459,7 +467,8 @@ Wenn das `INSERT` erfolgreich war, können wir uns `cur.lastrowid` ansehen, um h
 Sobald wir den Schlüsselwert sowohl für den Twitter-Benutzer als auch für den Freund im JSON kennen, ist es einfach, die beiden Zahlen mit dem folgenden Code in die Tabelle `Follows` einzufügen:
 
 ~~~~ {.python}
-cur.execute('INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
+cur.execute(
+    'INSERT OR IGNORE INTO Follows (from_id, to_id) VALUES (?, ?)',
     (id, friend_id))
 ~~~~
 

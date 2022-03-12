@@ -488,9 +488,9 @@ Als Programmierer wissen wir aber meistens, welche Art von Eingabe wir erwarten.
 Wenn wir also den Benutzer bitten, eine Zahl einzugeben, können wir die resultierende Zeichenkette als ganze Zahl interpretieren. Das geht mit einer Typumwandlungsfunktion `int()` in `int` umzuwandeln:
 
 ~~~~ {.python}
->>> prompt = 'Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe??\n'
+>>> prompt = 'Was ist die Fluggeschwindigkeit einer Schwalbe?\n'
 >>> speed = input(prompt)
-Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Was ist die Fluggeschwindigkeit einer Schwalbe?
 17
 >>> int(speed)
 17
@@ -500,10 +500,10 @@ Wenn der Benutzer jedoch etwas anderes als eine Ziffernfolge eingibt, erhalten w
 
 ~~~~ {.python}
 >>> speed = input(prompt)
-Was ist die Fluggeschwindigkeit einer unbeladenen Schwalbe?
+Was ist die Fluggeschwindigkeit einer Schwalbe?
 Meinst du eine europäische oder eine afrikanische Schwalbe?
 >>> int(speed)
-ValueError: invalid literal for int() with base 10:
+ValueError: invalid literal for int() with base 10: ...
 ~~~~
 
 Auch wenn das Beispiel hier ein wenig schräg erscheint, sind fehlerhafte Benutzereingabe keine Seltenheit.
@@ -535,7 +535,7 @@ percentage = (minute * 100) / 60
 In diesem Fall erscheint der Kommentar in einer eigenen Zeile. Wir können Kommentare auch als Zeilenendkommentar an das Ende einer Zeile setzen:
 
 ~~~~ {.python}
-percentage = (minute * 100) / 60     # Abgelaufene Minuten in Prozent
+percentage = (minute * 100) / 60 # Abgelaufene Minuten in Prozent
 ~~~~
 
 Kommentare sind am nützlichsten, wenn sie nicht offensichtliche Merkmale des Codes dokumentieren. Es ist vernünftig anzunehmen, dass der Leser herausfinden kann, *was* der Code tut; es ist viel nützlicher, zu erklären *warum*.

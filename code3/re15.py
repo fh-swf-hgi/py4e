@@ -1,6 +1,7 @@
-# Finde Zeilen die das Wort 'New Revision: ' enthalten, gefolg von einer
-# Zahl. Überführe diese Zahl in eine Fliesskommazahl und haenge sie an
-# die Liste nums an. Gib die Laenge und den Mittelwert von nums aus.
+# Finde Zeilen die das Wort 'New Revision: ' enthalten, gefolg von
+# einer Zahl. Überfuehre diese Zahl in eine Fliesskommazahl und
+# haenge sie an die Liste nums an. Gib die Laenge und den Mittelwert
+# von nums aus.
 import re
 fname = input('Enter file:')
 hand = open(fname)

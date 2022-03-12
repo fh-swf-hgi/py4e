@@ -447,14 +447,14 @@ Parsen von Zeichenketten
 
 Oft wollen wir in eine Zeichenkette schauen und eine Teilzeichenkette finden. Wenn wir zum Beispiel eine Liste von Zeilen erhalten, die wie folgt formatiert sind:
 
-`From giefers.heiner@`*`fh-swf.de` * ` Mon, 30 Aug 2021 16:20:09 +0200`
+`From giefers.heiner@`*`fh-swf.de` * ` Mon, 30 Aug 2021 16:20:09`
 
 Wollten wir nur die *Domäne* der e-Mail Adresse (d. h. `fh-swf.de`) aus jeder Zeile extrahieren, können wir dies mit der Methode `find` und String-Slicing erreichen.
 
 Zuerst wird die Position des at-Zeichens in der Zeichenkette ermittelt. Dann werden wir die Position des ersten Leerzeichens *nach* dem at-Zeichen finden. Und dann verwenden wir String-Slicing, um den Teil der Zeichenkette zu extrahieren, den wir suchen.
 
 ~~~~ {.python}
->>> data = 'From giefers.heiner@fh-swf.de Mon, 30 Aug 2021 16:20:09 +0200'
+>>> data = 'From giefers.heiner@fh-swf.de Mon, 30 Aug 2021 16:20:09'
 >>> atpos = data.find('@')
 >>> print(atpos)
 19

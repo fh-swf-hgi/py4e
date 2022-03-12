@@ -5,7 +5,7 @@ class PartyAnimal:
             self.x = self.x + 1
         except AttributeError:
             self.x = 1
-        print("Partys bisher:",self.x)
+        print("Partys bisher:", self.x)
 
 an = PartyAnimal()
 an.party()

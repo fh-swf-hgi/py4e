@@ -63,4 +63,3 @@ for (k,v) in pulls.items():
     print('Pulls available: ',k,'('+str(v)+')')
     count = count + 1
 print('No outstanding pulls')
-
