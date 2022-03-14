@@ -7,7 +7,7 @@ Bei typischen Informatik-Begriffen wie „Datenverarbeitung“ oder auch „Rech
 Noch einen kleinen Tipp vorab: vieles von dem, was man mit Zeichenketten machen kann, funktioniert genau so mit Folgen von völlig andren Elementen. Wenn Sie in diesem Kapitel genau hinsehen, kommt Ihnen das also in den folgenden umso mehr zugute.
 
 Was ist eine Zeichenkette?
---------------------------------------------------
+--------------------------
 
 \index{Folge}
 \index{Einzelzeichen}\index{Character}
@@ -333,7 +333,7 @@ Python hat eine Funktion namens `dir`, die die verfügbaren Methoden für ein Ob
 'title', 'translate', 'upper', 'zfill']
 ~~~~
 
-Im Gegensatz zur Funktion `dir`, die lediglich eine grobe Auflistung der Methoden anzeigt, liefert die Funktion `help` eine vollständige Hilfe. Besonders im interaktiven Modus ist `help` eine schnelle und gute Möglichkeit, um Informationen zu einer bestimmten Funktion zu erhalten. Noch übersichtlicher als `help` ist die Dokumentation der Standardbibliothek im Internet, unter [docs.python.org](https://docs.python.org/library/stdtypes.html#string-methods) (hier für die String-Methoden)
+Im Gegensatz zur Funktion `dir`, die lediglich eine grobe Auflistung der Methoden anzeigt, liefert die Funktion `help` eine vollständige Hilfe. Besonders im interaktiven Modus ist `help` eine schnelle und gute Möglichkeit, um Informationen zu einer bestimmten Funktion zu erhalten. Noch übersichtlicher als `help` ist die Dokumentation der Standardbibliothek im Internet unter [docs.python.org](https://docs.python.org/library/stdtypes.html#string-methods).
 
 ~~~~ {.python}
 >>> help(str.capitalize)
@@ -369,7 +369,7 @@ Diese Form der Punktschreibweise gibt den Namen der Methode (`upper`) und den Na
 
 \index{Klammern!leer}
 
-Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen. Die Aufrufkonvention mit der Punkt-Notation ist typisch für die *objektorientierte Programmierung*. Die Zeichenkette `word` ist in diesem Fall unser Objekt, und der Aufruf der Methode `upper` *auf* dem Objekt bewirkt, dass etwas mit dem Objekt passiert. 
+Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen. Die Aufrufkonvention mit der Punktnotation ist typisch für die *objektorientierte Programmierung*. Die Zeichenkette `word` ist in diesem Fall unser Objekt, und der Aufruf der Methode `upper` *auf* dem Objekt bewirkt, dass etwas mit dem Objekt passiert. 
 
 \index{Aufruf einer Methode}
 
@@ -522,7 +522,7 @@ Es gibt noch weitere Codes, mit denen die Ausgabe von Werten beeinflusst werden 
 Der Wert 42 zur Basis 8: 52 und zur Basis 16: 2a
 ~~~~
 
-Der Möglichkeiten, darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
+Der Möglichkeiten, Darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
 
 <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>
 

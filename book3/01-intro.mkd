@@ -112,7 +112,7 @@ Passiert dieses Übersetzten vor dem Starten des Programms (und damit in der Reg
 Letzteres ist bei Python der Fall und daher müssen wir einen *Python-Interpreter* auf unserem PC oder Notebook installieren.
 Leider gibt es hierzu nicht „die eine Anleitung“.
 Python ist eine *offene* Programmiersprache. Das bedeutet, dass die Regeln, wie Python-Programme geschrieben werden müssen und wie die Anweisungen der Sprache funktionieren, auf einem gemeinschaftsbasiertes Entwicklungsmodell beruht und vollkommen offengelegt ist.
-Jeder kann also, nach den vorgegebenen Regeln, einen Python Interpreter entwickeln und anbieten.
+Jeder kann also, nach den vorgegebenen Regeln, einen Python-Interpreter entwickeln und anbieten.
 Es gibt allerdings eine Standardversion, die man über die Homepage von Python ([www.python.org](https://www.python.org/downloads)) herunterladen kann.
 Hier gibt es auch verschiedene Versionen für Windows, MacOS und Linux.
 
@@ -412,7 +412,7 @@ Das Lesen des Codes kann zum Beispiel helfen, wenn das Problem ein Tippfehler is
 
 \index{experimentelles Debugging}
 
-Experimentieren kann hilfreich sein, vor allem, wenn man kleine, einfache Tests durchführt. Wenn man jedoch Experimente durchführt, ohne nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, dass man „Random-Walk-Programmierung“ nennt. Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm das Richtige tut. Es ist unnötig, zu erwähnen, dass die Random-Walk-Programmierung sehr lange dauern kann.
+Experimentieren kann hilfreich sein, vor allem, wenn man kleine, einfache Tests durchführt. Wenn man jedoch Experimente durchführt, ohne dabei nachzudenken oder den Code genau zu lesen, könnte man in ein Muster verfallen, dass man als „Zufallsprogrammierung“ bezeichnen könnte. Dabei handelt es sich um einen Prozess, bei dem zufällige Änderungen vorgenommen werden, bis das Programm (vielleicht) irgendwann das Richtige tut. Es ist unnötig zu erwähnen, dass diese Art der Programmierung sehr lange dauern kann.
 
 \index{Vorgehensmodell}
 

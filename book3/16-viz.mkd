@@ -312,7 +312,7 @@ iupui.edu -> indiana.edu
 So werden alle Konten der verschiedenen Standorte der Indiana University
 zusammen verfolgt.
 
-Wir können `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten immer mehr zu bereinigen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datenbank-Datei, die für die Datenanalyse verwendet wird. Mit ihr wird die Datenanalyse wirklich schnell sein.
+Wir können `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten immer mehr zu bereinigen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datenbankdatei, die für die Datenanalyse verwendet wird. Mit ihr wird die Datenanalyse wirklich schnell sein.
 
 Die erste und einfachste Datenanalyse besteht darin, festzustellen, wer die meisten Mails verschickt hat und welche Organisation die meisten Mails verschickt hat. Dies wird mit `gbasic.py` durchgeführt:
 
@@ -346,7 +346,9 @@ Output written to gword.js
 
 Dies erzeugt die Datei `gword.js`, die wir mit `gword.htm` visualisieren können, um eine Wortwolke ähnlich der am Anfang dieses Abschnitts zu erzeugen.
 
-Eine zweite Visualisierung wird von `gline.py` erzeugt. Sie berechnet die E-Mail-Beteiligung von Organisationen im Laufe der Zeit.
+Eine zweite Visualisierung wird von `gline.py` erzeugt. Sie berechnet die E-Mail-Aktivität von Organisationen im Laufe der Zeit.
+
+![Sakai-Mail-Aktivität pro Organisation](../images/mailorg)
 
 ~~~~
 Loaded messages= 51330 subjects= 25033 senders= 1584
@@ -358,8 +360,6 @@ Output written to gline.js
 ~~~~
 
 Die Ausgabe wird in `gline.js` geschrieben, die mit `gline.htm` visualisiert wird.
-
-![Sakai-Mail-Aktivität pro Organisation](../images/mailorg)
 
 Dies ist eine relativ komplexe und ausgefeilte Anwendung und sie verfügt über Funktionen zum Abrufen, Bereinigen und Visualisieren von Daten.
 

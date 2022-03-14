@@ -318,7 +318,7 @@ Um eine sortierte *Kopie* der Liste zu erhalten, können Sie die eingebaute Funk
 [' ', '!', 'H', 'W', 'a', 'e', 'l', 'l', 'l', 'o', 't']
 ~~~~
 
-Die meisten Listenmethoden (also solche die Sie mit der Punkt-Notation auf einer Liste aufrufen können) arbeiten *In-Place*, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn wir versehentlich `t = t.sort()` schreiben, werden wir von dem Ergebnis enttäuscht sein.
+Die meisten Listenmethoden (also solche die Sie mit der Punktnotation auf einer Liste aufrufen können) arbeiten *in-place*, haben also *keinen* Rückgabewert; sie verändern die Liste und geben `None` zurück. Wenn wir versehentlich `t = t.sort()` schreiben, werden wir von dem Ergebnis enttäuscht sein.
 
 \index{void-Methode}
 \index{Methode!void}
@@ -441,7 +441,7 @@ Eine Zeichenkette ist eine Folge von Zeichen und eine Liste ist eine Folge von W
 ['s', 'p', 'a', 'm']
 ~~~~
 
-Da `list` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden. Auch der  Buchstabe `l` sollte vermieden werden, weil er zu sehr wie die Zahl `1` aussieht. Deshalb kann man beispielsweise `t` verwenden.
+Da `list` der Name einer eingebauten Funktion ist, sollte man es vermeiden, ihn als Variablennamen zu verwenden. Auch der Buchstabe `l` sollte vermieden werden, weil er zu sehr wie die Zahl `1` aussieht. Deshalb kann man beispielsweise `t` verwenden.
 
 Was passiert, wenn wir zufällig einen Namen einer eingebauten Funktion für eigene Zwecke wiederverwenden, zeigt folgendes Beispiel:
 
@@ -510,7 +510,7 @@ In diesem Fall ist das Begrenzungszeichen ein Leerzeichen, also setzt `join` ein
 Parsen von Zeilen
 -----------------
 
-Wenn wir eine Datei lesen, wollen wir normalerweise etwas anderes mit den Zeilen machen, als nur die ganze Zeile auszugeben. Oft wollen wir die „interessanten Zeilen“ finden und dann die Zeile *parsen*, um einen interessanten *Teil* der Zeile zu finden. Was wäre, wenn wir den Wochentag aus den Zeilen ausgeben wollten, die mit `From` beginnen?
+Wenn wir eine Datei lesen, wollen wir normalerweise etwas anderes mit den Zeilen machen, als nur die ganze Zeile auszugeben. Oft wollen wir die „interessanten Zeilen“ finden und dann die Zeile *parsen*, um einen interessanten *Teil* der Zeile zu finden. Was wäre, wenn wir den Wochentag aus den Zeilen ausgeben wollten, die mit `From ` beginnen?
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
@@ -666,7 +666,7 @@ Die Funktion wird folgendermaßen verwendet:
 Der Parameter `t` und die Variable `letters` sind Aliasnamen für das selbe Objekt.
 
 
-**Übung 1:** Schreiben Sie eine Funktion namens `remove_all`, die eine Liste und einen Wert entgegennimmt und alle Vorkommen des Wertes aus der Liste entfernt. Die Funktion soll die Liste *In-Place* verändern und als Ergebnis `None` zurückgeben.
+**Übung 1:** Schreiben Sie eine Funktion namens `remove_all`, die eine Liste und einen Wert entgegennimmt und alle Vorkommen des Wertes aus der Liste entfernt. Die Funktion soll die Liste *in-place* verändern und als Ergebnis `None` zurückgeben.
 
 Es ist wichtig, zwischen Operationen zu unterscheiden, die Listen verändern, und Operationen, die neue Listen erzeugen. Zum Beispiel verändert die Methode `append` eine Liste, aber der Operator `+` erzeugt eine neue Liste:
 

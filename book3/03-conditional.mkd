@@ -48,7 +48,7 @@ False
 <class 'bool'>
 ~~~~
 
-Der Operator `==` ist ein *Vergleichsoperator*. Wenn man mit einen solchen Operator zwei Operanden vergleicht, erhält man einen Wahrheitswert zurück. Neben dem Vergleich auf *Gleichheit* gibt es noch einige weitere *Vergleichsoperatoren*. Diese sind:
+Der Operator `==` ist ein *Vergleichsoperator*. Wenn man mit einem solchen Operator zwei Operanden vergleicht, erhält man einen Wahrheitswert zurück. Neben dem Vergleich auf *Gleichheit* gibt es noch einige weitere *Vergleichsoperatoren*. Diese sind:
 
 ~~~~ {.python}
 x != y               # x ist ungleich y
@@ -122,14 +122,14 @@ if x > 0:
     print('x is positive')
 ~~~~
 
-Der boolesche Ausdruck nach der `if`-Anweisung wird als *Bedingung* bezeichnet. Wir beenden die `if`-Anweisung mit einem Doppelpunkt (:) und die Zeile(n) nach der if-Anweisung werden eingerückt.
+Der boolesche Ausdruck nach der `if`-Anweisung wird als *Bedingung* bezeichnet. Wir beenden die `if`-Anweisung mit einem Doppelpunkt (:) und die Zeile(n) nach der `if`-Anweisung werden eingerückt.
 
 ![Ablaufdiagramm einer If-Anweisung](height=1.5in@../images/de/if)
 
 
 Wenn die logische Bedingung wahr ist, dann wird die eingerückte Anweisung ausgeführt. Wenn die logische Bedingung falsch ist, wird die eingerückte Anweisung übersprungen.
 Die *Einrückung* erfüllt hier **zwei** wesentliche Aufgaben im Programm.
-Erstens: Sie macht das Programm besser lesbar. Man erkennt sofort, dass die Anweisung `print...` „unterhalb“ der Überprüfung mit `if` steht. Sie stehet also nicht auf gleicher *Ebene* wie das `if` selbst, sondern gehört sichtbar nur zu dem „Wahr-Teil“ der Überprüfung.
+Erstens: Sie macht das Programm besser lesbar. Man erkennt sofort, dass die Anweisung `print` „unterhalb“ der Überprüfung mit `if` steht. Sie stehet also nicht auf gleicher *Ebene* wie das `if` selbst, sondern gehört sichtbar nur zu dem „Wahr-Teil“ der Überprüfung.
 Zweitens: Statt der einen `print`-Anweisung könnten an der gleichen Stelle mehrere Anweisungen, und sogar wieder neue `if`-Anweisungen stehen. Alle Anweisungen mit der gleichen Einrückungstiefe gehören zur gleichen *Ebene* des Programms.
 
 Die Verwendung von Einrückungen führt schnell zu Syntaxfehlern. Wenn Sie einmal nicht genau aufpassen und ein Leerzeichen zu viel oder zu wenig, oder auch ein Tab-Zeichen, statt mehrerer Leerzeichen verwenden, wird Python sich beschweren. Allerdings lassen sich diese Fehler sehr schnell finden. Außerdem helfen Ihnen die Editoren und Werkzeuge, die Sie zum Programmieren verwenden, die Einrückungstiefe beizubehalten.

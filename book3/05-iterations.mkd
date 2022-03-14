@@ -6,7 +6,7 @@ Immer und immer wieder die gleichen Arbeitsschritte zu tun, ist für uns Mensche
 Computer hingegen sind wahre Meister der Wiederholung.
 Ein Großteil Ihrer Laufzeit verbringen Programme damit, bestimmte Aufgabenschritte zu wiederholen.
 In diesem Kapitel geht es genau um solche *Programmschleifen*, mit denen man Python anweist, bestimmte Anweisungen zu wiederholen.
-Wir werden zwei unterschiedliche Arten solche Schleifen kennenlernen.
+Wir werden zwei unterschiedliche Arten solcher Schleifen kennenlernen.
 Die eine Wiederholt einen Anweisungsblock, solange eine vom Programmierer angegebene Bedingung erfüllt ist.
 Das ist ein wenig wie beim Zähneputzen; solange die drei Minuten noch nicht um sind, putzen Sie weiter.
 Die andere Art von Schleifen ist dazu da, Folgen von Elementen abzuarbeiten.
