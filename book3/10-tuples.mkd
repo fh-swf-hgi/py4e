@@ -380,8 +380,8 @@ Jetzt sieht die Ausgabe endlich so aus, wie wir es uns für unsere Worthäufigke
 
 Die Tatsache, dass dieses komplexe Parsen und Analysieren von Daten mit einem leicht verständlichen 19-zeiligen Python-Programm durchgeführt werden kann, ist ein Grund, warum Python eine gute Wahl als Sprache für die Erforschung von Informationen ist.
 
-Verwendung von Tupeln als Schlüssel in Dictionarys
---------------------------------------------------
+Tupel als Schlüssel in Dictionarys
+----------------------------------
 
 \index{Tupel!als Schlüssel in Dictionarys}
 \index{hashbar}
@@ -511,7 +511,7 @@ Gib eine Datei an: mbox-short.txt
 19 1
 ~~~~
 
-**Übung 3:** Schreiben Sie ein Programm, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele in verschiedenen Sprachen als Eingabe dienen, um zu analysieren, wie die Buchstabenhäufigkeit zwischen verschiedenen Sprachen variiert. Vergleichen Sie ihre Ergebnisse mit den Tabellen auf: <https://wikipedia.org/wiki/Letter_frequencies>
+**Übung 3:** Schreiben Sie ein Programm, das eine Datei liest und die *Buchstaben* in absteigender Reihenfolge der Häufigkeit ausgibt. Das Programm sollte alle Eingaben in Kleinbuchstaben umwandeln und nur die Buchstaben a-z zählen. Es soll keine Leerzeichen, Ziffern, Interpunktionszeichen oder irgendetwas anderes als die Buchstaben a-z zählen. Dann sollen Textbeispiele in verschiedenen Sprachen als Eingabe dienen, um zu analysieren, wie die Buchstabenhäufigkeit zwischen verschiedenen Sprachen variiert. Vergleichen Sie ihre Ergebnisse mit den Tabellen auf <https://wikipedia.org/wiki/Letter_frequencies>
 
 \index{Buchstabenhäufigkeit}
 \index{Häufigkeit!Buchstaben}

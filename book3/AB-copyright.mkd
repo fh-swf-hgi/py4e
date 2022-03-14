@@ -3,7 +3,7 @@ Hinweise zum Urheberrecht
 
 Dieses Werk ist lizenziert unter einer Creative Common Attribution-NonCommercial-ShareAlike 3.0 Unported License. Diese Lizenz ist verfügbar unter
 
-[creativecommons.org/licenses/by-nc-sa/3.0/](creativecommons.org/licenses/by-nc-sa/3.0/).
+[https://creativecommons.org/licenses/by-nc-sa/3.0/](https://creativecommons.org/licenses/by-nc-sa/3.0/)
 
 Ich hätte es vorgezogen, das Buch unter der weniger restriktiven CC-BY-SA-Lizenz zu lizenzieren. Aber leider gibt es ein paar skrupellose Organisationen, die nach frei lizenzierten Büchern suchen und diese finden und dann praktisch unveränderte Kopien der Bücher über einen Print-on-Demand-Dienst wie LuLu oder KDP veröffentlichen und verkaufen. KDP hat (dankenswerterweise) eine Richtlinie eingeführt, die den Wünschen des eigentlichen Urheberrechtsinhabers Vorrang gegenüber einem Nicht-Urheberrechtsinhaber einräumt, der versucht, ein frei lizenziertes Werk zu veröffentlichen. Leider gibt es viele Print-on-Demand-Dienste, und nur wenige haben eine so gut durchdachte Politik wie KDP.
 

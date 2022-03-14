@@ -333,7 +333,7 @@ Python hat eine Funktion namens `dir`, die die verfügbaren Methoden für ein Ob
 'title', 'translate', 'upper', 'zfill']
 ~~~~
 
-Im Gegensatz zur Funktion `dir`, die lediglich eine grobe Auflistung der Methoden anzeigt, liefert die Funktion `help` eine vollständige Hilfe. Besonders im interaktiven Modus ist `help` eine schnelle und gute Möglichkeit, um Informationen zu einer bestimmten Funktion zu erhalten. Noch übersichtlicher als `help` ist die Dokumentation der Standardbibliothek im Internet, unter [docs.python.org](https://docs.python.org/library/stdtypes.html#string-methods) (hier für die String-Methoden)
+Im Gegensatz zur Funktion `dir`, die lediglich eine grobe Auflistung der Methoden anzeigt, liefert die Funktion `help` eine vollständige Hilfe. Besonders im interaktiven Modus ist `help` eine schnelle und gute Möglichkeit, um Informationen zu einer bestimmten Funktion zu erhalten. Noch übersichtlicher als `help` ist die Dokumentation der Standardbibliothek im Internet unter [docs.python.org](https://docs.python.org/library/stdtypes.html#string-methods).
 
 ~~~~ {.python}
 >>> help(str.capitalize)
@@ -517,10 +517,13 @@ Es gibt noch weitere Codes, mit denen die Ausgabe von Werten beeinflusst werden 
 
 ~~~~ {.python}
 >>> wert = 42
->>> print(f"Der Wert {wert:d} zur Basis 8: {wert:o} und zur Basis 16: {wert:x}")
-Der Wert 42 zur Basis 8: 52 und zur Basis 16: 2a
+>>> print(f"Der Wert {wert:d} zur Basis 8 ist {wert:o}")
+Der Wert 42 zur Basis 8 ist 52
+>>> print(f"Der Wert {wert:d} zur Basis 16 ist {wert:x}")
+Der Wert 42 zur Basis 16 ist 2a
+~~~~
 
-Der Möglichkeiten, darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
+Der Möglichkeiten, Darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
 
 <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>
 

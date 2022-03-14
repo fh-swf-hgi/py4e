@@ -42,7 +42,7 @@ In gewisser Weise ähnelt der Datenbankbrowser einem Texteditor beim Arbeiten mi
 Erstellen einer Datenbanktabelle
 --------------------------------
 
-Datenbanken erfordern eine strenger definierte Struktur als Python-Listen oder Python-Dictionarys^[SQLite erlaubt zwar eine gewisse Flexibilität bei der Speicherung von Daten in einer Tabellenspalte, aber wir werden uns strikt an bestimmte Datentypen halten, damit die hier vorgestellten Konzepte auch auf andere Datenbanksysteme wie MySQL übertragbar sind].
+Datenbanken erfordern eine strenger definierte Struktur als Python-Listen oder Python-Dictionarys^[SQLite erlaubt zwar eine gewisse Flexibilität bei der Speicherung von Daten in einer Tabellenspalte, aber wir werden uns strikt an bestimmte Datentypen halten, damit die hier vorgestellten Konzepte auch auf andere Datenbanksysteme wie MySQL übertragbar sind.].
 
 Wenn wir eine *Datenbanktabelle* erstellen, müssen wir der Datenbank im Voraus die Namen der einzelnen *Spalten* in der Tabelle und die Art der Daten mitteilen, die wir in jeder *Spalte* zu speichern beabsichtigen. Wenn die Datenbanksoftware den Typ der Daten in jeder Spalte kennt, kann sie den effizientesten Weg zum Speichern und Nachschlagen der Daten auf der Grundlage des Datentyps wählen.
 
@@ -74,7 +74,7 @@ Sobald wir den Cursor erhalten haben, können wir damit beginnen, mithilfe der M
 
 Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viele verschiedene Datenbankanbieter hinweg standardisiert wurde, sodass wir nur eine einzige Datenbanksprache erlernen müssen. Die Datenbanksprache wird *Structured Query Language* oder kurz *SQL* genannt. Eine Datenbankabfrage wird entsprechend als *Query* bezeichnet.
 
-<http://en.wikipedia.org/wiki/SQL>
+<https://de.wikipedia.org/wiki/SQL>
 
 In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Per Konvention schreiben wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. unsere Tabellen- und Spaltennamen), in Kleinbuchstaben. Das Datenbanksystem selbst unterscheidet nicht zwischen Groß- und Kleinschreibung.
 
@@ -331,7 +331,7 @@ Die eigentliche Leistung einer relationalen Datenbank besteht darin, dass wir me
 
 Die Datenmodellierung ist eine relativ anspruchsvolle Aufgabe und wir werden in diesem Abschnitt nur die grundlegendsten Konzepte der relationalen Datenmodellierung vorstellen. Weitere Details zur Datenmodellierung können hier eingesehen werden:
 
-<http://en.wikipedia.org/wiki/Relational_model>
+<https://de.wikipedia.org/wiki/Relationale_Datenbank>
 
 Nehmen wir an, für unsere Twitter-Spider-Anwendung wollten wir nicht nur die Freunde einer Person zählen, sondern eine Liste aller eingehenden Beziehungen führen, damit wir eine Liste aller Personen finden, die einem bestimmten Konto folgen.
 

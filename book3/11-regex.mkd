@@ -12,9 +12,9 @@ Diese Aufgabe des Suchens und Extrahierens begegnet einem so häufig, dass Pytho
 
 Reguläre Ausdrücke (englisch *regular Expressions* oder kurz *regex*) sind fast eine eigene kleine Programmiersprache zum Suchen und Parsen von Zeichenketten. Tatsächlich sind ganze Bücher über das Thema reguläre Ausdrücke geschrieben worden und auch der Python-Interpreter verwendet, immer wenn er unsere Programme „verstehen“ möchte, reguläre Ausdrücke an.
 
- In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden sich unter:
+In diesem Kapitel werden wir nur die Grundlagen der regulären Ausdrücke behandeln. Weitere Details zu regulären Ausdrücken finden sich unter:
 
-<https://en.wikipedia.org/wiki/Regular_expression>
+[https://de.wikipedia.org/wiki/Regulärer_Ausdruck](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
 
 <https://docs.python.org/library/re.html>
 
@@ -165,7 +165,7 @@ Wenn wir diesen Ausdruck in unserem Programm verwenden, sind unsere Daten viel s
 ['apache@localhost']
 ~~~~
 
-Es ist wichtig zu beachten, dass unser regulärer Ausdruck in den Zeilen mit `source@collab.sakaiproject.org` die zwei Buchstaben `>;` am Ende der Zeichenfolge entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das `>` am Ende von `sakaiproject.org>;` sieht, bleibt er einfach bei dem letzten „passenden” Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
+Es ist wichtig zu beachten, dass unser regulärer Ausdruck in den Zeilen mit `source@collab.sakaiproject.org` die zwei Buchstaben `>;` am Ende der Zeichenfolge entfernt hat. Das liegt daran, dass wir, wenn wir `[a-zA-Z]` an das Ende unseres regulären Ausdrucks anhängen, verlangen, dass jede Zeichenfolge, die der Parser des regulären Ausdrucks findet, mit einem Buchstaben enden muss. Wenn er also das `>` am Ende von `sakaiproject.org>;` sieht, bleibt er einfach bei dem letzten „passenden“ Buchstaben stehen, den er gefunden hat (d. h. das „g“ war die letzte Übereinstimmung).
 
 Zuletzt muss beachtet werden, dass die Ausgabe des Programms eine Python-Liste ist, die eine Zeichenkette als einziges Element in der Liste hat.
 

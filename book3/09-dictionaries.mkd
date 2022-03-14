@@ -113,7 +113,7 @@ Um zu sehen, ob etwas als Wert in einem Dictionary vorkommt, können wir die Met
 True
 ~~~~
 
-Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Dictionarys. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Dictionarys verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Dictionary vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [https://de.wikipedia.org/wiki/Hashtabelle](https://de.wikipedia.org/wiki/Hashtabelle) lesen.
+Der Operator `in` verwendet unterschiedliche Algorithmen für Listen und Dictionarys. Für Listen verwendet er einen linearen Suchalgorithmus. Je länger die Liste wird, desto länger wird die Suchzeit im direkten Verhältnis zur Länge der Liste. Für Dictionarys verwendet Python einen Algorithmus, der eine *Hashtabelle* verwendet und eine bemerkenswerte Eigenschaft hat: Der `in`-Operator benötigt jedes Mal ungefähr die gleiche konstante Zeit, egal wie viele Elemente in einem Dictionary vorhanden sind. Ich werde nicht erklären, warum Hash-Funktionen so schnell sind, aber man kann mehr darüber unter [de.wikipedia.org/wiki/Hashtabelle](https://de.wikipedia.org/wiki/Hashtabelle) lesen.
 
 \index{Hashtabelle}
 \index{Menge, Zugehörigkeit}\index{Set, Zugehörigkeit}

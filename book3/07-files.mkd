@@ -25,7 +25,7 @@ Wir werden uns in erster Linie auf das Lesen und Schreiben von Textdateien konze
 \index{open (Funktion)}
 \index{Funktion!open}
 
-Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit unserem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn wir eine Datei öffnen, bitten wir das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem wir uns befinden, wenn wir Python starten. Man kann diese Datei von [tiny.one/py4de/code3/mbox.txt](https://tiny.one/py4de/code3/mbox.txt) herunterladen.
+Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, müssen wir die Datei zuerst *öffnen*. Die `open`-Funktion kommuniziert mit unserem Betriebssystem, das weiß, wo die Daten für jede Datei gespeichert sind. Wenn wir eine Datei öffnen, bitten wir das Betriebssystem, die Datei anhand ihres Namens zu suchen und sicherzustellen, dass sie existiert. In diesem Beispiel öffnen wir die Datei `mbox.txt`, die in demselben Verzeichnis gespeichert sein sollte, in dem wir uns befinden, wenn wir Python starten. Man kann diese Datei hier herunterladen: [tiny.one/py4de/code3/mbox.txt](https://tiny.one/py4de/code3/mbox.txt)
 
 
 ~~~~ {.python}
@@ -71,7 +71,7 @@ Die gesamte Datei der Mail-Interaktionen ist verfügbar unter:
 
 [tiny.one/py4de/code3/mbox.txt](https://tiny.one/py4de/code3/mbox.txt)
 
-Eine gekürzte Version der Datei ist verfügbar unter:
+Eine gekürzte Version der Datei ist hier zu finden:
 
 [tiny.one/py4de/code3/mbox-short.txt](https://tiny.one/py4de/code3/mbox-short.txt)
 
@@ -395,7 +395,7 @@ Ein weiteres Problem, auf das wir stoßen könnten, ist, dass verschiedene Syste
 
 \index{Zeilenendezeichen}
 
-Für die meisten Systeme gibt es Anwendungen, um von einem Format in ein anderes zu konvertieren. Man findet sie (und lesen mehr über dieses Thema) unter [https://www.wikipedia.org/wiki/Newline](https://wikipedia.org/wiki/Newline). Oder man kann natürlich auch selbst eines schreiben.
+Für die meisten Systeme gibt es Anwendungen, um von einem Format in ein anderes zu konvertieren. Man findet sie (und lesen mehr über dieses Thema) unter [www.wikipedia.org/wiki/Newline](https://wikipedia.org/wiki/Newline). Oder man kann natürlich auch selbst eines schreiben.
 
 Glossar
 -------
