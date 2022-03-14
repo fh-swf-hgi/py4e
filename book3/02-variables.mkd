@@ -69,7 +69,7 @@ Was ist mit Werten wie `17` und `3.2`? Sie sehen aus wie Zahlen, stehen aber in 
 
 Es sind Zeichenketten.
 
-Wenn man eine große Ganzzahl eingeben könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden, werden zum Abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa eine Million als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in folgendem Beispiel sehen:
+Wenn man eine große Ganzzahl eingibt, könnte man versucht sein, Tausender-Trennzeichen zu verwenden. In Ländern, die den Dezimalpunkt verwenden, werden zum Abgrenzen der Tausenderstellen Kommata benutzt. Wenn wir dies in Python tun, also etwa eine Million als `1,000,000` schreiben ist das keine gültige Ganzzahl mehr. Allerdings ist `1,000,000` ein gültiger Python-Ausdruck, wie wir in folgendem Beispiel sehen:
 
 ~~~~ {.python .trinket height="120"}
 >>> print(1,000,000)
