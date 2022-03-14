@@ -7,7 +7,7 @@ Was ist eine Datenbank?
 
 \index{Datenbank}
 
-Eine *Datenbank* ist eine Datei, die zum Speichern von Daten organisiert ist. Die meisten Datenbanken sind wie ein Dictionary in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, sodass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Dictionary, das auf die Größe des Hauptspeichers beschränkt ist.
+Eine *Datenbank* ist eine Datei, die zum Speichern von Daten verwendet wird. Die meisten Datenbanken sind wie ein Dictionary in dem Sinne organisiert, dass sie von Schlüsseln auf Werte abbilden. Der größte Unterschied besteht darin, dass sich die Datenbank auf der Festplatte (oder einem anderen permanenten Speicher) befindet, sodass sie auch nach Beendigung des Programms bestehen bleibt. Da eine Datenbank auf einem permanenten Speicher gespeichert ist, kann sie viel mehr Daten speichern als ein Dictionary, das auf die Größe des Hauptspeichers beschränkt ist.
 
 \index{Datenbank!Index}
 
@@ -147,7 +147,7 @@ SELECT * FROM Tracks WHERE title = 'My Way'
 
 Die Verwendung von `*` zeigt an, dass die Datenbank alle Spalten für jede Zeile zurückgeben soll, die mit der `WHERE`-Klausel übereinstimmt.
 
-Es ist zu beachten, dass anders als in Python in einer SQL-`WHERE`-Klausel ein *einzelnes* Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit durchzuführen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um unsere logischen Ausdrücke aufzubauen.
+Es ist zu beachten, dass anders als in Python, in einer SQL-`WHERE`-Klausel ein *einzelnes* Gleichheitszeichen verwendet wird, um einen Test auf Gleichheit durchzuführen, und nicht ein doppeltes Gleichheitszeichen. Andere logische Operationen, die in einer `WHERE`-Klausel erlaubt sind, sind `<`, `>`, `<=`, `>=`, `!=`, sowie `AND` und `OR` und Klammern, um unsere logischen Ausdrücke aufzubauen.
 
 Wir können anfordern, dass die zurückgegebenen Zeilen nach einem der Felder wie folgt sortiert werden:
 
@@ -167,7 +167,7 @@ Es ist möglich, eine oder mehrere Spalten in einer oder mehreren Zeilen einer T
 UPDATE Tracks SET plays = 16 WHERE title = 'My Way'
 ~~~~
 
-Die `UPDATE`-Anweisung gibt eine Tabelle an, eine Liste von Spalten und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen, und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
+Die `UPDATE`-Anweisung gibt eine Tabelle an, eine Liste von Spalten und Werten, die nach dem `SET`-Schlüsselwort geändert werden sollen und dann eine optionale `WHERE`-Klausel, um die Zeilen auszuwählen, die aktualisiert werden sollen. Eine einzelne `UPDATE`-Anweisung ändert alle Zeilen, die mit der `WHERE`-Klausel übereinstimmen. Wenn keine `WHERE`-Klausel angegeben ist, wird die `UPDATE`-Anweisung für alle Zeilen in der Tabelle ausgeführt.
 
 Diese vier grundlegenden SQL-Befehle (`INSERT`, `SELECT`, `UPDATE` und `DELETE`) ermöglichen die vier grundlegenden Operationen, die zum Erstellen und Verwalten von Daten erforderlich sind.
 
@@ -184,7 +184,7 @@ Wir verfolgen auch, wie oft wir einen bestimmten Freund in der Datenbank gesehen
 
 In einer Datenbank speichern wir die Liste der bekannten Konten, deren Beliebtheit und die Information, ob wir das Konto bereits besucht (d. h. schon abgearbeitet) haben. Dadurch können wir unser Programm beliebig oft anhalten und neu starten.
 
-Dieses Programm ist ein recht komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
+Dieses Programm ist recht komplex. Es basiert auf dem Code aus der Übung weiter oben im Buch, die die Twitter-API verwendet.
 
 Hier ist der Quellcode für unsere Twitter Spider-Anwendung:
 
@@ -301,7 +301,7 @@ cur.execute('UPDATE Twitter SET retrieved=1 WHERE name = ?',
 
 Sobald wir die Daten erfolgreich abgerufen haben, verwenden wir die Anweisung `UPDATE`, um die Spalte `retrieved` auf 1 zu setzen, um damit anzuzeigen, dass wir den Abruf der Freunde dieses Kontos abgeschlossen haben. Dies verhindert, dass wir die gleichen Daten immer wieder abrufen, und sorgt dafür, dass wir im Netzwerk der Twitter-Freunde vorankommen.
 
-Wenn wir das friend-Programm ausführen und zweimal die Eingabetaste drücken, um die Freunde des nächsten nicht besuchten Freundes abzurufen, und dann das Dumper-Programm ausführen, erhalten wir die folgende Ausgabe:
+Wenn wir das *friend*-Programm ausführen und zweimal die Eingabetaste drücken, um die Freunde des nächsten nicht besuchten Freundes abzurufen, und dann das Dumper-Programm ausführen, erhalten wir die folgende Ausgabe:
 
 ~~~~
 ('opencontent', 1, 1)
@@ -372,9 +372,9 @@ CREATE TABLE Follows
     (from_id INTEGER, to_id INTEGER, UNIQUE(from_id, to_id))
 ~~~~
 
-Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, vereinbaren wir eine Reihe von Regeln, die die Datenbank befolgen wird, wenn wir versuchen, Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen. Die Regeln halten uns davon ab, Fehler zu machen, und erleichtern uns obendrein die Programmierung.
+Wenn wir `UNIQUE`-Klauseln zu unseren Tabellen hinzufügen, vereinbaren wir eine Reihe von Regeln, die die Datenbank befolgen wird, wenn wir versuchen Datensätze einzufügen. Wir erstellen diese Regeln aus Bequemlichkeit in unseren Programmen. Die Regeln halten uns davon ab Fehler zu machen und erleichtern uns obendrein die Programmierung.
 
-Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“, und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung verdeutlicht.
+Im Wesentlichen modellieren wir bei der Erstellung dieser `Follows`-Tabelle eine *Beziehung* (Relation), bei der eine Person einer anderen „folgt“ und stellen sie mit einem Zahlenpaar dar, das anzeigt, dass (a) die Personen miteinander verbunden sind und (b) die Richtung der Beziehung verdeutlicht.
 
 ![Beziehungen zwischen Tabellen](height=3.5in@figs2/twitter)
 
@@ -435,7 +435,7 @@ Dies ist ein sehr häufiges Schema und wird in dem obigen Programm zweimal ausge
 
 Da es im Laufe der Zeit immer wahrscheinlicher wird, dass das Konto bereits in der Datenbank vorhanden ist, prüfen wir zunächst mit einer `SELECT`-Anweisung, ob der Datensatz `People` existiert.
 
-Wenn alles gut geht^[Wenn ein Satz schon mit „wenn alles gut geht“ beginnt, ist es häufig ratsam, den Code in `try`/`except`-Blöcke einzuschließen.] rufen wir den Datensatz mit `fetchone()` ab und erhalten dann das erste (und einzige) Element des zurückgegebenen Tupels und speichern es in `friend_id`.
+Wenn alles gut geht,^[Wenn ein Satz schon mit „wenn alles gut geht“ beginnt, ist es häufig ratsam, den Code in `try`/`except`-Blöcke einzuschließen.] rufen wir den Datensatz mit `fetchone()` ab und erhalten dann das erste (und einzige) Element des zurückgegebenen Tupels und speichern es in `friend_id`.
 
 Wenn der `SELECT` fehlschlägt, schlägt `fetchone()[0]` fehl und die Kontrolle wird in den `except` Abschnitt übertragen.
 
@@ -472,7 +472,7 @@ cur.execute(
     (id, friend_id))
 ~~~~
 
-Es ist wichtig zu beachten, dass wir es der Datenbank überlassen, uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellt und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzugefügt haben.
+Es ist wichtig zu beachten, dass wir es der Datenbank überlassen uns vor dem doppelten Einfügen einer Beziehung zu schützen, indem wir die Tabelle mit einer `UNIQUE`-Einschränkung erstellt und dann `OR IGNORE` zu unserer `INSERT`-Anweisung hinzugefügt haben.
 
 Hier ist ein Beispiel für die Ausführung dieses Programms:
 
@@ -591,7 +591,7 @@ Zusammenfassung
 
 Datenbanktabellen anzulegen, zu verwalten und Datensätze einzufügen und abzufragen, ist mit einem gewissen programmiertechnischen Aufwand verbunden. Die Verwendung von Python-Datenstrukturen wie zum Beispiel Dictionarys ist dagegen recht simpel. Datenbanken verfügen jedoch über Eigenschaften und Funktionalitäten, wegen der man sie in bestimmten Szenarien präferiert.
 
-Die Situationen, in denen eine Datenbank sehr nützlich sein kann, sind: (1) Wenn die Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn die Daten so groß sind, dass sie nicht in ein Dictionary passen und wir wiederholt Informationen nachschlagen müssen, oder (3) wenn wir einen lange laufenden Prozess haben, den wir stoppen und neu starten möchten und die Daten von einem Lauf zum nächsten beibehalten wollen.
+Die Situationen, in denen eine Datenbank sehr nützlich sein kann sind: (1) Wenn die Anwendung viele kleine, zufällige Aktualisierungen innerhalb eines großen Datensatzes vornehmen muss, (2) wenn die Daten so groß sind, dass sie nicht in ein Dictionary passen und wir wiederholt Informationen nachschlagen müssen oder (3) wenn wir einen lange laufenden Prozess haben, den wir stoppen und neu starten möchten und die Daten von einem Lauf zum nächsten beibehalten wollen.
 
 Wir können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um viele Anwendungsanforderungen zu erfüllen, aber die meisten Probleme werden mehrere Tabellen und Beziehungen zwischen diesen erfordern. Wenn wir damit beginnen, Verknüpfungen zwischen Tabellen herzustellen, ist es wichtig, ein durchdachtes Design zu entwerfen und die Regeln der Datenbanknormalisierung zu befolgen, um die Fähigkeiten der Datenbank optimal nutzen zu können. Da die Hauptmotivation für die Verwendung einer Datenbank darin besteht, mit einer großen Menge von Daten zu arbeiten, ist es wichtig, Daten effizient zu modellieren, um damit auch die Performanz unserer Programme zu optimieren.
 

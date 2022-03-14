@@ -517,8 +517,10 @@ Es gibt noch weitere Codes, mit denen die Ausgabe von Werten beeinflusst werden 
 
 ~~~~ {.python}
 >>> wert = 42
->>> print(f"Der Wert {wert:d} zur Basis 8: {wert:o} und zur Basis 16: {wert:x}")
+>>> print(f"Der Wert {wert:d} zur Basis 8: {wert:o} \
+    und zur Basis 16: {wert:x}")
 Der Wert 42 zur Basis 8: 52 und zur Basis 16: 2a
+~~~~
 
 Der Möglichkeiten, darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
 

@@ -16,7 +16,7 @@ Zu Beginn dieses Buches haben wir vier grundlegende Programmiermuster betrachtet
 
 In den ersten Kapiteln haben wir vorwiegend *elementare Datentypen* wie ganze Zahlen oder Fließkommazahlen verwendet und in den späteren Kapiteln dann *zusammengesetzte Datentypen* wie Listen, Tupeln und Dictionarys eingeführt.
 
-Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, wie sie sein könnten, und andere, die uns vielleicht etwas geraten „eleganter“ sind. Auch wenn unsere bisherigen Programme eher überschaubar sind, fängt man an zu erkennen, dass ein gewisses Gespür für das Schreiben von gut lesbarem und übersichtlichem Code hilfreich ist.
+Wenn wir Programme erstellen, verwenden wir Datentypen um eigene Datenstrukturen zu entwerfen und schreiben Code, um diese Datenstrukturen zu manipulieren. Es gibt viele Möglichkeiten, Programme zu schreiben, und inzwischen haben wir wahrscheinlich einige Programme geschrieben, die „nicht so elegant“ sind, wie sie sein könnten, und andere, die uns vielleicht etwas „eleganter“ geraten sind. Auch wenn unsere bisherigen Programme eher überschaubar sind, fängt man an zu erkennen, dass ein gewisses Gespür für das Schreiben von gut lesbarem und übersichtlichem Code hilfreich ist.
 
 Wenn Programme Millionen von Zeilen lang werden, wird es immer wichtiger, Code zu schreiben, der leicht zu verstehen ist. Wenn wir an einem millionen Zeilen langen Programm arbeiten, können wir nie einen Überblick über das gesamte Programm gleichzeitig im Kopf behalten. Wir brauchen also Möglichkeiten, große Programme in mehrere kleinere Teile zu zerlegen, damit wir weniger zu beachten haben, wenn wir ein Problem lösen, einen Fehler beheben oder eine neue Funktionalität hinzufügen.
 
@@ -79,7 +79,7 @@ Im weiteren Verlauf dieses Kapitels werden alle oben genannten Begriffe definier
 Betrachtung von außen
 ---------------------
 
-Ein Programm in seiner einfachsten Form nimmt Eingaben entgegen, führt Verarbeitungen durch und erzeugt Ausgaben. Das Folgende Programm zum Konvertieren einer Etagennummer demonstriert ein sehr kurzes, aber vollständiges Programm, das alle drei dieser Schritte zeigt.
+Ein Programm in seiner einfachsten Form nimmt Eingaben entgegen, führt Verarbeitungen durch und erzeugt Ausgaben. Das folgende Programm zum Konvertieren einer Etagennummer demonstriert ein sehr kurzes, aber vollständiges Programm, das alle drei dieser Schritte zeigt.
 
 \VerbatimInput{../code3/elev.py}
 
@@ -87,7 +87,7 @@ Wenn wir ein bisschen mehr über dieses Programm nachdenken, gibt es die „Auß
 
 ![Ein Programm](height=1.20in@../images/program)
 
-Eine Möglichkeit, objektorientierte Programmierung zu verstehen, ist, dass sie unser Programm in mehrere „Zonen“ aufteilt. Jede Zone enthält etwas Code und Daten (wie ein Programm) und hat gut definierte Interaktionen mit der Außenwelt und den anderen Zonen innerhalb des Programms.
+Eine Möglichkeit, objektorientierte Programmierung zu verstehen ist, dass sie unser Programm in mehrere „Zonen“ aufteilt. Jede Zone enthält etwas Code und Daten (wie ein Programm) und hat gut definierte Interaktionen mit der Außenwelt und den anderen Zonen innerhalb des Programms.
 
 Wenn wir auf das Programm zur Link-Extraktion zurückblicken, bei der wir die BeautifulSoup-Bibliothek verwendet haben, können wir ein Programm sehen, das durch das Verbinden verschiedener Objekte konstruiert wird, um eine Aufgabe zu erfüllen:
 
@@ -226,7 +226,7 @@ Lebenszyklus von Objekten
 \index{Destruktor}
 \index{Lebenszyklus von Objekten}\index{Objekt-Lebenszyklus}
 
-In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen, und verwenden dann diese Instanz. Wenn das Programm beendet ist, werden alle Variablen verworfen. Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Objekten nach. Dies wird allerdings von Bedeutung, wenn wir eigene Klassen definieren. Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
+In den vorherigen Beispielen definieren wir eine Klasse, verwenden diese Klasse, um eine Instanz dieser Klasse (ein Objekt) zu erstellen und verwenden dann diese Instanz. Wenn das Programm beendet ist, werden alle Variablen verworfen. Normalerweise denken wir nicht viel über das Erzeugen und Zerstören von Objekten nach. Dies wird allerdings von Bedeutung, wenn wir eigene Klassen definieren. Dann müssen wir einige Aktionen innerhalb des Objekts durchführen, um Dinge einzurichten, während das Objekt konstruiert wird, und möglicherweise Dinge aufzuräumen, wenn das Objekt verworfen wird.
 
 Selbst bei unserem einfachen `PartyAnimal`-Beispiel sollten wir etwas tun, wenn wir ein neues Objekt erzeugen. Statt bei einem ersten Aufruf von `party()` das Attribut `x` zu erzeugen, sollten wir es beim Erstellen des Objekts anlegen. Gleichermaßen können wir auch „Aufräumarbeiten“ leisten, die immer dann ausgeführt werden, wenn ein Objekt verworfen wird.
 
