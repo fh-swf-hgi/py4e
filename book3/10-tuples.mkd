@@ -42,7 +42,7 @@ Um ein Tupel mit einem einzelnen Element zu erstellen, müssen wir das abschlie�
 <type 'tuple'>
 ~~~~
 
-Ohne das Komma würde die `(1)` für den Python Interpreter wie eine geklammerte Ganzzahl aussehen und damit wie ein ganz normaler Ausdruck. Erst das Komma vor der Klammer macht deutlich, dass hier etwas anderes, nämlich ein *Eintupel* gemeint ist.
+Ohne das Komma würde die `(1)` für den Python-Interpreter wie eine geklammerte Ganzzahl aussehen und damit wie ein ganz normaler Ausdruck. Erst das Komma vor der Klammer macht deutlich, dass hier etwas anderes, nämlich ein *Eintupel* gemeint ist.
 
 Eine weitere Möglichkeit, ein Tupel zu konstruieren, ist die eingebaute Funktion `tuple`. Ohne Argument erzeugt sie ein leeres Tupel:
 
@@ -306,7 +306,7 @@ Mehrfachzuweisung mit Dictionarys
 \index{Traversieren!Dictionary}
 \index{Dictionary!Traversieren}
 
-Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Code-Schema für das Durchlaufen der Schlüssel und Werte eines Dictionarys in einer einzigen Schleife sehen:
+Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Codeschema für das Durchlaufen der Schlüssel und Werte eines Dictionarys in einer einzigen Schleife sehen:
 
 ~~~~ {.python}
 for key, val in list(d.items()):

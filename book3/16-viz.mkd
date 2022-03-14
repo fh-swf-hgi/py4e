@@ -312,7 +312,7 @@ iupui.edu -> indiana.edu
 So werden alle Konten der verschiedenen Standorte der Indiana University
 zusammen verfolgt.
 
-Wir können `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten immer mehr zu bereinigen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datenbank-Datei, die für die Datenanalyse verwendet wird. Mit ihr wird die Datenanalyse wirklich schnell sein.
+Wir können `gmodel.py` immer wieder ausführen, während wir uns die Daten ansehen, und Mappings hinzufügen, um die Daten immer mehr zu bereinigen. Wenn wir fertig sind, haben wir eine ordentlich indizierte Version der E-Mail in `index.sqlite`. Dies ist die Datenbankdatei, die für die Datenanalyse verwendet wird. Mit ihr wird die Datenanalyse wirklich schnell sein.
 
 Die erste und einfachste Datenanalyse besteht darin, festzustellen, wer die meisten Mails verschickt hat und welche Organisation die meisten Mails verschickt hat. Dies wird mit `gbasic.py` durchgeführt:
 

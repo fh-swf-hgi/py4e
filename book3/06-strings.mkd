@@ -369,7 +369,7 @@ Diese Form der Punktschreibweise gibt den Namen der Methode (`upper`) und den Na
 
 \index{Klammern!leer}
 
-Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen. Die Aufrufkonvention mit der Punkt-Notation ist typisch für die *objektorientierte Programmierung*. Die Zeichenkette `word` ist in diesem Fall unser Objekt, und der Aufruf der Methode `upper` *auf* dem Objekt bewirkt, dass etwas mit dem Objekt passiert. 
+Ein Methodenaufruf wird als *Aufruf* bezeichnet; in diesem Fall würden wir sagen, dass wir `upper` auf `word` aufrufen. Die Aufrufkonvention mit der Punktnotation ist typisch für die *objektorientierte Programmierung*. Die Zeichenkette `word` ist in diesem Fall unser Objekt, und der Aufruf der Methode `upper` *auf* dem Objekt bewirkt, dass etwas mit dem Objekt passiert. 
 
 \index{Aufruf einer Methode}
 

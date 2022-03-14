@@ -37,7 +37,7 @@ Während sich dieses Kapitel auf die Verwendung von Python für die Arbeit mit D
 
 Mit dem Browser können wir ganz einfach Tabellen erstellen, Daten einfügen, Daten bearbeiten oder einfache SQL-Abfragen zu den Daten in der Datenbank ausführen.
 
-In gewisser Weise ähnelt der Datenbank-Browser einem Texteditor beim Arbeiten mit Textdateien. Wenn wir eine oder sehr wenige Operationen an einer Textdatei durchführen möchten, können wir sie einfach in einem Texteditor öffnen und die gewünschten Änderungen vornehmen. Wenn wir viele Änderungen an einer Textdatei vornehmen müssen, werden wir oft ein einfaches Python-Programm schreiben. Das gleiche Vorgehen werden wir bei der Arbeit mit Datenbanken finden. Wir werden einfache Operationen im Datenbankmanager durchführen und komplexere Operationen werden am bequemsten in Python erledigt.
+In gewisser Weise ähnelt der Datenbankbrowser einem Texteditor beim Arbeiten mit Textdateien. Wenn wir eine oder sehr wenige Operationen an einer Textdatei durchführen möchten, können wir sie einfach in einem Texteditor öffnen und die gewünschten Änderungen vornehmen. Wenn wir viele Änderungen an einer Textdatei vornehmen müssen, werden wir oft ein einfaches Python-Programm schreiben. Das gleiche Vorgehen werden wir bei der Arbeit mit Datenbanken finden. Wir werden einfache Operationen im Datenbankmanager durchführen und komplexere Operationen werden am bequemsten in Python erledigt.
 
 Erstellen einer Datenbanktabelle
 --------------------------------
@@ -78,7 +78,7 @@ Datenbankbefehle werden in einer speziellen Sprache ausgedrückt, die über viel
 
 In unserem Beispiel führen wir zwei SQL-Befehle in unserer Datenbank aus. Per Konvention schreiben wir die SQL-Schlüsselwörter in Großbuchstaben und die Teile des Befehls, die wir hinzufügen (z. B. unsere Tabellen- und Spaltennamen), in Kleinbuchstaben. Das Datenbanksystem selbst unterscheidet nicht zwischen Groß- und Kleinschreibung.
 
-Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie schon existieren sollte. Dies dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Es sei zu beachten, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt sofort aus der Datenbank löscht. Diese Operation kann ohne Weiteres nicht rückgängig gemacht werden.
+Der erste SQL-Befehl entfernt die Tabelle `Tracks` aus der Datenbank, falls sie schon existieren sollte. Dies dient lediglich dazu, dass wir das gleiche Programm zum Erstellen der Tabelle `Tracks` immer wieder ausführen können, ohne einen Fehler zu verursachen. Es ist zu beachten, dass der Befehl `DROP TABLE` die Tabelle und ihren gesamten Inhalt sofort aus der Datenbank löscht. Diese Operation kann ohne Weiteres nicht rückgängig gemacht werden.
 
 ~~~~ {.python}
 cur.execute('DROP TABLE IF EXISTS Tracks ')
@@ -598,11 +598,11 @@ Wir können eine einfache Datenbank mit einer einzigen Tabelle erstellen, um vie
 Debugging
 ---------
 
-Ein häufiges Vorgehen, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass wir ein Python-Programm ausführen und die Ergebnisse mit dem Datenbank-Browser für SQLite überprüfen. Mit dem Browser können wir schnell überprüfen, ob unser Programm richtig funktioniert.
+Ein häufiges Vorgehen, wenn wir ein Python-Programm zur Verbindung mit einer SQLite-Datenbank entwickeln, wird sein, dass wir ein Python-Programm ausführen und die Ergebnisse mit dem Datenbankbrowser für SQLite überprüfen. Mit dem Browser können wir schnell überprüfen, ob unser Programm richtig funktioniert.
 
 Wir müssen vorsichtig sein, weil SQLite darauf achtet, dass nicht zwei Programme gleichzeitig dieselben Daten ändern. Wenn wir z. B. eine Datenbank im Browser öffnen und eine Änderung an der Datenbank vornehmen und noch nicht die Schaltfläche „Speichern“ im Browser betätigt haben, sperrt der Browser die Datenbankdatei und verhindert, dass ein anderes Programm auf die Datei zugreift. Insbesondere unser Python-Programm kann nicht auf die Datei zugreifen, wenn sie gesperrt ist.
 
-Eine Lösung ist also, sicherzustellen, dass wir entweder den Datenbank-Browser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor wir versuchen, von Python aus auf die Datenbank zuzugreifen.
+Eine Lösung ist also, sicherzustellen, dass wir entweder den Datenbankbrowser schließen oder das Menü *Datei* verwenden, um die Datenbank im Browser zu schließen, bevor wir versuchen, von Python aus auf die Datenbank zuzugreifen.
 
 Glossar
 -------
