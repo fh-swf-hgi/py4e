@@ -112,7 +112,7 @@ Die Bindung eines Namens an einen Wert erfolgt durch eine *Zuweisung*. Existiert
 
 In diesem Beispiel werden drei Zuweisungen vorgenommen. Die erste weist eine Zeichenkette einer neuen Variablen namens `message` zu; die zweite weist die ganze Zahl `17` der Variablen `n` zu; die dritte weist den (ungefähren) Wert von $\pi$ `pi` zu.
 
-Um den Wert einer Variablen anzuzeigen, können Sie eine Print-Anweisung verwenden:
+Um den Wert einer Variablen anzuzeigen, können Sie eine `print`-Anweisung verwenden:
 
 ~~~~ {.python}
 >>> print(n)

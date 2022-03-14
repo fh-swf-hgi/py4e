@@ -329,7 +329,7 @@ Wir geben dann den ersten Eintrag in der Liste aus, indem wir die eckigen Klamme
 
 Am Ende des Programms wird das `stuff`-Objekt verworfen, aber nicht bevor der Destruktor (namens `__del__`) automatisch aufgerufen wurde, damit das Objekt bei Bedarf Aufräumarbeiten durchführen kann.
 
-Das sind die Grundlagen der objektorientierten Programmierung. Es gibt viele zusätzliche Details, wie man objektorientierte Ansätze bei der Entwicklung großer Anwendungen und Bibliotheken am besten einsetzt, die den Rahmen dieses Kapitels aber sprengen würden.^[Wenn Sie neugierig sind, wo die Klasse `list` definiert ist, werfen Sie einen Blick auf https://github.com/python/cpython/blob/master/Objects/listobject.c -- die Klasse `list` ist in einer Sprache namens „C“ geschrieben.]
+Das sind die Grundlagen der objektorientierten Programmierung. Es gibt viele zusätzliche Details, wie man objektorientierte Ansätze bei der Entwicklung großer Anwendungen und Bibliotheken am besten einsetzt, die den Rahmen dieses Kapitels aber sprengen würden.^[Wenn Sie neugierig sind, wo die Klasse `list` definiert ist, werfen Sie einen Blick auf <https://github.com/python/cpython/blob/master/Objects/listobject.c>. Die Klasse `list` ist in einer Sprache namens „C“ geschrieben.]
 
 Glossar
 -------

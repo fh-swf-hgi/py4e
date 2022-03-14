@@ -441,7 +441,7 @@ durch die Datei und sucht nach Zeilen der Form:
 X-DSPAM-Confidence: 0.8475
 ~~~~
 
-Wenn Sie auf eine Zeile stoßen, die mit „X-DSPAM-Confidence:“ beginnt, trennen Sie die Zeile auf, um die Fließkommazahl in der Zeile zu extrahieren. Zählen Sie diese Zeilen und berechnen Sie dann die Summe der Werte aus diesen Zeilen. Wenn Sie das Ende der Datei erreichen, geben Sie den Durchschnittswert aus.
+Wenn Sie auf eine Zeile stoßen, die mit `X-DSPAM-Confidence:` beginnt, trennen Sie die Zeile auf, um die Fließkommazahl in der Zeile zu extrahieren. Zählen Sie diese Zeilen und berechnen Sie dann die Summe der Werte aus diesen Zeilen. Wenn Sie das Ende der Datei erreichen, geben Sie den Durchschnittswert aus.
 
 ~~~~
 Gib eine Datei an: mbox.txt
