@@ -3,10 +3,10 @@ Funktionen
 ==========
 
 Eine Kernidee der Programmierung ist es, die unterschiedlichen Teilaufgaben, die in einem Programm verwendet werden, in einzelne logische Einheiten aufzuteilen.
-Der große Vorteil durch dieses Vorgehen ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
+Der große Vorteil dieses Vorgehens ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
 Jedes Python-Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
 Funktionen kann man aber nicht nur verwenden, sondern auch selbst definieren.
-Dies, und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
+Dies und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
 
 
 Funktionsaufrufe
@@ -33,7 +33,7 @@ Es ist üblich zu sagen, dass eine Funktion ein Argument „nimmt“ oder „akz
 Built-in-Funktionen
 -------------------
 
-Python bietet eine Reihe von wichtigen eingebauten Funktionen [*Built-in-Funktionen*](https://docs.python.org/3/library/functions.html#built-in-functions), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
+Python bietet eine Reihe von wichtigen eingebauten Funktionen^[[https://docs.python.org/3/library/functions.html#built-in-functions](https://docs.python.org/3/library/functions.html#built-in-functions)] (sogenannten *Built-in-Funktionen*), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
 
 ~~~~ {.python}
 >>> abs(-42)
@@ -44,7 +44,7 @@ Python bietet eine Reihe von wichtigen eingebauten Funktionen [*Built-in-Funktio
 ~~~~
 
 Funktionen können dabei nicht nur ein Argument haben, sondern auch mehrere.
-Die Built-in-Funktionen `max` und `min`, beispielsweise, geben uns den größten bzw. kleinsten Wert aus einer Folge von Attributen:
+Die Built-in-Funktionen `max` und `min` beispielsweise, geben den größten bzw. kleinsten Wert aus einer Folge von Attributen zurück:
 
 ~~~~ {.python}
 >>> max(2,-1.2,5.7,4)
@@ -54,8 +54,8 @@ Die Built-in-Funktionen `max` und `min`, beispielsweise, geben uns den größten
 >>>
 ~~~~
 
-Die Funktion `max` sagt uns den „größten Wert“ der Argumente, die Funktion `min` zeigt uns den kleinsten Wert.
-Viele Funktionen sind dabei sehr flexibel programmiert, d. h. man kann Sie mit unterschiedlichen Argumenten aufrufen.
+Die Funktion `max` liefert uns den „größten Wert“ der Argumente, die Funktion `min` den kleinsten Wert.
+Viele Funktionen sind dabei sehr flexibel programmiert, d. h. man kann sie mit unterschiedlichen Argumenten aufrufen.
 
 ~~~~ {.python}
 >>> max('Hello world')
@@ -65,7 +65,7 @@ Viele Funktionen sind dabei sehr flexibel programmiert, d. h. man kann Sie mit u
 >>>
 ~~~~
 
-Im obigen Beispiel sehen wir die Funktionen `max` und `min` erneut, aber diesmal aufgerufen mit der Zeichenkette `'Hello world'`. Nun gibt uns die Funktion `max` das „größte“ Zeichen in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) zurück und die Funktion `min` liefert uns das kleinste Zeichen (was sich als ein Leerzeichen herausstellt).
+Im obigen Beispiel sehen wir die Funktionen `max` und `min` erneut, aber diesmal aufgerufen mit der Zeichenkette `'Hello world'`. Nun gibt uns die Funktion `max` das „größte“ Zeichen in der Zeichenkette (was sich als der Buchstabe `'w'` herausstellt) zurück und die Funktion `min` liefert uns das „kleinste“ Zeichen (was sich als ein Leerzeichen herausstellt).
 
 Eine weitere sehr gebräuchliche eingebaute Funktion ist die Funktion `len`, die uns sagt, wie viele Elemente in unserem Argument enthalten sind. Wenn das Argument von `len` eine Zeichenkette ist, gibt sie die Anzahl der Zeichen in der Zeichenkette zurück.
 
@@ -129,30 +129,30 @@ Schließlich wandelt `str` das Argument in eine Zeichenkette um:
 ~~~~
 
 Übrigens sollten Sie die Namen der eingebauten Funktionen wie reservierte Wörter behandeln.
-Anders als bei den *Schlüsselwörtern* sind die Namen von eingebauten Funktionen, bzw. Funktionen ganz allgemein nicht vom Interpreter geschützt.
+Anders als bei den *Schlüsselwörtern* sind die Namen von eingebauten Funktionen bzw. von Funktionen ganz allgemein nicht vom Interpreter geschützt.
 Python verhindert es also nicht, wenn wir `max` als Namen für eine eigene Variable oder Funktion verwenden.
 Wenn man dies tut, führt das manchmal zu kuriosen, meist aber zu ärgerlichen und schwer zu findenden Fehlern.
 
 
 Die Standardbibliothek
-----------------------------
+----------------------
 
 \index{Standardbibliothek}
 \index{Programmbibliothek}
 
-Neben den Built-in-Funktionen, werden wir noch viele weitere verwenden, die uns Python bereitstellt.
+Neben den Built-in-Funktionen werden wir noch viele weitere verwenden, die uns Python bereitstellt.
 Python verfolgt eine *Batteries Included* Philosophie, was bedeutet, dass viele Funktionen (und Datenstrukturen), die zum produktiven Programmieren nützlich sind, bereits in der Sprache enthalten sind.
-Dieser Aspekt, hat wesentlich zur Verbreitung von Python beigetragen, denn es erlaubt ein Programmieren auf „höherer Ebene“.
+Dieser Aspekt hat wesentlich zur Verbreitung von Python beigetragen, denn es erlaubt ein Programmieren auf „höherer Ebene“.
 
-Sehr viele Funktionen stellt Python über die sogenannte *Standardbibliothek* bereit, einige Teile der Standardbibliothek werden wir uns in den kommenden Abschnitten genauer ansehen. In der Programmierung bezeichnet der Begriff „Bibliothek“ eine Sammlung von wiederverwendbaren Funktionen und Datenstrukturen. Es gibt Bibliotheken für den Zugriff auf Internetseiten, zum Verarbeiten von großen Datenmengen, für spezielle mathematische Aufgaben, für Audio oder Bildverarbeitung und für viele weitere Anwendungsgebiete.
+Sehr viele Funktionen stellt Python über die sogenannte *Standardbibliothek* bereit, einige Teile der Standardbibliothek werden wir uns in den kommenden Abschnitten genauer ansehen. In der Programmierung bezeichnet der Begriff „Bibliothek“ eine Sammlung von wiederverwendbaren Funktionen und Datenstrukturen. Es gibt Bibliotheken für den Zugriff auf Internetseiten, zum Verarbeiten von großen Datenmengen, für spezielle mathematische Aufgaben, für Audio- oder Bildverarbeitung und für viele weitere Anwendungsgebiete.
 
-Wenn wir für unsere Problemstellung eine geeignete Bibliothek zur Verfügung haben, müssen nicht „das Rad neu erfinden“, sondern können die bestehenden Funktionen nutzen, um unsere konkrete Aufgabenstellung damit zu lösen.
+Wenn wir für unsere Problemstellung eine geeignete Bibliothek zur Verfügung haben, müssen wir nicht „das Rad neu erfinden“, sondern können die bestehenden Funktionen nutzen, um unsere konkrete Aufgabenstellung damit zu lösen.
 Wie bei einem gut gefüllten Werkzeugkasten geht es dann auch bei der Programmierung darum, das „passende“ Werkzeug zu finden und es richtig anzuwenden.
-Gelingt ihnen das, können Sie Ihr Projekt in deutlich kürzerer Zeit und meist auch mit besserem Ergebnis abschließen.
+Gelingt uns das, können wir unser Projekt in deutlich kürzerer Zeit und meist auch mit besserem Ergebnis abschließen.
 
 Wenn Sie selbst Programme schreiben, werden Sie bei Ihren Recherchen in der Python Dokumentation, in anderen Lehrbüchern oder im Internet immer wieder auf Module oder komplette Bibliotheken stoßen, die Ihnen für die Lösung Ihres Problems nützlich sein können.
 Als erfolgreicher Entwickler sollten Sie lernen, bestehende Lösungen (die Sie lizenzrechtlich verwenden dürfen) einzusetzen.
-Beim Lernen der Sprache werden wir zwar -- zu Trainingszwecken -- Aufgaben „per Hand“ lösen, für die es auch vorgefertigte Lösungen.
+Beim Lernen der Sprache werden wir zwar -- zu Trainingszwecken -- auch solche Aufgaben „per Hand“ lösen, für die es eigentlich schon vorgefertigte Lösungen.
 Im Berufsalltag kommt es aber in aller Regel auf Produktivität an und dabei helfen Ihnen die Standardbibliothek oder auch Programmpakete, die andere bereits vor Ihnen entwickelt und frei zur Verfügung gestellt haben.
 
 Da eine Bibliothek sehr umfangreich sein kann, ist es ratsam, die einzelnen Funktionalitäten noch weiter aufzuteilen.
@@ -161,7 +161,7 @@ Bei diesen Begriffen kann man folgende Unterscheidung vornehmen:
 
 -   Ein **Modul** ist eine Datei mit der Endung *.py*, die ausführbaren Python Code enthält, darunter in der Regel verschiedene Funktionen und Variablen.
 
--   Ein **Paket** ist eine Sammlung von Modulen, die unter einem gemeinsamen Namensraum zusammengefasst sind und die für einen speziellen Anwendungsbereich entwickelt wurden. Unter den Modulen muss eine Datei namens `__init__.py` sein, damit der Python-Interpreter es als Paket erkennt. Die `__init__.py` kann eine leere Datei sein, es ist nur wichtig, dass sie im Ordner mit den Modulen existiert.
+-   Ein **Paket** ist eine Sammlung von Modulen, die unter einem gemeinsamen Namensraum zusammengefasst sind und die für einen speziellen Anwendungsbereich entwickelt wurden. Unter den Modulen muss eine Datei namens `__init__.py` sein, damit der Python-Interpreter sie als Paket erkennt. Die `__init__.py` kann eine leere Datei sein, es ist nur wichtig, dass sie im Ordner mit den Modulen existiert.
 
 -   **Bibliothek** ist eher ein Oberbegriff, der in der Programmierung ganz allgemein eine Sammlung von Programmfunktionen beschreibt. Eine Bibliothek kann hunderte von Modulen oder auch Paketen enthalten, so wie die Python Standardbibliothek. Im Unterschied zu einem Paket können in einer Bibliothek Funktionalitäten für ganz unterschiedliche Problembereiche zusammengefasst sein. Auch dies ist bei der Standardbibliothek von Python der Fall.
 
@@ -177,7 +177,7 @@ Mathematische Funktionen
 \index{Modul}
 \index{Modulobjekt}
 
-Ein häufig verwendetes Modul aus der Standardbibliothek ist `math`. Darin werden am häufigsten verwendeten mathematischen Funktionen bereitstellt. Bevor wir das Modul verwenden können, müssen wir es importieren:
+Ein häufig verwendetes Modul aus der Standardbibliothek ist `math`. Darin werden die am häufigsten verwendeten mathematischen Funktionen bereitstellt. Bevor wir das Modul verwenden können, müssen wir es importieren:
 
 ~~~~ {.python}
 >>> import math
@@ -235,7 +235,7 @@ Wenn man sich in Trigonometrie auskennt, kann man das vorherige Ergebnis überpr
 Bevor wir mit anderen Modulen der Standardbibliothek weiter machen, sollten wir nochmal einen kurzen Blick auf die `import` Anweisung richten, die wir zum Einbinden eines Moduls benötigen.
 Wenn Sie gerade mit der Programmierung beginnen, werden Sie sich vielleicht wundern, warum man, nachdem ein Modul importiert wurde, die Funktionen nicht „einfach so“ aufrufen kann, sondern immer den Modulnamen (bzw. das Modulobjekt) voranstellen muss? Was hier umständlich aussieht, hat einen guten Grund: Es kann gut sein, dass Sie in Ihrem Programm viele unterschiedliche Pakete und Module verwenden. Da diese Module normalerweise unabhängig voneinander entwickelt wurden, können verschiedene Module die gleichen Bezeichner verwenden. In diesem Fall würde es Namenskonflikte geben, bei einem Aufruf könnte es schlicht dazu kommen, dass Python nicht erkennen kann, welche Funktion Sie meinen.
 Daher Arbeiten Module mit *Namensräumen*. Beim Importieren definieren Sie das Modulobjekt, über dessen Namen Sie das Modul eindeutig erreichen.
-Wenn wir später *objektorientiert* programmieren, fällt das explizite Angeben des Modulobjekts meistens weg. Wir können dann Funktionen *auf Objekten* aufrufen und, da Objekte „ihre“ Funktionen kennen, wird Python dir passenden Funktion auswählen. Aber dazu später mehr.
+Wenn wir später *objektorientiert* programmieren, fällt das explizite Angeben des Modulobjekts meistens weg. Wir können dann Funktionen *auf Objekten* aufrufen und, da Objekte „ihre“ Funktionen kennen, wird Python die passende Funktion auswählen. Aber dazu später mehr.
 
 Zufallszahlen
 -------------
@@ -366,7 +366,7 @@ Nur, dass über diesen Namen kein Wert-Objekt (wie bei einer Variablen) erreicht
 ~~~~
 
 Der **Wert** von `print_lyrics` ist ein *Funktionsobjekt*, das den Typ `function` hat.
-Sie könnten der Funktion im Nachhinein auch andere Namen geben. Solange Sie dasselbe Funktionsobjekt benennen, kann die Funktion mit allen diesen Namen verwendet werden.
+Sie könnten der Funktion im Nachhinein auch andere Namen geben. Solange diese dasselbe Funktionsobjekt benennen, kann die Funktion mit allen diesen Namen verwendet werden.
 
 \index{Funktionsobjekt}
 \index{Objekt!Funktion}
