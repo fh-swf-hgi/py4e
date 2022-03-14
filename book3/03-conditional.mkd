@@ -48,7 +48,7 @@ False
 <class 'bool'>
 ~~~~
 
-Der Operator `==` ist ein *Vergleichsoperator*. Wenn man mit einen solchen Operator zwei Operanden vergleicht, erhält man einen Wahrheitswert zurück. Neben dem Vergleich auf *Gleichheit* gibt es noch einige weitere *Vergleichsoperatoren*. Diese sind:
+Der Operator `==` ist ein *Vergleichsoperator*. Wenn man mit einem solchen Operator zwei Operanden vergleicht, erhält man einen Wahrheitswert zurück. Neben dem Vergleich auf *Gleichheit* gibt es noch einige weitere *Vergleichsoperatoren*. Diese sind:
 
 ~~~~ {.python}
 x != y               # x ist ungleich y

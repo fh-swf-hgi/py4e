@@ -1,8 +1,8 @@
 
 Tupel
-======
+=====
 
-Den Begriff *Tupel* sollten Sie aus der Mathematik kennen. Dort bezeichnet er eine (endliche lange) Liste von nicht notwendigerweise voneinander verschiedenen Objekten. Da wir bereits Listen in Python haben, benötigen wir keine Tupel, richtig? Falsch! Denn im Gegensatz zu Listen können bei einem Tupel die einzelnen Werte zur Laufzeit des Programms nicht verändert werden. Und diese Eigenschaft macht tatsächlich einen großen Unterschied.
+Den Begriff *Tupel* sollten Sie aus der Mathematik kennen. Dort bezeichnet er eine (endlich lange) Liste von nicht notwendigerweise voneinander verschiedenen Objekten. Da wir bereits Listen in Python haben, benötigen wir keine Tupel, richtig? Falsch! Denn im Gegensatz zu Listen können bei einem Tupel die einzelnen Werte zur Laufzeit des Programms nicht verändert werden. Und diese Eigenschaft macht tatsächlich einen großen Unterschied.
 
 Tupel sind unveränderbar
 ------------------------
@@ -11,7 +11,7 @@ Tupel sind unveränderbar
 \index{Datentyp!Tupel}
 \index{Folge}
 
-Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein, und sie werden durch Ganzzahlen indiziert. Alles, wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Dictionarys verwenden können.
+Ein Tupel ist eine Folge von Werten. Die in einem Tupel gespeicherten Werte können von beliebigem Typ sein und sie werden durch Ganzzahlen indiziert. Alles genau wie bei Listen, nur eben mit dem wichtigen Unterschied, dass Tupel *unveränderlich* sind. Tupel sind außerdem *vergleichbar* und können *gehasht* werden, sodass wir Listen von ihnen sortieren und Tupel als Schlüsselwerte in Python-Dictionarys verwenden können.
 
 \index{Veränderbarkeit}
 \index{vergleichbar}
@@ -42,7 +42,7 @@ Um ein Tupel mit einem einzelnen Element zu erstellen, müssen wir das abschlie�
 <type 'tuple'>
 ~~~~
 
-Ohne das Komma würde die `(1)` für den Python Interpreter wie eine geklammerte Ganzzahl aussehen und damit wie ein ganz normaler Ausdruck. Erst das Komma vor der Klammer macht deutlich, dass hier etwas anderes, nämlich ein Eintupel gemeint ist.
+Ohne das Komma würde die `(1)` für den Python Interpreter wie eine geklammerte Ganzzahl aussehen und damit wie ein ganz normaler Ausdruck. Erst das Komma vor der Klammer macht deutlich, dass hier etwas anderes, nämlich ein *Eintupel* gemeint ist.
 
 Eine weitere Möglichkeit, ein Tupel zu konstruieren, ist die eingebaute Funktion `tuple`. Ohne Argument erzeugt sie ein leeres Tupel:
 
@@ -232,7 +232,7 @@ ValueError: too many values to unpack
 
 Wir sollten noch ein wenig näher darauf eingehen, was „zueinander passen“ hier bedeutet. `a` und `b` sind in der obigen Zuweisung einfach nur Namen. Python, als dynamisch typisierte Programmiersprache, wird zur Laufzeit entscheiden, welche Werte `a` und `b` bekommen sollen. Nun könnte einer der beiden Namen für eine Liste stehen, in der mehrere Werte untergebracht sind. Dann würde die Zuweisung oben wieder „passen“. Nur kann Python hier nicht wissen, ob `a` oder `b` diese Liste sein soll.
 
-Um das Beispiel oben doch funktionstüchtig zu machen, müssen wir die Information hinzufügen, welcher Name für eine Sequenz von Werten stehen soll. Das tun wir mit einem vorangestellten Sternchen (englisch *Asterisk*) `*`:
+Um das Beispiel oben doch funktionstüchtig zu machen, müssen wir die Information hinzufügen, welcher Name für eine Sequenz von Werten stehen soll. Das tun wir mit einem vorangestellten Sternchen `*` (englisch *Asterisk*):
 
 ~~~~ {.python}
 >>> a, *b = (1,2,3)
@@ -240,14 +240,14 @@ Um das Beispiel oben doch funktionstüchtig zu machen, müssen wir die Informati
 [2, 3]
 ~~~~
 
-Es gibt noch weitere Stellen in Python, an denen man mit einem vorangestellten Asterisk ausdrückt, dass mehrere einzelne Werte *zusammengefasst* oder aber eine Sequenz zu einzelnen Werten *entpackt* wird. Dieses Konzept nennt man dementsprechend *Packing* bzw. *Unpacking*. Funktionen verwenden es z. B. um eine beliebig lange lange Liste von Parametern zuzulassen.
+Es gibt noch weitere Stellen in Python, an denen man mit einem vorangestellten Asterisk ausdrückt, dass mehrere einzelne Werte *zusammengefasst* oder aber eine Sequenz zu einzelnen Werten *entpackt* wird. Dieses Konzept nennt man dementsprechend *Packing* bzw. *Unpacking*. Funktionen verwenden es z. B., um eine beliebig lange Liste von Parametern zuzulassen.
 
 Beachten Sie übrigens, dass im Beispiel oben das Resultat in `b` eine Liste ist, obwohl auf der linken Seite der Zuweisung ein Tupel steht. Beim Packing werden die einzelenen Elemente immer in eine Liste gepackt, ganz gleich aus welcher Datenstruktur sie entnommen werden.
 
 \index{Packing}
 \index{Unpacking}
 
-(Un)packing lässt sich nicht nur auf numerische Werte anwenden, sondern auch auf andere Typen, wie etwa Zeichenketten. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten wir schreiben:
+(Un)packing lässt sich nicht nur auf numerische Werte anwenden, sondern auch auf andere Typen wie etwa Zeichenketten. Um z. B. eine E-Mail-Adresse in einen Benutzernamen und eine Domäne aufzuteilen, könnten wir schreiben:
 
 \index{split (Methode)}
 \index{Methode!split}

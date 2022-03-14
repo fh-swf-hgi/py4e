@@ -7,7 +7,7 @@ Bei typischen Informatik-Begriffen wie „Datenverarbeitung“ oder auch „Rech
 Noch einen kleinen Tipp vorab: vieles von dem, was man mit Zeichenketten machen kann, funktioniert genau so mit Folgen von völlig andren Elementen. Wenn Sie in diesem Kapitel genau hinsehen, kommt Ihnen das also in den folgenden umso mehr zugute.
 
 Was ist eine Zeichenkette?
---------------------------------------------------
+--------------------------
 
 \index{Folge}
 \index{Einzelzeichen}\index{Character}

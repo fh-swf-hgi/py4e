@@ -10,7 +10,7 @@ Dateien
 
 Bisher haben wir gelernt, wie man Programme schreibt und der *CPU* unsere Absichten mit Hilfe von bedingter Ausführung, Funktionen und Iterationen mitteilt. Wir haben gelernt, wie wir Datenstrukturen im *Hauptspeicher* erstellen und verwenden. Die CPU und der Speicher sind der Ort, an dem unsere Software arbeitet und läuft. Hier findet das gesamte „Denken“ statt.
 
-Aber wenn man sich an unsere Diskussionen über die Hardware-Architektur erinnert stellt man fest, alles wird, was entweder in der CPU oder im Hauptspeicher gespeichert ist, gelöscht ist, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
+Aber wenn wir uns an unsere Diskussionen über die Hardware-Architektur erinnert, stellen wir fest, dass alles, was in der CPU oder im Hauptspeicher gespeichert ist, verloren geht, sobald der Strom abgeschaltet wird. Bis jetzt waren unsere Programme also nur flüchtige Spaßübungen, um Python zu lernen.
 
 ![Arbeitsspeicher und Sekundärspeicher (Festspeicher)](height=1.75in@../images/de/arch)
 
@@ -36,7 +36,7 @@ Wenn wir eine Datei (z. B. auf unserer Festplatte) lesen oder schreiben wollen, 
 
 \index{Dateihandler}
 
-Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandle* zurück. Dieses Handle beeinhaltet nicht eigentlichen Daten der Datei, sondern er sagt dem Python-Programm, *wo* das Betriebssystem die Datei abgelegt hat. Über dieses Handle können dann aller weiteren Operation für die Datei (mithilfe des Betriebssystems) ausgeführt werden. 
+Wenn das `open` erfolgreich ist, gibt uns das Betriebssystem ein *Dateihandle* zurück. Dieses Handle beeinhaltet nicht die eigentlichen Daten der Datei, sondern er sagt dem Python-Programm, *wo* das Betriebssystem die Datei abgelegt hat. Über dieses Handle können dann alle weiteren Operation für die Datei (mithilfe des Betriebssystems) ausgeführt werden.
 
 ![Ein Dateihandler](height=1.75in@../images/de/handle)
 

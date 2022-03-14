@@ -6,7 +6,7 @@ Eine Kernidee der Programmierung ist es, die unterschiedlichen Teilaufgaben, die
 Der große Vorteil dieses Vorgehens ist, dass unsere Programme besser strukturiert sind und die einzelnen Teile im gleichen oder auch in anderen Programmen wiederverwendet werden können.
 Jedes Python-Programm verwendet, selbst wenn Sie das nicht einmal sehen, Funktionen und auch wir haben schon einige *eingebaute Funktionen* von Python kennengelernt, darunter `print` und `input`. 
 Funktionen kann man aber nicht nur verwenden, sondern auch selbst definieren.
-Dies und vieles weitere zu Funktionen, lernen Sie in diesem Kapitel kennen.
+Dies und vieles weitere zu Funktionen lernen Sie in diesem Kapitel kennen.
 
 
 Funktionsaufrufe
