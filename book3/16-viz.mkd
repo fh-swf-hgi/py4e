@@ -257,7 +257,7 @@ Does not start with From
 
 Das Programm durchsucht die Datei `content.sqlite` von der allerersten bis zur ersten noch nicht verarbeiteten Nachricht und beginnt das Spidering bei dieser Nachricht. Es fährt mit dem Spidering fort, bis es die gewünschte Anzahl von Nachrichten durchforstet hat oder es eine Seite erreicht, die nicht als ordnungsgemäß formatierte Nachricht erscheint.
 
-Manchmal fehlt auf **gmane.org** eine Nachricht. Vielleicht können Administratoren Nachrichten löschen oder vielleicht gehen sie verloren. Wenn unser Spider anhält und es scheint, dass er auf eine fehlende Nachricht gestoßen ist, gehen wir in den SQLite Manager und fügen eine Zeile mit der fehlenden ID hinzu, wobei wir alle anderen Felder leer lassen und `gmane.py` neu starten. Dies wird den Spider-Prozess wieder freigeben und ihm erlauben fortzufahren. Diese leeren Nachrichten werden in der nächsten Phase des Prozesses ignoriert.
+Manchmal fehlt auf **gmane.org** eine Nachricht. Vielleicht können Administratoren Nachrichten löschen oder vielleicht gehen sie verloren. Wenn unser Spider anhält und es scheint, dass er auf eine fehlende Nachricht gestoßen ist, gehen wir in den SQLite Manager und fügen eine Zeile mit der fehlenden ID hinzu, wobei wir alle anderen Felder leer lassen und `gmane.py` neu starten. Dies wird den Spider-Prozess wieder freigeben und ihm erlauben, fortzufahren. Diese leeren Nachrichten werden in der nächsten Phase des Prozesses ignoriert.
 
 Eine schöne Sache ist, dass wir, sobald wir alle Nachrichten gespidert haben und sie in `content.sqlite` vorliegen, `gmane.py` erneut ausführen können, um neue Nachrichten zu erhalten, sobald sie in die Liste übertragen werden.
 

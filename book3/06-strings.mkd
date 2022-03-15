@@ -522,7 +522,7 @@ Es gibt noch weitere Codes, mit denen die Ausgabe von Werten beeinflusst werden 
 Der Wert 42 zur Basis 8: 52 und zur Basis 16: 2a
 ~~~~
 
-Der Möglichkeiten, Darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
+Die Möglichkeiten, Darstellungsweisen mit Formatierungcodes zu verändern, sind sehr vielfältig und etwas kompliziert. Es ist also ratsam, sich eine Hilfe-Seite zur Hand zu nehmen, wenn man eine bestimmte Ausgabe erreichen möchte. Weiters zu dem Thema finden sie unter
 
 <https://docs.python.org/3/reference/lexical_analysis.html#f-strings>
 

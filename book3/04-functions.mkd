@@ -33,7 +33,7 @@ Es ist üblich zu sagen, dass eine Funktion ein Argument „nimmt“ oder „akz
 Built-in-Funktionen
 -------------------
 
-Python bietet eine Reihe von wichtigen eingebauten Funktionen^[[https://docs.python.org/3/library/functions.html#built-in-functions](https://docs.python.org/3/library/functions.html#built-in-functions)] (sogenannten *Built-in-Funktionen*), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
+Python bietet eine Reihe von wichtigen eingebauten Funktionen^[[https://docs.python.org/3/library/functions.html#built-in-functions](https://docs.python.org/3/library/functions.html#built-in-functions)] (sogenannte *Built-in-Funktionen*), die wir verwenden können, ohne die Funktionsdefinition angeben zu müssen. Die Schöpfer von Python haben eine Reihe von Funktionen geschrieben, um häufige Probleme zu lösen, und sie in Python integriert, damit wir sie verwenden können.
 
 ~~~~ {.python}
 >>> abs(-42)
