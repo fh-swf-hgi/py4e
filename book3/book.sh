@@ -41,4 +41,4 @@ else
   echo "Output on x.pdf"
 fi
 
-#rm tmp.*
+rm tmp.*
