@@ -1,0 +1,33 @@
+Musterlösungen
+==============
+
+Lösung
+------
+
+~~~~ {.python}
+print('Hallo')
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+print('Hallo')
+~~~~
+
+Musterlösungen
+==============
+
+Lösung
+------
+
+~~~~ {.python}
+print('Hallo')
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+print('Hallo')
+~~~~
