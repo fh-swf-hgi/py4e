@@ -1,9 +1,9 @@
 
 ---
-title: Python for Everybody
-author: Charles R Severance
+title: Python für alle
+author: Charles R Severance, Fabian Eberts, Heiner Giefers
 rights:  Creative Commons Non-Commercial Share Alike 3.0
-language: en-US
-cover-image: ../cover3-final.jpg
+language: de-DE
+cover-image: ../cover3_de_s.png
 ...
 
