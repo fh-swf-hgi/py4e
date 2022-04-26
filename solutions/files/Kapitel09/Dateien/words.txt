@@ -1,0 +1,30 @@
+    Das Schreiben von Programmen (oder Programmieren) ist eine
+sehr kreative und lohnende Tätigkeit. Wir können Programme
+aus vielen Gründen schreiben, angefangen mit dem Ziel,
+damit den Lebensunterhalt zu verdienen, ein schwieriges
+Datenanalyseproblem zu lösen, Spaß zu haben oder um jemand
+anderem bei der Lösung eines Problems zu helfen. Dieses Buch
+geht davon aus, dass {\em jeder} wissen sollte, wie man
+programmiert, und dass man, sobald man die Programmierung
+beherrscht, herausfindet, was man mit den neugewonnenen
+Fähigkeiten machen kann.
+
+Wir sind in unserem täglichen Leben von Computern umgeben,
+von Laptops bis hin zu Handys. Wir nehmen diese Computer als
+unsere persönlichen Assistenten war, die viele Dinge für
+uns erledigen können. Die Hardware in unseren heutigen
+Computern ist im Wesentlichen so gebaut, dass sie uns ständig
+die Frage stellt: Was soll ich als Nächstes tun?
+
+Programmierer fügen der Hardware ein Betriebssystem und eine
+Reihe von Anwendungen hinzu, und schon haben wir einen
+persönlichen digitalen Assistenten, der uns bei vielen
+Problemen des Alltags nützlich sein kann. Unsere Computer
+sind schnell und haben riesige Mengen an Speicher und könnten
+uns sehr hilfreich sein, wenn wir nur die Sprache beherrschen
+würden, um dem Computer zu erklären, was er als Nächstes tun
+soll. Wenn wir diese Sprache kennen, könnten wir dem Computer
+sagen, dass er in unserem Namen Aufgaben erledigen soll, die
+sich wiederholen. Interessanterweise sind die Dinge, die Computer
+am besten können oft die Dinge, die wir Menschen langweilig
+und stumpfsinnig finden.
