@@ -1,5 +1,3 @@
-from mdutils.mdutils import MdUtils
-from mdutils import Html
 import os
 
 target_file_path = "solutions.mkd"
@@ -31,7 +29,6 @@ def py_to_md(py_path):
 
     for line in py_file:
         target_file.write(line)
-        target_file.write("\n")
 
     target_file.write("~~~~\n")
     target_file.write("\n")
