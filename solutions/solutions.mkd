@@ -5,29 +5,1425 @@ Lösung
 ------
 
 ~~~~ {.python}
-print('Hallo')
+"""c"""
+
 ~~~~
 
 Lösung
 ------
 
 ~~~~ {.python}
-print('Hallo')
-~~~~
+"""Ein Programm ist eine Abfolge von Python-Anweisungen, die gestaltet sind, um etwas zu tun.
 
-Musterlösungen
-==============
+Ein Programm kann auch aus nur einer Zeile Code bestehen."""
 
-Lösung
-------
-
-~~~~ {.python}
-print('Hallo')
 ~~~~
 
 Lösung
 ------
 
 ~~~~ {.python}
-print('Hallo')
+"""Ein Interpreter liest den Quellcode des Programms, wie er vom Programmierer geschrieben wurde, analysiert den Quellcode und interpretiert die Befehle im laufenden Betrieb. Python ist ein Interpreter, und wenn wir Python interaktiv ausführen,
+
+können wir eine Zeile (einen Satz) in Python eingeben und Python verarbeitet sie
+
+sofort und ist bereit für die Eingabe einer weiteren Python-Zeile (siehe Seite 8).
+
+
+
+Ein Compiler muss das gesamte Programm
+
+in einer oder mehreren Dateien erhalten. Dann führt er einen Prozess aus, um den
+
+High-Level-Quellcode in Maschinensprache zu übersetzen. Danach stellt der Compiler die resultierende Maschinensprache in einer Datei zur späteren Ausführung
+
+zur Verfügung (siehe Seite 9)."""
 ~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+"""a"""
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+print('Hello world!')
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+"""b"""
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+"""b"""
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+"""
+
+ CPU - Gehirn
+
+ Hauptspeicher - Kurzzeitgedächtnis
+
+ Sekundärspeicher - Langzeitgedächtnis
+
+ Eingabegerät - 7 Sinne
+
+ Ausgabegerät - Mund
+
+"""
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+"""Indem Einrückungen und geschriebene Zeichen überprüft und gegebenenfalls anpasst werden."""
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+""" 5
+
+    -> Keine Ausgabe
+
+ x = 5
+
+    -> Legt eine neue Variable x mit dem Wert 5 an
+
+ x + 1
+
+    -> Berechnet 5 + 1 = 6"""
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+name = input("Gib deinen Namen ein: ")
+
+print("Hallo", name)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+stunden = float(input("Gib die Arbeitsstunden an: "))
+
+satz = float(input("Gib den Stundensatz an: "))
+
+print("Zahlung:", stunden * satz)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+""" breite//2 = 8
+
+breite/2.0 = 8.5
+
+hoehe/3 = 4.0
+
+1 + 2 * 5 = 11"""
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+celsius = input("Gib die Temperatur in Celsius ein: ")
+
+
+
+fahrenheit = celsius * 1,8 + 32
+
+
+
+print("Fahrenheit in", fahrenheit)
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+stunden = float(input("Gib die Arbeitsstunden an: "))
+
+satz = float(input("Gib den Stundensatz an: "))
+
+zahlung = 0
+
+
+
+if stunden > 40:
+
+    zahlung = 40 * satz
+
+    zahlung = zahlung + (stunden - 40) * satz * 1.5
+
+else:
+
+    zahlung = zahlung * satz
+
+
+
+print("Zahlung:", zahlung)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+try:
+
+    stunden = float(input("Gib die Arbeitsstunden an: "))
+
+    satz = float(input("Gib den Stundensatz an: "))
+
+except:
+
+    print("Fehler, bitte gib eine Zahl ein")
+
+zahlung = 0
+
+
+
+if stunden > 40:
+
+    zahlung = 40 * satz
+
+    zahlung = zahlung + (stunden - 40) * satz * 1.5
+
+else:
+
+    zahlung = stunden * satz
+
+
+
+print("Zahlung:", zahlung)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+punktzahl = input("Geben Sie ihre Punktzahl an: ")
+
+
+
+try:
+
+    punkte = float(punktzahl)
+
+except:
+
+    print("Bitte eine Zahl eingeben")
+
+    quit()
+
+
+
+if punkte >= 0.9 and punkte <= 1:
+
+    print(1)
+
+elif punkte >= 0.8 and punkte <= 1:
+
+    print(2)
+
+elif punkte >= 0.7 and punkte <= 1:
+
+    print(3)
+
+elif punkte >= 0.6 and punkte <= 1:
+
+    print(4)
+
+elif 0 <= punkte < 0.6:
+
+    print(5)
+
+else:
+
+    print("Falsche Punktanzahl, bitte geben Sie die Punkte von 0.0 bis 1.0 ein")
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+# Man erhält immer wieder verschiedene Zahlen.
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def print_lyrics():
+
+    print("I'm a lumberjack, and I'm okay.")
+
+    print('I sleep all night and I work all day.')
+
+
+
+
+
+repeat_lyrics()
+
+
+
+
+
+def repeat_lyrics():
+
+    print_lyrics()
+
+    print_lyrics()
+
+
+
+# Man erhält:
+
+# NameError: name 'repeat_lyrics' is not defined
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def repeat_lyrics():
+
+    print_lyrics()
+
+    print_lyrics()
+
+
+
+
+
+def print_lyrics():
+
+    print("I'm a lumberjack, and I'm okay.")
+
+    print('I sleep all night and I work all day.')
+
+
+
+
+
+repeat_lyrics()
+
+
+
+# Das Programm wird ausgeführt.
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+# c
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+# d
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def lohnberechnung(arbeitsstunden, stundenlohn):
+
+    zahlung = 0
+
+
+
+    if arbeitsstunden > 40:
+
+        zahlung = 40 * stundenlohn
+
+        zahlung = zahlung + (arbeitsstunden - 40) * satz * 1.5
+
+    else:
+
+        zahlung = arbeitsstunden * stundenlohn
+
+
+
+    print("Monatsgehalt:", zahlung)
+
+
+
+
+
+try:
+
+    stunden = float(input("Anzahl Arbeitsstunden: "))
+
+    satz = float(input("Stundenlohn:"))
+
+except:
+
+    print("Fehler, bitte gib eine Zahl ein")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def durchschnitt():
+
+    anzahl = 0
+
+    summe = 0
+
+    durchschnitt = 0
+
+
+
+    done = False
+
+    while not done:
+
+        eingabe = input("Bitte eine Zahl eingeben: ")
+
+        try:
+
+            z = float(eingabe)
+
+            anzahl = anzahl + 1
+
+            summe = summe + z
+
+        except:
+
+            if eingabe == "done":
+
+                done = True
+
+            else:
+
+                return "Es werden nur Zahlen akzeptiert. Beenden mit 'done'"
+
+    durchschnitt = summe / anzahl
+
+
+
+    erg = "Anzahl: " + str(anzahl) + " Summe: " + str(summe) + " Durchschnitt: " + str(durchschnitt)
+
+    print(erg)
+
+    return erg
+
+
+
+
+
+durchschnitt()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def minmax():
+
+    anzahl = 0
+
+    minimum = None
+
+    maximum = None
+
+
+
+    done = False
+
+    while (not done):
+
+        eingabe = input("Bitte eine Zahl eingeben: ")
+
+        try:
+
+            z = float(eingabe)
+
+            if minimum is None:
+
+                minimum = z
+
+            else:
+
+                if z < minimum:
+
+                    minimum = z
+
+            if maximum is None:
+
+                maximum = z
+
+            else:
+
+                if z > maximum:
+
+                    maximum = z
+
+        except:
+
+            if eingabe == "done":
+
+                done = True
+
+            else:
+
+                return "Es werden nur Zahlen akzeptiert. Beenden mit 'done'"
+
+
+
+    erg = "Minimum: " + str(minimum) + " Maximum: " + str(maximum)
+
+    print(erg)
+
+    return erg
+
+
+
+
+
+minmax()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+zeichenkette = "TestZeichenkette"
+
+count = len(zeichenkette)
+
+
+
+while count > 0:
+
+    print(zeichenkette[count-1])
+
+    count -= 1
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def count(word, zeichen):
+
+    count = 0
+
+    for letter in word:
+
+        if letter == zeichen:
+
+            count = count + 1
+
+    print(count)
+
+
+
+
+
+count("Banane", "a")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def count(word, zeichen):
+
+    word = str(word)
+
+    print(word.count(zeichen))
+
+
+
+
+
+count("banane", "a")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+str = 'X-DSPAM-Confidence:0.8475'
+
+
+
+zahl = float(str[str.find(":") + 1:])
+
+print(zahl)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open("Dateien/mbox-short.txt", "r")
+
+
+
+for line in file:
+
+    print(line.upper())
+
+
+
+file.close()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+# Dateiort: Dateien/mbox-short_modified.txt
+
+filename = input("Dateipfad: ")
+
+file = open(filename, "r")
+
+
+
+count = 0
+
+summe = 0
+
+
+
+for line in file:
+
+    if line.startswith("X-DSPAM-Confidence:"):
+
+        zahl = float(line[line.find(":") + 1:])
+
+        summe = summe + zahl
+
+        count = count + 1
+
+print("Summe:", summe)
+
+print("Anzahl:", count)
+
+
+
+file.close()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+# Dateiort: Dateien/mbox-short_modified.txt
+
+filename = input("Gib eine Datei an: ")
+
+if filename == "blafabel":
+
+    print("Du laberst mich an?")
+
+    exit()
+
+
+
+file = open(filename, "r")
+
+
+
+count = 0
+
+summe = 0
+
+
+
+for line in file:
+
+    if line.startswith("X-DSPAM-Confidence:"):
+
+        zahl = float(line[line.find(":") + 1:])
+
+        summe = summe + zahl
+
+        count = count + 1
+
+print("Summe:", summe)
+
+print("Anzahl:", count)
+
+
+
+file.close()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def remove_all(liste, wert):
+
+    for element in liste:
+
+        if element == wert:
+
+            liste.remove(element)
+
+
+
+
+
+liste = ["Banane", "Erbeere", "Apfel", "Banane", "Gurke"]
+
+print("Start Liste:", liste)
+
+
+
+remove_all(liste, "Banane")
+
+
+
+print("Geleerte Liste:", liste)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def chop(liste):
+
+    if len(liste) > 0:
+
+        del liste[0]
+
+    if len(liste) > 1:
+
+        del liste[len(liste) - 1]
+
+    return None
+
+
+
+
+
+l = ["a", "b", "c"]
+
+chop(l)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def original():
+
+    fhand = open('Dateien/mbox-short_modified.txt')
+
+    count = 0
+
+    for line in fhand:
+
+        words = line.split()
+
+        # print('Debug:', words)
+
+        if len(words) == 0:
+
+            continue
+
+        if words[0] != 'From':
+
+            continue
+
+        print(words[2])
+
+
+
+
+
+# original()
+
+
+
+
+
+def optimized():
+
+    fhand = open('Dateien/mbox-short_modified.txt')
+
+    count = 0
+
+    for line in fhand:
+
+        words = line.split()
+
+        # print('Debug:', words)
+
+        if len(words) < 3:
+
+            continue
+
+        if words[0] != 'From':
+
+            continue
+
+        print(words[2])
+
+
+
+
+
+optimized()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+def optimized():
+
+    fhand = open('Dateien/mbox-short_modified.txt')
+
+    count = 0
+
+    for line in fhand:
+
+        words = line.split()
+
+        # print('Debug:', words)
+
+        if len(words) < 3 or words[0] != 'From':
+
+            continue
+
+        print(words[2])
+
+
+
+
+
+optimized()
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+list = []
+
+file = open('Dateien/romeo.txt')
+
+for line in file:
+
+    words = line.split()
+
+    for word in words:
+
+        if word in list:
+
+            continue
+
+        list.append(word)
+
+print(sorted(list))
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+from_count = 0
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    print(words[1])
+
+    from_count += 1
+
+print("Es gibt ", from_count, " Zeilen mit from.")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+list = []
+
+while True:
+
+    zahl = 0.0
+
+    eingabe = input('Bitte eine Zahl eingeben: ')
+
+    if eingabe == 'done':
+
+        break
+
+
+
+    try:
+
+        zahl = float(eingabe)
+
+    except:
+
+        print('Falsche Eingabe')
+
+        quit()
+
+
+
+    list.append(zahl)
+
+
+
+if list:
+
+    print('Maximum: ', max(list))
+
+    print('Minimum: ', min(list))
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+unique_words = dict()
+
+file = open('Dateien/words.txt')
+
+for line in file:
+
+    words = line.split()
+
+    for word in words:
+
+        if word in unique_words:
+
+            continue
+
+        unique_words[word] = 1
+
+print(unique_words)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+weekdays = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    if words[2] not in weekdays:
+
+        weekdays[words[2]] = 1
+
+        continue
+
+    weekdays[words[2]] = weekdays[words[2]] + 1
+
+
+
+print(weekdays)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+mail_count = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    if words[1] not in mail_count:
+
+        mail_count[words[1]] = 1
+
+        continue
+
+    mail_count[words[1]] = mail_count[words[1]] + 1
+
+
+
+print(mail_count)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+mail_count = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    if words[1] not in mail_count:
+
+        mail_count[words[1]] = 1
+
+        continue
+
+    mail_count[words[1]] = mail_count[words[1]] + 1
+
+
+
+print(max(mail_count), ":", mail_count[max(mail_count)])
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+mail_count = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    domain = words[1].split("@")[1]
+
+    if domain not in mail_count:
+
+        mail_count[domain] = 1
+
+        continue
+
+    mail_count[domain] = mail_count[domain] + 1
+
+
+
+print(mail_count)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+mail_count = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    if words[1] not in mail_count:
+
+        mail_count[words[1]] = 1
+
+        continue
+
+    mail_count[words[1]] = mail_count[words[1]] + 1
+
+
+
+tuples = mail_count.items()
+
+
+
+print(sorted(tuples, reverse=True)[0])
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+file = open('Dateien/mbox-short.txt')
+
+hour_count = dict()
+
+for line in file:
+
+    words = line.split()
+
+    if len(words) < 3 or words[0] != 'From':
+
+        continue
+
+    hour = words[5].split(":")[0]
+
+    if hour not in hour_count:
+
+        hour_count[hour] = 1
+
+        continue
+
+    hour_count[hour] = hour_count[hour] + 1
+
+
+
+for hour in sorted(hour_count):
+
+    print(hour, hour_count[hour])
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import re
+
+
+
+file = open('Dateien/mbox-short.txt')
+
+chars = dict()
+
+for line in file:
+
+    for char in line:
+
+        char = char.lower()
+
+        if re.search("[a-z]", char):
+
+            if char not in chars:
+
+                chars[char] = 1
+
+                continue
+
+            chars[char] = chars[char] + 1
+
+sorted_dict = sorted(chars)
+
+
+
+for char in sorted_dict:
+
+    print(char, ":", chars[char])
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import re
+
+
+
+lines = 0
+
+regex = str(input("Gib einen RegEx an:"))
+
+
+
+with open("Dateien/mbox-short.txt", "r") as file:
+
+    for line in file:
+
+        if re.findall(regex, line):
+
+            lines += 1
+
+print(lines)
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import re
+
+
+
+lines = 0
+
+regex = '^New Revision: ([0-9.]+)'
+
+val = []
+
+
+
+with open("Dateien/mbox-short.txt", "r") as file:
+
+    for line in file:
+
+        found = re.findall(regex, line)
+
+        if found:
+
+            for f in found:
+
+                val.append(float(f))
+
+print(int(sum(val) / len(val)))
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import socket
+
+
+
+try:
+
+    url = input("Geben Sie eine URL an: ")
+
+    hostname = url.split("/")[2]
+
+
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    mysock.connect((hostname, 80))
+
+    cmd = 'GET ' + url + ' HTTP/1.0\r\n\r\n'
+
+    cmd = cmd.encode()
+
+    mysock.send(cmd)
+
+
+
+    while True:
+
+        data = mysock.recv(512)
+
+        if len(data) < 1:
+
+            break
+
+        print(data.decode(), end='')
+
+
+
+    mysock.close()
+
+except:
+
+    print("Die URL ist falsch formatiert oder existiert nicht")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import socket
+
+
+
+try:
+
+    url = input("Geben Sie eine URL an: ")
+
+    hostname = url.split("/")[2]
+
+
+
+
+
+    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+
+    mysock.connect((hostname, 80))
+
+    cmd = 'GET ' + url + ' HTTP/1.0\r\n\r\n'
+
+    cmd = cmd.encode()
+
+    mysock.send(cmd)
+
+
+
+    content = b""
+
+    while True:
+
+        data = mysock.recv(512)
+
+        if len(data) < 1:
+
+            break
+
+        content += data
+
+
+
+    content = content.decode()
+
+    print(content[:3000])
+
+    print(len(content))
+
+
+
+    mysock.close()
+
+except:
+
+    print("Die URL ist falsch formatiert oder existiert nicht")
+
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import urllib.request
+
+
+
+url = input("Geben Sie eine URL an: ")
+
+content = urllib.request.urlopen(url).read()
+
+content = content.decode()
+
+
+
+print(content[:3000])
+
+print(len(content))
+~~~~
+
+Lösung
+------
+
+~~~~ {.python}
+import urllib.request, urllib.parse, urllib.error
+
+from bs4 import BeautifulSoup
+
+import ssl
+
+
+
+ctx = ssl.create_default_context()
+
+ctx.check_hostname = False
+
+ctx.verify_mode = ssl.CERT_NONE
+
+
+
+url = input('Eingeben - ')
+
+html = urllib.request.urlopen(url, context=ctx).read()
+
+soup = BeautifulSoup(html, 'html.parser')
+
+
+
+tags = soup('a')
+
+for tag in tags:
+
+    print(tag.get('href', None))
+
+~~~~
+

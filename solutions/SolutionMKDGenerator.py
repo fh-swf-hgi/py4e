@@ -2,7 +2,7 @@ from mdutils.mdutils import MdUtils
 from mdutils import Html
 import os
 
-target_file_path = "example.mkd"
+target_file_path = "solutions.mkd"
 
 
 def file_init():
