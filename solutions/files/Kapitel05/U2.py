@@ -4,7 +4,7 @@ def minmax():
     maximum = None
 
     done = False
-    while (not done):
+    while not done:
         eingabe = input("Bitte eine Zahl eingeben: ")
         try:
             z = float(eingabe)

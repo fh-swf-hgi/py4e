@@ -1,1 +1,1 @@
-# Man erhält immer wieder verschiedene Zahlen.
+# Es werden bei jedem Durchgang verschiedene Zahlen erzeugt.
