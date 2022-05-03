@@ -1,7 +1,6 @@
 import os
 
-target_file_path = "solutions.mkd"
-target_file = open(target_file_path, "a", encoding="utf-8")
+target_file_path = "./solutions.mkd"
 
 # Bereitet die Zieldatei vor
 def file_init():
@@ -31,7 +30,7 @@ def py_to_mkd(py_path):
     for line in py_file:
         target_file.write(line)
 
-    target_file.write("~~~~\n")
+    target_file.write("\n~~~~\n")
     target_file.write("\n")
     py_file.close()
 
@@ -39,6 +38,7 @@ def py_to_mkd(py_path):
 # Programmablauf startet
 # Datei vorbereiten
 file_init()
+target_file = open(target_file_path, "a", encoding="utf-8")
 
 # Aktuell besuchtes Verzeichnisss
 curr_dir = ""
@@ -49,7 +49,7 @@ for subdir, dirs, files in os.walk("files"):
         filepath = subdir + os.sep + file
 
         # Prüfen ob Kapitel bereits vorhanden, vergleich mit Zwischengespeichertem Ordner
-        if subdir.split("\\")[-1] != "Dateien" and curr_dir is not subdir:
+        if subdir.split("/")[-1] != "Dateien" and curr_dir is not subdir:
             curr_dir = subdir
             target_file.write("Musterlösungen\n")
             target_file.write("==============\n")
