@@ -47,6 +47,7 @@ curr_dir = ""
 for subdir, dirs, files in os.walk("files"):
     for file in files:
         filepath = subdir + os.sep + file
+        print(filepath)
 
         # Prüfen ob Kapitel bereits vorhanden, vergleich mit Zwischengespeichertem Ordner
         if subdir.split("\\")[-1] != "Dateien" and curr_dir is not subdir:

@@ -14,10 +14,12 @@ def durchschnitt():
             if eingabe == "done":
                 done = True
             else:
-                return "Es werden nur Zahlen akzeptiert. Beenden mit 'done'"
+                return "Es werden nur Zahlen akzeptiert. " \
+                       "Beenden mit 'done'"
     durchschnitt = summe / anzahl
 
-    erg = "Anzahl: " + str(anzahl) + " Summe: " + str(summe) + " Durchschnitt: " + str(durchschnitt)
+    erg = "Anzahl: " + str(anzahl) + " Summe: " + str(summe) + \
+          " Durchschnitt: " + str(durchschnitt)
     print(erg)
     return erg
 

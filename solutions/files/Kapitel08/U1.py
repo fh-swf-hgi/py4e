@@ -4,7 +4,8 @@ def remove_all(liste, wert):
             liste.remove(element)
 
 
-liste = ["Banane", "Erbeere", "Apfel", "Banane", "Gurke"]
+liste = ["Banane", "Erbeere", "Apfel",
+         "Banane", "Gurke"]
 print("Start Liste:", liste)
 
 remove_all(liste, "Banane")

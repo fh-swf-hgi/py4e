@@ -4,7 +4,8 @@ try:
     url = input("Geben Sie eine URL an: ")
     hostname = url.split("/")[2]
 
-    mysock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    mysock = \
+        socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     mysock.connect((hostname, 80))
     cmd = 'GET ' + url + ' HTTP/1.0\r\n\r\n'
     cmd = cmd.encode()
@@ -18,4 +19,5 @@ try:
 
     mysock.close()
 except:
-    print("Die URL ist falsch formatiert oder existiert nicht")
+    print("Die URL ist falsch formatiert "
+          "oder existiert nicht")

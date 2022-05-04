@@ -22,9 +22,11 @@ def minmax():
             if eingabe == "done":
                 done = True
             else:
-                return "Es werden nur Zahlen akzeptiert. Beenden mit 'done'"
+                return "Es werden nur Zahlen akzeptiert. " \
+                       "Beenden mit 'done'"
 
-    erg = "Minimum: " + str(minimum) + " Maximum: " + str(maximum)
+    erg = "Minimum: " + str(minimum) + \
+          " Maximum: " + str(maximum)
     print(erg)
     return erg
 

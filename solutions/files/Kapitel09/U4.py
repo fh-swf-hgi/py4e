@@ -9,4 +9,5 @@ for line in file:
         continue
     mail_count[words[1]] = mail_count[words[1]] + 1
 
-print(max(mail_count), ":", mail_count[max(mail_count)])
+print(max(mail_count), ":",
+      mail_count[max(mail_count)])

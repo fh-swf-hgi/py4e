@@ -6,4 +6,5 @@ for line in file:
         continue
     print(words[1])
     from_count += 1
-print("Es gibt ", from_count, " Zeilen mit from.")
+print("Es gibt ", from_count,
+      " Zeilen mit from.")
