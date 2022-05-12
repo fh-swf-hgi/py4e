@@ -24,7 +24,7 @@ def py_to_mkd(py_path):
     target_file.write("------\n")
     target_file.write("\n")
 
-    target_file.write("~~~~ {.python}\n")
+    target_file.write("\n~~~~ {.python}\n")
 
     # Quellcodedateien einfügen
     for line in py_file:
