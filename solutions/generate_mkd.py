@@ -18,22 +18,18 @@ py_path definiert die Pythondatei, welche eingefügt werden soll. """
 
 def py_to_mkd(py_path):
     py_file = open(py_path, "r", encoding="utf-8")
-
+    print(py_path)
     # Überschrift einfügen
-    target_file.write("Lösung\n")
-    target_file.write("------\n")
-    target_file.write("\n")
-
-    target_file.write("\n~~~~ {.python}\n")
+    target_file.write("Aufgabe\n")
+    target_file.write("-------\n\n")
+    target_file.write("~~~~ {.python}\n")
 
     # Quellcodedateien einfügen
     for line in py_file:
         target_file.write(line)
 
-    target_file.write("\n~~~~\n")
-    target_file.write("\n")
+    target_file.write("\n~~~~\n\n")
     py_file.close()
-
 
 # Programmablauf startet
 # Datei vorbereiten
@@ -44,7 +40,10 @@ target_file = open(target_file_path, "a", encoding="utf-8")
 curr_dir = ""
 
 # Verzeichnisse und Dateien im Ordner files zum Hinzufügen durchlaufen
-for subdir, dirs, files in os.walk("files"):
+for subdir, dirs, files in sorted(os.walk("files")):
+
+    files.sort()
+
     for file in files:
         filepath = subdir + os.sep + file
 
@@ -52,7 +51,7 @@ for subdir, dirs, files in os.walk("files"):
         if subdir.split("/")[-1] != "Dateien" and curr_dir is not subdir:
             curr_dir = subdir
             target_file.write("Musterlösungen\n")
-            target_file.write("==============\n")
+            target_file.write("==============\n\n")
 
         # Prüfen ob Python Datei, ansonsten Überspringen
         if not filepath.endswith(".py"):

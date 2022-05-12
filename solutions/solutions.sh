@@ -11,7 +11,7 @@
 #     echo "mobi not generated - please install kindlegen"
 # fi
 
-python3 SolutionMKDGenerator.py
+python3 generate_mkd.py
 
 rm tmp.* *.tmp *.aux
 # # # # pandoc A0-preface.mkd -o tmp.prefacex.tex
