@@ -1,5 +1,5 @@
 \documentclass[$if(fontsize)$$fontsize$,$endif$$if(papersize)$$papersize$,$endif$$for(classoption)$$classoption$$sep$,$endfor$]{$documentclass$}
-\usepackage[size=journal,gutter=0.75in,trim,bleed]{createspace}
+\usepackage[size=journal,gutter=0.125in,inner=0.8125in,outer=0.8125in,trim,bleed]{createspace}
 \usepackage{alltt} % http://stackoverflow.com/a/11236836
 $if(fontfamily)$
 \usepackage{$fontfamily$}
@@ -116,18 +116,17 @@ $endif$
 \fancyhf{}
 \fancyhf[roh,leh]{\thepage}
 \fancyhf[reh]{\nouppercase{\leftmark}}
-\fancyhf[loh]{\nouppercase{\rightmark}}
+\fancyhf[loh]{\nouppercase{\leftmark}}
 \fancypagestyle{plain}{
   \fancyhf{} 
   \fancyfoot[LE,RO]{} % same placement as with page style "fancy"
   \renewcommand{\headrulewidth}{0pt}}
 % END page header
 
-% BEGIN dotted chapter numbers
-\usepackage{titlesec}
-\titlelabel{\thetitle.\quad}
-\usepackage[dotinlabels]{titletoc}
-% END dotted chapter numbers
+% BEGIN section title formatting
+\usepackage[compact,explicit]{titlesec}
+\titleformat{\section}[runin]{\Large\bfseries}{}{0pt}{#1~\thesection}
+% END section title formatting
 
 \ifxetex
   \usepackage[setpagesize=false, % page size defined by xetex
@@ -218,18 +217,18 @@ $include-before$
 
 $endfor$
 
-% % % % \input{tmp.preface}
+% \input{tmp.preface}
 
 
 $if(toc)$
 {
-\hypersetup{linkcolor=black}
-\setcounter{tocdepth}{$toc-depth$}
-\cleardoublepage
-\pdfbookmark{\contentsname}{toc}
-\begin{spacing}{0.0}
-    \tableofcontents
-\end{spacing}
+% \hypersetup{linkcolor=black}
+% \setcounter{tocdepth}{$toc-depth$}
+% \cleardoublepage
+% \pdfbookmark{\contentsname}{toc}
+% \begin{spacing}{0.0}
+%     \tableofcontents
+% \end{spacing}
 }
 $endif$
 $if(lot)$
@@ -266,13 +265,13 @@ $endfor$
 
 \appendix
 
-% % % % \input{tmp.appendix}
+% \input{tmp.appendix}
 
 \normalsize
 
-% % % % \cleardoublepage
-% % % % \fancyhead[RE, LO]{Index}
-% % % % \printindex
+% \cleardoublepage
+% \fancyhead[RE, LO]{Index}
+% \printindex
 
 % \newpage\null\thispagestyle{empty}\newpage
 
