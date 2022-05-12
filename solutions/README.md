@@ -1,4 +1,4 @@
-Python for Everybody - Solutions
+Python für alle - Musterlösungen
 --------------------------------
 
-Solutions for the exercises of the German edition.
+Musterlösungen zu den Übungsaufgaben der deutschen Ausgabe.
