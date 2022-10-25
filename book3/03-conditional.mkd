@@ -467,7 +467,7 @@ verkettete Bedingungen
 \index{Bedingung!verkettete}
 
 Vergleichsoperator
-:   Einer der Operatoren, der seine Operanden vergleicht: `==`, `!=`, `>`, `<`, `>=`, and `<=`.
+:   Einer der Operatoren, der seine Operanden vergleicht: `==`, `!=`, `>`, `<`, `>=` und `<=`.
 
 bedingte Anweisung
 :   Eine Anweisung, die den Ablauf der Ausführung in Abhängigkeit von einer Bedingung steuert.
