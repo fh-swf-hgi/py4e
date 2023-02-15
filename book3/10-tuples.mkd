@@ -278,10 +278,10 @@ Dictionarys und Tupel
 Dictionarys haben eine Methode namens `items`, die eine Liste von Tupeln zurückgibt, wobei jedes Tupel ein Schlüssel-Wert-Paar ist:
 
 ~~~~ {.python .trinket}
->>> d = {'a':10, 'b':1, 'c':22}
+>>> d = {'b':1, 'a':13, 'c':7}
 >>> t = list(d.items())
 >>> print(t)
-[('b', 1), ('a', 10), ('c', 22)]
+[('b', 1), ('a', 13), ('c', 7)]
 ~~~~
 
 Wie wir es vermutlich von einem Dictionary erwarten, sind die Begriffe in keiner bestimmten Reihenfolge angeordnet.
@@ -289,13 +289,13 @@ Wie wir es vermutlich von einem Dictionary erwarten, sind die Begriffe in keiner
 Da die Liste der Tupel jedoch eine Liste ist und Tupel vergleichbar sind, können wir nun die Liste der Tupel sortieren. Das Konvertieren eines Dictionarys in eine Liste von Tupeln ist eine Möglichkeit, den Inhalt eines Dictionarys nach Schlüssel sortiert auszugeben:
 
 ~~~~ {.python}
->>> d = {'a':10, 'b':1, 'c':22}
+>>> d = {'b':1, 'a':13, 'c':7}
 >>> t = list(d.items())
 >>> t
-[('b', 1), ('a', 10), ('c', 22)]
+[('b', 1), ('a', 13), ('c', 7)]
 >>> t.sort()
 >>> t
-[('a', 10), ('b', 1), ('c', 22)]
+[('a', 13), ('b', 1), ('c', 7)]
 ~~~~
 
 Die neue Liste wird in aufsteigender alphabetischer Reihenfolge nach dem Schlüsselwert sortiert.
@@ -309,6 +309,7 @@ Mehrfachzuweisung mit Dictionarys
 Durch die Kombination von `items`, Tupel-Zuweisung und `for` können wir ein schönes Codeschema für das Durchlaufen der Schlüssel und Werte eines Dictionarys in einer einzigen Schleife sehen:
 
 ~~~~ {.python}
+d = {'b':1, 'a':13, 'c':7}
 for key, val in list(d.items()):
     print(val, key)
 ~~~~
@@ -320,9 +321,9 @@ Bei jeder Iteration durch die Schleife werden sowohl `key` als auch `val` zum n�
 Der Ausgang dieser Schleife ist:
 
 ~~~~
-10 a
-22 c
 1 b
+13 a
+7 c
 ~~~~
 
 Auch hier gilt wieder die Reihenfolge der Hash-Schlüssel (d. h. letztendlich keine bestimmte Reihenfolge).
@@ -332,16 +333,16 @@ Wenn wir diese beiden Techniken kombinieren, können wir den Inhalt eines Dictio
 Um dies zu tun, erstellen wir zunächst eine Liste von Tupeln, wobei jedes Tupel `(value, key)` ist. Die Methode `items` würde uns eine Liste von `(key, value)`-Tupeln liefern, aber dieses Mal wollen wir nach Wert und nicht nach Schlüssel sortieren. Sobald wir die Liste mit den Wert-Schlüssel-Tupeln aufgebaut haben, ist es eine einfache Sache, die Liste in umgekehrter Reihenfolge zu sortieren und die neue, sortierte Liste auszugeben.
 
 ~~~~ {.python}
->>> d = {'a':10, 'b':1, 'c':22}
+>>> d = {'b':1, 'a':13, 'c':7}
 >>> l = list()
 >>> for key, val in d.items():
 ...     l.append( (val, key) )
 ...
 >>> l
-[(10, 'a'), (22, 'c'), (1, 'b')]
+[(1, 'b'), (13, 'a'), (7, 'c')]
 >>> l.sort(reverse=True)
 >>> l
-[(22, 'c'), (10, 'a'), (1, 'b')]
+[(13, 'a'), (7, 'c'), (1, 'b')]
 >>>
 ~~~~
 
