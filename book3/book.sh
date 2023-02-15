@@ -11,7 +11,7 @@ cat epub-metadata.txt *.mkd | grep -v '^%' | python pre-html.py | python verbati
 #     echo "mobi not generated - please install kindlegen"
 # fi
 
-rm tmp.* *.tmp *.aux
+rm tmp.* *.tmp *.aux &>/dev/null
 pandoc A0-preface.mkd -o tmp.prefacex.tex
 sed < tmp.prefacex.tex 's/section{/section*{/' > tmp.preface.tex
 
@@ -39,4 +39,5 @@ else
   echo "Output on x.pdf"
 fi
 
-rm tmp.* *.tmp *.aux
+rm tmp.* *.tmp *.aux &>/dev/null
+rm figs2/*-eps-converted-to.pdf ../images/*-eps-converted-to.pdf ../images/de/*-eps-converted-to.pdf ../photos/*-eps-converted-to.pdf  &>/dev/null
