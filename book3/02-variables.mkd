@@ -645,7 +645,7 @@ Bei Syntaxfehlern sind die Fehlermeldungen nicht sehr hilfreich. Die häufigsten
 Im Beispiel oben besteht übrigens das Problem, dass Zahlen nicht mit führenden Nullen beginnen dürfen.
 `09` ist also kein gültiges *Wort* in Python.
 Wenn Sie das Buch bisher sorgfältig gelesen haben, sollten Sie nun stutzig werden.
-Wir hatten ja ein Beispiel, in dem der Code `1,000,000` als Folge der Zahlen `1`, `0`und `0` gedeutet wurde.
+Wir hatten ja ein Beispiel, in dem der Code `1,000,000` als Folge der Zahlen `1` und `0` gedeutet wurde.
 Dabei gibt es doch auch führende Nullen, oder? Nicht ganz! Folgen von beliebig vielen Nullen interpretiert Python als `0`. Dies ist eines von vielen kleinen Details, die manchmals sonderbar erscheinen und die man nicht unbedingt verstehen muss.
 
 \index{Fehlermeldung}

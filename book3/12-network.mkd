@@ -19,7 +19,7 @@ Es gibt viele Dokumente, die diese Netzwerkprotokolle beschreiben. Das Hypertext
 
 <https://www.w3.org/Protocols/rfc2616/rfc2616.txt>
 
-Dies ist ein langes und komplexes 176-seitiges Dokument mit vielen Details. Wer es interessant findet, kann es gerne ganz lesen, notwending ist das aber nicht, um HTTP zu verwenden. Auf Seite 36 von RFC2616 finden wir die Syntax für den GET-Request. Um ein Dokument von einem Webserver anzufordern, stellen wir eine Verbindung zum `www.pr4e.org`-Server auf Port 80 her und senden dann eine Zeile der Form
+Dies ist ein langes und komplexes 176-seitiges Dokument mit vielen Details. Wer es interessant findet, kann es gerne ganz lesen, notwendig ist das aber nicht, um HTTP zu verwenden. Auf Seite 36 von RFC2616 finden wir die Syntax für den GET-Request. Um ein Dokument von einem Webserver anzufordern, stellen wir eine Verbindung zum `www.pr4e.org`-Server auf Port 80 her und senden dann eine Zeile der Form
 
 `GET http://data.pr4e.org/romeo.txt HTTP/1.0 `
 

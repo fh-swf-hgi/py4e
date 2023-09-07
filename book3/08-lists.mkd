@@ -770,7 +770,7 @@ Der unvorsichtige Umgang mit Listen (und anderen veränderbaren Objekten) kann z
 
     Die dritte Anweisung ist eine Kurzschreibweise des `+`-Operators. Im Allgemeinen (also vor allem bei Zahlen) entspricht `a += b` der Schreibweise `a = a + b`. Auf Listen angewendet, hat dies den Effekt, dass die Liste selbst, also wie bei `append` verändert wird. Wir behalten damit also das alte Listenobjekt.
 
-    Oft ist es unerheblich, ob man mit einem neuen Objekt oder dem bestehenden weiterarbeitet. Wenn es aber zu einem unerwarteten Programmverhalten kommt, können darin die Ursachen bestehen. Wenn Sie genau wissen wollen, ob sich ein Objekt geändert hat, können Sie die eingebaute Funktion `id()` verwenden. `id` zeigt Ihnen zu jedem Objekt die zugehörige, eindeutige ID an. Wenn Sie diese vor und nach einer Zuweisung aufrufen, wissen Sie, ob ein neus Objekt angelegt wurde.
+    Oft ist es unerheblich, ob man mit einem neuen Objekt oder dem bestehenden weiterarbeitet. Wenn es aber zu einem unerwarteten Programmverhalten kommt, können darin die Ursachen bestehen. Wenn Sie genau wissen wollen, ob sich ein Objekt geändert hat, können Sie die eingebaute Funktion `id()` verwenden. `id` zeigt Ihnen zu jedem Objekt die zugehörige, eindeutige ID an. Wenn Sie diese vor und nach einer Zuweisung aufrufen, wissen Sie, ob ein neues Objekt angelegt wurde.
 
     Neben den richtigen Anweisungen, um eine Liste zu erweitern, gibt es noch viele, die recht ähnlich aussehen, aber leider nicht das gewünschte Ergebnis liefer. Hier einige Beispiele:
 

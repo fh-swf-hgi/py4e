@@ -107,7 +107,7 @@ Die Ausgabe des Programms würde lauten:
 ['csev@umich.edu', 'cwen@iupui.edu']
 ~~~~
 
-Der reguläre Ausdrucks sucht nach Teilzeichenfolgen, die mindestens ein Nicht-Leerzeichen enthalten, gefolgt von einem at-Zeichen, gefolgt von mindestens einem weiteren Nicht-Leerzeichen. Das `\S+` passt auf so viele Nicht-Leerzeichen wie möglich.
+Der reguläre Ausdruck sucht nach Teilzeichenfolgen, die mindestens ein Nicht-Leerzeichen enthalten, gefolgt von einem at-Zeichen, gefolgt von mindestens einem weiteren Nicht-Leerzeichen. Das `\S+` passt auf so viele Nicht-Leerzeichen wie möglich.
 
 Der reguläre Ausdruck würde zweimal passen (auf `csev@umich.edu` und auf `cwen@iupui.edu`), aber er würde nicht auf die Zeichenkette „@2PM“ passen, weil es keine Nicht-Leerzeichen *vor* dem at-Zeichen gibt. Wir können diesen regulären Ausdruck in einem Programm verwenden, um alle Zeilen in einer Datei zu lesen und alles auszugeben, was wie eine E-Mail-Adresse aussieht:
 

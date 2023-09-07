@@ -9,7 +9,7 @@ Ein wichtiges Konzept, das uns fehlt, ist der sogenannte *Kontrollfluss*.
 Dabei handelt es sich, grob gesagt, um das Steuern von Abläufen im Programm.
 Nehmen wir an, wir fragen den Benutzer nach der Eingabe eines Zeichens und nur wenn das Zeichen kein `q` (für *quit*) ist, soll das Programm weiter laufen.
 
-Wie wir die Eingabe erledigen, haben wir bereits kennengelernt, nicht aber wie wir feststellen können, ob das gelesene Zeichen ein `q`ist. Außerdem wissen wir noch nicht, wie man die Ausführung bestimmter Anweisungen von dem Ergebnis einer solchen Überprüfung abhängig macht.
+Wie wir die Eingabe erledigen, haben wir bereits kennengelernt, nicht aber wie wir feststellen können, ob das gelesene Zeichen ein `q` ist. Außerdem wissen wir noch nicht, wie man die Ausführung bestimmter Anweisungen von dem Ergebnis einer solchen Überprüfung abhängig macht.
 Glücklicherweise brauchen wir dazu nicht viel Neues und nach dem Lesen der folgenden Seiten wird uns klar sein, wie man solche Aufgaben mit Python erledigt.    
 
 Boolesche Ausdrücke
