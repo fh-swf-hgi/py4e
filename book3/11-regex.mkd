@@ -179,17 +179,17 @@ X-DSPAM-Confidence: 0.8475
 X-DSPAM-Probability: 0.0000
 ~~~~
 
-dann wollen wir nicht einfach irgendwelche Fließkommazahlen aus irgendwelchen Zeilen. Wir wollen nur Zahlen aus Zeilen extrahieren, die die obige Syntax haben.
+dann suchen wir nicht einfach beliebige Fließkommazahlen aus beliebigen Zeilen, sondern wir möchten nur Zahlen aus Zeilen extrahieren, die die obige Syntax aufweisen.
 
-Wir können den folgenden regulären Ausdruck konstruieren, um die Zeilen auszuwählen:
+Wir können den folgenden regulären Ausdruck verwenden, um diese Zeilen auszuwählen:
 
 ~~~~
 ^X-.*: [0-9.]+
 ~~~~
 
-Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder mehr beliebigen Zeichen (`.*`),  von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Der Punkt innerhalb der eckigen Klammern stimmt mit einem tatsächlichen Punkt überein (d. h. es handelt sich nicht um einen Platzhalter)!
+Übersetzt bedeutet dieser Ausdruck: Wir wollen Zeilen, die mit `X-` beginnen, gefolgt von keinem oder beliebig vielen Zeichen (`.*`), gefolgt von einem Doppelpunkt (`:`) und dann einem Leerzeichen. Nach dem Leerzeichen suchen wir nach einem oder mehreren Zeichen, die entweder eine Ziffer (0-9) oder ein Punkt `[0-9.]+` sind. Der Punkt innerhalb der eckigen Klammern stimmt mit einem tatsächlichen Punkt überein (d. h. es handelt sich nicht um einen Platzhalter)!
 
-Dies ist ein sehr strenger Ausdruck, der so ziemlich nur die Zeilen trifft, an denen wir interessiert sind:
+Dies ist ein sehr genau definierter Ausdruck, der wirklich nur die Zeilen trifft, an denen wir interessiert sind:
 
 \VerbatimInput{../code3/re10.py} 
 \begin{trinketfiles}
@@ -235,7 +235,7 @@ Die Ausgabe dieses Programms ist wie folgt:
 ..
 ~~~~
 
-Die Zahlen sind immer noch in einer Liste und müssen von Zeichenketten in Fließkommazahlen umgewandelt werden, aber wir haben die Macht der regulären Ausdrücke genutzt, um sowohl zu suchen als auch die Informationen zu extrahieren, die wir interessant finden.
+Die Zahlen sind immer noch in einer Liste und müssen von Zeichenketten in Fließkommazahlen umgewandelt werden. Aber wir haben gelernt, wie man reguläre Ausdrücke nutzt, um sowohl zu suchen als auch Informationen zu extrahieren, die wir interessant finden.
 
 Als weiteres Beispiel für diese Technik, gibt es eine Reihe von Zeilen der Form:
 
@@ -262,9 +262,9 @@ Wenn wir das Programm ausführen, erhalten wir die folgende Ausgabe:
 ...
 ~~~~
 
-Wir müssen bedenken, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis sie auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
+Wir müssen bedenken, dass das `[0-9]+` „gierig“ ist und versucht, eine möglichst große Ziffernfolge zu bilden, bevor es diese Ziffern extrahiert. Dieses „gierige“ Verhalten ist der Grund, warum wir alle fünf Ziffern für jede Zahl erhalten. Der reguläre Ausdruck expandiert in beide Richtungen, bis er auf eine Nicht-Ziffer oder den Anfang oder das Ende einer Zeile stößt.
 
-Jetzt können wir reguläre Ausdrücke verwenden, um eine Übung von früher im Buch zu wiederholen, bei der wir uns für die Tageszeit jeder Mail-Nachricht interessierten. Wir suchten nach Zeilen der Form:
+Jetzt können wir reguläre Ausdrücke verwenden, um eine Übung von früher im Buch zu wiederholen, bei der wir uns für die Tageszeit jeder Mail-Nachricht interessierten. Wir haben nach Zeilen dieser Form gesucht:
 
 ~~~~
 From stephen.marquard@uct.ac.za Sat Jan  5 09:14:16 2008
@@ -333,7 +333,7 @@ Obwohl dies nur an der Oberfläche der regulären Ausdrücke gekratzt hat, haben
 
 `\s` genau ein Leerzeichen
 
-`\S` genau ein Nicht-Whitespace (Gegenteil von `\s`).
+`\S` genau ein Nicht-Leerzeichen (Gegenteil von `\s`).
 
 `*` kein bis beliebig viele Zeichen
 
