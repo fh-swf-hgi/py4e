@@ -125,9 +125,9 @@ $endif$
 % END page header
 
 % BEGIN dotted chapter numbers
-\usepackage{titlesec}
-\titlelabel{\thetitle.\quad}
-\usepackage[dotinlabels]{titletoc}
+% \usepackage{titlesec}
+% \titlelabel{\thetitle.\quad}
+% \usepackage[dotinlabels]{titletoc}
 % END dotted chapter numbers
 
 \ifxetex
@@ -150,9 +150,9 @@ $endif$
             pdfborder={0 0 0}}
 
 % pdf bookmarks with dotted numbers:
-\makeatletter
-\renewcommand{\Hy@numberline}[1]{#1. }
-\makeatother
+% \makeatletter
+% \renewcommand{\Hy@numberline}[1]{#1. }
+% \makeatother
 
 \urlstyle{same}  % don't use monospace font for urls
 $if(links-as-notes)$
